@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 # 5.times do |i|
 #   User.create(
 #     email: "user#{i}@gmail.com",
@@ -14,8 +15,15 @@
 #   )
 # end
 
-5.times do |i|
-  Event.create(
-    name: "New Event #{i}"
-  )
-end
+# 5.times do |i|
+#   Event.create(
+#     name: "New Event #{i}",
+#     user_id: 1
+#   )
+# end
+
+# 5.times do |i|
+#   Item.create(
+#     name: "New Items #{i}"
+#   )
+# end
