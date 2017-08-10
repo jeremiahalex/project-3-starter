@@ -17,10 +17,11 @@
 
 # 5.times do |i|
 #   Event.create(
-#     name: "New Event #{i}"
+#     name: "New Event #{i}",
+#     user_id: 1
 #   )
 # end
-#
+
 # 5.times do |i|
 #   Item.create(
 #     name: "New Items #{i}"

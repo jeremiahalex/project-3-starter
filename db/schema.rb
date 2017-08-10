@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 20170810092207) do
     t.time "time"
     t.string "type"
     t.integer "budget"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "events_items", id: false, force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema.define(version: 20170810092207) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "users"
 end
