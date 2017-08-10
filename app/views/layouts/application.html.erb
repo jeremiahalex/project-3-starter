@@ -6,28 +6,94 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
   </head>
 
   <body>
-    <%= link_to "Home", root_path %>
-    <% if current_user %>
-    <%= link_to "Create Event", new_event_path %>
-    <%= link_to "View My Events", events_path  %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <!-- true -->
-    <% else %>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Register", new_user_registration_path %>
-    <!-- false -->
-    <% end %>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">Logo</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+            <ul id="dropdown1" class="dropdown-content">
+              <li>
+                <a href="#!">one</a>
+              </li>
+              <li>
+                <a href="#!">two</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#!">three</a>
+              </li>
+            </ul>
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1">Hello<i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <li><%= link_to "Create Event", new_event_path %></li>
+          <li><%= link_to "View My Events", events_path  %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <!-- true -->
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <!-- false -->
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <h1>Events Budget Planner</h1>
+  <h1>Events Budget Planner</h1>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+  <%= yield %>
 
-    <footer> Done by Team Puma </footer>
-  </body>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <p class="grey-text text-lighten-4">
+            Email: TeamPuma@ga.com</br>
+          Address: 8 Claymore Hill Singapore
+        </p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Copyright Team Puma
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
 </html>
