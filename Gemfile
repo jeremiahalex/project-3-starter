@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 gem 'pry'
+gem 'httparty'
 gem 'materialize-sass'
 gem 'jquery-rails'
 
