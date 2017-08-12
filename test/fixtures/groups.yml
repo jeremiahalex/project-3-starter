@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pax: 1
+  date: 2017-08-12
+  time: 2017-08-12 13:03:00
+  deal: one
+
+two:
+  pax: 1
+  date: 2017-08-12
+  time: 2017-08-12 13:03:00
+  deal: two
