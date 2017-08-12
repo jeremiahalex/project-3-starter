@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Restaurant.create(name: "Macdonald's")
+
+# Deal.create(name: "Free Ice-Cream", restaurant_id: 1)
+
+# 5.times do |i|
+#   Group.create(deal_id: 1)
+# end
+#
+# 5.times do |i|
+#   User.create(name: "Tag##{i + 1}", email: "test#{i}@gmail.com",
+#   password: "test123")
+# end
