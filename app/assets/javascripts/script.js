@@ -1,4 +1,21 @@
 $(document).on('turbolinks:load', function() {
+  $(".restaurants.main").ready(function (){
+    $.get('/restaurants').done(function(data) {
+      data.restaurants.forEach (function(rest) {
+        console.log(rest)
+      })
+      data.deals.forEach (function(deals) {
+        console.log(deals)
+      })
+      for (var i = 0; i< data.restaurants.length; i++) {
+        data.restaurants[i].deals = data.deals[i]
+        placeMarker({
+          lat: data.restaurants[i].latitude,
+          lng: data.restaurants[i].longitude
+        }, data.restaurants[i])
+      }
+    })
+  })
   var singapore = {
     lat: 1.352083,
     lng: 103.819836
@@ -26,16 +43,22 @@ $(document).on('turbolinks:load', function() {
       $restName.text(marker.restaurantInfo.name)
       $('#sidemenu').append($restName)
       $('#sidemenu').append($('<p>').text('Deals'))
-      $('#sidemenu').append($('<p>').text(marker.restaurantInfo.deals))
-      $('#sidemenu').append($('<p>').text('Groups'))
-      var $groups = $('<ul>')
-      var $groupsName = $('<li>')
-      $groupsName.text('Dominic\'s Party')
-      $groups.append($groupsName)
-      var $viewMore = $('<button>')
-      $viewMore.text('View Group').css('float', 'right')
-      $groupsName.append($viewMore)
-      $('#sidemenu').append($groups)
+      var $deals = $('<table>').css({
+        width: '90%',
+        margin: '0 auto'
+      })
+      marker.restaurantInfo.deals.forEach (function(deal) {
+        var $dealsName = $('<tr>')
+        $dealsName.append($('<td>').text(deal.name).css('width','50%'))
+        var $viewMore = $('<td>')
+        $viewMore.append($('<button>').text('View Deal')).css({
+            width: '50%',
+            float: 'right'
+        })
+        $dealsName.append($viewMore)
+        $deals.append($dealsName)
+      })
+      $('#sidemenu').append($deals)
       $('#sidemenu').append($('<button>').attr('id', 'collapseSide').css('display', 'none').text('>'))
       $('#sidemenu').hover(function() {
         $('#collapseSide').css('display', 'initial')
@@ -51,13 +74,13 @@ $(document).on('turbolinks:load', function() {
   var long = 103.723456
   var lat = 1.322083
   var rests = [{name:'KFC', deals: '1 for 1'},{name:'Starbucks', deals: '2 for 2'},{name:'Mcdonalds', deals: '50% off for 4'},{name:'Burger King', deals: '3 for 3'}]
-  for (var i = 0; i<4; i++) {
-    placeMarker({
-      lat: lat,
-      lng: long
-    }, rests[i])
-    long += Math.random() * 0.05
-    lat += Math.random() * 0.05
-  }
+  // for (var i = 0; i<4; i++) {
+  //   placeMarker({
+  //     lat: lat,
+  //     lng: long
+  //   }, rests[i])
+  //   long += Math.random() * 0.05
+  //   lat += Math.random() * 0.05
+  // }
 
 })
