@@ -1,4 +1,7 @@
 $(document).on('turbolinks:load', function () {
-  $(".dropdown-button").dropdown();
-  $('.parallax').parallax();
+  $('.dropdown-button').dropdown()
+
+  $('.static.home').ready(function () {
+    $('.parallax').parallax()
+  })
 })
