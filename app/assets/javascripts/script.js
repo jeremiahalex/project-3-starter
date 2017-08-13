@@ -1,5 +1,8 @@
 $(document).on('turbolinks:load', function () {
-  $('.dropdown-button').dropdown()
+  $('.dropdown-button').dropdown({
+    hover: true,
+    belowOrigin: true
+  })
 
   $('.static.home').ready(function () {
     $('.parallax').parallax()
