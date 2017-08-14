@@ -6,15 +6,87 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">Logo</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+            <ul id="dropdown1" class="dropdown-content">
+              <li>
+                <%= link_to "Create New Event", new_event_path %>
+              </li>
+              <li>
+                <%= link_to "View All Events", events_path%>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.email %><i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <!-- true -->
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <!-- false -->
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
+  <h1>Events Budget Planner</h1>
 
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-    <footer> Done by Team Puma </footer>
-  </body>
+  <%= yield %>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <p class="grey-text text-lighten-4">
+            Email: TeamPuma@ga.com</br>
+          Address: 8 Claymore Hill Singapore
+        </p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Copyright Team Puma
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>

@@ -3,6 +3,33 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">mail_outline</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Password (6 character minimum)</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Password Confirmation</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -24,6 +51,10 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+<% end %>
+<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+  <i class="material-icons right">send</i>
+</button>
+
+<!-- <%= render "devise/shared/links" %> -->
