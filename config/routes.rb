@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root 'static#home'
 
+resources :restaurants do
+  resources :deals do
+    resources :groups
+  end
+end
+
+
   get '/about', to: 'static#about'
 
   devise_for :users

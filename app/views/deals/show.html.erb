@@ -1,0 +1,25 @@
+<h1>Showing All Groups Under One Deal</h1>
+
+<h1><%= @deal.name %> by <%= @restaurant.name %> </h1>
+<p><%= @deal.description %></p>
+
+<% @groups.each do |group|%>
+<table>
+  <tr>
+    <th>Group</th>
+    <th>Pax</th>
+    <th>Date</th>
+    <th>Time</th>
+  </tr>
+
+    <tr>
+      <td><%= group.id %></td>
+      <td><%= group.pax %></td>
+      <td><%= group.date %></td>
+      <td><%= group.time %></td>
+            <td><%= link_to 'View', "#"%></td>
+    </tr>
+    <% end %>
+</table>
+
+<%= link_to 'Back', restaurant_deals_path %>
