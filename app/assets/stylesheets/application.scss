@@ -1,7 +1,7 @@
 @import "materialize/components/color";
 
 .nav-wrapper {
-  background-color: blue !important;
+  background-color: rgb(87,103,255) !important;
 }
 
 .card {
@@ -15,17 +15,33 @@
   width: 90%;
   margin: 0 auto;
 }
-.eventleft {
+.eventleft, .eventright{
   width: 45%;
   display: inline-block;
 }
-.eventright {
-  width: 45%,auto;
+.queryside, .addingside {
+  width: 45%;
   display: inline-block;
 }
+.queryside {
+  vertical-align: top;
+}
+// .eventright {
+//   width: 45%
+//   display: inline-block;
+// }
 .dropdown-button {
   width: 150px;
 }
+
+.page-footer {
+  background-color: rgb(87,103,255) !important;
+}
+
+.footer-copyright {
+  background-color: rgb(59,70,173) !important;
+}
+
 
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";

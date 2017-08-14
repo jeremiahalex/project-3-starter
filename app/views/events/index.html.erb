@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2>View All Events</h2>
+  <h3>View All Events</h3>
 
   <% @all_events.each do |event| %>
   <div class="card small">
@@ -8,12 +8,12 @@
       <span class="card-title activator grey-text text-darken-4"><%= event.name %>
         <!-- <i class="material-icons right">more_vert</i> -->
       </span>
-      <small>
+      <h6>
         When?
         <%= event.date %>
         <%= event.time.to_s.split(" ")[1] %></br>
       Where?
-      <%= event.location %></small>
+      <%= event.location %></h6>
     <p><%= link_to "View Details", event_path(event) %></p>
   </div>
   <div class="card-action">
@@ -27,7 +27,7 @@
 <%#= link_to "delete", post_path(post), method: :delete %>
 <% end  %>
 
-<h2>Total Number of events:
-  <%= @all_events.count %></h2>
+<h4>Total Number of events:
+  <%= @all_events.count %></h4>
 
 </div>
