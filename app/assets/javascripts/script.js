@@ -132,7 +132,6 @@ $(document).on('turbolinks:load', function() {
         $('#sidemenu').removeClass('visible')
         $('#map').removeClass('mapNarrowed')
       })
-      google.maps.event.trigger(map, 'resize')
       map.panTo({
         lat: marker.position.lat(),
         lng: marker.position.lng()
