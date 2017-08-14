@@ -18,7 +18,7 @@ end
 5.times do |i|
   Event.create(
     name: "New Event #{i}",
-    user_id: 2
+    user_id: 1
   )
 end
 
@@ -26,5 +26,5 @@ end
   Item.create(
     name: "New Items #{i}"
   )
-  
+
 end
