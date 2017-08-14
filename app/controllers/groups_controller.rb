@@ -19,13 +19,13 @@ class GroupsController < ApplicationController
     #   deal_id: 33
     # }
 
-    # creating_group = params.require(:group).permit(:pax, :date, :time)
+    creating_group = params.require(:group).permit(:pax, :date, :time)
 
-    # creating_group[:deal_id] = params[:deal_id]
+    creating_group[:deal_id] = params[:deal_id]
 
-    # Group.create(creating_group)
+    Group.create(creating_group)
 
-    # redirect_to root_path
+    redirect_to root_path
 
   end
 
@@ -55,10 +55,10 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group_time = Date.parse("#{@group.date} #{@group.time}")
 
-    render json: {
-      :group => @group,
-      :formatted_time => @group_time
-    }
+  #   render json: {
+  #     :group => @group,
+  #     :formatted_time => @group_time
+  #   }
   end
 
   def update
