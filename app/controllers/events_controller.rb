@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   def update
     current_event = Event.find(params[:id])
     event_to_update = params.require(:event).permit(:name, :location, :date, :time, :budget)
-    redirect_to :root if current_event.update(event_to_update)
+    redirect_to event_path if current_event.update(event_to_update)
     # render html: 'update!'
   end
 
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
   def destroy
     event_to_delete = Event.find(params[:id])
     event_to_delete.destroy
-    redirect_to :root
+    redirect_to events_path
   end
 
 end

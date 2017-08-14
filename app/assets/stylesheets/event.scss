@@ -12,15 +12,17 @@
 }
 
 .showevent {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 .eventleft {
-  width: 50%;
+  width: 45%;
   display: inline-block;
-
 }
-
 .eventright {
-  width: 50%,auto;  display: inline-block;
+  width: 45%,auto;
+  display: inline-block;
+}
+.dropdown-button {
+  width: 150px;
 }
