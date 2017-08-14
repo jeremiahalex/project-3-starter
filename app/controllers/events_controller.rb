@@ -24,25 +24,31 @@ class EventsController < ApplicationController
     @new_event = current_user.events.build
   end
 
-  #whats the diff between edit show update???
+  #edit path to show a form for editing
   def edit
-    render html: 'edit!'
+    @current_event = Event.find(params[:id])
+    # render html: 'edit!'
   end
 
   #need to link to items when ready
   def show
     @current_event = Event.find(params[:id])
-    render :show
+    # render :show
   end
 
-  #wz
+  #patch path to actually update
   def update
-    render html: 'update!'
+    current_event = Event.find(params[:id])
+    event_to_update = params.require(:event).permit(:name, :location, :date, :time, :budget)
+    redirect_to :root if current_event.update(event_to_update)
+    # render html: 'update!'
   end
 
-  #wz
+  #delete
   def destroy
-    render html: 'destroy!'
+    event_to_delete = Event.find(params[:id])
+    event_to_delete.destroy
+    redirect_to :root
   end
 
 end
