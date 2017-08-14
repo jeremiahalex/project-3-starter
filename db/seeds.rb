@@ -7,12 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Restaurant.create(name: "Macdonald's")
-
+#
 # Deal.create(name: "Free Ice-Cream", restaurant_id: 1)
 
-# 5.times do |i|
-#   Group.create(deal_id: 1)
-# end
+Group.create(pax: 10, time: 1300, date: 20170814)
+
 #
 # 5.times do |i|
 #   User.create(name: "Tag##{i + 1}", email: "test#{i}@gmail.com",

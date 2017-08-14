@@ -1,0 +1,30 @@
+<h1><%= "Group #{@group.id}\'s Page for the #{@group.deal.name} deal" %></h1>
+<h2><%= "#{@group.deal.restaurant.name}" %></h2>
+<h5><%= "#{@group.deal.description}" %></h5>
+
+<!-- show members -->
+<h3>Attendees:</h3>
+<ul>
+  <% @group.users.each do |user| %>
+  <li>
+   <%= user.name %>
+ </li>
+  <% end %>
+</ul>
+
+<!-- join button, patch request -->
+<% if @group.users.include? current_user %>
+  <%= link_to "Leave", restaurant_deal_group_path, method: :delete %>
+
+  <% else %>
+    <!-- Leave button -->
+    <%= link_to "Join", restaurant_deal_group_path, method: :patch %>
+
+<% end %>
+
+<!-- button to go back to all groups -->
+<%= link_to "Back", restaurant_deal_groups_path %>
+
+<p><%= "Date of meetup: #{@group.date}" %></p>
+<p><%= "Time of meetup: #{@group.time}" %></p>
+<small><%= "This group was created on #{@group.created_at}" %></small>
