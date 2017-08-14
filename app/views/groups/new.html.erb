@@ -1,0 +1,39 @@
+<h1><%= @current_restaurant.name %> (Create)</h1>
+<h3><%= @current_deal.name %></h3>
+<h3><%= @current_deal.description %></h3>
+
+<%= form_for @new_group, url: restaurant_deal_groups_path do |f| %>
+
+  <div class="field">
+    <label class="label"><%= f.label :pax %></label>
+    <div class="control">
+      <%= f.text_field :pax %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= f.label :date %></label>
+    <div class="control">
+      <%= f.date_field :date %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= f.label :time %></label>
+    <div class="control">
+      <%= f.time_field :time %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-link">Cancel</button>
+    </div>
+  </div>
+
+<% end %>
