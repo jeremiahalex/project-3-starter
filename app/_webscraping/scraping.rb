@@ -76,7 +76,9 @@ for i in 0..no_of_results-1
 end
 
 # # checking output:
-# p arr_of_pdt_hashes
+p arr_of_pdt_hashes
+p arr_of_pdt_hashes[2]
+p arr_of_pdt_hashes[2]["pdt_name"]
 # # all these arrays should be the same size:
 # p arr_of_pdt_hashes.size
 # p arr_of_pdt_names.size
