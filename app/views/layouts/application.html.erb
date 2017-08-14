@@ -24,6 +24,9 @@
               <li>
                 <%= link_to "View All Events", events_path%>
               </li>
+              <li>
+                <%= link_to "Edit #{current_user.name}\'s details", edit_user_registration_path %>
+              </li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
