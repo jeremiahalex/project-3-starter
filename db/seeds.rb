@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# 1.times do |i|
-#   User.create(
-#     email: "leesinshingbrian@gmail.com",
-#     password: "test123",
-#     password_confirmation: "test123"
-#   )
-# end
+1.times do |i|
+  User.create(
+    email: "leesinshingbrian@gmail.com",
+    password: "test123",
+    password_confirmation: "test123"
+  )
+end
 
 5.times do |i|
   Event.create(
@@ -22,8 +22,9 @@
   )
 end
 
-# 5.times do |i|
-#   Item.create(
-#     name: "New Items #{i}"
-#   )
-# end
+5.times do |i|
+  Item.create(
+    name: "New Items #{i}"
+  )
+  
+end
