@@ -1,7 +1,8 @@
-<h2><%= @current_event.name %></h2>
-<h4>WHERE? <%= @current_event.location %></h4>
-<h4>WHICH DAY? <%= @current_event.date %></h4>
-<h4>WHAT TIME? <%= @current_event.time %></h4>
+<div class="container">
+<h3><%= @current_event.name %></h3>
+<h5>WHERE? <%= @current_event.location %></h5>
+<h5>WHICH DAY? <%= @current_event.date %></h5>
+<h5>WHAT TIME? <%= @current_event.time.to_s.split(" ")[1] %></h5>
 
 <div class="showevent">
   <div class="eventleft">
@@ -44,4 +45,5 @@
     <p>Total Budget Remaining: <%= @current_event.budget %></p>
   </div>
 
+</div>
 </div>

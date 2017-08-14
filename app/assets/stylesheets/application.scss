@@ -1,3 +1,31 @@
+@import "materialize/components/color";
+
+.nav-wrapper {
+  background-color: blue !important;
+}
+
+.card {
+  padding-top: 40px;
+}
+.waves-effect {
+  margin-bottom: 50px;
+}
+
+.showevent {
+  width: 90%;
+  margin: 0 auto;
+}
+.eventleft {
+  width: 45%;
+  display: inline-block;
+}
+.eventright {
+  width: 45%,auto;
+  display: inline-block;
+}
+.dropdown-button {
+  width: 150px;
+}
+
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-@import "event"
