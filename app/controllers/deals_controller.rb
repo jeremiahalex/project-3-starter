@@ -12,7 +12,7 @@ class DealsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
 
     @deal = @restaurant.deals.find(params[:id])
-    
+
     @groups = @deal.groups
 
   end
