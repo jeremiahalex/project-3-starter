@@ -1,6 +1,5 @@
 class GroupsController < ApplicationController
 
-<<<<<<< HEAD
   def new
     @new_group = current_user.groups.new
     # render json: current_user.groups
@@ -22,7 +21,6 @@ class GroupsController < ApplicationController
     # render json: params
   end
 
-=======
   def index
     render html: 'show all groups within deals page'
   end
@@ -50,5 +48,5 @@ class GroupsController < ApplicationController
   # def group_update_params
   #   params.require(:group).permit(:id)
   # end
->>>>>>> 5e36c4702c2941faf4c31055d4e31a34fd140d8b
+
 end
