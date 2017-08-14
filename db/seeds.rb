@@ -15,15 +15,16 @@
 #   )
 # end
 
-5.times do |i|
-  Event.create(
-    name: "New Event #{i}",
-    user_id: 2
-  )
-end
-
 # 5.times do |i|
-#   Item.create(
-#     name: "New Items #{i}"
+#   Event.create(
+#     name: "New Event #{i}",
+#     user_id: 1
 #   )
 # end
+
+5.times do |i|
+  Item.create(
+    name: "New Items #{i}",
+    price: "3"
+  )
+end
