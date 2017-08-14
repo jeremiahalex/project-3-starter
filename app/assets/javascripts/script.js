@@ -9,25 +9,53 @@ $(document).on('turbolinks:load', function() {
     })
     $('#sidemenu').append($groups)
     $.get('/profile/groups').done(function(data) {
-      data.forEach (function (group) {
+      console.log(data);
+      for(var i = 0; i < data.groups.length; i++) {
+        data.groups[i].restaurant = data.restaurants[i]
+        data.groups[i].deal = data.deals[i]
+      }
+      data.groups.forEach (function (group) {
+        var marker = new google.maps.Marker({
+          position: {
+            lat: parseFloat(group.restaurant.latitude),
+            lng: parseFloat(group.restaurant.longitude)
+          },
+          map: map
+        })
         var $groupsName = $('<tr>')
         $groupsName.append($('<td>').text(`Group # ${group.id}`).css('width', '40%'))
         var $viewMore = $('<td>').css('width', '60%')
         var $viewMoreDiv = $('<div>').css('width', '100%')
         $viewMore.append($viewMoreDiv)
+        var $showGroupLink = $('<a>').attr('href', `/restaurants/${group.restaurant.id}/deals/${group.deal.id}/groups/${group.id}`)
         var $showLocationBtn = $('<button>').text('Show Location').css({
           width: '48%',
           margin: '1%'
         })
-        $viewMoreDiv.append($showLocationBtn)
-        $viewMoreDiv.append($('<button>').text('View Group').css({
+        $showLocationBtn.on('click', function () {
+            map.panTo({
+              lat: parseFloat(group.restaurant.latitude),
+              lng: parseFloat(group.restaurant.longitude)
+            })
+            map.setZoom(18)
+        })
+        $showGroupLink.html($('<button>').text('View Group').css({
           width: '50%'
         }))
+        $viewMoreDiv.append($showLocationBtn)
+        $viewMoreDiv.append($showGroupLink)
         $groupsName.append($viewMore)
         $groups.append($groupsName)
+        marker.addListener('mouseover', function () {
+          $groupsName.css('background-color', 'yellow')
+          marker.addListener('mouseout', function () {
+            $groupsName.css('background-color', 'white')
+          })
+        })
       })
     })
   })
+
   $(".restaurants.main").ready(function () {
     $.get('/restaurants').done(function (data) {
       data.restaurants.forEach(function (rest) {
@@ -39,8 +67,8 @@ $(document).on('turbolinks:load', function() {
       for (var i = 0; i < data.restaurants.length; i++) {
         data.restaurants[i].deals = data.deals[i]
         placeMarker({
-          lat: data.restaurants[i].latitude,
-          lng: data.restaurants[i].longitude
+          lat: parseFloat(data.restaurants[i].latitude),
+          lng: parseFloat(data.restaurants[i].longitude)
         }, data.restaurants[i])
       }
     })
@@ -54,6 +82,10 @@ $(document).on('turbolinks:load', function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: singapore,
     zoom: 11
+  })
+
+  map.addListener('click', function(e) {
+    console.log(e.latLng.lat(), e.latLng.lng())
   })
 
 
@@ -80,10 +112,12 @@ $(document).on('turbolinks:load', function() {
         var $dealsName = $('<tr>')
         $dealsName.append($('<td>').text(deal.name).css('width', '50%'))
         var $viewMore = $('<td>')
-        $viewMore.append($('<button>').text('View Deal')).css({
+        var $viewMoreLink = $('<a>').attr('href', `/restaurants/${restaurantInfo.id}/deals/${deal.id}`)
+        $viewMoreLink.html($('<button>').text('View Deal')).css({
           width: '50%',
           float: 'right'
         })
+        $viewMore.append($viewMoreLink)
         $dealsName.append($viewMore)
         $deals.append($dealsName)
       })
@@ -98,30 +132,12 @@ $(document).on('turbolinks:load', function() {
         $('#sidemenu').removeClass('visible')
         $('#map').removeClass('mapNarrowed')
       })
+      google.maps.event.trigger(map, 'resize')
+      map.panTo({
+        lat: marker.position.lat(),
+        lng: marker.position.lng()
+      })
+      map.setZoom(15)
     })
   }
-  var long = 103.723456
-  var lat = 1.322083
-  var rests = [{
-    name: 'KFC',
-    deals: '1 for 1'
-  }, {
-    name: 'Starbucks',
-    deals: '2 for 2'
-  }, {
-    name: 'Mcdonalds',
-    deals: '50% off for 4'
-  }, {
-    name: 'Burger King',
-    deals: '3 for 3'
-  }]
-  // for (var i = 0; i<4; i++) {
-  //   placeMarker({
-  //     lat: lat,
-  //     lng: long
-  //   }, rests[i])
-  //   long += Math.random() * 0.05
-  //   lat += Math.random() * 0.05
-  // }
-
 })
