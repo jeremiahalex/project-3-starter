@@ -20,6 +20,7 @@
   display: inline-block;
   vertical-align: middle;
 }
+
 .eventleft{
   margin-bottom: 50px
 }
@@ -30,11 +31,32 @@
 .queryside {
   vertical-align: top;
 }
+
 .addingside{
   margin-left: 30px
 }
 .dropdown-button {
   width: 150px;
+}
+
+.queryside{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15%;
+}
+
+.searchtitle{
+  padding-top: 10%;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10%;
+}
+
+.container{
+  width: 500px;
+  text-align: center;
+  position: relative;
 }
 
 .page-footer {
