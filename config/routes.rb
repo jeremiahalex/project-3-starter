@@ -12,11 +12,15 @@ Rails.application.routes.draw do
             }
 
   resources :events
-  resources :items
+  # resources :items
 
-  get '/shoppinglist', to: 'shoppinglist#start'
-  post '/shoppinglist', to: 'shoppinglist#results'
-  post '/shoppinglist/basket', to: 'shoppinglist#basket'
+get '/items/new', to: 'items#new'
+post '/items', to: 'items#results'
+post '/items/create', to: 'items#create'
+delete '/items', to: 'items#destroy'
+  # get '/shoppinglist', to: 'shoppinglist#start'
+  # post '/shoppinglist', to: 'shoppinglist#results'
+  # post '/shoppinglist/basket', to: 'shoppinglist#basket'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

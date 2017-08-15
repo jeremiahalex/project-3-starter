@@ -5,10 +5,17 @@ require 'json'
 class ItemsController < ApplicationController
 
   def new
-    #code
   end
 
-  def start
+  # def start
+  # end
+
+  def create
+    render json: params
+    Item.create(
+    params.require(:park )
+    )
+    # redirect_to event_path
   end
 
   def results
@@ -101,20 +108,21 @@ class ItemsController < ApplicationController
     # render json: @arr_of_pdt_hashes
 
   end
-  def basket
-    # render json: params['add_item']
-    # add_item is an array of strings. each string contains the pdt information (pdt_name, price, etc)
-    # for each (product) string, replace => with : so that JSON.parse can understand the string, and later convert to a JSON object
-    # convert string to JSON object
 
-    # items_added will be an array of pdt hashes
-    @items_added = []
-    params['add_item'].each_with_index do |item_string, index|
-      item_string.gsub!(/=>/, ": ")
-      @items_added.push(JSON.parse(item_string))
-    end
-    # @items_added = JSON.parse(params['add_item'][0].gsub!(/=>/, ": "))
-  end
+  # def basket
+  #   # render json: params['add_item']
+  #   # add_item is an array of strings. each string contains the pdt information (pdt_name, price, etc)
+  #   # for each (product) string, replace => with : so that JSON.parse can understand the string, and later convert to a JSON object
+  #   # convert string to JSON object
+  #
+  #   # items_added will be an array of pdt hashes
+  #   @items_added = []
+  #   params['add_item'].each_with_index do |item_string, index|
+  #     item_string.gsub!(/=>/, ": ")
+  #     @items_added.push(JSON.parse(item_string))
+  #   end
+  #   # @items_added = JSON.parse(params['add_item'][0].gsub!(/=>/, ": "))
+  # end
 
 
 end
