@@ -1,41 +1,12 @@
 <div class="container">
   <h3>Adding items to event.name</h3>
   <div class="queryside">
-    <%= form_tag do %>
+    <%= form_tag items_path, :id => 'searchItem' do %>
       <%= label_tag(:search_text, "Search supermarket database:") %>
       <%= text_field_tag(:search_text) %>
       <%= submit_tag("Search") %>
     <% end %>
-    <% if @arr_of_pdt_hashes %>
-    <%= form_tag("/shoppinglist/basket", method: "post") do %>
-
-      <% @arr_of_pdt_hashes.each_with_index do |pdt, index| %>
-        <div class='pdt_container'>
-          <h3><%= pdt['pdt_name'] %></h3>
-          <p><%= pdt['price'] %></p>
-          <img alt="product_image" class="pdt_img" src=<%= pdt['img_url'] %> />
-          <%= link_to "Product details", pdt['pdt_url'] %> <br>
-
-          <%= check_box_tag("add_item[]", "#{pdt}", false, id: "add_item_#{index}") %>
-          <%= label_tag("add_item_#{index}", "Add") %>
-        </div>
-      <% end %>
-      <% end %>
-
-      <%= submit_tag "Submit Items!" %>
-
-    <% end %>
-
-  </div>
-  <div class="addingside">
-    <ul class="collection with-header">
-        <li class="collection-header"><h4>Basket</h4></li>
-        <li class="collection-item">Item </li>
-        <li class="collection-item">Item </li>
-        <li class="collection-item">Item </li>
-        <li class="collection-item">Item </li>
-      </ul>
-  </div>
 
 
+</div>
 </div>

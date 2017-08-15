@@ -3,6 +3,7 @@
 <h5>WHERE? <%= @current_event.location %></h5>
 <h5>WHICH DAY? <%= @current_event.date %></h5>
 <h5>WHAT TIME? <%= @current_event.time.to_s.split(" ")[1] %></h5>
+    <%= link_to "Edit Event", edit_event_path, class: "waves-effect waves-light btn" %>
 
 <div class="showevent">
   <div class="eventleft">
@@ -37,8 +38,7 @@
         </p>
       </li>
     </ul>
-    <%= link_to "Edit Event", edit_event_path, class: "waves-effect waves-light btn" %>
-    <i class="material-icons left">mode_edit</i>
+    <%= link_to "Add more Item", new_item_path, class: "waves-effect waves-light btn" %>
   </div>
   <div class="eventleft">
     <div id="chart_show"></div>

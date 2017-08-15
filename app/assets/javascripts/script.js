@@ -8,7 +8,6 @@ $(document).on('turbolinks:load', function () {
     $('.parallax').parallax()
   })
 
-
   $('.events.new, .events.edit').ready(function () {
     $('.datepicker').pickadate({
       selectMonths: true, // Creates a dropdown to control month
@@ -63,5 +62,7 @@ $(document).on('turbolinks:load', function () {
       var chart = new google.visualization.PieChart(document.getElementById('chart_show'))
       chart.draw(data, options)
     }
+  })
+  $('.items.new').ready(function () {
   })
 })
