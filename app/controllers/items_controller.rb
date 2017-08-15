@@ -11,11 +11,18 @@ class ItemsController < ApplicationController
   # end
 
   def create
-    render json: params
+    # render json:
+    temp = params[:add_item][0]
+    temp = eval(temp)
+    # @temp = temp
+    tempprice = temp["price"].gsub(/\$/,'').to_f
     Item.create(
-    params.require(:park )
+    name: temp["pdt_name"],
+    price: tempprice,
+    imageUrl: temp["img_url"],
+    product_details_url: temp["pdt_url"]
     )
-    # redirect_to event_path
+    redirect_to :root
   end
 
   def results
