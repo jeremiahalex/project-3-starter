@@ -1,18 +1,24 @@
-<%= form_tag("/items/create", method: "post") do %>
+<div class="container">
+
+  <%= form_tag("/items/create", method: "post") do %>
 
   <% @arr_of_pdt_hashes.each_with_index do |pdt, index| %>
-    <div class='pdt_container'>
-      <h3><%= pdt['pdt_name'] %></h3>
-      <p><%= pdt['price'] %></p>
-      <img alt="product_image" class="pdt_img" src=<%= pdt['img_url'] %> />
-      <%= link_to "Product details", pdt['pdt_url'] %> <br>
+  <div class='pdt_container'>
+    <h3><%= pdt['pdt_name'] %></h3>
+    <img alt="product_image" class="pdt_img" src="<%= pdt['img_url'] %>"/>
+    <p><%= pdt['price'] %></p>
+    <%= link_to "Product details", pdt['pdt_url'] %>
+    <br>
+
 
       <%= check_box_tag("add_item[]", "#{pdt}", false, id: "add_item_#{index}", class: "event#{params[:event]}") %>
       <%= label_tag("add_item_#{index}", "Add") %>
       <%= hidden_field_tag("event_id", value = params[:event]) %>
     </div>
+
   <% end %>
 
   <%= submit_tag "Submit Items!" %>
 
-<% end %>
+  <% end %>
+</div>
