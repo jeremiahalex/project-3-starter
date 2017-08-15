@@ -18,9 +18,10 @@
 .eventleft, .eventright{
   width: 45%;
   display: inline-block;
-}
-.eventleft {
   vertical-align: middle;
+}
+.eventleft{
+  margin-bottom: 50px
 }
 .queryside, .addingside {
   width: 45%;
