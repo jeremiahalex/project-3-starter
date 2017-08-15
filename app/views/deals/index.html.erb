@@ -10,7 +10,8 @@
     <tr>
       <td><%= deal.name %></td>
       <td><%= deal.description %></td>
-      <td><%= link_to 'See Deal Details', restaurant_deal_path(@restaurant, deal.id)%></td>
+      <td><%= link_to 'See Deal Details', deal_path(deal.id) %></td>
+
     </tr>
   <% end %>
 </table>
