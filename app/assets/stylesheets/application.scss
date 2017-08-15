@@ -19,6 +19,8 @@
   width: 45%;
   display: inline-block;
 }
+<<<<<<< HEAD
+=======
 .eventleft {
   vertical-align: middle;
 }
@@ -29,11 +31,32 @@
 .queryside {
   vertical-align: top;
 }
+>>>>>>> upstream/master
 .addingside{
   margin-left: 30px
 }
 .dropdown-button {
   width: 150px;
+}
+
+.queryside{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15%;
+}
+
+.searchtitle{
+  padding-top: 10%;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10%;
+}
+
+.container{
+  width: 500px;
+  text-align: center;
+  position: relative;
 }
 
 .page-footer {
