@@ -1,4 +1,7 @@
-<h2>Edit event</h2>
+<div class="container">
+
+
+<h3>Edit event</h3>
 
 <%= form_for @current_event do |f| %>
 
@@ -20,14 +23,14 @@
 <div class="row">
   <div class="input-field col s12">
 <%= f.label :date %>
-<%= f.text_field :date %>
+<%= f.text_field :date, :class => "datepicker" %>
 </div>
 </div>
 
 <div class="row">
   <div class="input-field col s12">
 <%= f.label :time %>
-<%= f.text_field :time %>
+<%= f.text_field :time, :class => "timepicker" %>
 </div>
 </div>
 
@@ -46,4 +49,5 @@
 
 <%= f.submit%>
 <% end %>
+</div>
 </div>
