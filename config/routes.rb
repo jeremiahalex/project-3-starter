@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-resources :restaurants do
+resources :restaurants, shallow: true do
   resources :deals do
     resources :groups
   end

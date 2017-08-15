@@ -5,15 +5,14 @@ class DealsController < ApplicationController
   def index
     #show all deals by one restaurants
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @deals = @restaurant.deals.all
+    @deals = @restaurant.deals
 
   end
 
   def show
     #show specified deal by one restaurant
-    @restaurant = Restaurant.find(params[:restaurant_id])
-
-    @deal = @restaurant.deals.find(params[:id])
+    @deal = Deal.find(params[:id])
+    @restaurant = @deal.restaurant
 
     @groups = @deal.groups
 
