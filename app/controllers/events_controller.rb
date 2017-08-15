@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     budget: params[:event][:budget],
     user: current_user
     )
-    redirect_to new_item_path
+    redirect_to items_new_path
   end
 
   #this route is just for getting the form to create new
