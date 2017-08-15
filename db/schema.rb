@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 20170812051631) do
 
   create_table "groups", force: :cascade do |t|
     t.integer "pax"
-    t.time "datetime"
+    t.string "time"
+    t.date "date"
     t.bigint "deal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
