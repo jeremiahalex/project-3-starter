@@ -10,9 +10,12 @@
     <%= link_to "Product details", pdt['pdt_url'] %>
     <br>
 
-    <%= check_box_tag("add_item[]", "#{pdt}", false, id: "add_item_#{index}") %>
-    <%= label_tag("add_item_#{index}", "Add") %>
-  </div>
+
+      <%= check_box_tag("add_item[]", "#{pdt}", false, id: "add_item_#{index}", class: "event#{params[:event]}") %>
+      <%= label_tag("add_item_#{index}", "Add") %>
+      <%= hidden_field_tag("event_id", value = params[:event]) %>
+    </div>
+
   <% end %>
 
   <%= submit_tag "Submit Items!" %>
