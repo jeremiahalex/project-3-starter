@@ -11,7 +11,7 @@
 <br>
 
 <% @groups.each do |group|%>
-  <% if group.date >= Date.today %>
+  <% if group.date > Date.today %>
   <table>
     <tr>
       <th>Group Name</th>

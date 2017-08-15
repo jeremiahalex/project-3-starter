@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :check_already_joined, :check_if_full, only: [:update]
+  before_action :check_date_valid, only: [:create]
 
   def new
     @new_group = current_user.groups.new
@@ -17,10 +18,8 @@ class GroupsController < ApplicationController
     Group.create(creating_group)
 
     redirect_to deal_path(params[:deal_id])
-
   end
 
-    # render json: params
   def show_current_user
     current_user_groups = current_user.groups
     current_user_restaurants = current_user_groups.map do |group|
@@ -68,6 +67,7 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
     if group.users.include? current_user
       flash[:join_error] = "You have already joined the group!"
+
       redirect_to group_path
     end
   end
@@ -77,7 +77,17 @@ class GroupsController < ApplicationController
     max_pax = group.deal.pax
     if group.users.count >= max_pax
       flash[:max_error] = "The group is full!"
+
       redirect_to group_path
+    end
+  end
+
+  def check_date_valid
+    # render json: params[:date].is_a?(String)
+    if Date.parse(params[:date]) < Date.today
+      flash[:date_error] = "Please enter a date that is today or after"
+
+      redirect_to new_deal_group_path
     end
   end
 
