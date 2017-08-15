@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', function() {
         var $viewMore = $('<td>').css('width', '60%')
         var $viewMoreDiv = $('<div>').css('width', '100%')
         $viewMore.append($viewMoreDiv)
-        var $showGroupLink = $('<a>').attr('href', `/restaurants/${group.restaurant.id}/deals/${group.deal.id}/groups/${group.id}`)
+        var $showGroupLink = $('<a>').attr('href', `/groups/${group.id}`)
         var $showLocationBtn = $('<button>').text('Show Location').css({
           width: '48%',
           margin: '1%'
@@ -112,7 +112,7 @@ $(document).on('turbolinks:load', function() {
         var $dealsName = $('<tr>')
         $dealsName.append($('<td>').text(deal.name).css('width', '50%'))
         var $viewMore = $('<td>')
-        var $viewMoreLink = $('<a>').attr('href', `/restaurants/${restaurantInfo.id}/deals/${deal.id}`)
+        var $viewMoreLink = $('<a>').attr('href', `/deals/${deal.id}`)
         $viewMoreLink.html($('<button>').text('View Deal')).css({
           width: '50%',
           float: 'right'
