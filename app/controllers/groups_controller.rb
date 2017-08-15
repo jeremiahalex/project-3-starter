@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :check_already_joined, :check_if_full, only: [:update]
 
   def new
     @new_group = current_user.groups.new
@@ -10,7 +11,6 @@ class GroupsController < ApplicationController
 
   def create
     render json: params
-
 
     # {
     #   pax: 123,
@@ -53,7 +53,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @group_time = Date.parse("#{@group.date} #{@group.time}")
+  #  @group_time = Date.parse("#{@group.date} #{@group.time}")
 
   #   render json: {
   #     :group => @group,
@@ -65,20 +65,33 @@ class GroupsController < ApplicationController
     update_group = Group.find(params[:id])
     update_group.users << current_user
 
-    redirect_to restaurant_deal_group_path
+    redirect_to group_path
   end
 
   def destroy
     delete_from_group = Group.find(params[:id])
     delete_from_group.users.delete(current_user)
 
-    redirect_to restaurant_deal_group_path
+    redirect_to group_path
   end
 
-  # private
-  #
-  # def group_update_params
-  #   params.require(:group).permit(:id)
-  # end
+  private
+
+  def check_already_joined
+    group = Group.find(params[:id])
+    if group.users.include? current_user
+      flash[:join_error] = "You have already joined the group!"
+      redirect_to group_path
+    end
+  end
+
+  def check_if_full
+    group = Group.find(params[:id])
+    max_pax = group.deal.pax
+    if group.users.count >= max_pax
+      flash[:max_error] = "The group is full!"
+      redirect_to group_path
+    end
+  end
 
 end

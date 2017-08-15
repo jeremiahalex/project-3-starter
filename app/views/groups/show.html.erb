@@ -12,18 +12,27 @@
   <% end %>
 </ul>
 
+<!-- Show flash error -->
+<% if flash[:join_error] %>
+  <div class="notice"><%= flash[:join_error] %></div>
+<% end %>
+
+<% if flash[:max_error] %>
+  <div class="notice"><%= flash[:max_error] %></div>
+<% end %>
+
 <!-- join button, patch request -->
 <% if @group.users.include? current_user %>
-  <%= link_to "Leave", restaurant_deal_group_path, method: :delete %>
+  <%= link_to "Leave", group_path, method: :delete %>
 
   <% else %>
     <!-- Leave button -->
-    <%= link_to "Join", restaurant_deal_group_path, method: :patch %>
+    <%= link_to "Join", group_path, method: :patch %>
 
 <% end %>
 
 <!-- button to go back to all groups -->
-<%= link_to "Back", restaurant_deal_groups_path %>
+<%= link_to "Back", deal_path %>
 
 <p><%= "Date of meetup: #{@group.date}" %></p>
 <p><%= "Time of meetup: #{@group.time}" %></p>
