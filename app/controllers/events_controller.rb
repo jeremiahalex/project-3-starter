@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   #this route is for creating new events linked to users
   def create
     # render json: params[:event]
-    Event.create(
+    temp_event = Event.create(
     name: params[:event][:name],
     location: params[:event][:location],
     date: params[:event][:date],
@@ -16,12 +16,12 @@ class EventsController < ApplicationController
     budget: params[:event][:budget],
     user: current_user
     )
-    redirect_to items_new_path
+    redirect_to "/items/new?event=#{temp_event.id}"
   end
 
   #this route is just for getting the form to create new
   def new
-    @new_event = current_user.events.build
+    @new_event = Event.new
   end
 
   #edit path to show a form for editing
