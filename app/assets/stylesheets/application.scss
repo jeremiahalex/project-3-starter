@@ -61,6 +61,18 @@
 .eventinfo {
   text-decoration: underline;
 }
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+.wordsPic {
+   position: absolute;
+   font-size: 20px;
+   top: 200px;
+   margin: 0 auto;
+   width: 100%;
+}
 
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";

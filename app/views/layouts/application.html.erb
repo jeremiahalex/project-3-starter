@@ -13,7 +13,8 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo right">Logo</a>
+          <!-- <a href="#" class="brand-logo right">Logo</a> -->
+          <%= image_tag "logo.png", :class => "brand-logo right" %>
           <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><%= link_to "Home", root_path %></li>
             <% if current_user %>
