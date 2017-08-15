@@ -1,11 +1,13 @@
 <div class="container">
-  <h3><%= @current_event.name %></h3>
+  <h3><span class='eventinfo'><%= @current_event.name %></h3></span>
   <h5>WHERE?
-    <%= @current_event.location %></h5>
+    <span class='eventinfo'><%= @current_event.location %></h5></span>
   <h5>WHICH DAY?
-    <%= @current_event.date %></h5>
+    <span class='eventinfo'><%= @current_event.date %></h5></span>
   <h5>WHAT TIME?
-    <%= @current_event.time.to_s.split(" ")[1] %></h5>
+    <span class='eventinfo'><%= @current_event.time.to_s.split(" ")[1] %></h5></span>
+  <h5>BUDGET? <span class='eventinfo'>$
+    <%= @current_event.budget %></h5></span>
   <%= link_to "Edit Details", edit_event_path, class: "waves-effect waves-light btn" %>
 
   <div class="showevent">
@@ -34,7 +36,8 @@
     <div class="eventright">
       <div id="chart_show"></div>
       <h4 class='budget'>Total Budget Remaining:
-        <%= @current_event.budget %></h4>
+        <span id="budgetvalue">$<%= @current_event.budget %></span>
+      </h4>
     </div>
   </div>
 </div>

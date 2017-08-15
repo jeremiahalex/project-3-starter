@@ -46,7 +46,7 @@ $(document).on('turbolinks:load', function () {
       data.addColumn('string', 'Item')
       data.addColumn('number', 'Cost')
       data.addRows([
-        ['Mushrooms', 3],
+        ['Mushrooms', 3.5],
         ['Onions', 1],
         ['Olives', 1],
         ['Zucchini', 1],
@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function () {
       ])
 
       // Set chart options
-      var options = {'title': 'Budget',
+      var options = {'title': 'Expenditure',
         'width': 500,
         'height': 300}
 
