@@ -32,10 +32,26 @@ $(document).on('turbolinks:load', function () {
 
   $('.events.show').ready(function () {
     // Load the Visualization API and the corechart package.
+    var $eventBudget = parseFloat($('#eventBudget').text())
+    var $itemName = $('.itemName')
+    var $itemPrice = ($('.itemPrice').text())
+    var $budgetLeft = $('#budgetLeft')
+
+    console.log($itemName)
     google.charts.load('current', {'packages': ['corechart']})
+    console.log($itemPrice)
 
     // Set a callback to run when the Google Visualization API is loaded.
     google.charts.setOnLoadCallback(drawChart)
+
+    var testArr = []
+    for (var i = 0; i < $itemName.length; i++) {
+      testArr.push($itemName.text())
+      testArr.push(parseFloat($itemPrice))
+    }
+    console.log(testArr)
+
+    var itemArr = [testArr]
 
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
@@ -45,18 +61,15 @@ $(document).on('turbolinks:load', function () {
       var data = new google.visualization.DataTable()
       data.addColumn('string', 'Item')
       data.addColumn('number', 'Cost')
-      data.addRows([
-        ['Mushrooms', 3.5],
-        ['Onions', 1],
-        ['Olives', 1],
-        ['Zucchini', 1],
-        ['Pepperoni', 2]
-      ])
+      data.addRows(itemArr)
 
       // Set chart options
       var options = {'title': 'Expenditure',
         'width': 500,
         'height': 300}
+
+      var budgetLeft = $eventBudget - parseFloat($itemPrice)
+      $budgetLeft.text(budgetLeft)
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('chart_show'))

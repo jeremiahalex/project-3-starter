@@ -7,7 +7,7 @@
   <h5>WHAT TIME?
     <span class='eventinfo'><%= @current_event.time.to_s.split(" ")[1] %></h5></span>
   <h5>BUDGET? <span class='eventinfo'>$
-    <%= @current_event.budget %></h5></span>
+    <span id='eventBudget'><%= @current_event.budget %></span></h5></span>
   <%= link_to "Edit Details", edit_event_path, class: "waves-effect waves-light btn" %>
 
   <div class="showevent">
@@ -20,13 +20,13 @@
         <li class="collection-item avatar">
           <img src="<%= item.imageUrl %>" alt="" class="circle">
           <span class="title">Name:
-            <%= item.name %>
+            <span class='itemName'><%= item.name %></span>
           </span>
           <p>Price: $
-            <%= item.price %>
+            <span class='itemPrice'><%= item.price %></span>
             <br>
 
-            <a href="<%= item.product_details_url %>">Link</a>
+            <a href="<%= item.product_details_url %>" target="_blank">Link</a>
           </p>
         </li>
         <% end %>
@@ -35,8 +35,8 @@
     </div>
     <div class="eventright">
       <div id="chart_show"></div>
-      <h4 class='budget'>Total Budget Remaining:
-        <span id="budgetvalue">$<%= @current_event.budget %></span>
+      <h4 class='budget'>Total Budget Remaining: $
+        <span class= 'eventinfo' id="budgetLeft"></span>
       </h4>
     </div>
   </div>
