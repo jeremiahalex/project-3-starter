@@ -68,10 +68,16 @@
 
 .wordsPic {
    position: absolute;
-   font-size: 20px;
    top: 200px;
-   margin: 0 auto;
+   text-align: center;
    width: 100%;
+   background-color: rgba(0,0,0,0.6);
+  //  vertical-align: middle;
+}
+.word{
+  font-size: 30px;
+  color: white;
+  letter-spacing: 5px;
 }
 
 @import "materialize";
