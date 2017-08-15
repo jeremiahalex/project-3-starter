@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170810092207) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "location"
     t.date "date"
     t.time "time"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170810092207) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
