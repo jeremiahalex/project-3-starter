@@ -1,0 +1,60 @@
+/* line 1, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+body {
+  background-color: red;
+}
+
+/* line 5, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+.container {
+  height: 90%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+.mapWide {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+}
+
+/* line 20, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+.mapNarrowed {
+  width: 69%;
+  height: 100%;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+/* line 26, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+.hidden {
+  display: none;
+}
+
+/* line 29, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+.visible {
+  display: inline-block;
+}
+
+/* line 32, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+#sidemenu {
+  height: 100%;
+  width: 30%;
+  vertical-align: top;
+  position: relative;
+}
+
+/* line 38, /Users/shaun/code/project-3/app/assets/stylesheets/_style.scss */
+#collapseSide {
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  width: 5%;
+  height: 5%;
+}
