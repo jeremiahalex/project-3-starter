@@ -6,25 +6,16 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-resources :restaurants do
-  resources :deals do
-    resources :groups
-  end
-end
-
-
   get '/about', to: 'static#about'
   get '/profile', to: 'static#profile'
 
   devise_for :users
-  resources :restaurants
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :restaurants do
+  resources :restaurants, shallow: true do
     resources :deals do
       resources :groups
     end
   end
-
-
+  
 end
