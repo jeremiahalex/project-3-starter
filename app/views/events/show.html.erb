@@ -14,13 +14,14 @@
         <li class="collection-header">
           <h4>Items for this event:</h4>
         </li>
+        <%= @all_item_for_current_event.each do |item| %>
         <li class="collection-item avatar">
-          <img src="#" alt="" class="circle">
-          <span class="title">Name:
+          <img src= "<%= item.imageUrl %>" alt="" class="circle">
+          <span class="title">Name: <%= item.name %>
           </span>
-          <p>Price:
+          <p>Price: <%= item.price %>
             <br>
-            Link:
+            Link: <%= item.product_details_url %>
           </p>
         </li>
         <li class="collection-item avatar">
