@@ -1,3 +1,41 @@
+<<<<<<< HEAD
+<h1>NEW EVENT USING FORM FOR, BUTTON NOT FORMATTED</h1>
+<%= form_for @new_event do |f| %>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :name, :required=>true, class: "validate"%>
+        <%= f.text_field :name, :required=>true, class: "validate"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :date %>
+        <%= f.text_field :date, :class => "datepicker" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :time %>
+        <%= f.text_field :time, :class => "timepicker" %>
+        <!-- <input type="text" class="timepicker"> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :budget %>
+        <%= f.text_field :budget %>
+=======
 <div class="container">
   <h3>Create New Event</h3>
   <%= form_for @new_event do |f| %>
@@ -8,6 +46,7 @@
           <%= f.label :name, class: "validate"%>
           <%= f.text_field :name, class: "validate"%>
         </div>
+>>>>>>> upstream/master
       </div>
       <div class="row">
         <div class="input-field col s12">
