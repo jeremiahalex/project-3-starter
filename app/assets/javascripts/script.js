@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function () {
       // Set chart options
       var options = {'title': 'Budget',
         'width': 500,
-        'height': 500}
+        'height': 300}
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('chart_show'))

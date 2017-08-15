@@ -1,10 +1,14 @@
 <div class="container">
-<h3><%= @current_event.name %></h3>
-<h5>WHERE? <%= @current_event.location %></h5>
-<h5>WHICH DAY? <%= @current_event.date %></h5>
-<h5>WHAT TIME? <%= @current_event.time.to_s.split(" ")[1] %></h5>
-    <%= link_to "Edit Event", edit_event_path, class: "waves-effect waves-light btn" %>
+  <h3><%= @current_event.name %></h3>
+  <h5>WHERE?
+    <%= @current_event.location %></h5>
+  <h5>WHICH DAY?
+    <%= @current_event.date %></h5>
+  <h5>WHAT TIME?
+    <%= @current_event.time.to_s.split(" ")[1] %></h5>
+  <%= link_to "Edit Details", edit_event_path, class: "waves-effect waves-light btn" %>
 
+<<<<<<< HEAD
 <div class="showevent">
   <div class="eventleft">
     <ul class="collection with-header">
@@ -44,6 +48,61 @@
     <div id="chart_show"></div>
     <p>Total Budget Remaining: <%= @current_event.budget %></p>
   </div>
+=======
+  <div class="showevent">
+    <div class="eventleft">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h4>Items for this event:</h4>
+        </li>
+        <li class="collection-item avatar">
+          <img src="#" alt="" class="circle">
+          <span class="title">Name:
+          </span>
+          <p>Price:
+            <br>
+            Link:
+          </p>
+        </li>
+        <li class="collection-item avatar">
+          <img src="#" alt="" class="circle">
+          <span class="title">Name:
+          </span>
+          <p>Price:
+            <br>
+            Link:
+          </p>
+        </li>
+        <li class="collection-item avatar">
+          <img src="#" alt="" class="circle">
+          <span class="title">Name:
+          </span>
+          <p>Price:
+            <br>
+            Link:
+          </p>
+        </li>
+        <li class="collection-item avatar">
+          <img src="#" alt="" class="circle">
+          <span class="title">Name:
+          </span>
+          <p>Price:
+            <br>
+            Link:
+          </p>
+        </li>
+      </ul>
+      <%= form_tag ("/items/new") do %>
+      <%= hidden_field_tag(:event_id, "5") %>
+        <%= submit_tag "Add more Item" %>
+      <% end %>
+      <%#= link_to "Add more Item", new_item_path, class: "waves-effect waves-light btn" %>
+    </div>
+    <div class="eventleft">
+      <div id="chart_show"></div>
+      <p>Total Budget Remaining: $<%= @current_event.budget %></p>
+    </div>
+>>>>>>> upstream/master
 
-</div>
+  </div>
 </div>

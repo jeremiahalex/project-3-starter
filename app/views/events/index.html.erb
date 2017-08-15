@@ -1,6 +1,8 @@
 <div class="container">
 
   <h3>View All Events</h3>
+  <h5>Total Number of events:
+    <%= @all_events.count %></h5>
 
   <% @all_events.each do |event| %>
   <div class="card small">
@@ -10,14 +12,17 @@
       </span>
       <h6>
         When?
-        <%= event.date %>
+        <%= event.date %></br>
+        Time?
         <%= event.time.to_s.split(" ")[1] %></br>
-      Where?
-      <%= event.location %></h6>
-    <p><%= link_to "View Details", event_path(event) %></p>
+        Where?
+        <%= event.location %></br>
+        Budget? $
+        <%= event.budget %>
+      </h6>
   </div>
   <div class="card-action">
-    <%= link_to "Edit Event", edit_event_path(event) %>
+    <%= link_to "View/Edit Event", event_path(event) %>
     <%= link_to "Delete Event", event_path(event), method: :delete %>
   </div>
 
@@ -26,8 +31,5 @@
 <%#= link_to "edit", edit_post_path(post) %>
 <%#= link_to "delete", post_path(post), method: :delete %>
 <% end  %>
-
-<h5>Total Number of events:
-  <%= @all_events.count %></h5>
 
 </div>
