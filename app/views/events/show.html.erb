@@ -38,7 +38,7 @@
         </p>
       </li>
     </ul>
-    <%= link_to "Add more Item", new_item_path, class: "waves-effect waves-light btn" %>
+    <%= link_to 'Add new items', "/items/new?event=#{params[:id]}", class: "waves-effect waves-light btn"%>
   </div>
   <div class="eventleft">
     <div id="chart_show"></div>

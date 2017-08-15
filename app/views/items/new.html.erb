@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class='searchtitle'>Adding items to <%= Event.where(user_id: 2).order("created_at").last.name %></h3>
   <div class="queryside">
-    <%= form_tag items_path, :id => 'searchItem' do %>
+    <%= form_tag "/items?event=#{params[:event]}", :id => 'searchItem' do %>
       <%= label_tag(:search_text, "Search supermarket database:") %>
       <%= text_field_tag(:search_text) %>
       <%= submit_tag("Search") %>
