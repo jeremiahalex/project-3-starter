@@ -36,4 +36,4 @@
 
 <p><%= "Date of meetup: #{@group.date}" %></p>
 <p><%= "Time of meetup: #{@group.time}" %></p>
-<small><%= "This group was created on #{@group.created_at}" %></small>
+<small><%= "This group was created on #{@group.created_at.getlocal}" %></small>
