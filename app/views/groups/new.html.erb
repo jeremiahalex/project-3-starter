@@ -2,26 +2,19 @@
 <h3><%= @current_deal.name %></h3>
 <h3><%= @current_deal.description %></h3>
 
-<%= form_for @new_group, url: restaurant_deal_groups_path do |f| %>
+<%= form_for @new_group, url: deal_groups_path do |f| %>
 
   <div class="field">
-    <label class="label"><%= f.label :pax %></label>
+    <label class="label"><%= label_tag :date %></label>
     <div class="control">
-      <%= f.text_field :pax %>
+      <%= date_field_tag :date %>
     </div>
   </div>
 
   <div class="field">
-    <label class="label"><%= f.label :date %></label>
+    <label class="label"><%= label_tag :time %></label>
     <div class="control">
-      <%= f.date_field :date %>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label"><%= f.label :time %></label>
-    <div class="control">
-      <%= f.time_field :time %>
+      <%= time_field_tag :time %>
     </div>
   </div>
 

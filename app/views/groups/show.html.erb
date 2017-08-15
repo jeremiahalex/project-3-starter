@@ -32,7 +32,7 @@
 <% end %>
 
 <!-- button to go back to all groups -->
-<%= link_to "Back", deal_path %>
+<%= link_to "Back", deal_path(@group.deal) %>
 
 <p><%= "Date of meetup: #{@group.date}" %></p>
 <p><%= "Time of meetup: #{@group.time}" %></p>

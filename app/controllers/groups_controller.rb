@@ -5,27 +5,18 @@ class GroupsController < ApplicationController
     @new_group = current_user.groups.new
     # render json: current_user.groups
     @current_deal = Deal.find(params[:deal_id])
-    # render json: Deal.find(params[:deal_id])
-    @current_restaurant = Restaurant.find(params[:restaurant_id])
+    # render json: Deal.find(params[:deal_id]).restaurant_id
+    current_restaurant_id = Deal.find(params[:deal_id]).restaurant_id
+    # render json: @current_restaurant
+    @current_restaurant = Restaurant.find(current_restaurant_id)
   end
 
   def create
-    render json: params
-
-    # {
-    #   pax: 123,
-    #   date: 12-12-12
-    #   datetime: 1233.t123123213
-    #   deal_id: 33
-    # }
-
-    creating_group = params.require(:group).permit(:pax, :date, :time)
-
+    creating_group = params.permit(:date, :time)
     creating_group[:deal_id] = params[:deal_id]
-
     Group.create(creating_group)
 
-    redirect_to root_path
+    redirect_to deal_path(params[:deal_id])
 
   end
 
@@ -45,10 +36,6 @@ class GroupsController < ApplicationController
     current_group = Group.find(params[:id])
     current_restaurant = current_group.restaurant
     render json: current_restaurant
-  end
-
-  def index
-    render html: 'show all groups within deals page'
   end
 
   def show

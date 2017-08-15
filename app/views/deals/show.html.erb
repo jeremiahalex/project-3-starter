@@ -6,6 +6,8 @@
 
 <%= link_to 'View Groups List', deal_groups_path(@groups) %>
 
+<%= link_to 'Create Group', new_deal_group_path(@deal) %>
+
 <br></br>
 
 <% @groups.each do |group|%>
@@ -24,7 +26,7 @@
       <td><%= @deal.pax %></td>
       <td><%= group.date %></td>
       <td><%= group.time %></td>
-            <td><%= link_to 'View Group', deal_groups_path(@deal) %></td>
+            <td><%= link_to 'View Group', group_path(group) %></td>
     </tr>
     <% end %>
 </table>
