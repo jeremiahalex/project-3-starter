@@ -31,7 +31,6 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.events.show').ready(function () {
-
     var $eventBudget = parseFloat($('#eventBudget').text())
     var $itemName = $('.itemName')
     var $itemPrice = $('.itemPrice')
@@ -71,7 +70,7 @@ $(document).on('turbolinks:load', function () {
       data.addRows(itemArr)
 
       // Set chart options
-      var options = {'title': "Total Expenditure = $" + totalPrice,
+      var options = {'title': 'Total Expenditure = $' + totalPrice,
         'width': 500,
         'height': 300}
 
