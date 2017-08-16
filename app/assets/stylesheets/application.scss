@@ -3,7 +3,12 @@
 .nav-wrapper {
   background-color: rgb(87,103,255) !important;
 }
-
+.btn {
+  background-color: rgb(87,103,255) !important;
+}
+.btn:hover{
+  background-color: rgb(59,70,173) !important;
+}
 .card {
   padding-top: 40px;
 }
