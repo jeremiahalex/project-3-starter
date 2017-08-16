@@ -4,7 +4,6 @@ class MessagesChannel < ApplicationCable::Channel
   end
 
   def receive(payload)
-    message = Message.create(chatroom_id: payload["chatroom_id"], content: payload["message"])
-    ActionCable.server.broadcast('messages', {message: message.content, chatroom_id: message.chatroom_id})
+    Message.create(user: current_user, chatroom_id: params["room"], content: payload["message"])
   end
 end
