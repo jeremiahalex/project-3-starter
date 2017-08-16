@@ -1,4 +1,6 @@
 class StaticController < ApplicationController
+  before_action :authenticate_user!, only: [:profile]
+
   def home
   end
 
@@ -8,6 +10,4 @@ class StaticController < ApplicationController
   def profile
   end
 
-  def map
-  end
 end

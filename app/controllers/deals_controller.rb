@@ -1,5 +1,6 @@
 class DealsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     #show all deals by one restaurants
     @restaurant = Restaurant.find(params[:restaurant_id])
