@@ -3,6 +3,7 @@ require 'open-uri'
 require 'json'
 
 class ItemsController < ApplicationController
+    before_action :authenticate_user!
 
   def new
   end
@@ -115,4 +116,5 @@ class ItemsController < ApplicationController
       @arr_of_pdt_hashes.push(pdt_hash)
     end
   end
+
 end
