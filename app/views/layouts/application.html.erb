@@ -13,10 +13,7 @@
     <p class="alert"><%= alert %></p> -->
     <nav class="navbar">
       <% if user_signed_in? %>
-<<<<<<< HEAD
-=======
 
->>>>>>> fb13dd8ef846a20219f5f28fde9adfcab2ddf08a
         <a class="navbar-item">
           Logged in as &nbsp<strong><%= current_user.name %></strong>
         </a>
@@ -24,14 +21,9 @@
         <%= link_to 'Restaurant', restaurants_main_path, :class => 'navbar-item' %>
         <%= link_to "My Groups", profile_path, :class => 'navbar-item' %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-item'  %>
-<<<<<<< HEAD
-=======
 
-
-        |
         <%= link_to "Find a Restaurant", restaurants_main_path %>
 
->>>>>>> fb13dd8ef846a20219f5f28fde9adfcab2ddf08a
       <% else %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-item'%>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-item'%>
