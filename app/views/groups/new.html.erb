@@ -3,35 +3,41 @@
 <h2 class="subtitle"><%= @current_deal.name %></h2>
 <h2 class="subtitle"><%= @current_deal.description %></h2>
 
-<%= form_for @new_group, url: deal_groups_path do |f| %>
+<div class="columns">
+  <div class="column is-one-third"></div>
+  <div class="column">
+    <%= form_for @new_group, url: deal_groups_path do |f| %>
 
-  <div class="field">
-    <label class="label"><%= label_tag :date %></label>
-    <div class="control">
-      <%= date_field_tag :date, nil, :required => true %>
+      <div class="field">
+        <label class="label"><%= label_tag :date %></label>
+        <div class="control">
+          <%= date_field_tag :date, nil, :required => true, :class => 'input' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label"><%= label_tag :time %></label>
+        <div class="control">
+          <%= time_field_tag :time, nil, :required => true, :class => 'input' %>
+        </div>
+      </div>
+
+      <% if flash[:date_error] %>
+        <div class="notice"><%= flash[:date_error] %></div>
+      <% end %>
+
+      <br>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary">Submit</button>
+        </div>
+        <div class="control">
+          <%= link_to "Cancel", deal_path(params[:deal_id]) %>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="field">
-    <label class="label"><%= label_tag :time %></label>
-    <div class="control">
-      <%= time_field_tag :time, nil, :required => true %>
-    </div>
-  </div>
-
-  <% if flash[:date_error] %>
-    <div class="notice"><%= flash[:date_error] %></div>
-  <% end %>
-
-  <br>
-
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-primary">Submit</button>
-    </div>
-    <div class="control">
-      <%= link_to "Cancel", deal_path(params[:deal_id]) %>
-    </div>
-  </div>
+    <div class="column"></div>
+</div>
 
 <% end %>
