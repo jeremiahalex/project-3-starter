@@ -30,11 +30,10 @@
 
             <a href="<%= item.product_details_url %>" target="_blank">Link</a></br>
 
+            <%= link_to "Delete Item",
+            items_delete_path(item, addparam: params[:id]),
+            method: :delete%>
 
-            <%= link_to items_create_path(item), method: :delete, class: "waves-effect waves-light btn" do %>
-              <i class="material-icons right">delete</i> Delete
-
-            <% end %>
           </p>
         </li>
         <% end %>
