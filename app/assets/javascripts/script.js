@@ -74,7 +74,7 @@ $(document).on('turbolinks:load', function () {
         'width': 500,
         'height': 300}
 
-      var budgetLeft = $eventBudget - totalPrice
+      var budgetLeft = ($eventBudget - totalPrice).toFixed(2)
       $budgetLeft.text(budgetLeft)
 
       // Instantiate and draw our chart, passing in some options.
