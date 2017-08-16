@@ -8,7 +8,9 @@
     <span class='eventinfo'><%= @current_event.time.to_s.split(" ")[1] %></h5></span>
   <h5>BUDGET? <span class='eventinfo'>$
     <span id='eventBudget'><%= @current_event.budget %></span></h5></span>
-  <%= link_to "Edit Details", edit_event_path, class: "waves-effect waves-light btn" %>
+    <%= link_to edit_event_path, class: "waves-effect waves-light btn" do %>
+      <i class="material-icons right">mode_edit</i> Edit Details
+    <% end %>
 
   <div class="showevent">
     <div class="eventleft">
@@ -26,16 +28,24 @@
             <span class='itemPrice'><%= item.price %></span>
             <br>
 
-            <a href="<%= item.product_details_url %>" target="_blank">Link</a>
+            <a href="<%= item.product_details_url %>" target="_blank">Link</a></br>
+
+            <%= link_to "Delete Item",
+            items_delete_path(item, addparam: params[:id]),
+            method: :delete%>
+
           </p>
         </li>
         <% end %>
       </ul>
-      <%= link_to 'Add new items', "/items/new?event=#{params[:id]}", class: "waves-effect waves-light btn"%>
+      <%= link_to "/items/new?event=#{params[:id]}", class: "waves-effect waves-light btn" do %>
+        <i class="material-icons right">add_shopping_cart</i> Add New Item
+      <% end %>
+
     </div>
     <div class="eventright">
       <div id="chart_show"></div>
-      <h4 class='budget'>Total Budget Remaining: $
+      <h4 class='budget'>Budget Remaining: $
         <span class= 'eventinfo' id="budgetLeft"></span>
       </h4>
     </div>

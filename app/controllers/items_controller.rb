@@ -7,22 +7,35 @@ class ItemsController < ApplicationController
   def new
   end
 
-  # def start
-  # end
+  def destroy
+    # render json: params
+    itemtodestroy = Item.find(params[:id])
+    current_event = Event.find(params[:addparam])
+    itemtodestroy.events.delete(current_event)
+    itemtodestroy.destroy()
+    redirect_to event_path(current_event)
+  end
 
   def create
     # render json: params
-    temp = params[:add_item][0]
-    temp = eval(temp)
-    tempprice = temp["price"].gsub(/\$/,'').to_f
-    temp = Item.create(
-    name: temp["pdt_name"],
-    price: tempprice,
-    imageUrl: temp["img_url"],
-    product_details_url: temp["pdt_url"]
-    )
-    tempitem = Item.find(temp.id)
-    tempitem.events << Event.find(params[:event_id])
+    temparr = params[:add_item].each do |e|
+      temp = eval(e)
+      itemfound = Item.find_by(name: temp["pdt_name"])
+      if itemfound == nil
+        then
+        tempprice = temp["price"].gsub(/\$/,'').to_f
+        temp = Item.create(
+        name: temp["pdt_name"],
+        price: tempprice,
+        imageUrl: temp["img_url"],
+        product_details_url: temp["pdt_url"]
+        )
+        tempitem = Item.find(temp.id)
+        tempitem.events << Event.find(params[:event_id])
+      else
+        itemfound.events << Event.find(params[:event_id])
+      end
+    end
     redirect_to "/events/#{params[:event_id]}"
   end
 

@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.events.show').ready(function () {
-    
+
     var $eventBudget = parseFloat($('#eventBudget').text())
     var $itemName = $('.itemName')
     var $itemPrice = $('.itemPrice')
@@ -71,7 +71,7 @@ $(document).on('turbolinks:load', function () {
       data.addRows(itemArr)
 
       // Set chart options
-      var options = {'title': `Total Expenditure = $${totalPrice}`,
+      var options = {'title': "Total Expenditure = $" + totalPrice,
         'width': 500,
         'height': 300}
 
@@ -82,7 +82,5 @@ $(document).on('turbolinks:load', function () {
       var chart = new google.visualization.PieChart(document.getElementById('chart_show'))
       chart.draw(data, options)
     }
-  })
-  $('.items.new').ready(function () {
   })
 })
