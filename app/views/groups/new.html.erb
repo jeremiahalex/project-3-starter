@@ -18,6 +18,10 @@
     </div>
   </div>
 
+  <% if flash[:date_error] %>
+    <div class="notice"><%= flash[:date_error] %></div>
+  <% end %>
+
   <br>
 
   <div class="field is-grouped">
