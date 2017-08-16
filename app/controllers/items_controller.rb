@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     itemtodestroy = Item.find(params[:id])
     current_event = Event.find(params[:addparam])
     itemtodestroy.events.delete(current_event)
-    itemtodestroy.destroy()
+    # itemtodestroy.destroy()
     redirect_to event_path(current_event)
   end
 
