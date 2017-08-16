@@ -18,6 +18,10 @@
     </div>
   </div>
 
+  <% if flash[:date_error] %>
+    <div class="notice"><%= flash[:date_error] %></div>
+  <% end %>
+
   <br>
 
   <div class="field is-grouped">
@@ -25,7 +29,7 @@
       <button class="button is-primary">Submit</button>
     </div>
     <div class="control">
-      <button class="button is-link">Cancel</button>
+      <button class="button">Cancel</button>
     </div>
   </div>
 

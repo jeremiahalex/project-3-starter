@@ -8,7 +8,8 @@
 
 <%= link_to 'Create Group', new_deal_group_path(@deal) %>
 
-<br></br>
+<br>
+
 
 <table>
   <tr>
@@ -17,8 +18,8 @@
     <th>Date</th>
     <th>Time</th>
   </tr>
-
   <% @groups.each do |group|%>
+    <% if group.date > Date.today %>
     <tr>
       <td><%= group.id %></td>
       <td><%= group.users.count %>/<%= @deal.pax %></td>
@@ -26,7 +27,8 @@
       <td><%= group.time %></td>
       <td><%= link_to 'View Group', group_path(group) %></td>
     </tr>
-    <% end %>
+  <% end %>
+<% end %>
 </table>
 
 <%= link_to 'Back', restaurant_deals_path(@restaurant) %>
