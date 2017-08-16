@@ -15,4 +15,5 @@
 //= require jquery
 //= require jquery-readyselector
 //= require materialize-sprockets
+//= require loader
 //= require_tree .

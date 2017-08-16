@@ -10,6 +10,7 @@ gem 'pry'
 gem 'httparty'
 gem 'materialize-sass'
 gem 'jquery-rails'
+gem 'font-awesome-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

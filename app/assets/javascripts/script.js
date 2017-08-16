@@ -31,7 +31,30 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.events.show').ready(function () {
-    // Load the Visualization API and the corechart package.
+    
+    var $eventBudget = parseFloat($('#eventBudget').text())
+    var $itemName = $('.itemName')
+    var $itemPrice = $('.itemPrice')
+    var $budgetLeft = $('#budgetLeft')
+
+    var totalPrice = 0
+
+    var nameArr = []
+    $itemName.each(function (index) {
+      nameArr.push($(this).text())
+    })
+    var priceArr = []
+    $itemPrice.each(function (index) {
+      priceArr.push(parseFloat($(this).text()))
+    })
+    for (var i = 0; i < priceArr.length; i++) {
+      totalPrice = totalPrice + priceArr[i]
+    }
+    var itemArr = []
+    for (var j = 0; j < $itemName.length; j++) {
+      itemArr.push([nameArr[j], priceArr[j]])
+    }
+
     google.charts.load('current', {'packages': ['corechart']})
 
     // Set a callback to run when the Google Visualization API is loaded.
@@ -45,18 +68,15 @@ $(document).on('turbolinks:load', function () {
       var data = new google.visualization.DataTable()
       data.addColumn('string', 'Item')
       data.addColumn('number', 'Cost')
-      data.addRows([
-        ['Mushrooms', 3],
-        ['Onions', 1],
-        ['Olives', 1],
-        ['Zucchini', 1],
-        ['Pepperoni', 2]
-      ])
+      data.addRows(itemArr)
 
       // Set chart options
-      var options = {'title': 'Budget',
+      var options = {'title': `Total Expenditure = $${totalPrice}`,
         'width': 500,
         'height': 300}
+
+      var budgetLeft = $eventBudget - totalPrice
+      $budgetLeft.text(budgetLeft)
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('chart_show'))

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project3</title>
+    <title>Kreeay8</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+
 
   </head>
 
@@ -13,7 +15,8 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo right">Logo</a>
+          <!-- <a href="#" class="brand-logo right">Logo</a> -->
+          <%= image_tag "logo.png", :class => "brand-logo right" %>
           <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><%= link_to "Home", root_path %></li>
             <% if current_user %>
@@ -63,19 +66,19 @@
         </p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+        <h5 class="white-text">Team Members</h5>
         <ul>
           <li>
-            <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+            <a class="grey-text text-lighten-3" href="https://github.com/michelleylai target="_blank""><i class="fa fa-github" aria-hidden="true"></i> Michelle Lai</a>
           </li>
           <li>
-            <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+            <a class="grey-text text-lighten-3" href="https://github.com/thecodingdog" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Ng Wan Zhen</a>
           </li>
           <li>
-            <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+            <a class="grey-text text-lighten-3" href="https://github.com/nicoalee" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Nicholas Lee</a>
           </li>
           <li>
-            <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+            <a class="grey-text text-lighten-3" href="https://github.com/bleetdh" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Lee Brian</a>
           </li>
         </ul>
       </div>
@@ -84,11 +87,9 @@
   <div class="footer-copyright">
     <div class="container">
       © 2017 Copyright Team Puma
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
     </div>
   </div>
 </footer>
 
 </body>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </html>
