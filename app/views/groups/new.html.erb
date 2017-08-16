@@ -1,6 +1,7 @@
-<h1><%= @current_restaurant.name %> (Create)</h1>
-<h3><%= @current_deal.name %></h3>
-<h3><%= @current_deal.description %></h3>
+<h1 class="title"><%= @current_restaurant.name %> (Create)</h1>
+<br>
+<h2 class="subtitle"><%= @current_deal.name %></h2>
+<h2 class="subtitle"><%= @current_deal.description %></h2>
 
 <%= form_for @new_group, url: deal_groups_path do |f| %>
 
