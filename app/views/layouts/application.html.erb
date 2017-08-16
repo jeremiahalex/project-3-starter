@@ -22,7 +22,7 @@
         <%= link_to "My Groups", profile_path, :class => 'navbar-item' %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-item'  %>
 
-        <%= link_to "Find a Restaurant", restaurants_main_path %>
+        <%#= link_to "Find a Restaurant", restaurants_main_path %>
 
       <% else %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-item'%>
