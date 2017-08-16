@@ -12,9 +12,8 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
 
     @restaurant = @deal.restaurant
-    
-    @groups = @deal.groups
 
+    @groups = @deal.groups.order(:date).order(:time)
   end
 
 end

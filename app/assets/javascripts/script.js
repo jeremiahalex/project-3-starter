@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
           map: map
         })
         var $groupsName = $('<tr>')
-        $groupsName.append($('<td>').text('Group # ' + group.id).css('width', '40%'))
+        $groupsName.append($('<td>').html('Group # ' + group.id + '<br>' + group.date + ' ' +group.time).css('width', '40%'))
         var $viewMore = $('<td>').css('width', '60%')
         var $viewMoreDiv = $('<div>').css('width', '100%')
         $viewMore.append($viewMoreDiv)

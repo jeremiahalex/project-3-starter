@@ -10,21 +10,19 @@
 
 <br>
 
-<% @groups.each do |group|%>
-  <% if group.date > Date.today %>
-  <table>
-    <tr>
-      <th>Group Name</th>
-      <th>Group Size</th>
-      <th>Deal Size</th>
-      <th>Date</th>
-      <th>Time</th>
-    </tr>
 
+<table>
+  <tr>
+    <th>Group Name</th>
+    <th>Users</th>
+    <th>Date</th>
+    <th>Time</th>
+  </tr>
+  <% @groups.each do |group|%>
+    <% if group.date > Date.today %>
     <tr>
       <td><%= group.id %></td>
-      <td><%= group.pax %></td>
-      <td><%= @deal.pax %></td>
+      <td><%= group.users.count %>/<%= @deal.pax %></td>
       <td><%= group.date %></td>
       <td><%= group.time %></td>
       <td><%= link_to 'View Group', group_path(group) %></td>
