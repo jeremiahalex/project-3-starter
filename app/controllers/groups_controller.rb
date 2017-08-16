@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
   end
 
   def show_current_user
-    current_user_groups = current_user.groups.order(:date).order(:time)
+    current_user_groups = current_user.groups.where("date >= (?)", Date.today).order(:date).order(:time)
     current_user_restaurants = current_user_groups.map do |group|
       group.restaurant
     end
