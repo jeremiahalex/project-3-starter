@@ -7,11 +7,16 @@ class ItemsController < ApplicationController
   def new
   end
 
-  # def start
-  # end
+  def destroy
+    itemtodestroy = Item.find(params[:id])
+    current_event = Event.find(params[:event_id])
+    itemtodestroy.events.delete(current_event)
+    itemtodestroy.destroy()
+  end
 
   def create
     # render json: params
+
     temp = params[:add_item][0]
     temp = eval(temp)
     tempprice = temp["price"].gsub(/\$/,'').to_f
