@@ -27,7 +27,9 @@
             <br>
 
             <a href="<%= item.product_details_url %>" target="_blank">Link</a></br>
-            <%= link_to "Delete Item", items_create_path(item), method: :delete%>
+            <%= link_to "Delete Item",
+            items_delete_path(item, addparam: params[:id]),
+            method: :delete%>
           </p>
         </li>
         <% end %>
