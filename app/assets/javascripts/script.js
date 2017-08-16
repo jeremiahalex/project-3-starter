@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function() {
   $(".static.profile").ready(function () {
+    $('#sidemenu').html('')
     $('#map').addClass('mapNarrowed')
     $('#sidemenu').addClass('visible')
     $('#sidemenu').append($('<p>').text('Joined Groups').addClass('title'))
