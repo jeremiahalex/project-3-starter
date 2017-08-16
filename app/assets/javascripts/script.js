@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.events.show').ready(function () {
-    
+
     var $eventBudget = parseFloat($('#eventBudget').text())
     var $itemName = $('.itemName')
     var $itemPrice = $('.itemPrice')
@@ -82,7 +82,5 @@ $(document).on('turbolinks:load', function () {
       var chart = new google.visualization.PieChart(document.getElementById('chart_show'))
       chart.draw(data, options)
     }
-  })
-  $('.items.new').ready(function () {
   })
 })
