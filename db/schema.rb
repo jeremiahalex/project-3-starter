@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170810092207) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "location"
     t.date "date"
     t.time "time"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170810092207) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.float "price"
+    t.integer "price"
     t.string "imageUrl"
     t.string "product_details_url"
     t.datetime "created_at", null: false
