@@ -14,7 +14,7 @@
     <th>Time</th>
   </tr>
   <% @groups.each do |group|%>
-    <% if group.date > Date.today %>
+    <% if group.date >= Date.today %>
     <tr>
       <td><%= group.id %></td>
       <td><%= group.users.count %>/<%= @deal.pax %></td>
