@@ -17,8 +17,9 @@ class GroupsController < ApplicationController
   def create
     creating_group = params.permit(:date, :time)
     creating_group[:deal_id] = params[:deal_id]
-    Group.create(creating_group)
-
+    new_group = Group.create(creating_group)
+    Chatroom.create(group_id: new_group.id)
+    
     redirect_to deal_path(params[:deal_id])
   end
 

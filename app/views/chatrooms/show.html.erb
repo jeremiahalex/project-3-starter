@@ -1,0 +1,9 @@
+<h1>Chatroom for Group # <%= @chatroom.id  %></h1>
+<ul>
+  <h2>Users</h2>
+  <% @chatroom.group.users.each do |user| %>
+    <li>
+      <%= user.name %>
+    </li>
+  <% end %>
+</ul>

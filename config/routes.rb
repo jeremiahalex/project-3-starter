@@ -14,8 +14,13 @@ Rails.application.routes.draw do
 
   resources :restaurants, shallow: true do
     resources :deals do
-      resources :groups
+      resources :groups do
+        resources :chatrooms
+      end
     end
   end
-  
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
 end
