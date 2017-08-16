@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     itemtodestroy = Item.find(params[:id])
     current_event = Event.find(params[:addparam])
     itemtodestroy.events.delete(current_event)
-    itemtodestroy.destroy()
+    # itemtodestroy.destroy()
     redirect_to event_path(current_event)
   end
 
@@ -114,36 +114,5 @@ class ItemsController < ApplicationController
       pdt_hash["pdt_url"] = arr_of_pdt_urls[i]
       @arr_of_pdt_hashes.push(pdt_hash)
     end
-
-    # # checking output:
-    # p @arr_of_pdt_hashes
-    # p @arr_of_pdt_hashes[2]
-    # p @arr_of_pdt_hashes[2]["pdt_name"]
-    # # all these arrays should be the same size:
-    # p @arr_of_pdt_hashes.size
-    # p arr_of_pdt_names.size
-    # p arr_of_prices.size
-    # p arr_of_img_urls.size
-    # p arr_of_pdt_urls.size
-
-    # render json: @arr_of_pdt_hashes
-
   end
-
-  # def basket
-  #   # render json: params['add_item']
-  #   # add_item is an array of strings. each string contains the pdt information (pdt_name, price, etc)
-  #   # for each (product) string, replace => with : so that JSON.parse can understand the string, and later convert to a JSON object
-  #   # convert string to JSON object
-  #
-  #   # items_added will be an array of pdt hashes
-  #   @items_added = []
-  #   params['add_item'].each_with_index do |item_string, index|
-  #     item_string.gsub!(/=>/, ": ")
-  #     @items_added.push(JSON.parse(item_string))
-  #   end
-  #   # @items_added = JSON.parse(params['add_item'][0].gsub!(/=>/, ": "))
-  # end
-
-
 end

@@ -28,13 +28,14 @@
             <span class='itemPrice'><%= item.price %></span>
             <br>
 
-            <a href="<%= item.product_details_url %>" target="_blank">Link</a></br>
 
-            <%= link_to "Delete Item",
-            items_delete_path(item, addparam: params[:id]),
-            method: :delete%>
+            <a href="<%= item.product_details_url %>" target="_blank">More Info</a></br>
 
           </p>
+            <%= link_to items_delete_path(item, addparam: params[:id]),
+            method: :delete, class: "btn waves-effect waves-light" do %>
+              <i class="material-icons right">delete</i>Delete Item
+            <% end %>
         </li>
         <% end %>
       </ul>
@@ -45,7 +46,7 @@
     </div>
     <div class="eventright">
       <div id="chart_show"></div>
-      <h4 class='budget'>Budget Remaining: $
+      <h4 class='budget'>Budget Remaining: </br>$
         <span class= 'eventinfo' id="budgetLeft"></span>
       </h4>
     </div>
