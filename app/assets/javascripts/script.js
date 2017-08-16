@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
   $(".static.profile").ready(function () {
     $('#map').addClass('mapNarrowed')
     $('#sidemenu').addClass('visible')
-    $('#sidemenu').append($('<p>').text('Joined Groups'))
+    $('#sidemenu').append($('<p>').text('Joined Groups').addClass('title'))
     var $groups = $('<table>').css({
       width: '90%',
       margin: '0 auto'
@@ -23,15 +23,15 @@ $(document).on('turbolinks:load', function() {
           map: map
         })
         var $groupsName = $('<tr>')
-        $groupsName.append($('<td>').html('Group # ' + group.id + '<br>' + group.date + ' ' +group.time).css('width', '40%'))
+        $groupsName.append($('<td>').html('Group # ' + group.id + '<br>' + group.date + '<br>' +group.time).css('width', '40%'))
         var $viewMore = $('<td>').css('width', '60%')
         var $viewMoreDiv = $('<div>').css('width', '100%')
         $viewMore.append($viewMoreDiv)
-        var $showGroupLink = $('<a>').attr('href', '/groups/' + group.id)
-        var $showLocationBtn = $('<button>').text('Show Location').css({
+        var $showLocationBtn = $('<a>').text('Show Location').css({
           width: '48%',
-          margin: '1%'
-        })
+          margin: '0 1%'
+        }).addClass('button is-primary')
+        //
         $showLocationBtn.on('click', function () {
             map.panTo({
               lat: parseFloat(group.restaurant.latitude),
@@ -39,9 +39,7 @@ $(document).on('turbolinks:load', function() {
             })
             map.setZoom(18)
         })
-        $showGroupLink.html($('<button>').text('View Group').css({
-          width: '50%'
-        }))
+        var $showGroupLink = $('<a>').attr('href', '/groups/' + group.id).addClass('button is-primary').text('View Group')
         $viewMoreDiv.append($showLocationBtn)
         $viewMoreDiv.append($showGroupLink)
         $groupsName.append($viewMore)
@@ -100,10 +98,14 @@ $(document).on('turbolinks:load', function() {
       $('#map').addClass('mapNarrowed')
       $('#sidemenu').addClass('visible')
       $('#sidemenu').html('')
-      var $restName = $('<p>')
+      var $restName = $('<p>').addClass('title')
       $restName.text(marker.restaurantInfo.name)
       $('#sidemenu').append($restName)
-      $('#sidemenu').append($('<p>').text('Deals'))
+      $('#sidemenu').append($('<p>').text('Deals').css({
+        "font-size": '20px',
+        width: '90%',
+        margin: '0 auto 10px auto',
+      }))
       var $deals = $('<table>').css({
         width: '90%',
         margin: '0 auto'
@@ -112,11 +114,12 @@ $(document).on('turbolinks:load', function() {
         var $dealsName = $('<tr>')
         $dealsName.append($('<td>').text(deal.name).css('width', '50%'))
         var $viewMore = $('<td>')
-        var $viewMoreLink = $('<a>').attr('href', '/deals/' + deal.id)
-        $viewMoreLink.html($('<button>').text('View Deal')).css({
-          width: '50%',
+        var $viewMoreLink = $('<a>').attr('href', '/deals/' + deal.id).text('View Deal').css({
           float: 'right'
-        })
+        }).addClass('button is-primary')
+        // $viewMoreLink.html($('<button>').text('View Deal')).css({
+        //   float: 'right'
+        // }).addClass('button is-primary')
         $viewMore.append($viewMoreLink)
         $dealsName.append($viewMore)
         $deals.append($dealsName)
