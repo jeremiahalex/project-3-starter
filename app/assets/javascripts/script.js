@@ -31,27 +31,34 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.events.show').ready(function () {
-    // Load the Visualization API and the corechart package.
+    
     var $eventBudget = parseFloat($('#eventBudget').text())
     var $itemName = $('.itemName')
-    var $itemPrice = ($('.itemPrice').text())
+    var $itemPrice = $('.itemPrice')
     var $budgetLeft = $('#budgetLeft')
 
-    console.log($itemName)
+    var totalPrice = 0
+
+    var nameArr = []
+    $itemName.each(function (index) {
+      nameArr.push($(this).text())
+    })
+    var priceArr = []
+    $itemPrice.each(function (index) {
+      priceArr.push(parseFloat($(this).text()))
+    })
+    for (var i = 0; i < priceArr.length; i++) {
+      totalPrice = totalPrice + priceArr[i]
+    }
+    var itemArr = []
+    for (var j = 0; j < $itemName.length; j++) {
+      itemArr.push([nameArr[j], priceArr[j]])
+    }
+
     google.charts.load('current', {'packages': ['corechart']})
-    console.log($itemPrice)
 
     // Set a callback to run when the Google Visualization API is loaded.
     google.charts.setOnLoadCallback(drawChart)
-
-    var testArr = []
-    for (var i = 0; i < $itemName.length; i++) {
-      testArr.push($itemName.text())
-      testArr.push(parseFloat($itemPrice))
-    }
-    console.log(testArr)
-
-    var itemArr = [testArr]
 
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
@@ -64,11 +71,11 @@ $(document).on('turbolinks:load', function () {
       data.addRows(itemArr)
 
       // Set chart options
-      var options = {'title': 'Expenditure',
+      var options = {'title': `Total Expenditure = $${totalPrice}`,
         'width': 500,
         'height': 300}
 
-      var budgetLeft = $eventBudget - parseFloat($itemPrice)
+      var budgetLeft = $eventBudget - totalPrice
       $budgetLeft.text(budgetLeft)
 
       // Instantiate and draw our chart, passing in some options.
