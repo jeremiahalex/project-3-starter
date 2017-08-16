@@ -7,14 +7,14 @@
   <div class="field">
     <label class="label"><%= label_tag :date %></label>
     <div class="control">
-      <%= date_field_tag :date %>
+      <%= date_field_tag :date, nil, :required => true %>
     </div>
   </div>
 
   <div class="field">
     <label class="label"><%= label_tag :time %></label>
     <div class="control">
-      <%= time_field_tag :time %>
+      <%= time_field_tag :time, nil, :required => true %>
     </div>
   </div>
 

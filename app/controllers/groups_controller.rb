@@ -9,6 +9,8 @@ class GroupsController < ApplicationController
     current_restaurant_id = Deal.find(params[:deal_id]).restaurant_id
     # render json: @current_restaurant
     @current_restaurant = Restaurant.find(current_restaurant_id)
+
+    @todayvariable = Date.today
   end
 
   def create
