@@ -71,7 +71,7 @@ $(document).on('turbolinks:load', function () {
       data.addRows(itemArr)
 
       // Set chart options
-      var options = {'title': "Total Expenditure",
+      var options = {'title': "Total Expenditure = $" + totalPrice,
         'width': 500,
         'height': 300}
 
