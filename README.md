@@ -7,7 +7,7 @@ SOME INTRO TEXT
 ## Development
 
 #### Routing & CRUD
-- 4 main views created for events
+### Events had 4 main views
 * Index is for displaying all events linked to users
 * Show is for displaying details linked to specific event including items and chart
 * New renders a form for that links to events model
@@ -15,7 +15,7 @@ SOME INTRO TEXT
 
 ![alt text](app/assets/images/eventMVC.png?raw=true 'start')
 
-- Item had a single view that displayed
+### Item had a single view that displayed
 * search bar
 * results from scraping
 * add buttons that are linked to event setup by user
