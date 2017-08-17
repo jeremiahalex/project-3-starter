@@ -1,0 +1,38 @@
+<div class="container">
+
+<h3>Edit <%= resource_name.to_s.humanize %></h3>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Enter your old password" %> <br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Enter your new password (must be more than 6 characters)" %> <br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+<div class="btn waves-effect waves-light action" type="submit" name="action">
+    <%= f.submit "Update" %>
+    <i class="material-icons right">done</i>
+
+  </div>
+<% end %>
+
+<!-- <%= link_to "Back", :back %> -->
+</div>

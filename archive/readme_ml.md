@@ -1,8 +1,3 @@
-# README
-
-SOME INTRO TEXT
-
----
 
 ## Development
 
@@ -33,5 +28,3 @@ This is how we interact with the user on the Intercom webapp:
 Set up is beautifully easy:
 ![](public/img/intercom_setup.png)
 <br>
-
----

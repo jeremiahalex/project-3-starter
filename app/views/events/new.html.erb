@@ -1,0 +1,55 @@
+<div class="container">
+  <h3>Create New Event</h3>
+  <h6><%= flash[:date_error] %></h6>
+  <h6><%= flash[:time_error] %></h6>
+  <%= form_for @new_event do |f| %>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :name, :required=>true, class: "validate"%>
+          <%= f.text_field :name, :required=>true, class: "validate"%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :location %>
+          <%= f.text_field :location %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :date %>
+          <%= f.text_field :date, :class => "datepicker" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :time %>
+          <%= f.text_field :time, :class => "timepicker" %>
+          <!-- <input type="text" class="timepicker"> -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :budget %>
+          <%= f.number_field :budget, :value => 0 %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.hidden_field :user_id %>
+        </div>
+      </div>
+      <div class="btn waves-effect waves-light" type="submit" name="action">
+      <%= f.submit%>
+      <i class="material-icons right">send</i>
+    </div>
+      <% end %>
+    </div>
+
+</div>

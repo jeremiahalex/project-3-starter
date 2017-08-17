@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h3>View All Events</h3>
+  <h5>Total Number of events:
+    <%= @all_events.count %></h5>
+
+  <% @all_events.each do |event| %>
+  <div class="card small">
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><%= event.name %>
+        <!-- <i class="material-icons right">more_vert</i> -->
+      </span>
+      <h6>
+        When?
+        <%= event.date %></br>
+        Time?
+        <%= event.time.to_s.split(" ")[1] %></br>
+        Where?
+        <%= event.location %></br>
+        Budget? $
+        <%= event.budget %>
+      </h6>
+  </div>
+  <div class="card-action">
+    <%= link_to "View/Edit Event", event_path(event) %>
+    <%= link_to "Delete Event", event_path(event), method: :delete %>
+  </div>
+
+</div>
+<%#= link_to "view", post_path(post) %>
+<%#= link_to "edit", edit_post_path(post) %>
+<%#= link_to "delete", post_path(post), method: :delete %>
+<% end  %>
+
+</div>
