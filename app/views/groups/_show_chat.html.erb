@@ -20,4 +20,9 @@
 
     <%= render partial: 'message_form'%>
   </div>
+
+  <% else %>
+  <div class="section">
+    <img class="responsive-img" src="<%=@group.deal.img %>"%>
+  </div>
 <% end %>
