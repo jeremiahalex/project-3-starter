@@ -13,11 +13,12 @@
     <% end %>
   </div>
 </div>
+<h1><%= params[:id] %></h1>
 
 <div class="container">
 
+  <% if @arr_of_pdt_hashes %>
   <%= form_tag("/items/create", method: "post") do %>
-
   <% @arr_of_pdt_hashes.each_with_index do |pdt, index| %>
   <div class='pdt_container'>
     <h3><%= pdt['pdt_name'] %></h3>
@@ -25,19 +26,16 @@
     <p><%= pdt['price'] %></p>
     <a href="<%= pdt['pdt_url'] %>" target="_blank">More info</a>
     <br>
-
-
-      <%= check_box_tag("add_item[]", "#{pdt}", false, id: "add_item_#{index}", class: "event#{params[:event]}") %>
-      <%= label_tag("add_item_#{index}", "Add") %>
-      <%= hidden_field_tag("event_id", value = params[:event]) %>
-    </div>
-
+    <%= check_box_tag("add_item[]", "#{pdt}", false, id: "add_item_#{index}", class: "event#{params[:event]}") %>
+    <%= label_tag("add_item_#{index}", "Add") %>
+    <%= hidden_field_tag("event_id", value = params[:event]) %>
+  </div>
   <% end %>
 </br></br>
-  <div class="btn waves-effect waves-light" type="submit" name="action">
+<div class="btn waves-effect waves-light" type="submit" name="action">
   <%= submit_tag "Add Items" %>
   <i class="material-icons right">add_shopping_cart</i>
 </div>
-
-  <% end %>
+<% end %>
+<% end %>
 </div>
