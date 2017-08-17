@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery
 //= require jquery-readyselector
+//= require_tree ./channels
 //= require_tree .

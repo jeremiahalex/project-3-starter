@@ -1,5 +1,20 @@
 <div class="container">
 
+
+      <% else %>
+        <!-- Leave button -->
+        <%= link_to "Join Group", group_path, method: :patch %>
+    <% end %>
+
+
+
+    <!-- button to go back to all groups -->
+    <%= link_to "Back to Deal", deal_path(@group.deal) %>
+
+    <br></br>
+
+    <%= render partial: 'show_chat', locals: {chatroom: @chatroom}%>
+
   <div class="col s6">
 
     <h4><%= "#{@group.deal.name} (Group #{@group.id}) " %></h4>
@@ -8,6 +23,7 @@
     <p><%= "#{@group.deal.description}" %></p>
 
     <br>
+
 
     <div class="columns">
       <div class="column is-one-third"></div>

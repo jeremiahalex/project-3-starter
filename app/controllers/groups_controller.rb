@@ -21,11 +21,13 @@ class GroupsController < ApplicationController
     new_group = Group.create(creating_group)
     new_group.users << current_user
 
+    Chatroom.create(group_id: new_group.id)
+
     redirect_to deal_path(params[:deal_id])
   end
 
   def show_current_user
-    current_user_groups = current_user.groups.order(:date).order(:time)
+    current_user_groups = current_user.groups.where("date >= (?)", Date.today).order(:date).order(:time)
     current_user_restaurants = current_user_groups.map do |group|
       group.restaurant
     end
@@ -43,6 +45,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @chatroom = @group.chatroom
   #  @group_time = Date.parse("#{@group.date} #{@group.time}")
 
   #   render json: {
