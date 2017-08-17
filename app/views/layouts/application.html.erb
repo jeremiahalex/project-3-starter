@@ -9,23 +9,35 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <p class="navbar-text pull-right">
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+    <nav class="navbar">
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.name %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <%= link_to "Profile", profile_path %>
+
+        <a class="navbar-item">
+          Logged in as &nbsp<strong><%= current_user.name %></strong>
+        </a>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-item' %>
+        <%= link_to 'Restaurants', restaurants_main_path, :class => 'navbar-item' %>
+        <%= link_to "My Groups", profile_path, :class => 'navbar-item' %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-item'  %>
+
+        <%#= link_to "Find a Restaurant", restaurants_main_path %>
+
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-item'%>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-item'%>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-item'%>
       <% end %>
-    </div>
-  </nav>
-  <%= yield %>
-  <br>
-  <footer>
-    &copy; Group Shen 2017
-  </footer>
+    </nav>
+
+    <%= yield %>
+
+    <br>
+
+    <footer>
+      &copy; Group Shen 2017
+    </footer>
+
+  </body>
+
 </html>
