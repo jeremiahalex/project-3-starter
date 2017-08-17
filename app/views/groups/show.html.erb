@@ -44,8 +44,8 @@
       <% else %>
         <!-- Leave button -->
         <%= link_to "Join Group", group_path, method: :patch %>
+    <% end %>
 
-<%= link_to "View Chat", chatroom_path(@group.chatroom) %>
 
 
     <!-- button to go back to all groups -->
@@ -53,7 +53,7 @@
 
     <br></br>
 
-
+    <%= render partial: 'show_chat', locals: {chatroom: @chatroom}%>
 
   </div>
   <div class="column"></div>

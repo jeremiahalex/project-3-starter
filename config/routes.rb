@@ -14,9 +14,7 @@ Rails.application.routes.draw do
 
   resources :restaurants, shallow: true do
     resources :deals do
-      resources :groups do
-        resources :chatrooms
-      end
+      resources :groups
     end
   end
 

@@ -56,9 +56,12 @@ html, body {
   float: right;
 }
 #messageBox {
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 50%;
   margin: 0 auto;
+  height: 400px;
+  overflow-y: auto;
+  word-break: break-all;
 }
 #chatForm {
   width: 50%;

@@ -45,6 +45,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @chatroom = @group.chatroom
   #  @group_time = Date.parse("#{@group.date} #{@group.time}")
 
   #   render json: {
