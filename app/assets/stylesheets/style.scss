@@ -56,6 +56,11 @@ html {
   float: right;
 }
 
+#dealDescription {
+  height: 300px;
+  overflow-y: auto;
+}
+
 .nav-wrapper {
   @extend .white;
   @extend .grey-text, .text-darken-3;
@@ -70,14 +75,14 @@ nav ul li a{
 }
 #messageBox {
   // border: 1px solid black;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
-  height: 400px;
+  height: 412px;
   overflow-y: auto;
   word-break: break-all;
 }
 #chatForm {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 #chatUserList {
@@ -86,4 +91,9 @@ nav ul li a{
 
 .login {
   margin-top: 150px;
+}
+
+#message_content {
+  width: 100%;
+  height: 100px;
 }
