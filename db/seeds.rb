@@ -29,6 +29,24 @@ Restaurant.create(name: "PocoLoco Brewery", latitude:1.335010, longitude:103.735
 Restaurant.create(name: "Tatsuya", latitude:1.308886, longitude:103.834463)
 Restaurant.create(name: "Saboten", latitude:1.361620, longitude:103.989519)
 
+Restaurant.create(name: "Cut", latitude:1.285252, longitude:103.859580)
+Restaurant.create(name: "Skirt", latitude:1.246191, longitude:103.842230)
+Restaurant.create(name: "Prata Wala", latitude:1.339084, longitude:103.706219)
+Restaurant.create(name: "Grub", latitude:1.364908, longitude:103.835823)
+Restaurant.create(name: "Swensen's", latitude:1.380015, longitude:103.764360)
+Restaurant.create(name: "Ramen Keisuke", latitude:1.318872, longitude:103.892899)
+
+
+
+
+
+
+
+
+
+
+
+
 # Deal.create(name: "1 for 1 Cai Fan if meal is Above $5", description: "1 for 1 Cai Fan if meal is Above $5 all day", pax: 2, restaurant_id: 1)
 # Deal.create(name: "1 for 1 on all Mains Lunch Only", description: "1 for 1 on all Mains Lunch Only, between 12-2pm", pax: 2, restaurant_id: 2)
 # Deal.create(name: "Buy 3 Salads get 1 Pork Knuckle at 50% off", description: "Buy 3 Salads get 1 Pork Knuckle at 50% off. While Stocks Last", pax: 3, restaurant_id: 3)
