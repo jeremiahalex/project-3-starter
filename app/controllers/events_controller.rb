@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_valid_date,
+      only: [:create]
+  before_action :check_valid_time,
+      only: [:create]
 
   def index
     @all_events = current_user.events
@@ -49,6 +53,22 @@ class EventsController < ApplicationController
     event_to_delete = Event.find(params[:id])
     event_to_delete.destroy
     redirect_to events_path
+  end
+
+  private
+
+  def check_valid_date
+    if Date.parse(params[:event][:date]) < Date.today
+      flash[:date_error] = "Please enter a date that is today or earlier"
+      redirect_to new_event_path
+    end
+  end
+
+  def check_valid_time
+    if Date.parse(params[:event][:date]) == Date.today && Time.parse(params[:event][:time]) < Time.now
+      flash[:time_error] = "Please select a time that is after now"
+      redirect_to new_event_path
+    end
   end
 
 end
