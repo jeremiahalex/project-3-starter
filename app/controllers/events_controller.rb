@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     # render html: 'edit!'
   end
 
-  #need to link to items when ready
+  #linked to items on front end
   def show
     @current_event = Event.find(params[:id])
     # render :show
