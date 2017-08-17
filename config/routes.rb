@@ -13,9 +13,8 @@ Rails.application.routes.draw do
 
   resources :events
   # resources :items
-
-get '/items/new', to: 'items#new'
-post '/items/new', to: 'items#new'
+  
+get '/items', to: 'items#results'
 post '/items', to: 'items#results'
 post '/items/create', to: 'items#create'
 delete '/items/:id', to: 'items#destroy', as: 'items_delete'
