@@ -11,11 +11,10 @@ SOME INTRO TEXT
 * Note: Nokogiri itself requires the Ruby gem __open-uri__ to fetch HTML pages
 <br>
 This is the HTML page we want to scrape:
-__[NOT SURE WHERE TO INSERT THE IMAGE. CURRENTLY IN APP/ASSETS/IMAGES. SHOULD IT BE IN /PUBLIC?]__
 ![](/app/assets/images/ntuc_search_results.png)
 <br>
 We fetch the HTML document, then parse it and save the information into an array variable.
-![](/images/nokogiri.png)
+![](app/assets/images/nokogiri.png)
 <br>
 Finally, we pass this variable to our view template.
 ![](/images/nokogiri_view.png)
