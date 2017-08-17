@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function() {
         var $viewMore = $('<td>').css('width', '60%')
         var $viewMoreDiv = $('<div>').css('width', '100%')
         $viewMore.append($viewMoreDiv)
-        var $showLocationBtn = $('<a>').text('Show Location').css({
+        var $showLocationBtn = $('<a>').text('Location').css({
           width: '48%',
           margin: '0 1%'
         }).addClass('button is-primary')
@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function() {
             })
             map.setZoom(18)
         })
-        var $showGroupLink = $('<a>').attr('href', '/groups/' + group.id).addClass('button is-primary').text('View Group')
+        var $showGroupLink = $('<a>').attr('href', '/groups/' + group.id).addClass('button is-primary').text('Details')
         $viewMoreDiv.append($showLocationBtn)
         $viewMoreDiv.append($showGroupLink)
         $groupsName.append($viewMore)
