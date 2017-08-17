@@ -1,4 +1,4 @@
-# Stranger Deals
+# ![](/readme_images/logo.png) Stranger Deals
 
 _**Find, join, and dine**_
 
