@@ -6,6 +6,9 @@ We have created an app to give people a whole new flexibility when it comes to e
 
 ## Development
 
+#### Wireframe
+The design from which our website is based off of can be viewed in the ([linked powerpoint](https://docs.google.com/presentation/d/1ml9hg4V50Hcqb_tYOU9-8_3El5K8Qn-v4llbk1H_qno/edit#slide=id.p))
+
 #### Web Scraping
 - We used a webscraping Ruby gem, __Nokogiri__ ([documentation](https://github.com/sparklemotion/nokogiri)), to access search results from http://www.fairprice.com.sg/
 - Note: Nokogiri itself requires the Ruby gem __open-uri__ to fetch HTML pages
