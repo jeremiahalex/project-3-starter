@@ -1,59 +1,62 @@
-<h1 class="title"><%= "#{@group.deal.name} (Group #{@group.id}) " %></h1>
-<br>
-<h2 class="subtitle"><%= "#{@group.deal.restaurant.name}" %></h2>
-<h2 class="subtitle"><%= "#{@group.deal.description}" %></h2>
+<div class="container">
 
-<br>
+  <h1 class="title"><%= "#{@group.deal.name} (Group #{@group.id}) " %></h1>
+  <br>
+  <h2 class="subtitle"><%= "#{@group.deal.restaurant.name}" %></h2>
+  <p><%= "#{@group.deal.description}" %></p>
 
-<div class="columns">
-  <div class="column is-one-third"></div>
-  <div class="column">
-    <% if @group.users.first %>
-    <%= "Created by: #{@group.users.first.name}" %>
-    <br>
-    <%= "Created on: #{@group.created_at.getlocal}" %>
-    <% else %>
-    <small><%= "This group was created on #{@group.created_at.getlocal}"%></small>
-    <% end %>
+  <br>
 
-    <p><%= "Date of meetup: #{@group.date}" %></p>
-    <p><%= "Time of meetup: #{@group.time}" %></p>
-
-    <h3>Attendees:</h3>
-    <ul>
-      <% @group.users.each do |user| %>
-      <li>
-       <%= user.name %>
-     </li>
-      <% end %>
-    </ul>
-
-    <!-- Show flash error -->
-    <% if flash[:join_error] %>
-      <div class="notice"><%= flash[:join_error] %></div>
-    <% end %>
-
-    <% if flash[:max_error] %>
-      <div class="notice"><%= flash[:max_error] %></div>
-    <% end %>
-
-    <!-- join button, patch request -->
-    <% if @group.users.include? current_user %>
-      <%= link_to "Leave Group", group_path, method: :delete %>
-
+  <div class="columns">
+    <div class="column is-one-third"></div>
+    <div class="column">
+      <% if @group.users.first %>
+      <%= "Created by: #{@group.users.first.name}" %>
+      <br>
+      <%= "Created on: #{@group.created_at.getlocal}" %>
       <% else %>
-        <!-- Leave button -->
-        <%= link_to "Join Group", group_path, method: :patch %>
+      <small><%= "This group was created on #{@group.created_at.getlocal}"%></small>
+      <% end %>
 
-    <% end %>
+      <p><%= "Date of meetup: #{@group.date}" %></p>
+      <p><%= "Time of meetup: #{@group.time}" %></p>
 
-    <!-- button to go back to all groups -->
-    <%= link_to "Back to Deal", deal_path(@group.deal) %>
+      <h3>Attendees:</h3>
+      <ul>
+        <% @group.users.each do |user| %>
+        <li>
+         <%= user.name %>
+       </li>
+        <% end %>
+      </ul>
 
-    <br></br>
+      <!-- Show flash error -->
+      <% if flash[:join_error] %>
+        <div class="notice"><%= flash[:join_error] %></div>
+      <% end %>
+
+      <% if flash[:max_error] %>
+        <div class="notice"><%= flash[:max_error] %></div>
+      <% end %>
+
+      <!-- join button, patch request -->
+      <% if @group.users.include? current_user %>
+        <%= link_to "Leave Group", group_path, method: :delete %>
+
+        <% else %>
+          <!-- Leave button -->
+          <%= link_to "Join Group", group_path, method: :patch %>
+
+      <% end %>
+
+      <!-- button to go back to all groups -->
+      <%= link_to "Back to Deal", deal_path(@group.deal) %>
+
+      <br></br>
 
 
 
+    </div>
+    <div class="column"></div>
   </div>
-  <div class="column"></div>
 </div>

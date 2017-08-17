@@ -1,33 +1,48 @@
 <br>
-<br>
-<div class="row">
-  <div class="col s3"></div>
-  <div class="col s3">
-    <h4><%= @restaurant.name %></h4>
-    <h6><%= @deal.name %></h6>
-    <h6><%= @deal.description %></h6>
+<div class="container">
+  <h4><%= @restaurant.name %></h4>
+  <h5><%= @deal.name %></h5>
+  <p><%= @deal.description %></p>
+
+  <div class="row">
     <table>
       <tr>
-        <th>Group Name</th>
-        <th>Users</th>
-        <th>Date</th>
-        <th>Time</th>
+        <div class="col s2">
+          <th>Group Name</th>
+        </div>
+
+        <div class="col s2">
+          <th>Users</th>
+        </div>
+
+        <div class="col s2">
+          <th>Date</th>
+        </div>
+
+        <div class="col s2">
+          <th>Time</th>
+        </div>
+
       </tr>
+
       <% @groups.each do |group|%>
         <% if group.date >= Date.today %>
-        <tr>
-          <td><%= group.id %></td>
-          <td><%= group.users.count %>/<%= @deal.pax %></td>
-          <td><%= group.date %></td>
-          <td><%= group.time %></td>
-          <td id="dealsViewGroup"><%= link_to 'View Group', group_path(group) %></td>
-        </tr>
+          <tr>
+            <td><%= group.id %></td>
+            <td><%= group.users.count %>/<%= @deal.pax %></td>
+            <td><%= group.date %></td>
+            <td><%= group.time %></td>
+            <td><%= link_to 'View Group', group_path(group) %></td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
     </table>
 
-    <%= link_to 'Create Group', new_deal_group_path(@deal) %>
-    <%= link_to 'Back', restaurants_main_path %>
-  </div>
-  <div class="column"></div>
+        <div class="col s2">
+          <%= link_to 'Create Group', new_deal_group_path(@deal) %>
+        </div>
+        <div class="col s2">
+          <%= link_to 'Back', restaurants_main_path %>
+        </div>
+    <div class="column"></div>
 </div>
