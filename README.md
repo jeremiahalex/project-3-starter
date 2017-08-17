@@ -11,7 +11,7 @@ SOME INTRO TEXT
 * Note: Nokogiri itself requires the Ruby gem __open-uri__ to fetch HTML pages
 <br>
 This is the HTML page we want to scrape:
-![](/app/assets/images/ntuc_search_results.png)
+![](/images_readme/ntuc_search_results.png)
 <br>
 We fetch the HTML document, then parse it and save the information into an array variable.
 ![](app/assets/images/nokogiri.png)
