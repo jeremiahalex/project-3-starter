@@ -1,12 +1,11 @@
-<h1 class='title'><%= @restaurant.name %>: <%= @deal.name %> </h1> <br>
-
-<h2 class='subtitle'><%= @deal.description %></h2> <br>
-
 <br>
-
-<div class="columns">
-  <div class="column is-one-third"></div>
-  <div class="column">
+<br>
+<div class="row">
+  <div class="col s3"></div>
+  <div class="col s3">
+    <h4><%= @restaurant.name %></h4>
+    <h6><%= @deal.name %></h6>
+    <h6><%= @deal.description %></h6>
     <table>
       <tr>
         <th>Group Name</th>

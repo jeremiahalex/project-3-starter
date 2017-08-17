@@ -1,53 +1,60 @@
-<h1><%= "Group #{@group.id}\'s Page for the #{@group.deal.name} deal" %></h1>
-<h1><%= "Group #{@group.id}" %></h1>
-<h2><%= "#{@group.deal.restaurant.name}" %></h2>
-<h5><%= "#{@group.deal.description}" %></h5>
+<h1 class="title"><%= "#{@group.deal.name} (Group #{@group.id}) " %></h1>
+<br>
+<h2 class="subtitle"><%= "#{@group.deal.restaurant.name}" %></h2>
+<h2 class="subtitle"><%= "#{@group.deal.description}" %></h2>
 
 <br>
 
-<!-- show members -->
-<h3>Attendees:</h3>
-<ul>
-  <% @group.users.each do |user| %>
-  <li>
-   <%= user.name %>
- </li>
-  <% end %>
-</ul>
+<div class="columns">
+  <div class="column is-one-third"></div>
+  <div class="column">
+    <% if @group.users.first %>
+    <%= "Created by: #{@group.users.first.name}" %>
+    <br>
+    <%= "Created on: #{@group.created_at.getlocal}" %>
+    <% else %>
+    <small><%= "This group was created on #{@group.created_at.getlocal}"%></small>
+    <% end %>
 
-<!-- Show flash error -->
-<% if flash[:join_error] %>
-  <div class="notice"><%= flash[:join_error] %></div>
-<% end %>
+    <p><%= "Date of meetup: #{@group.date}" %></p>
+    <p><%= "Time of meetup: #{@group.time}" %></p>
 
-<% if flash[:max_error] %>
-  <div class="notice"><%= flash[:max_error] %></div>
-<% end %>
+    <h3>Attendees:</h3>
+    <ul>
+      <% @group.users.each do |user| %>
+      <li>
+       <%= user.name %>
+     </li>
+      <% end %>
+    </ul>
 
-<!-- join button, patch request -->
-<% if @group.users.include? current_user %>
-  <%= link_to "Leave Group", group_path, method: :delete %>
+    <!-- Show flash error -->
+    <% if flash[:join_error] %>
+      <div class="notice"><%= flash[:join_error] %></div>
+    <% end %>
 
-  <% else %>
-    <!-- Leave button -->
-    <%= link_to "Join Group", group_path, method: :patch %>
+    <% if flash[:max_error] %>
+      <div class="notice"><%= flash[:max_error] %></div>
+    <% end %>
 
-<% end %>
+    <!-- join button, patch request -->
+    <% if @group.users.include? current_user %>
+      <%= link_to "Leave Group", group_path, method: :delete %>
+
+      <% else %>
+        <!-- Leave button -->
+        <%= link_to "Join Group", group_path, method: :patch %>
 
 <%= link_to "View Chat", chatroom_path(@group.chatroom) %>
 
-<!-- button to go back to all groups -->
-<%= link_to "Back to Deal", deal_path(@group.deal) %>
 
-<br></br>
+    <!-- button to go back to all groups -->
+    <%= link_to "Back to Deal", deal_path(@group.deal) %>
 
-<p><%= "Date of meetup: #{@group.date}" %></p>
-<p><%= "Time of meetup: #{@group.time}" %></p>
+    <br></br>
 
-<% if @group.users.first %>
-  <small><%= "This group was created on #{@group.created_at.getlocal} by #{@group.users.first.name}" %></small>
 
-  <% else %>
-    <small><%= "This group was created on #{@group.created_at.getlocal}"%></small>
 
-<% end %>
+  </div>
+  <div class="column"></div>
+</div>
