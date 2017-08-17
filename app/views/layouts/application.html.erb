@@ -3,6 +3,7 @@
   <head>
     <title>Project3</title>
     <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDPPIJi451Gb2Ee2ehiwOiar1HtiE10UGg&&libraries=places"  %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -18,7 +19,9 @@
       <li class="divider"></li>
       <li><a href="#!">three</a></li>
     </ul>
+
     <nav>
+
       <div class="nav-wrapper">
           <% if user_signed_in? %>
             <ul class="right hide-on-med-and-down">
@@ -38,7 +41,7 @@
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               </li>
               <li>
-                <a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><b><%= current_user.name %></b><i class="material-icons right">arrow_drop_down</i></a>
               </li>
             </ul>
           <% else %>
@@ -52,16 +55,29 @@
             </ul>
           <% end %>
       </div>
+
     </nav>
 
     <%= yield %>
 
     <br>
 
-    <footer>
+    <footer class="page-footer">
       &copy; Group Shen 2017
     </footer>
 
   </body>
+
+  <footer class"page-footer">
+    <div class="container">
+
+        <div class="footer-copyright">
+          <div class="container">
+            © 2017 Group Shen
+          </div>
+        </div>
+
+    </div>
+  </footer>
 
 </html>

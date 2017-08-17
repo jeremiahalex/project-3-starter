@@ -1,0 +1,15 @@
+<% if chatroom.group.users.include? current_user  %>
+<div>
+  <br>
+  <h3>Chat</h3>
+  <div>
+    <div id="messageBox">
+      <div id="messages" data-chatroom=<%=chatroom.id%> data-user=<%=current_user.id%>>
+        <%= render partial: 'message', collection: chatroom.messages%>
+      </div>
+    </div>
+
+
+    <%= render partial: 'message_form'%>
+  </div>
+<% end %>

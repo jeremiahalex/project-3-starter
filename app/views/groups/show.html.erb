@@ -1,3 +1,4 @@
+
 <br>
 <br>
 
@@ -80,19 +81,16 @@
       <!-- join button, patch request -->
       <% if @group.users.include? current_user %>
       <%= link_to "Leave Group", group_path, method: :delete %>
-
-        <% else %>
+      <%= render partial: 'show_chat', locals: {chatroom: @chatroom}%>
+      <% else %>
         <!-- Leave button -->
-        <%= link_to "Join Group", group_path, method: :patch %>
-
-        <% end %>
+       <%= link_to "Join Group", group_path, method: :patch %>
+      <% end %>
 
       <!-- button to go back to all groups -->
       <%= link_to "Back to Deal", deal_path(@group.deal) %>
 
       <br></br>
-
-
 
     </div>
 

@@ -1,11 +1,14 @@
-<h4>Deals</h4>
-<br>
-<div class="row">
-  <% @deals.each do |deal| %>
-  <div class="col s2">
-    <img class="responsive-img" src="<%= deal.img %>">
-    <br>
-    <%= deal.name %>
-  </div>
-  <% end %>
-</ul>
+<div class="column">
+  <br>
+  <h5 class="deals">Deals</h5>
+  <br>
+  <div class="row">
+    <% @deals.each do |deal| %>
+    <div class="col s2">
+      <%= link_to (image_tag(deal.img, :class => 'responsive-img')), deal_path(deal.id) %>
+      <br>
+      <b><%= deal.restaurant.name %></b>: <%= deal.name %>
+    </div>
+    <% end %>
+  </ul>
+</div>

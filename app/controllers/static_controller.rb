@@ -3,7 +3,7 @@ class StaticController < ApplicationController
 
   def home
     @deals = Deal.all
-    # render json: @deals
+    # render json: @restaurants.find(12)
   end
 
   def about
