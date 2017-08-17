@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     budget: params[:event][:budget],
     user: current_user
     )
-    redirect_to "/items/new?event=#{temp_event.id}"
+    redirect_to "/items?event=#{temp_event.id}"
   end
 
   #this route is just for getting the form to create new
