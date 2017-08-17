@@ -172,4 +172,4 @@ While there were at least a few guides on using Action Cables. It was difficult 
 - Prima Aulia Gusta
 - Shimei Wong
 
-###### and the amazingly talented Class of WDI 11 :heart: :tada:
+###### and the amazingly talented **Class of WDI 11** :heart: :tada:
