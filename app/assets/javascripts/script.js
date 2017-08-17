@@ -35,8 +35,7 @@ $(document).on('turbolinks:load', function() {
         var $viewMoreDiv = $('<div>').css('width', '100%')
         $viewMore.append($viewMoreDiv)
         var $showLocationBtn = $('<a>').text('Location').css({
-          width: '48%',
-          margin: '0 1%'
+          margin: '1% 0'
         }).addClass('waves-effect waves-light btn')
         //
         $showLocationBtn.on('click', function () {
