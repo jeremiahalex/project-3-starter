@@ -8,14 +8,14 @@
 
         <div class="section flow-text">
 
-          <h4><%= "Group #{@group.id}" %>: <%= "#{@group.deal.restaurant.name} deal for #{@group.deal.pax}"%> </h4>
-          <h4></h4>
+          <h5><%= "Group #{@group.id}" %>: <%= "#{@group.deal.restaurant.name} deal for #{@group.deal.pax}"%> </h5>
 
-          <h6><strong><%= "#{@group.deal.name}" %></strong></h4>
+
+          <h6><strong><%= "#{@group.deal.name}" %></strong></h6>
         </div>
 
         <div class="divider"></div>
-        <div class="section">
+        <div id="dealDescription" class="section">
           <h6><strong>Deal Description</strong></h6>
           <h6><%= "#{@group.deal.description}" %></h6>
         </div>

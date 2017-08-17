@@ -66,6 +66,11 @@ html {
   float: right;
 }
 
+#dealDescription {
+  height: 300px;
+  overflow-y: auto;
+}
+
 .nav-wrapper {
   @extend .white;
   @extend .grey-text, .text-darken-3;
@@ -82,7 +87,7 @@ nav ul li a{
   // border: 1px solid black;
   width: 100%;
   margin: 0 auto;
-  height: 400px;
+  height: 412px;
   overflow-y: auto;
   word-break: break-all;
 }

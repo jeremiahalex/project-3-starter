@@ -23,9 +23,9 @@
 # Restaurant.create(name: "Cold Storage @ Claymore", latitude: 1.307519, longitude: 103.829481)
 
 Restaurant.create(name: "Waku Ghin", latitude:1.284119, longitude:103.859157)
-Restaurant.create(name: "IPPUDO Tanjong Pagar", latitude:1.276724, longitude:103.846234)
-Restaurant.create(name: "Ramen Champion (Clarke Quay Central)", latitude:1.289228, longitude:103.846236)
-Restaurant.create(name: "PocoLoco Microbrewery", latitude:1.335010, longitude:103.735361)
+Restaurant.create(name: "IPPUDO", latitude:1.276724, longitude:103.846234)
+Restaurant.create(name: "Ramen Champion", latitude:1.289228, longitude:103.846236)
+Restaurant.create(name: "PocoLoco Brewery", latitude:1.335010, longitude:103.735361)
 Restaurant.create(name: "Tatsuya", latitude:1.308886, longitude:103.834463)
 Restaurant.create(name: "Saboten", latitude:1.361620, longitude:103.989519)
 
