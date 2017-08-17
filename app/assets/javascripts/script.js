@@ -89,15 +89,16 @@ $(document).on('turbolinks:load', function() {
     lat: 1.352083,
     lng: 103.819836
   }
+  if (document.getElementById('map')){  
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: singapore,
+      zoom: 11
+    })
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: singapore,
-    zoom: 11
-  })
-
-  map.addListener('click', function(e) {
-    console.log(e.latLng.lat(), e.latLng.lng())
-  })
+    map.addListener('click', function(e) {
+      console.log(e.latLng.lat(), e.latLng.lng())
+    })
+  }
 
 
   function placeMarker(location, restaurantInfo) {
