@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function() {
   $(".static.profile").ready(function () {
+    // $(".dropdown-button").dropdown()
     $('#sidemenu').html('')
     $('#map').addClass('mapNarrowed')
     $('#sidemenu').addClass('visible')

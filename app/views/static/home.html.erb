@@ -1,0 +1,11 @@
+<h4>Deals</h4>
+<br>
+<div class="row">
+  <% @deals.each do |deal| %>
+  <div class="col s2">
+    <img class="responsive-img" src="<%= deal.img %>">
+    <br>
+    <%= deal.name %>
+  </div>
+  <% end %>
+</ul>
