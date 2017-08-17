@@ -22,6 +22,7 @@ This project is built with the following technologies:
 - HTML, JS, CSS
 - jQuery
 - Ruby on Rails
+- deployed with [Heroku](https://www.heroku.com)
 
 ### ERD
 The model relationship design was a unique learning experience for us. The models we used were:
@@ -42,6 +43,9 @@ Finalized flowchart of our website.
 
 ### Wireframe
 The design from which our website is based off of can be viewed in the [linked powerpoint](https://docs.google.com/presentation/d/1ml9hg4V50Hcqb_tYOU9-8_3El5K8Qn-v4llbk1H_qno/edit#slide=id.p)
+
+---
+## Script
 
 ### Routing & CRUD
 #### Events had 4 main views
@@ -113,3 +117,47 @@ Made use of jQuery to extract information of items (name and price) from the fro
 http://materializecss.com/
 
 ![](/app/assets/images/materialize.png)
+
+---
+### Future Development
+
+- Use of a better pie chart so as to allow better visualisation of data.
+
+![](/app/assets/images/piechartugly.png)
+
+What happened when there are too many items in the list.
+
+- Implementation of Starter Kit so as to pre-add relevant items into shopping list. (ie. When user choose a BBQ, items like skewers, chicken wings, butter etc will be automatically added to his shopping list.)
+
+- Allow invitation of guests by users. Guests will have the ability to add/ recommend items to the event's shopping list.
+
+---
+
+### Working as a team
+- Pair Programming
+- Frontend and Backend
+- Plan project in phases
+- Daily morning and evening SCRUM
+
+### Members
+- [Michelle](https://github.com/michelleylai)
+- [Ng Wan Zhen](https://github.com/thecodingdog)
+- [Nicholas Lee](https://github.com/nicoalee)
+- [Lee Brian](https://github.com/bleetdh)
+
+---
+
+
+### Acknowledgement ###
+* Prima Aulia (my Awesome WDI Instructor!)
+
+* Wong Shi Mei (my very patient TA!)
+
+* WDI 11 classmates!
+
+* GOOGLE!
+
+---
+
+### Feedback ###
+All feedbacks are welcome!
