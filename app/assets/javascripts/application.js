@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require jquery
 //= require jquery-readyselector
+//= require materialize-sprockets
 //= require_tree ./channels
 //= require_tree .

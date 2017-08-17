@@ -89,7 +89,7 @@ $(document).on('turbolinks:load', function() {
     lat: 1.352083,
     lng: 103.819836
   }
-  if (document.getElementById('map')){  
+  if (document.getElementById('map')){
     var map = new google.maps.Map(document.getElementById('map'), {
       center: singapore,
       zoom: 11

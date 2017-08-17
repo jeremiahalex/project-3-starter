@@ -14,10 +14,16 @@
     <p class="alert"><%= alert %></p> -->
 
     <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
+      <li>
+        <%= link_to 'Edit Profile', edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "My Groups", profile_path %>
+      </li>
       <li class="divider"></li>
-      <li><a href="#!">three</a></li>
+      <li>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </li>
     </ul>
 
     <nav>
@@ -29,16 +35,7 @@
                 <%= link_to 'Home', root_path %>
               </li>
               <li>
-                <%= link_to 'Edit Profile', edit_user_registration_path %>
-              </li>
-              <li>
                 <%= link_to 'Restaurants', restaurants_main_path %>
-              </li>
-              <li>
-                <%= link_to "My Groups", profile_path %>
-              </li>
-              <li>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
               </li>
               <li>
                 <a class="dropdown-button" href="#!" data-activates="dropdown1"><b><%= current_user.name %></b><i class="material-icons right">arrow_drop_down</i></a>
@@ -60,10 +57,5 @@
 
     <%= yield %>
 
-    <br>
-
-    <footer class="page-footer">
-      &copy; Group Shen 2017
-    </footer>
   </body>
 </html>

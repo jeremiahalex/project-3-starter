@@ -1,13 +1,3 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
 html, body {
   height: 100%;
   margin: 0;
@@ -92,4 +82,8 @@ nav ul li a{
 }
 #chatUserList {
   text-align: center;
+}
+
+.login {
+  margin-top: 150px;
 }
