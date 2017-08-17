@@ -12,7 +12,7 @@ This website is to give users a whole new flexibility when it comes to event's b
 
 Users are able to plan their events with information on the price of the items that they are planning to buy.
 
-All information of items are fetched from NTUC Fairprice via webscraping.
+All information of items are fetched from [NTUC Fairprice](http://www.fairprice.com.sg/) via web scraping.
 
 ---
 
@@ -22,6 +22,7 @@ This project is built with the following technologies:
 - HTML, JS, CSS
 - jQuery
 - Ruby on Rails
+- PostgreSQL
 - deployed with [Heroku](https://www.heroku.com)
 
 ### ERD
@@ -149,9 +150,9 @@ What happened when there are too many items in the list.
 
 
 ### Acknowledgement ###
-* Prima Aulia (my Awesome WDI Instructor!)
+* Prima Aulia (our Awesome WDI Instructor!)
 
-* Wong Shi Mei (my very patient TA!)
+* Wong Shi Mei (our very patient TA!)
 
 * WDI 11 classmates!
 
