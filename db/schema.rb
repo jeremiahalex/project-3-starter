@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170812051631) do
     t.string "name"
     t.text "description"
     t.integer "pax"
+    t.text "img"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

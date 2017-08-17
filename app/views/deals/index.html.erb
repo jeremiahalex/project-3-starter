@@ -1,17 +1,22 @@
-<h1> Listing All Deals by Restaurant  </h1>
+<div class="row">
+  <div class="col s4"></div>
+  <div class="col s4">
+    <h1> Listing All Deals by Restaurant  </h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
+      <% @deals.each do |deal| %>
+        <tr>
+          <td><%= deal.name %></td>
+          <td><%= deal.description %></td>
+          <td><%= link_to 'See Deal Details', deal_path(deal.id) %></td>
 
-  <% @deals.each do |deal| %>
-    <tr>
-      <td><%= deal.name %></td>
-      <td><%= deal.description %></td>
-      <td><%= link_to 'See Deal Details', deal_path(deal.id) %></td>
-
-    </tr>
-  <% end %>
-</table>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col s4"></div>
+</div>
