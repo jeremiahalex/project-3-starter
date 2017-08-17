@@ -39,14 +39,14 @@
         </li>
         <% end %>
       </ul>
-      <%= link_to "/items/new?event=#{params[:id]}", class: "waves-effect waves-light btn" do %>
+      <%= link_to "/items?event=#{params[:id]}", class: "waves-effect waves-light btn" do %>
         <i class="material-icons right">add_shopping_cart</i> Add New Item
       <% end %>
 
     </div>
     <div class="eventright">
       <div id="chart_show"></div>
-      <h4 class='budget'>Budget Remaining: $
+      <h4 class='budget'>Budget Remaining: </br>$
         <span class= 'eventinfo' id="budgetLeft"></span>
       </h4>
     </div>
