@@ -3,6 +3,7 @@ require 'open-uri'
 require 'json'
 
 class ItemsController < ApplicationController
+    before_action :authenticate_user!
 
   def destroy
     # render json: params
@@ -115,4 +116,5 @@ class ItemsController < ApplicationController
       end
     end
   end
+
 end
