@@ -1,30 +1,32 @@
-App.messages = App.cable.subscriptions.create('MessagesChannel', {
-  received: function(data) {
-    $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
+$(".groups.show").ready(function () {
+  App.messages = App.cable.subscriptions.create('MessagesChannel', {
+    received: function(data) {
+      $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
+      scrollBottom()
+    }
+  });
+
+
+  $(document).on('turbolinks:load', function() {
+    submitNewMessage()
     scrollBottom()
+  });
+
+  function submitNewMessage(){
+    $('textarea#message_content').keydown(function(event) {
+      if (event.keyCode === 13) {
+          var msg = event.target.value
+          if (msg.replace(/\s/g, '').length < 1) return false
+          var chatroomId = $("[data-chatroom]").data().chatroom
+          var userId = $("[data-user]").data().user
+          App.messages.send({message: msg, chatroom_id: chatroomId, user_id: userId})
+          $('[data-textarea="message"]').val(" ")
+          return false
+       }
+     })
   }
-});
 
-
-$(document).on('turbolinks:load', function() {
-  submitNewMessage()
-  scrollBottom()
-});
-
-function submitNewMessage(){
-  $('textarea#message_content').keydown(function(event) {
-    if (event.keyCode === 13) {
-        var msg = event.target.value
-        if (msg.replace(/\s/g, '').length < 1) return false
-        var chatroomId = $("[data-chatroom]").data().chatroom
-        var userId = $("[data-user]").data().user
-        App.messages.send({message: msg, chatroom_id: chatroomId, user_id: userId})
-        $('[data-textarea="message"]').val(" ")
-        return false
-     }
-   })
-}
-
-function scrollBottom(){
-  $('#messageBox').scrollTop($('#messages')[0].scrollHeight)
-}
+  function scrollBottom(){
+    $('#messageBox').scrollTop($('#messages')[0].scrollHeight)
+  }
+})

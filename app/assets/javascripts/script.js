@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  var markers = []
   $(".static.profile").ready(function () {
     // $(".dropdown-button").dropdown()
     $('#sidemenu').html('')
@@ -56,8 +57,11 @@ $(document).on('turbolinks:load', function() {
     })
   })
 
-  $(".restaurants.main").ready(function () {
-    $.get('/restaurants').done(function (data) {
+  function getRestaurants (query) {
+    $.get('/restaurants', query).done(function (data) {
+      markers.forEach(function(marker) {
+        marker.setMap(null)
+      })
       data.restaurants.forEach(function (rest) {
         console.log(rest)
       })
@@ -72,12 +76,19 @@ $(document).on('turbolinks:load', function() {
         }, data.restaurants[i])
       }
     })
+  }
+  $(".restaurants.main").ready(function () {
+    getRestaurants()
+    $('#searchForm').on('submit', function (e) {
+      e.preventDefault()
+      var query = $(this).serializeArray()[1].value
+      getRestaurants({search: query})
+    })
   })
   var singapore = {
     lat: 1.352083,
     lng: 103.819836
   }
-  // var markers = []
 
   var map = new google.maps.Map(document.getElementById('map'), {
     center: singapore,
@@ -94,6 +105,7 @@ $(document).on('turbolinks:load', function() {
       position: location,
       map: map
     })
+    markers.push(marker)
     marker.restaurantInfo = restaurantInfo
     console.log(marker.position.lat(), marker.position.lng())
     marker.addListener('click', function () {
