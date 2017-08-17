@@ -2,7 +2,7 @@
 
 _**Find, join, and dine**_
 
-> **_Stranger Deals_** _is an app designed for individuals and friends, for finding and locating your favorite restaurant deals nearby while grouping into perfect group sizes with friends or completely anonymous strangers for a perfect dining experience._
+> **_Stranger Deals_** _is an app designed for individuals and friends, for finding and locating your favorite restaurant deals nearby while grouping into perfect group sizes with friends or completely anonymous strangers for an extraordinary dining experience._
 
 ## Live Version
 
@@ -55,7 +55,9 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 * Turbolinks
 * Redis
 
-## Workflow
+## Application Overview
+![](/readme_images/the_app.png)
+
 
 ##### Process Flow
 ![](/readme_images/process_flow.png)
@@ -75,10 +77,10 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 
 ## Authors
 
-* **[Dominic Phua](https://github.com/DominikPhua)** - *Responsible for keeping wests white*
-* **[Ernest Tan](https://github.com/evilernie1985)** - *Responsible for keeping bests white*
-* **[Ng Yang Theng](https://github.com/yangtheng)** - *Responsible for keeping nests white*
-* **[Shaun Loh](https://github.com/shaunloh89)** - *Responsible for keeping tests white*
+* **[Dominic Phua](https://github.com/DominikPhua)**
+* **[Ernest Tan](https://github.com/evilernie1985)**
+* **[Ng Yang Theng](https://github.com/yangtheng)**
+* **[Shaun Loh](https://github.com/shaunloh89)**
 
 ## Acknowledgments
 
