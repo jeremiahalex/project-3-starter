@@ -58,16 +58,20 @@ class EventsController < ApplicationController
   private
 
   def check_valid_date
-    if Date.parse(params[:event][:date]) < Date.today
-      flash[:date_error] = "Please enter a date that is today or earlier"
-      redirect_to new_event_path
+    if params[:event][:date] != ""
+      if Date.parse(params[:event][:date]) < Date.today
+        flash[:date_error] = "Please enter a date that is today or earlier"
+        redirect_to new_event_path
+      end
     end
   end
 
   def check_valid_time
-    if Date.parse(params[:event][:date]) == Date.today && Time.parse(params[:event][:time]) < Time.now
-      flash[:time_error] = "Please select a time that is after now"
-      redirect_to new_event_path
+    if params[:event][:time] !=""
+      if Date.parse(params[:event][:date]) == Date.today && Time.parse(params[:event][:time]) < Time.now
+        flash[:time_error] = "Please select a time that is after now"
+        redirect_to new_event_path
+      end
     end
   end
 
