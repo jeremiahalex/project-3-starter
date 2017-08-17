@@ -31,7 +31,7 @@ Restaurant.create(name: "Saboten", latitude:1.361620, longitude:103.989519)
 
 
 
-# Deal.create(name: "1 for 1 Cai Fan if meal is Above $5", description: "1 for 1 Cai Fan if meal is Above $5 all day", pax: 2, restaurant_id: 1)
-# Deal.create(name: "1 for 1 on all Mains Lunch Only", description: "1 for 1 on all Mains Lunch Only, between 12-2pm", pax: 2, restaurant_id: 2)
-# Deal.create(name: "Buy 3 Salads get 1 Pork Knuckle at 50% off", description: "Buy 3 Salads get 1 Pork Knuckle at 50% off. While Stocks Last", pax: 3, restaurant_id: 3)
-# Deal.create(name: "Buy 4 Roast Chicken Platters get two free Bratwurst Sausage", description: "Buy 4 Roast Chicken Platters get one free Bratwurst Sausage", pax: 4, restaurant_id: 3)
+Deal.create(name: "1 for 1 Cai Fan if meal is Above $5", description: "1 for 1 Cai Fan if meal is Above $5 all day", pax: 2, restaurant_id: 1)
+Deal.create(name: "1 for 1 on all Mains Lunch Only", description: "1 for 1 on all Mains Lunch Only, between 12-2pm", pax: 2, restaurant_id: 2)
+Deal.create(name: "Buy 3 Salads get 1 Pork Knuckle at 50% off", description: "Buy 3 Salads get 1 Pork Knuckle at 50% off. While Stocks Last", pax: 3, restaurant_id: 3)
+Deal.create(name: "Buy 4 Roast Chicken Platters get two free Bratwurst Sausage", description: "Buy 4 Roast Chicken Platters get one free Bratwurst Sausage", pax: 4, restaurant_id: 3)
