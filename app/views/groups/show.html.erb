@@ -5,11 +5,7 @@
 
   <div class="row">
       <div class="col s5">
-        <!-- button to go back to all groups -->
-        <a class="waves-effect waves-light btn red">
-          <%= button_to "Back to Deal", deal_path(@group.deal), method: :get %>
-        </a>
-        
+
         <div class="section flow-text">
 
           <h4><%= "Group #{@group.id}" %>: <%= "#{@group.deal.restaurant.name} deal for #{@group.deal.pax}"%> </h4>
@@ -85,6 +81,10 @@
           <%= button_to "Join Group", group_path, method: :patch %>
         </a>
         <% end %>
+        <!-- button to go back to all groups -->
+        <a class="waves-effect waves-light btn red">
+          <%= button_to "Back to Deal", deal_path(@group.deal), method: :get %>
+        </a>
 
       </div>
 
