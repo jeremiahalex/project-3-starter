@@ -1,6 +1,6 @@
 # README
 
-SOME INTRO TEXT
+We have created an app to give people a whole new flexibility when it comes to event planning.
 
 ---
 
