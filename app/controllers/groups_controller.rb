@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :check_already_joined, :check_if_full, only: [:update]
   before_action :check_date_valid, only: [:create]
 
@@ -17,7 +18,8 @@ class GroupsController < ApplicationController
   def create
     creating_group = params.permit(:date, :time)
     creating_group[:deal_id] = params[:deal_id]
-    Group.create(creating_group)
+    new_group = Group.create(creating_group)
+    new_group.users << current_user
 
     redirect_to deal_path(params[:deal_id])
   end
