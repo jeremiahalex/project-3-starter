@@ -11,6 +11,48 @@
   <body class="<%= controller_name %> <%= action_name %>">
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
+<<<<<<< HEAD
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper">
+          <% if user_signed_in? %>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <%= link_to 'Home', root_path %>
+              </li>
+              <li>
+                <%= link_to 'Edit Profile', edit_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to 'Restaurants', restaurants_main_path %>
+              </li>
+              <li>
+                <%= link_to "My Groups", profile_path %>
+              </li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </li>
+              <li>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="right hide-on-mend-and-down">
+              <li>
+                <%= link_to "Login", new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+            </ul>
+          <% end %>
+      </div>
+=======
     <nav class="navbar">
       <% if user_signed_in? %>
 
@@ -18,18 +60,17 @@
           Logged in as &nbsp<strong><%= current_user.name %></strong>
         </a>
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-item' %>
-        <%= link_to 'Restaurant', restaurants_main_path, :class => 'navbar-item' %>
+        <%= link_to 'Restaurants', restaurants_main_path, :class => 'navbar-item' %>
         <%= link_to "My Groups", profile_path, :class => 'navbar-item' %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-item'  %>
 
-
-        |
-        <%= link_to "Find a Restaurant", restaurants_main_path %>
+        <%#= link_to "Find a Restaurant", restaurants_main_path %>
 
       <% else %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-item'%>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-item'%>
       <% end %>
+>>>>>>> ee5dd0ea407d602d14e7c4d70417fd9b9d8a0e50
     </nav>
 
     <%= yield %>

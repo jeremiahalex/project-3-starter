@@ -22,12 +22,12 @@ class RestaurantsController < ApplicationController
   end
 
   def search
-  @restaurants = Restaurant.all
-  if params[:search]
-    @restaurant = Resraurant.search(params[:search]).order("created_at DESC")
-  else
-    @restaurant = Restaurant.all.order("created_at DESC")
+    @restaurants = Restaurant.all
+    if params[:search]
+      @restaurant = Resraurant.search(params[:search]).order("created_at DESC")
+    else
+      @restaurant = Restaurant.all.order("created_at DESC")
+    end
   end
-end
 
 end
