@@ -17,7 +17,9 @@
       <li class="divider"></li>
       <li><a href="#!">three</a></li>
     </ul>
+
     <nav>
+
       <div class="nav-wrapper">
           <% if user_signed_in? %>
             <ul class="right hide-on-med-and-down">
@@ -51,16 +53,26 @@
             </ul>
           <% end %>
       </div>
-    </nav>  
+
+    </nav>
 
     <%= yield %>
 
     <br>
 
-    <footer>
-      &copy; Group Shen 2017
-    </footer>
 
   </body>
+
+  <footer class"page-footer">
+    <div class="container">
+
+        <div class="footer-copyright">
+          <div class="container">
+            © 2017 Group Shen
+          </div>
+        </div>
+
+    </div>
+  </footer>
 
 </html>
