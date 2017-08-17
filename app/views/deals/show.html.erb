@@ -42,6 +42,9 @@
 
       <div class="section">
         <a class="waves-effect waves-light btn red">
+          <%= button_to "Create Group", new_deal_group_path(@deal), :method => "get" %>
+        </a>
+        <a class="waves-effect waves-light btn red">
           <%= button_to "Back", restaurants_main_path, :method => "get" %>
         </a>
       </div>
@@ -56,17 +59,7 @@
 
     <div class="col s5">
       <div class="section">
-        <img class="circle responsive-img" src="<%=@deal.img %>"%>
+        <img class="responsive-img" src="<%=@deal.img %>"%>
       </div>
-      <div class="section right-align">
-        <a class="waves-effect waves-light btn red">
-          <%= button_to "Create Group", new_deal_group_path(@deal), :method => "get" %>
-        </a>
-
-      </div>
-    </div>
-
-
-  </div>
 
 </div>

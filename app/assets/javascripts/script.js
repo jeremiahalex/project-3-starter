@@ -5,10 +5,14 @@ $(document).on('turbolinks:load', function() {
     $('#sidemenu').html('')
     $('#map').addClass('mapNarrowed')
     $('#sidemenu').addClass('visible')
-    $('#sidemenu').append($('<p>').text('Joined Groups').addClass('title'))
+    $('#sidemenu').append($('<p>').text('Joined Groups').css({
+      "font-size": '30px',
+      width: '90%',
+      margin: '10px auto 10px auto'
+    }))
     var $groups = $('<table>').css({
       width: '90%',
-      margin: '0 auto'
+      margin: '0 auto 10px auto'
     })
     $('#sidemenu').append($groups)
     $.get('/profile/groups').done(function(data) {
@@ -33,7 +37,7 @@ $(document).on('turbolinks:load', function() {
         var $showLocationBtn = $('<a>').text('Location').css({
           width: '48%',
           margin: '0 1%'
-        }).addClass('button is-primary')
+        }).addClass('waves-effect waves-light btn')
         //
         $showLocationBtn.on('click', function () {
             map.panTo({
@@ -42,7 +46,7 @@ $(document).on('turbolinks:load', function() {
             })
             map.setZoom(18)
         })
-        var $showGroupLink = $('<a>').attr('href', '/groups/' + group.id).addClass('button is-primary').text('Details')
+        var $showGroupLink = $('<a>').attr('href', '/groups/' + group.id).addClass('waves-effect waves-light btn').text('Details')
         $viewMoreDiv.append($showLocationBtn)
         $viewMoreDiv.append($showGroupLink)
         $groupsName.append($viewMore)
@@ -113,14 +117,13 @@ $(document).on('turbolinks:load', function() {
       $('#map').addClass('mapNarrowed')
       $('#sidemenu').addClass('visible')
       $('#sidemenu').html('')
-      var $restName = $('<p>').addClass('title')
+      var $restName = $('<p>').css({
+        "font-size": '30px',
+        width: '90%',
+        margin: '0 auto 10px auto'
+      })
       $restName.text(marker.restaurantInfo.name)
       $('#sidemenu').append($restName)
-      $('#sidemenu').append($('<p>').text('Deals').css({
-        "font-size": '20px',
-        width: '90%',
-        margin: '0 auto 10px auto',
-      }))
       var $deals = $('<table>').css({
         width: '90%',
         margin: '0 auto'
@@ -131,10 +134,10 @@ $(document).on('turbolinks:load', function() {
         var $viewMore = $('<td>')
         var $viewMoreLink = $('<a>').attr('href', '/deals/' + deal.id).text('View Deal').css({
           float: 'right'
-        }).addClass('button is-primary')
+        }).addClass('waves-effect waves-light btn')
         // $viewMoreLink.html($('<button>').text('View Deal')).css({
         //   float: 'right'
-        // }).addClass('button is-primary')
+        // }).addClass('waves-effect waves-light btn')
         $viewMore.append($viewMoreLink)
         $dealsName.append($viewMore)
         $deals.append($dealsName)
