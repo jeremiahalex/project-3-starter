@@ -6,6 +6,22 @@ SOME INTRO TEXT
 
 ## Development
 
+#### Routing & CRUD
+- 4 main views created for events
+* Index is for displaying all events linked to users
+* Show is for displaying details linked to specific event including items and chart
+* New renders a form for that links to events model
+* Edit renders a form for that allows updates to specific event
+
+![alt text](app/assets/images/eventMVC.png?raw=true 'start')
+
+- Item had a single view that displayed
+* search bar
+* results from scraping
+* add buttons that are linked to event setup by user
+
+![alt text](app/assets/images/ItemMVC.png?raw=true 'start')
+
 #### Web Scraping
 - We used a webscraping Ruby gem, __Nokogiri__ ([documentation](https://github.com/sparklemotion/nokogiri)), to access search results from http://www.fairprice.com.sg/
 - Note: Nokogiri itself requires the Ruby gem __open-uri__ to fetch HTML pages
