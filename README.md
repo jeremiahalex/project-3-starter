@@ -92,4 +92,4 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 - Prima Aulia Gusta
 - Shimei Wong
 
-###### and the amazingly talented Class of WDI 11 :heart:
+###### and the amazingly talented Class of WDI 11 :heart: :tada:
