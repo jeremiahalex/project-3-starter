@@ -1,9 +1,0 @@
-<h1>Items added:</h1>
-<ol>
-<% @items_added.each do |item_object| %>
-  <li>Name: <%= item_object['pdt_name'] %></li>
-  Price: <%= item_object['price'] %>
-  <img alt="product_image" class="pdt_img" src=<%= item_object['img_url'] %> />
-  <%= link_to "Product details", item_object['pdt_url'] %> <br>
-<% end %>
-</ol>
