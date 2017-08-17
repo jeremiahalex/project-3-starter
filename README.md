@@ -1,10 +1,27 @@
-# README
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #3: Kreey8
 
-We have created an app to give people a whole new flexibility when it comes to event planning.
+https://kreey8.herokuapp.com/
+---
+
+### Introduction
+
+![](/app/assets/images/logo.png)
+
+
+This website is to give users a whole new flexibility when it comes to event's budget planning.
+
+Users are able to plan their events with information on the price of the items that they are planning to buy.
+
+All information of items are fetched from NTUC Fairprice via webscraping.
 
 ---
 
-## Development
+### Overview
+This project is built with the following technologies:
+
+- HTML, JS, CSS
+- jQuery
+- Ruby on Rails
 
 ### ERD
 The model relationship design was a unique learning experience for us. The models we used were:
@@ -72,6 +89,27 @@ Ruby makes authentication much easier! With devise, and Ruby on Rails' autogener
 
 * Set up is beautifully easy:
 
-![](/app/assets/images/intercom_setup.png)
+```javascript
+<script>
+  var APP_ID = "APP_ID";
 
----
+ window.intercomSettings = {
+    app_id: APP_ID
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/APP_ID';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+```
+
+### Google Pie Chart
+
+https://developers.google.com/chart/interactive/docs/gallery/imagepiechart
+
+![](/app/assets/images/piechartgood.png)
+
+Made use of jQuery to extract information of items (name and price) from the frontend instead of data base.
+
+
+### CSS Framework
+http://materializecss.com/
+
+![](/app/assets/images/materialize.png)
