@@ -1,43 +1,57 @@
-<h1 class="title"><%= @current_restaurant.name %> (Create)</h1>
-<br>
-<h2 class="subtitle"><%= @current_deal.name %></h2>
-<h2 class="subtitle"><%= @current_deal.description %></h2>
+<div class="container">
+  <br>
 
-<div class="columns">
-  <div class="column is-one-third"></div>
-  <div class="column">
-    <%= form_for @new_group, url: deal_groups_path do |f| %>
+  <h3>Create a Group</h3>
 
-      <div class="field">
-        <label class="label"><%= label_tag :date %></label>
-        <div class="control">
-          <%= date_field_tag :date, nil, :required => true, :class => 'input' %>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label"><%= label_tag :time %></label>
-        <div class="control">
-          <%= time_field_tag :time, nil, :required => true, :class => 'input' %>
-        </div>
-      </div>
-
-      <% if flash[:date_error] %>
-        <div class="notice"><%= flash[:date_error] %></div>
-      <% end %>
-
+  <div class="row">
+    <div class="col s5">
+      <h4><%= @current_restaurant.name %></h1>
+      <h5><%= @current_deal.name %></h2>
       <br>
+      <p>You're all set, just select a date and time for the meetup!</p>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-primary">Submit</button>
+      <%= form_for @new_group, url: deal_groups_path do |f| %>
+
+        <div class="field">
+          <label class="label"><%= label_tag :date %></label>
+          <div class="control">
+            <%= date_field_tag :date, nil, :required => true, :class => 'input' %>
+          </div>
         </div>
-        <div class="control">
-          <%= link_to "Cancel", deal_path(params[:deal_id]) %>
+
+        <div class="field">
+          <label class="label"><%= label_tag :time %></label>
+          <div class="control">
+            <%= time_field_tag :time, nil, :required => true, :class => 'input' %>
+          </div>
         </div>
-      </div>
+
+        <% if flash[:date_error] %>
+          <div class="notice"><%= flash[:date_error] %></div>
+        <% end %>
+
+        <br>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary">Submit</button>
+            <button class="button-is-primary" name="button">
+              <%= link_to "Cancel", deal_path(params[:deal_id]) %>
+            </button>
+          </div>
+        </div>
+
+      <% end %>
     </div>
-    <div class="column"></div>
-</div>
 
-<% end %>
+    <div class="col s2">
+
+    </div>
+
+    <div class="col s5">
+      <img src="">
+    </div>
+
+  </div>
+
+</div>

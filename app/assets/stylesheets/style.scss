@@ -1,8 +1,26 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
+html {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #616161;
+  }
+
 .mapContainer{
   height: 100%;
   margin: 0;
@@ -44,16 +62,21 @@ html, body {
   height: 5%;
 }
 
-.title {
-  text-align: center;
-}
-
-.subtitle {
-  text-align: center;
-}
-
 #dealsViewGroup {
   float: right;
+}
+
+.nav-wrapper {
+  @extend .white;
+  @extend .grey-text, .text-darken-3;
+}
+
+nav ul li a{
+  color: #616161;
+}
+
+.deals {
+  margin-left: 11px;
 }
 #messageBox {
   // border: 1px solid black;
