@@ -1,7 +1,14 @@
 <% if chatroom.group.users.include? current_user  %>
+
+
 <div>
-  <br>
-  <h3>Chat</h3>
+  <div class="section center-align">
+  <h5>Group Chat</h5>
+  <h6><strong>Don't be shy. Say hi!</strong></h6>
+  </div>
+
+  <div class="divider"></div>
+
   <div>
     <div id="messageBox">
       <div id="messages" data-chatroom=<%=chatroom.id%> data-user=<%=current_user.id%>>
@@ -9,6 +16,7 @@
       </div>
     </div>
 
+    <div class="divider"></div>
 
     <%= render partial: 'message_form'%>
   </div>
