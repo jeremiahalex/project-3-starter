@@ -11,7 +11,8 @@
 
 production: &production
   adapter: redis
-  url: redis://10.10.3.153:6381
+  url: redis://h:p8430c2e9b115effd08a95b76eeaf43231cdc3fe07cb417686174179fe980fdb6@ec2-34-231-155-48.compute-1.amazon
+aws.com:41489
 development: &development
   adapter: redis
   url: redis://localhost:6379
