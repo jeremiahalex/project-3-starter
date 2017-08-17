@@ -14,8 +14,10 @@ The model relationship design was a unique learning experience for us. The model
 - users
 - events
 - items
+
 We were using PostgreSQL for the first time, and had to utilize join tables to represent many to many relationships between our models.
 Items and events have a many to many relationship in this project.
+
 ![](/app/assets/images/ERD.png)
 
 ### Flowchart
@@ -51,6 +53,7 @@ Ruby makes authentication much easier! With devise, and Ruby on Rails' autogener
 ![](/app/assets/images/intercom_agent.png)
 
 * Set up is beautifully easy:
+
 ![](/app/assets/images/intercom_setup.png)
 
 ---
