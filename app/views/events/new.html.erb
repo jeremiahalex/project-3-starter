@@ -1,5 +1,7 @@
 <div class="container">
   <h3>Create New Event</h3>
+  <h6><%= flash[:date_error] %></h6>
+  <h6><%= flash[:time_error] %></h6>
   <%= form_for @new_event do |f| %>
   <div class="row">
     <form class="col s12">
