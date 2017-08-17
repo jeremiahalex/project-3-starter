@@ -74,6 +74,10 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 
 ## ActionCable
 
+## Further Development
+- Creating restaurants type users that are able to login and manage deals
+- Enabling chat notifications to user
+- Enabling user to view other user profiles
 
 ## Authors
 
@@ -87,3 +91,5 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 ###### Our wonderful GA instructional team:
 - Prima Aulia Gusta
 - Shimei Wong
+
+###### and the amazingly talented Class of WDI 11 :heart:
