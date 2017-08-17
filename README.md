@@ -69,7 +69,6 @@ Ruby makes authentication much easier! With devise, and Ruby on Rails' autogener
 ![](/app/assets/images/intercom_agent.png)
 
 * Set up is beautifully easy:
-![](/app/assets/images/intercom_setup.png)
 
 ```javascript
 <script>
