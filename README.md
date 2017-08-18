@@ -58,6 +58,9 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 ## Application Overview
 ![](/readme_images/the_app.png)
 
+##### Initial Wireframes
+[Link to wireframes](https://xd.adobe.com/view/8c83ed3b-e399-454f-bc3c-95cb16ffd2f0/)
+![](/readme_images/wireframes.png)
 
 ##### Process Flow
 ![](/readme_images/process_flow.png)
@@ -65,9 +68,17 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 ##### ERD
 ![](/readme_images/erd.png)
 
-##### Initial Wireframes
-[Link to wireframes](https://xd.adobe.com/view/8c83ed3b-e399-454f-bc3c-95cb16ffd2f0/)
-![](/readme_images/wireframes.png)
+##### Model Relations
+![](/readme_images/model_relations.png)
+
+##### Nested Shallow Routing
+```
+resources :restaurants, shallow: true do
+  resources :deals do
+    resources :groups
+  end
+end
+```
 
 ## Google Maps
 
@@ -158,6 +169,14 @@ Initially there were problems connecting to the message channel without refreshi
 While there were at least a few guides on using Action Cables. It was difficult to find a guide on using Action Cables with Heroku that is easy for a beginner to understand. I was not aware that using `redis` on Heroku requires an addon and some configuration to be done. This also made me more aware that there are differences between running on development environment vs production environment. Thanks to some intense googling I was able to deploy it.
 
 ##### Heroku Addon used: [Heroku-redis](https://elements.heroku.com/addons/heroku-redis)
+
+### Other Bugs
+
+- Restaurants Main Map intermittent load issues. Entire map doesn’t load on first trip to page. Restaurant beacons failed to load on at least one subsequent attempt.
+- Empty groups are not automatically deleted
+- Clicking the ‘submit’ button repeatedly on the Create Group page results in multiple groups being created.
+- Group create allows dates very far into the future, and also at times when the restaurant will probably not be open. Should probably set a limit.
+- Website styling is not completely responsive to different browser sizes. Buttons sometimes stack when browser size is reduced. Also doesn’t display properly with mobile devices.
 
 ## Authors
 
