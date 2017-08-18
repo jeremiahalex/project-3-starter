@@ -26,11 +26,11 @@ This project is built with [Ruby on Rails](http://rubyonrails.org/) and [Postgre
 
 Fork and clone this repository into your own directory. Install the Gem files used in this project by entering the following code in your terminal:
 
-```bundle install```
+``bundle install``
 
 Run the following code in your terminal to reset the database and populate it with seed data:
 
-```rails db:reset```
+``rails db:reset``
 
 
 ### Deployment
@@ -40,7 +40,7 @@ This project was deployed with [Heroku](https://www.heroku.com), create an accou
 
 In Heroku, you will need to connect a Redis add-on in order to utilize **ActionCable**. Add your Redis url to _production_ in:
 
-```/config/cable.yml```
+``/config/cable.yml``
 
 ## Built With
 
@@ -53,11 +53,14 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 * Materialize
 * HTTParty
 * Turbolinks
-* Redis
+* Heroku-redis
 
 ## Application Overview
 ![](/readme_images/the_app.png)
 
+##### Initial Wireframes
+[Link to wireframes](https://xd.adobe.com/view/8c83ed3b-e399-454f-bc3c-95cb16ffd2f0/)
+![](/readme_images/wireframes.png)
 
 ##### Process Flow
 ![](/readme_images/process_flow.png)
@@ -65,73 +68,51 @@ In Heroku, you will need to connect a Redis add-on in order to utilize **ActionC
 ##### ERD
 ![](/readme_images/erd.png)
 
-##### Initial Wireframes
-[Link to wireframes](https://xd.adobe.com/view/8c83ed3b-e399-454f-bc3c-95cb16ffd2f0/)
-![](/readme_images/wireframes.png)
+##### Model Relations
+![](/readme_images/model_relations.png)
 
-## Google Maps API
-
-
-## ActionCable
-
-## Further Development
-- Creating restaurants type users that are able to login and manage deals
-- Enabling chat notifications to user
-- Enabling user to view other user profiles
-
-## Authors
-
-* **[Dominic Phua](https://github.com/DominikPhua)** _- responsible for keeping vests white_
-* **[Ernest Tan](https://github.com/evilernie1985)** _- responsible for keeping tests right_
-* **[Ng Yang Theng](https://github.com/yangtheng)** _- responsible for keeping crests bright_
-* **[Shaun Loh](https://github.com/shaunloh89)** _- responsible for keeping jests light_
-
-## Acknowledgments
-
-<<<<<<< HEAD
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+##### Nested Shallow Routing
+```
+resources :restaurants, shallow: true do
+  resources :deals do
+    resources :groups
+  end
+end
+```
 
 ## Google Maps
 
 One of the major selling points of our application compared to other restaurant promotion apps is the use of Google Maps. Being able to locate deals in your vicinity lets you dine cheaply on a busy schedule and you can easily meet up with the rest of the group as well! No more wandering around aimlessly trying to find affordable and delicious food. The nearest 1 for 1 deal could be less than 5 minutes away and there may be someone already waiting to claim the deal with you.
 
 On the restaurants page, there is a map with many red markers on it. Each marker represents a place with food and tempting deals, be it a restaurant, cafe or even a supermarket. One click on the marker will show you the deal(s) available available at that place:
-
-<img src="../../Pictures/restaurantsmap.png">
+![](/readme_images/restaurantsmap.png)
 
 You can also search for a restaurant by name if you want to find deal(s) by a specific restaurant:
-
-<img src="../../Pictures/search.png">
+![](/readme_images/search.png)
 
 To use Google Maps in our rails project, we included a javascript include tag within the `<head>` tag in application.html.erb:
 
-``
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}&&libraries=places"  %>
-``
+```<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}&&libraries=places"  %>```
 
 Create a div with `id="map"` in the view, and call the following function in the front end javascript:
 
-```
-var map = new google.maps.Map(document.getElementById('map'), {
+``var map = new google.maps.Map(document.getElementById('map'), {
   center: {
     lat: 1.352083,
     lng: 103.819836 #lat & lng can be customised based on where you want the map to center at
   },
   zoom: 11
-})
-```
+})``
 
 The following function provided by Google Maps creates markers at a specific location on the map based on latitude and longitude:
 
-```
-new google.maps.Marker({
+``new google.maps.Marker({
   position: {
     lat: latitude,
     lng: longitude
   },
   map: map
-})
-```
+})``
 
 We plan to incorporate more Google Map features into our app in the near future, starting with Geolocation and infoWindows.
 
@@ -139,11 +120,11 @@ We plan to incorporate more Google Map features into our app in the near future,
 
 Action Cables allow the client to have a persistent connection to the server and communicate with the server and vice versa without reloading the page. This allows us to make real time applications, such as the group chat feature within each group:
 
-<img src="../../Pictures/chat.png">
+![](/readme_images/chat.png)
 
 A well illustrated flow chat on how Action Cables work ( from [http://www.thegreatcodeadventure.com/rails-5-action-cable-with-multiple-chatroom-subscriptions/]() ):
 
-<img src="../../Pictures/actioncable.png">
+![](/readme_images/actioncable.png)
 
 Using our chat feature as an example, the user is subscribed to the message channel upon connecting to the chatroom. The front end javascript is constantly listening for an event (submitting a message) and sends this message, with other information such as the chatroom id and the user who sent the message, to the message channel.
 The message channel creates a message and saves it in the database, then broadcasts this message to all users currently subscribed to the channel. This message is then rendered/appended into the view (chatbox) of the users.
@@ -187,11 +168,28 @@ Initially there were problems connecting to the message channel without refreshi
 
 While there were at least a few guides on using Action Cables. It was difficult to find a guide on using Action Cables with Heroku that is easy for a beginner to understand. I was not aware that using `redis` on Heroku requires an addon and some configuration to be done. This also made me more aware that there are differences between running on development environment vs production environment. Thanks to some intense googling I was able to deploy it.
 
-Heroku Addon used: [Redis to go](https://elements.heroku.com/addons/redistogo)
-=======
+##### Heroku Addon used: [Heroku-redis](https://elements.heroku.com/addons/heroku-redis)
+
+### Other Bugs
+
+- Restaurants Main Map intermittent load issues. Entire map doesn’t load on first trip to page. Restaurant beacons failed to load on at least one subsequent attempt.
+- Empty groups are not automatically deleted
+- Clicking the ‘submit’ button repeatedly on the Create Group page results in multiple groups being created.
+- Group create allows dates very far into the future, and also at times when the restaurant will probably not be open. Should probably set a limit.
+- Website styling is not completely responsive to different browser sizes. Buttons sometimes stack when browser size is reduced. Also doesn’t display properly with mobile devices.
+
+## Authors
+
+* **[Dominic Phua](https://github.com/DominikPhua)** _- responsible for keeping vests white_
+* **[Ernest Tan](https://github.com/evilernie1985)** _- responsible for keeping tests right_
+* **[Ng Yang Theng](https://github.com/yangtheng)** _- responsible for keeping crests bright_
+* **[Shaun Loh](https://github.com/shaunloh89)** _- responsible for keeping jests light_
+
+## Acknowledgments
+
 ###### Our wonderful GA instructional team:
 - Prima Aulia Gusta
 - Shimei Wong
 
-###### and the amazingly talented Class of WDI 11 :heart: :tada:
->>>>>>> upstream/master
+
+###### and the amazingly talented **Class of WDI 11** :heart: :tada:
