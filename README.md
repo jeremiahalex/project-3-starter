@@ -1,66 +1,94 @@
-# Your Project Name
+# ![](/readme_images/logo.png) Stranger Deals
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+_**Find, join, and dine**_
 
-## Getting Started
-
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
-
-### Prerequisites
-
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
-
-### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
-
-
-```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
-
-## Tests
-
-Did you write automated tests? If so, how do we run them.
-
-
-```
-Code example
-```
+> **_Stranger Deals_** _is an app designed for individuals and friends, for finding and locating your favorite restaurant deals nearby while placed in perfect group sizes with friends or completely anonymous strangers for an extraordinary dining experience._
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+Click for an app demo:
+[https://stranger-deals.herokuapp.com](https://stranger-deals.herokuapp.com)
+
+## Objectives
+- To develop a platform for helping users capitalize on group dining offers
+- Simple user interface for finding restaurants and manipulating groups
+- Enable users to simply create groups at their desired date and time
+- Google maps feature for locating restaurants easily
+- Chat interface for assisting users to make arrangements
+
+## Getting Started
+
+### Prerequisites
+
+This project is built with [Ruby on Rails](http://rubyonrails.org/) and [PostgreSQL](https://www.postgresql.org/) with a Model-View-Controller (MVC) architecture. Follow the official documentation for the download and install.
+
+### How to Use
+
+Fork and clone this repository into your own directory. Install the Gem files used in this project by entering the following code in your terminal:
+
+```bundle install```
+
+Run the following code in your terminal to reset the database and populate it with seed data:
+
+```rails db:reset```
+
+
+### Deployment
+
+#### Hosting
+This project was deployed with [Heroku](https://www.heroku.com), create an account and follow the instructions for your own deployment.
+
+In Heroku, you will need to connect a Redis add-on in order to utilize **ActionCable**. Add your Redis url to _production_ in:
+
+```/config/cable.yml```
 
 ## Built With
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+* Ruby on Rails
+* PostgreSQL
+* jQuery
+* Embedded Ruby
+* Devise
+* Pry
+* Materialize
+* HTTParty
+* Turbolinks
+* Redis
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
+## Application Overview
+![](/readme_images/the_app.png)
 
-## Workflow
 
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+##### Process Flow
+![](/readme_images/process_flow.png)
+
+##### ERD
+![](/readme_images/erd.png)
+
+##### Initial Wireframes
+[Link to wireframes](https://xd.adobe.com/view/8c83ed3b-e399-454f-bc3c-95cb16ffd2f0/)
+![](/readme_images/wireframes.png)
+
+## Google Maps API
+
+
+## ActionCable
+
+## Further Development
+- Creating restaurants type users that are able to login and manage deals
+- Enabling chat notifications to user
+- Enabling user to view other user profiles
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
-
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
+* **[Dominic Phua](https://github.com/DominikPhua)** _- responsible for keeping vests white_
+* **[Ernest Tan](https://github.com/evilernie1985)** _- responsible for keeping tests right_
+* **[Ng Yang Theng](https://github.com/yangtheng)** _- responsible for keeping crests bright_
+* **[Shaun Loh](https://github.com/shaunloh89)** _- responsible for keeping jests light_
 
 ## Acknowledgments
 
+<<<<<<< HEAD
 * Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
 
 ## Google Maps
@@ -160,3 +188,10 @@ Initially there were problems connecting to the message channel without refreshi
 While there were at least a few guides on using Action Cables. It was difficult to find a guide on using Action Cables with Heroku that is easy for a beginner to understand. I was not aware that using `redis` on Heroku requires an addon and some configuration to be done. This also made me more aware that there are differences between running on development environment vs production environment. Thanks to some intense googling I was able to deploy it.
 
 Heroku Addon used: [Redis to go](https://elements.heroku.com/addons/redistogo)
+=======
+###### Our wonderful GA instructional team:
+- Prima Aulia Gusta
+- Shimei Wong
+
+###### and the amazingly talented Class of WDI 11 :heart: :tada:
+>>>>>>> upstream/master
