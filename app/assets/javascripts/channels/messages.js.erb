@@ -4,6 +4,9 @@ $(document).on('turbolinks:load', function() {
     var byUser = false
     var justConnected = true
     App.messages = App.cable.subscriptions.create({channel: 'MessagesChannel', room: chatroomId }, {
+      connected: function () {
+        $("#messages").append($('<p>').text('Welcome to the chatroom!'))
+      },
       received: function(data) {
         $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
         var audio = new Audio('../sounds/notification.mp3')
