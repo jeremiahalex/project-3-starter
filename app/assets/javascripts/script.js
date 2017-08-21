@@ -65,12 +65,6 @@ $(document).on('turbolinks:load', function() {
       markers.forEach(function(marker) {
         marker.setMap(null)
       })
-      data.restaurants.forEach(function (rest) {
-        console.log(rest)
-      })
-      data.deals.forEach(function (deals) {
-        console.log(deals)
-      })
       for (var i = 0; i < data.restaurants.length; i++) {
         data.restaurants[i].deals = data.deals[i]
         placeMarker({
