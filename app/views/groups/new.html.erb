@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+
+      <div class="section flow-text">
+        <h5><strong><%= @current_restaurant.name %> deal for <%= @current_deal.pax %></strong></h1>
+        <h6><strong><%= @current_deal.name %></strong></h6>
+      </div>
+      <div class="divider"></div>
+      <div class="section flow-text">
+        <h6>You're all set, just select a date and time for the meetup!</h6>
+      </div>
+
+      <%= form_for @new_group, url: deal_groups_path do |f| %>
+
+        <div class="field">
+          <label class="label"><%= label_tag :date %></label>
+          <div class="control">
+            <%= date_field_tag :date, nil, :required => true, :class => 'input' %>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label"><%= label_tag :time %></label>
+          <div class="control">
+            <%= time_field_tag :time, nil, :required => true, :class => 'input' %>
+          </div>
+        </div>
+
+        <% if flash[:date_error] %>
+          <div class="notice"><%= flash[:date_error] %></div>
+        <% end %>
+
+        <br>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="waves-effect waves-light btn red">Submit</button>
+            <button class="waves-effect waves-light btn red" name="button">
+              <%= link_to "Cancel", deal_path(params[:deal_id]) %>
+            </button>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+    <div class="col s2">
+
+    </div>
+
+    <div class="col s5">
+      <div class="section">
+        <img class="responsive-img" src="<%= @current_deal.img %>">
+      </div>
+    </div>
+
+  </div>
+
+</div>

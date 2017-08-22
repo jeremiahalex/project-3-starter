@@ -1,0 +1,41 @@
+$(document).on('turbolinks:load', function() {
+  $(".groups.show").ready(function () {
+    var chatroomId = $("[data-chatroom]").data().chatroom
+    var byUser = false
+    var justConnected = true
+    App.messages = App.cable.subscriptions.create({channel: 'MessagesChannel', room: chatroomId }, {
+      connected: function () {
+        $("#messages").append($('<p>').text('Welcome to the chatroom!'))
+      },
+      received: function(data) {
+        if ($("[data-chatroom='" + data.chatroom_id + "']").length != 0) {
+          $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
+          var audio = new Audio('../sounds/notification.mp3')
+          if (!byUser && !justConnected) audio.play()
+          else byUser = false
+          if (justConnected) justConnected = false
+          scrollBottom()
+        }
+      }
+    })
+    submitNewMessage()
+    scrollBottom()
+
+    function submitNewMessage(){
+      $('textarea#message_content').keydown(function(event) {
+        if (event.keyCode === 13) {
+          var msg = event.target.value
+          if (msg.replace(/\s/g, '').length < 1) return false
+          App.messages.send({message: msg, chatroom_id: chatroomId})
+          $('[data-textarea="message"]').val(" ")
+          byUser = true
+          return false
+        }
+      })
+    }
+
+    function scrollBottom(){
+      $('#messageBox').scrollTop($('#messages')[0].scrollHeight)
+    }
+  })
+})

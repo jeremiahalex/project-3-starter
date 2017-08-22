@@ -1,0 +1,13 @@
+<%= form_tag(restaurants_path, method: "get", :id => "searchForm") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search, params[:search], placeholder:"Restaurant" ) %>
+<% end %>
+
+<br>
+
+<div class="mapContainer">
+    <div id="map" class="mapWide">
+    </div>
+    <div id="sidemenu" class="hidden">
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project3</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDPPIJi451Gb2Ee2ehiwOiar1HtiE10UGg&&libraries=places"  %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+
+    <ul id="dropdown1" class="dropdown-content">
+      <li>
+        <%= link_to 'Edit Profile', edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "My Groups", profile_path %>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+
+    <nav>
+
+      <div class="nav-wrapper">
+        <ul class="left hide-on-med-and-down">
+          <li>
+            <%= link_to (image_tag("http://i.imgur.com/rg5ClP2.png", :class => 'logo')), root_path %>
+          </li>
+        </ul>
+          <% if user_signed_in? %>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <%= link_to 'Home', root_path %>
+              </li>
+              <li>
+                <%= link_to 'Restaurants', restaurants_main_path %>
+              </li>
+              <li>
+                <%= link_to 'About', about_path %>
+              </li>
+              <li>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><b><%= current_user.name %></b><i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="right hide-on-mend-and-down">
+              <li>
+                <%= link_to 'About', about_path %>
+              </li>
+              <li>
+                <%= link_to "Login", new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+            </ul>
+          <% end %>
+      </div>
+
+    </nav>
+
+    <%= yield %>
+
+  </body>
+
+</html>

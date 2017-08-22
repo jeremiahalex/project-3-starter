@@ -1,0 +1,106 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #616161;
+  }
+
+.mapContainer{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 90%;
+  margin: 0;
+  padding: 0;
+}
+.mapWide {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+}
+.mapNarrowed {
+  width: 69%;
+  height: 100%;
+  display: inline-block;
+  transition: 0.2s;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: inline-block;
+}
+#sidemenu {
+  height: 100%;
+  width: 30%;
+  vertical-align: top;
+  position: relative;
+}
+#collapseSide {
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  width: 5%;
+  height: 5%;
+}
+
+#dealsViewGroup {
+  float: right;
+}
+
+#dealDescription {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.nav-wrapper {
+  @extend .white;
+  @extend .grey-text, .text-darken-3;
+}
+
+nav ul li a{
+  color: #616161;
+}
+
+.deals {
+  margin-left: 11px;
+}
+#messageBox {
+  // border: 1px solid black;
+  width: 100%;
+  margin: 0 auto;
+  height: 412px;
+  overflow-y: auto;
+  word-break: break-all;
+}
+#chatForm {
+  width: 100%;
+  margin: 0 auto;
+}
+#chatUserList {
+  text-align: center;
+}
+
+.login {
+  margin-top: 150px;
+}
+
+#message_content {
+  width: 100%;
+  height: 100px;
+}
+
+.logo {
+  margin-top: 16px;
+  margin-left: 10px;
+  max-height: 30px;
+  max-width: 100px;
+}
