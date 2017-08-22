@@ -8,12 +8,14 @@ $(document).on('turbolinks:load', function() {
         $("#messages").append($('<p>').text('Welcome to the chatroom!'))
       },
       received: function(data) {
-        $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
-        var audio = new Audio('../sounds/notification.mp3')
-        if (!byUser && !justConnected) audio.play()
-        else byUser = false
-        if (justConnected) justConnected = false
-        scrollBottom()
+        if ($("[data-chatroom='" + data.chatroom_id + "']").length != 0) {
+          $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
+          var audio = new Audio('../sounds/notification.mp3')
+          if (!byUser && !justConnected) audio.play()
+          else byUser = false
+          if (justConnected) justConnected = false
+          scrollBottom()
+        }
       }
     })
     submitNewMessage()
