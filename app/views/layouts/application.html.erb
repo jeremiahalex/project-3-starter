@@ -12,9 +12,9 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <!-- <a href="#" class="brand-logo right">Logo</a> -->
           <%= image_tag "logo.png", :class => "brand-logo right" %>
           <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -46,9 +46,31 @@
           <!-- false -->
           <% end %>
         </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><%= link_to "Home", root_path %></li>
+          <% if current_user %>
+            <li>
+              <%= link_to "Create New Event", new_event_path %>
+            </li>
+            <li>
+              <%= link_to "View All Events", events_path%>
+            </li>
+            <li>
+              <%= link_to "Edit user details", edit_user_registration_path %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </li>
+        <!-- true -->
+      <% else %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Register", new_user_registration_path %></li>
+        <!-- false -->
+        <% end %>
+        </ul>
       </div>
     </nav>
-  </div>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

@@ -1,8 +1,11 @@
 $(document).on('turbolinks:load', function () {
+
   $('.dropdown-button').dropdown({
-    hover: true,
+    hover: false,
     belowOrigin: true
   })
+
+  $(".button-collapse").sideNav();
 
   $('.static.home').ready(function () {
     $('.parallax').parallax()
@@ -31,7 +34,6 @@ $(document).on('turbolinks:load', function () {
   })
 
   $('.events.show').ready(function () {
-
     var $eventBudget = parseFloat($('#eventBudget').text())
 
     var $itemName = $('.itemName')
