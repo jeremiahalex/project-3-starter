@@ -1,0 +1,97 @@
+@import "materialize/components/color";
+
+.nav-wrapper {
+  background-color: rgb(87,103,255) !important;
+}
+.btn {
+  background-color: rgb(87,103,255) !important;
+}
+.btn:hover{
+  background-color: rgb(59,70,173) !important;
+}
+.card {
+  padding-top: 40px;
+}
+.waves-effect {
+  margin-bottom: 50px;
+}
+
+.showevent {
+  width: 90%;
+  margin: 0 auto;
+}
+.eventleft, .eventright{
+  width: 45%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.budget{
+  text-align: center;
+}
+.addingside{
+  margin-left: 30px
+}
+.dropdown-button {
+  width: 150px;
+}
+
+.queryside{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15%;
+}
+
+.searchtitle{
+  padding-top: 10%;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10%;
+}
+
+.searching{
+  width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.page-footer {
+  background-color: rgb(87,103,255) !important;
+}
+
+.footer-copyright {
+  background-color: rgb(59,70,173) !important;
+}
+
+.eventinfo {
+  text-decoration: underline;
+}
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+.wordsPic {
+   position: absolute;
+   top: 200px;
+   text-align: center;
+   width: 100%;
+   background-color: rgba(0,0,0,0.6);
+  //  vertical-align: middle;
+}
+.word{
+  font-size: 30px;
+  color: white;
+  letter-spacing: 5px;
+}
+.fixed-action-btn {
+  top: 200px;
+}
+#nav-mobile{
+  z-index: 9999999;
+}
+
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "font-awesome-sprockets";
+@import "font-awesome";

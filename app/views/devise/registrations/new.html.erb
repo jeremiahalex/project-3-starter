@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h3>Sign up</h3>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <h5><%= devise_error_messages! %></h5>
+
+  <div class="row">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <%= f.label :name %><br/>
+        <%= f.text_field :name, autofocus: true, :required => true %>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mail_outline</i>
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, :required => true %>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">vpn_key</i>
+        <%= f.label "password (minimum #{@minimum_password_length} characters)" %>
+        <% if @minimum_password_length %>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "off", :required => true %>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">vpn_key</i>
+        <%= f.label :password_confirmation %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "off", :required => true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn waves-effect waves-light" type="submit" name="action">
+    <%= f.submit "Sign up" %>
+  </div>
+
+  <% end %>
+
+  <!-- <%= render "devise/shared/links" %> -->
+
+</div>

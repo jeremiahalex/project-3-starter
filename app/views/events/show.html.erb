@@ -1,0 +1,54 @@
+<div class="container">
+  <h3><span class='eventinfo'><%= @current_event.name %></h3></span>
+  <h5>WHERE?
+    <span class='eventinfo'><%= @current_event.location %></h5></span>
+  <h5>WHICH DAY?
+    <span class='eventinfo'><%= @current_event.date %></h5></span>
+  <h5>WHAT TIME?
+    <span class='eventinfo'><%= @current_event.time.to_s.split(" ")[1] %></h5></span>
+  <h5>BUDGET? <span class='eventinfo'>$
+    <span id='eventBudget'><%= @current_event.budget %></span></h5></span>
+    <%= link_to edit_event_path, class: "waves-effect waves-light btn" do %>
+      <i class="material-icons right">mode_edit</i> Edit Details
+    <% end %>
+
+  <div class="showevent">
+    <div class="eventleft">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h4>Items for this event:</h4>
+        </li>
+        <% @current_event.items.each do |item| %>
+        <li class="collection-item avatar">
+          <img src="<%= item.imageUrl %>" alt="" class="circle">
+          <span class="title">Name:
+            <span class='itemName'><%= item.name %></span>
+          </span>
+          <p>Price: $
+            <span class='itemPrice'><%= item.price %></span>
+            <br>
+
+
+            <a href="<%= item.product_details_url %>" target="_blank">More Info</a></br>
+
+          </p>
+            <%= link_to items_delete_path(item, addparam: params[:id]),
+            method: :delete, class: "btn waves-effect waves-light" do %>
+              <i class="material-icons right">delete</i>Delete Item
+            <% end %>
+        </li>
+        <% end %>
+      </ul>
+      <%= link_to "/items?event=#{params[:id]}", class: "waves-effect waves-light btn" do %>
+        <i class="material-icons right">add_shopping_cart</i> Add New Item
+      <% end %>
+
+    </div>
+    <div class="eventright">
+      <div id="chart_show"></div>
+      <h4 class='budget'>Budget Remaining: </br>$
+        <span class= 'eventinfo' id="budgetLeft"></span>
+      </h4>
+    </div>
+  </div>
+</div>

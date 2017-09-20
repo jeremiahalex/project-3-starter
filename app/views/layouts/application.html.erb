@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kreeay8</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+
+
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <!-- <a href="#" class="brand-logo right">Logo</a> -->
+          <%= image_tag "logo.png", :class => "brand-logo right" %>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+            <ul id="dropdown1" class="dropdown-content">
+              <li>
+                <%= link_to "Create New Event", new_event_path %>
+              </li>
+              <li>
+                <%= link_to "View All Events", events_path%>
+              </li>
+              <li>
+                <%= link_to "Edit user details", edit_user_registration_path %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1"><%= current_user.name %><i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <!-- true -->
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <!-- false -->
+          <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><%= link_to "Home", root_path %></li>
+          <% if current_user %>
+            <li>
+              <%= link_to "Create New Event", new_event_path %>
+            </li>
+            <li>
+              <%= link_to "View All Events", events_path%>
+            </li>
+            <li>
+              <%= link_to "Edit user details", edit_user_registration_path %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </li>
+        <!-- true -->
+      <% else %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Register", new_user_registration_path %></li>
+        <!-- false -->
+        <% end %>
+        </ul>
+      </div>
+    </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <p class="grey-text text-lighten-4">
+            Email: TeamPuma@ga.com</br>
+          Address: 8 Claymore Hill Singapore
+        </p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Team Members</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-lighten-3" href="https://github.com/michelleylai" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Michelle Lai</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="https://github.com/thecodingdog" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Ng Wan Zhen</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="https://github.com/nicoalee" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Nicholas Lee</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="https://github.com/bleetdh" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Lee Brian</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Copyright Team Puma
+    </div>
+  </div>
+</footer>
+
+<script>
+  var APP_ID = "gc2ovp9m";
+
+ window.intercomSettings = {
+    app_id: APP_ID
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/APP_ID';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+
+</body>
+</html>
