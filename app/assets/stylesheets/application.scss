@@ -1,0 +1,162 @@
+@import "https://fonts.googleapis.com/css?family=Cabin|Proza+Libre";
+@import "materialize/components/color";
+
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+// change navbar color
+.nav-wrapper {
+  background-color: #46BFD2 !important;
+}
+
+// keep navbar logo size consistent
+.logo-img img{
+    max-height: 35px!important;
+    margin-top: 15px;
+    margin-bottom: -9px;
+}
+
+// change footer color
+.page-footer {
+  background-color: #308693 !important;
+}
+
+// change container default from 70% to 80%
+.container {
+  margin: 0 auto !important;
+  max-width: 1280px !important;
+  width: 80% !important;
+  font-family: 'Proza Libre', sans-serif;
+}
+
+// align icons and text next to each other in the footer
+.foot ul {
+  margin-left: -15px;
+}
+.foot ul li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+}
+.foot ul li i {
+  margin-right: 10px;
+}
+.foot ul li p {
+  margin: 0;
+}
+
+// change card color on hover
+.card:hover {
+  background-color: #ECF1F3
+}
+
+// adjust contents inside card
+.card-image, .card-content, .card-action {
+  padding: 10px !important;
+}
+
+.card-content h5{
+  text-align: center
+}
+
+.card-content p {
+  text-align: center;
+  font-size: 15px
+}
+
+.card-action p {
+  text-align: center;
+  margin: 10px !important;
+  font-size: 15px
+}
+
+// Make the whole card into a clickable link
+.card {
+  position:relative
+}
+
+.div-link {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+// Put Req/Rew left and SeeAll right
+.mainLeft {
+  display: inline-block;
+  color: white;
+  font-size: 28px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #308693
+}
+
+.mainRight {
+  display: inline-block;
+  font-size: 20px;
+  padding: 7px;
+  color: #308693;
+}
+
+.formtemplate {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 100px;
+}
+
+.formbttn {
+  margin-bottom: 40px;
+}
+
+// changed color of the My Requests and My Rewards tabs
+.tabs .tab a{
+    color:#308693 !important;
+}
+.tabs .tab a:hover,.tabs .tab a.active {
+	background-color:transparent !important;
+	color:#308693 !important;
+}
+.tabs .tab.disabled a,.tabs .tab.disabled a:hover {
+	color:rgba(102,147,153,0.7) !important;
+}
+.tabs .indicator {
+	background-color:#308693 !important;
+}
+
+// flash alert colors
+#flash_resource, .alert-danger, .alert-error {
+  width: 400px;
+  // border: 2px solid red;
+  padding: 7px;
+  color: rgb(200, 70, 70);
+}
+
+p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+}
+
+.alert-success {
+  color: #219091;
+  text-align: right;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+#ourteam li {
+  padding-bottom: 8px;
+}
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize";

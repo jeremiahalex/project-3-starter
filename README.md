@@ -1,65 +1,60 @@
-# Your Project Name
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #3: **[Gift Loop](https://giftloop.herokuapp.com/)**
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
-
-## Getting Started
-
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
-
-### Prerequisites
-
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
-
-### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
+![Website](http://imgur.com/ttLRttv.png)
 
 
-```
-Code example
-```
+## Description
 
-More steps...
+We want Singapore to be a society where people volunteer for social causes and help one another out in times of need. Instead of money, we decide to use a digital currency called time credits. Organisations start out with 1,000 time credits and can create requests to get volunteers for social causes, but will also have to give back by offering rewards like art classes. Individuals start out with 0 credit and will build up their credits by first volunteering for organisational events or helping other individuals out.
 
-```
-until finished
-```
+* Users can see their profile page, fulfill requests and redeem rewards
 
+![Profile Page](http://imgur.com/frrlaEE.png)
 
-## Tests
+* Event requesters can see the attendance list and send sms reminders to attendees
 
-Did you write automated tests? If so, how do we run them.
+![Attendance](http://imgur.com/0u1igmj.png)
 
 
-```
-Code example
-```
+## ERD
 
-## Live Version
+<img src="app/assets/images/ERD.jpg">
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
 
-## Built With
+## Wireframes
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+<img src="app/assets/images/1.png" height="400">
+<img src="app/assets/images/2.png" height="400">
+<img src="app/assets/images/3.png" height="400">
+<img src="app/assets/images/4.png" height="400">
+<img src="app/assets/images/5.png" height="400">
+<img src="app/assets/images/6.png" height="400">
+<img src="app/assets/images/7.png" height="400">
+<img src="app/assets/images/8.png" height="400">
+<img src="app/assets/images/9.png" height="400">
+<img src="app/assets/images/10.png" height="400">
+<img src="app/assets/images/11.png" height="400">
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
-
-## Workflow
-
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
+* **Nawas** - *Team Leader* - [king-of-flab](https://github.com/king-of-flab)
+* **Daniel** - *Git Master* - [ddanielnp](https://github.com/ddanielnp)
+* **Jocelyn** - [dreamz89](https://github.com/dreamz89)
+* **Shumin** - [shumin13](https://github.com/shumin13)
 
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+* Icons in the main page from [Icons8](http://www.icons8.com)
+* Curly Loop by Prosymbols from [The Noun Project](https://thenounproject.com)
+* Arrow by Ersin from [The Noun Project](https://thenounproject.com)
+* Blue watercolor background [Designed by Freepik](http://www.freepik.com/free-vector/soft-background-with-a-cute-blue-watercolor-stain_1064674.htm)
 
+
+## Built With
+* [Ruby on Rails](http://rubyonrails.org/)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Twilio API](http://www.twilio.com)
+* [Cloudinary API](http://www.cloudinary.com) with help from Cloudinary support staff Yakir Perlin
+* [Materialize CSS Framework](http://materializecss.com/)

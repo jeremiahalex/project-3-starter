@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="section">
+
+      <div class="col s10 offset-s1 formtemplate">
+        <br>
+        <h4 class="center">Create Request</h4>
+
+        <div class="row" align="center">
+          <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %>
+          </div>
+          <% end %>
+        </div>
+
+        <div class="center">
+          <div class="input-field inline">
+            <img onclick="openUploadRequestsWidget()" src="http://res.cloudinary.com/ddanielnp/image/upload/c_scale,w_300/v1502804208/giftloop/ntbdvahkbycuxlecogcr.png" class="event_image">
+            <p>Click on image above to upload or change</p>
+          </div>
+        </div>
+
+        <%= form_for @new_request do |f| %>
+
+        <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">event</i>
+          <%= f.text_field :name, required: true, autofocus: true %>
+          <%= f.label :name %>
+        </div>
+
+        <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">date_range</i>
+          <%= f.text_field :date, required: true, class: 'datepicker' %>
+          <%= f.label :date %>
+        </div>
+
+        <div class="col s8 offset-s2">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">access_time</i>
+              <%= f.text_field :start_time, required: true, class: 'timepicker' %>
+              <%= f.label :start_time, "Start Time" %>
+            </div>
+
+            <div class="input-field col s6">
+              <%= f.text_field :end_time, required: true, class: 'timepicker' %>
+              <%= f.label :end_time, "End Time" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s8 offset-s2">
+          <div class="row">
+            <div class="input-field col s8">
+              <i class="material-icons prefix">location_on</i>
+              <%= f.text_field :address, required: true %>
+              <%= f.label :address %>
+            </div>
+
+            <div class="input-field col s4">
+              <%= f.text_field :area, required: true, class: "autocomplete" %>
+              <%= f.label :area %>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">people</i>
+          <%= f.number_field :opening, required: true %>
+          <%= f.label :opening, "No. of Openings" %>
+        </div>
+
+        <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">timer</i>
+          <%= f.number_field :unit_time_credit, in: 1..50, required: true %>
+          <%= f.label :unit_time_credit, "Time Credit Per Pax" %>
+        </div>
+
+        <div class="input-field col s8 offset-s2">
+          <i class="material-icons prefix">description</i>
+          <%= f.text_area :description, required: true, class: 'materialize-textarea' %>
+          <%= f.label :description %>
+        </div>
+
+        <%= f.hidden_field :image %>
+
+        <div class="input-field col s8 offset-s2">
+          <%= f.submit "Create", class: 'btn waves-effect waves-light right formbttn' %>
+        </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
