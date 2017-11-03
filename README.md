@@ -1,24 +1,7 @@
+<<<<<<< HEAD
 # PROJECT 3 (Hidayah & Chong Qiang & Hui Shi)
+=======
+# PROJECT 3
+>>>>>>> d188f3249c912f72a4cdb87071e05abcdf4a638b
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## PeerTutor Project
