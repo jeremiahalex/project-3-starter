@@ -3,13 +3,4 @@
 
 ## PeerTutor Project
 
-
-## ADD
-Blahblahblahsdaisufniudsfuiewf
-
-
-
-Hello I am jus typing some nonsense!!!!
-
-## test
-testing the pull and no pull
+ THIS IS THE MASTER BRANCH
