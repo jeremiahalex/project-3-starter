@@ -1,4 +1,4 @@
-# PROJECT 3 
+# PROJECT 3 (Nur,Chong,Peh)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
