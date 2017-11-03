@@ -1,4 +1,4 @@
-# PROJECT 3 
+# PROJECT 3 (Hidayah & Chong Qiang & Hui Shi)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
