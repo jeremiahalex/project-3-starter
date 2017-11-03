@@ -10,15 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103094054) do
+ActiveRecord::Schema.define(version: 20171103095027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "children", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.date "birthday"
+    t.string "size"
+    t.bigint "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_children_on_customer_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password"
+    t.string "address"
     t.integer "phone_number"
     t.string "subscription_status"
     t.integer "points"
@@ -26,4 +38,5 @@ ActiveRecord::Schema.define(version: 20171103094054) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "children", "customers"
 end
