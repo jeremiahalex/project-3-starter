@@ -1,3 +1,3 @@
-# PROJECT 3 (Prima & Shumin)
+# PROJECT 3 (Prima & Shumin) TODO: Need new name for the team
 
-Cool shit happeningg
+Cool shit happening. Awesomeness await
