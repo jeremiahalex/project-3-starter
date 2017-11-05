@@ -8,6 +8,7 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
       t.integer :phone_number
       t.string :subscription_status
       t.integer :points
+      t.boolean :admin?
 
       t.timestamps
     end

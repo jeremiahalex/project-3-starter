@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20171103095027) do
     t.integer "phone_number"
     t.string "subscription_status"
     t.integer "points"
+    t.boolean "admin?"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
