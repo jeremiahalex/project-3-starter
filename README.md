@@ -1,4 +1,3 @@
-Project 3 - Siya, Hazel, Mingyi 1 TEST
 ## Project-3 - Siya, Hazel, Mingyi
 
 # README
@@ -26,8 +25,20 @@ Things you may want to cover:
 
 * ...
 
-## Description
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## User Story
+Users
+- Users can register for an account
+- Users can login to account
+- Users can subscribe / unsubscribe
+- Users can add details of children
+- Users can update details of children
+- Users can choose a new set of clothes to receive every month
+- Users have to return old set of clothes every month
+
+Admin
+- Admin can register account with secret code
+- Admin can login to account
+- Admin can view all new monthly requests
 
 ## ERD
 ![Image of flowchart](public/assets/img/erd.png)
