@@ -66,12 +66,6 @@ ActiveRecord::Schema.define(version: 20171105075246) do
     t.string "email"
     t.string "photo"
     t.string "password"
-    t.text "description"
-    t.string "gender"
-    t.text "past_experience"
-    t.string "github"
-    t.text "available_timings"
-    t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
