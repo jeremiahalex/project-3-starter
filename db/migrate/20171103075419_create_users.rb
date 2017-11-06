@@ -3,14 +3,12 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.text :name
       t.string :email
-      t.string :photo
       t.string :password
-      t.text :description
+      t.string :photo
       t.string :gender
+      t.boolean :reg_tutor, default: false
       t.text :past_experience
       t.string :github
-      t.text :available_timings
-      t.float :rating
 
       t.timestamps
     end

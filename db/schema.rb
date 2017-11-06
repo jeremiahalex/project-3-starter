@@ -15,28 +15,6 @@ ActiveRecord::Schema.define(version: 20171105075246) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
-    t.string "name"
-    t.time "time"
-    t.date "date"
-    t.text "venue"
-    t.bigint "tutor_id"
-    t.bigint "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_bookings_on_student_id"
-    t.index ["tutor_id"], name: "index_bookings_on_tutor_id"
-  end
-
-  create_table "interests", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "language_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["language_id"], name: "index_interests_on_language_id"
-    t.index ["user_id"], name: "index_interests_on_user_id"
-  end
-
   create_table "languages", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
@@ -64,16 +42,16 @@ ActiveRecord::Schema.define(version: 20171105075246) do
   create_table "users", force: :cascade do |t|
     t.text "name"
     t.string "email"
-    t.string "photo"
     t.string "password"
+    t.string "photo"
+    t.string "gender"
+    t.boolean "reg_tutor", default: false
+    t.text "past_experience"
+    t.string "github"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bookings", "users", column: "student_id"
-  add_foreign_key "bookings", "users", column: "tutor_id"
-  add_foreign_key "interests", "languages"
-  add_foreign_key "interests", "users"
   add_foreign_key "skills", "languages"
   add_foreign_key "skills", "users"
   add_foreign_key "testimonials", "users", column: "author"
