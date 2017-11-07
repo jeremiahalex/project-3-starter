@@ -1,3 +1,4 @@
+Project 3 - Siya, Hazel, Mingyi 1 TEST
 ## Project-3 - Siya, Hazel, Mingyi
 
 # README
@@ -41,7 +42,7 @@ Admin
 - Admin can view all new monthly requests
 
 ## ERD
-![Image of flowchart](public/assets/img/erd.png)
+![Image of flowchart](public/assets/img/ERD_new.jpg)
 
 ## Use Case
 ![Image of flowchart](public/assets/img/use_case.png)
@@ -51,4 +52,7 @@ Admin
 ## wireframe
 ![Screenshot 1](/public/assets/img/homepage.png)  |  ![Screenshot 2](/public/assets/img/admin_register.png)
 :------------------------------------------------:|:-------------------------------------------------:
-![Screenshot 3](/public/assets/img/profile.png)  |  ![Screenshot 1](/public/assets/img/search.png)
+![Screenshot 3](/public/assets/img/profile.png)  |  ![Screenshot 4](/public/assets/img/search.png)
+
+-------
+## routes list
