@@ -13,3 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require materialize
+
+$( document ).ready(function(){
+  $(".button-collapse").sideNav();
+  $('.carousel').carousel();
+})
