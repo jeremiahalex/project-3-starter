@@ -1,6 +1,8 @@
 class AddDeviseToUsers < ActiveRecord::Migration[5.1]
   def self.up
     create_table :users do |t|
+      # custom field for db
+      t.string :name
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -8,6 +10,18 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
+
+      # custom phone
+      t.integer :phone
+
+      # custom street address
+      t.string :street
+
+      # custom unit no
+      t.string :unit
+
+      # custom postal code
+      t.string :postalcode
 
       ## Rememberable
       t.datetime :remember_created_at
