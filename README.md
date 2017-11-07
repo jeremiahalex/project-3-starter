@@ -53,3 +53,6 @@ Admin
 ![Screenshot 1](/public/assets/img/homepage.png)  |  ![Screenshot 2](/public/assets/img/admin_register.png)
 :------------------------------------------------:|:-------------------------------------------------:
 ![Screenshot 3](/public/assets/img/profile.png)  |  ![Screenshot 4](/public/assets/img/search.png)
+
+-------
+## routes list
