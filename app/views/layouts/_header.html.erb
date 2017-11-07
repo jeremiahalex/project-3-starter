@@ -6,11 +6,11 @@
     <ul class="right hide-on-med-and-down">
       <ul class="right hide-on-med-and-down">
         <% unless user_signed_in? %>
-        <li><a href="/users/sign_in">Login</a></li>
-        <li><a href="/users/sign_up">Register</a></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Register", new_user_registration_path %></li>
         <% else %>
-        <li><a href="/users/edit"><%= current_user.email %></a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="/edit"><%= current_user.email %></a></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete%>Logout</a></li>
         <% end %>
       </ul>
     </ul>
