@@ -42,7 +42,7 @@ Admin
 - Admin can view all new monthly requests
 
 ## ERD
-![Image of flowchart](public/assets/img/erd.png)
+![Image of flowchart](public/assets/img/ERD_new.jpg)
 
 ## Use Case
 ![Image of flowchart](public/assets/img/use_case.png)
