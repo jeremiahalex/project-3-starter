@@ -4,7 +4,7 @@
     <title>Project3</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -17,9 +17,9 @@
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="menu-container">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                              <span class="sr-only">Toggle navigation</span>
-                              <span class="toggle-icon"></span>
-                          </button>
+              <span class="sr-only">Toggle navigation</span>
+              <span class="toggle-icon"></span>
+            </button>
 
             <!-- Logo -->
             <div class="logo">
@@ -34,11 +34,31 @@
           <div class="collapse navbar-collapse nav-collapse">
             <div class="menu-container">
               <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">Find Tutor</a></li>
-                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">Login</a></li>
-                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">Register</a></li>
+                <li class="nav-item">
+                  <a class="nav-item-child nav-item-hover active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item-child nav-item-hover" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item-child nav-item-hover" href="#">Find Tutor</a>
+                </li>
+
+                <% unless user_signed_in? %>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover" href="users/sign_in">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover" href="users/sign_up">Register</a>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover" href="/users/edit"><%= current_user.email %></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover" href="#">Logout</a>
+                  </li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -49,9 +69,8 @@
     </header>
     <!--========== END HEADER ==========-->
     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>
 
-       
     <%= yield %>
 
     <!--========== FOOTER ==========-->
@@ -59,11 +78,13 @@
       <!-- Copyright -->
       <div class="content container">
         <div class="row">
-          <div class="col-xs-6">
-
-          </div>
+          <div class="col-xs-6"></div>
           <div class="col-xs-6 text-right">
-            <p class="margin-b-0"><a class="color-base fweight-700">Peer Programming</a> Design by: <a class="color-base fweight-700">Hui Shi, Hidayah & Chong Qiang</a></p>
+            <p class="margin-b-0">
+              <a class="color-base fweight-700">Peer Programming</a>
+              Design by:
+              <a class="color-base fweight-700">Hui Shi, Hidayah & Chong Qiang</a>
+            </p>
           </div>
         </div>
         <!--// end row -->
