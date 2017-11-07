@@ -9,6 +9,65 @@
   </head>
 
   <body>
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed-top">
+      <!-- Navbar -->
+      <nav class="navbar" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="menu-container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="toggle-icon"></span>
+                          </button>
+
+            <!-- Logo -->
+            <div class="logo">
+              <a class="logo-wrap" href="index.html">
+                <h6>Peer Programming</h6>
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-collapse">
+            <div class="menu-container">
+              <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">Find Tutor</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">Login</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="#">Register</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Navbar Collapse -->
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <!--========== END HEADER ==========-->
     <%= yield %>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer">
+      <!-- Copyright -->
+      <div class="content container">
+        <div class="row">
+          <div class="col-xs-6">
+
+          </div>
+          <div class="col-xs-6 text-right">
+            <p class="margin-b-0"><a class="color-base fweight-700">Peer Programming</a> Design by: <a class="color-base fweight-700">Hui Shi, Hidayah & Chong Qiang</a></p>
+          </div>
+        </div>
+        <!--// end row -->
+      </div>
+      <!-- End Copyright -->
+
+    </footer>
+    <!--========== END FOOTER ==========-->
   </body>
+
 </html>
