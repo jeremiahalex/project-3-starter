@@ -2,9 +2,9 @@ class User < ApplicationRecord
   has_many :skills
   has_many :languages, through: :skills
 
-  has_many :interests
-  has_many :languages, through: :interests
+  has_many :sessions
+  has_many :bookings, through: :sessions
 
-  has_many :bookings, :class_name => 'bookings', :foreign_key => 'tutor_id'
-  has_many :bookings, :class_name => 'bookings', :foreign_key => 'student_id'
+  has_many :testimonials, :class_name => 'testimonials', :foreign_key => 'tutor_id'
+  has_many :testimonials, :class_name => 'testimonials', :foreign_key => 'author_id'
 end
