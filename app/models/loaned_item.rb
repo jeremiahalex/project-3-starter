@@ -1,0 +1,2 @@
+class LoanedItem < ApplicationRecord
+end
