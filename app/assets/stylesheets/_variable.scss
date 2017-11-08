@@ -1,1 +1,28 @@
+$primary-bg: #ffffff;
+$color2: #D6BA73;
+$font-color: #000000;
 
+nav {
+  background-color: $primary-bg;
+  box-shadow: none;
+}
+
+nav ul a{
+  color: $font-color;
+}
+
+.container {
+  width: 85%;
+}
+
+#logo-container {
+  color: $font-color;
+}
+
+.navbar-fixed {
+  height: 40px;
+}
+
+.carousel {
+  height: 640px;
+}

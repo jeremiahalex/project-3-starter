@@ -18,5 +18,6 @@
 
 $( document ).ready(function(){
   $(".button-collapse").sideNav();
-  $('.carousel').carousel();
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+  $('.slider').slider();
 })
