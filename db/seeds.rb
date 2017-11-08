@@ -7,11 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-5.times do
-  new_user = User.new
-  new_user.name = Faker::Hobbit.character
-  new_user.email = Faker::Internet.email
-  new_user.password = 'test123'
+# 5.times do
+#   new_user = User.new
+#   new_user.name = Faker::Hobbit.character
+#   new_user.email = Faker::Internet.email
+#   new_user.password = 'test123'
+#
+#   new_user.save
+# end
 
-  new_user.save
+5.times do |i|
+  new_size = Size.new
+  i += 2
+  new_size.name = "#{i}" +" M"
+  new_size.save
+
 end

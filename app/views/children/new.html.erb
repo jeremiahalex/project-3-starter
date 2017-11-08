@@ -1,0 +1,27 @@
+<div class="container">
+ <div class="row">
+   <h1>New Child Form</h1>
+
+   <%= form_for @new_child do |f| %>
+     <%= f.label("Name:") %>
+     <%= f.text_field :name %>
+     <%= f.label("Gender") %>
+     <%= f.radio_button(:gender, "Male") %>
+     <%= f.label(:gender_male, "Male") %>
+     <%= f.radio_button(:gender, "Female") %>
+     <%= f.label(:gender_female, "Female")  %>
+      <br>
+     <%= f.label("Birthday") %>
+     <%= f.date_field :birthday %>
+
+     <!-- <%= f.label "Gender" %><br />
+     <%= f.select :size, options_for_select([["male", 1], ["female", 2]]), {prompt: 'Select gender'} %> -->
+
+
+
+
+
+     <%= f.submit("Create Child Infor", class: 'btn') %>
+   <% end %>
+ </div>
+</div>
