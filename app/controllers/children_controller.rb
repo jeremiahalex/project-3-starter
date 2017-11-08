@@ -3,7 +3,7 @@ class ChildrenController < ApplicationController
   before_action :authenticate_user!, only: :index
   def create
 
-    current_user.child.create(params.require(:child).permit(:name, :gender, :birthday))
+    current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
     redirect_to root_path
 
 

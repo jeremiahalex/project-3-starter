@@ -16,10 +16,11 @@
 #   new_user.save
 # end
 
-5.times do |i|
+4.times do |i|
   new_size = Size.new
-  i += 2
-  new_size.name = "#{i}" +" M"
-  new_size.save
+  lower_bound = i*3
+  upper_bound = i*3+3
 
+  new_size.name = "#{lower_bound} - #{upper_bound} M"
+  new_size.save
 end

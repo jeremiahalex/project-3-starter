@@ -14,11 +14,9 @@
      <%= f.label("Birthday") %>
      <%= f.date_field :birthday %>
 
-     <!-- <%= f.label "Gender" %><br />
-     <%= f.select :size, options_for_select([["male", 1], ["female", 2]]), {prompt: 'Select gender'} %> -->
-
-
-
+     <%= f.label :size_id %><br />
+     <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}) %>
+  
 
 
      <%= f.submit("Create Child Infor", class: 'btn') %>
