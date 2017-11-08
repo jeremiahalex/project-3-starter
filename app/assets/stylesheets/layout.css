@@ -1,4 +1,21 @@
 @charset "UTF-8";
+html,body{height:100%; width:100%}
+
+.login{
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 300px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: center;
+}
+
+
 .blockquote, .btn-theme, p {
   line-height: 1.4
 }
@@ -70,7 +87,7 @@ a:active, a:focus, a:hover {
   right: -15px;
   width: 9px;
   height: 2px;
-  background: #17bed2;
+  background: #FF6B6B;
   content: " "
 }
 
@@ -563,7 +580,7 @@ h3, h4 {
 .header .nav-item-child {
   font-size: 13px;
   font-weight: 600;
-  color: grey;
+  color: #292F36;
   line-height: 55px;
   padding: 20px;
   transition-duration: .3s;
@@ -581,7 +598,7 @@ h3, h4 {
   left: 0;
   width: 9px;
   height: 2px;
-  background: #17bed2;
+  background: #FF6B6B;
   opacity: 0;
   content: " ";
   transition-duration: .4s;
@@ -660,8 +677,8 @@ h3, h4 {
     float: right
   }
   .page-on-scroll .header .navbar {
-    background: #fff;
-    border-bottom-color: #f0f0f0;
+    background: #ffffff;
+    border-bottom-color: transparent;
     transition-duration: .3s;
     transition-property: all;
     transition-timing-function: cubic-bezier(.7, 1, .7, 1)
@@ -678,7 +695,7 @@ h3, h4 {
     display: inline-block
   }
   .page-on-scroll .header .nav-item-child {
-    color: #515769;
+    color: #292F36;
     transition-duration: .3s;
     transition-property: all;
     transition-timing-function: cubic-bezier(.7, 1, .7, 1)
@@ -961,7 +978,7 @@ h3, h4 {
 }
 
 .color-base {
-  color: #17bed2
+  color: #4ECDC4
 }
 
 .color-white {

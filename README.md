@@ -1,5 +1,5 @@
 
-# PROJECT 3 (Hidayah & Chong Qiang & Hui Shi.)
+# PROJECT 3 (Hidayah & Chong Qiang & Hui Shi)
 
 ## PeerTutor Project
 
@@ -7,8 +7,8 @@
 
 ## Wireframes
 These wireframes are subject to changes.
-![](public/assets/img/wireframe1.png)
-![](public/assets/img/wireframe2.png)
-![](public/assets/img/wireframe3.png)
-![](public/assets/img/wireframe4.png)
-![](public/assets/img/wireframe5.png)
+![](/app/assets/images/wireframe1.png)
+![](/app/assets/images/wireframe2.png)
+![](/app/assets/images/wireframe3.png)
+![](/app/assets/images/wireframe4.png)
+![](/app/assets/images/wireframe5.png)
