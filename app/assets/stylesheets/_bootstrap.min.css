@@ -253,6 +253,7 @@ td, th {
   .table-bordered td, .table-bordered th {
     border: 1px solid #fff!important
   }
+}
 
 @font-face {
   font-family: 'Glyphicons Halflings';
