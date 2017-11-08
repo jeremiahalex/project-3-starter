@@ -21,22 +21,17 @@
 #   new_size = Size.new
 #   lower_bound = i*3
 #   upper_bound = i*3+3
-#
 #   new_size.name = "#{lower_bound} - #{upper_bound} M"
 #   new_size.save
 # end
 #
-# 1.times do |i|
-#   new_size = Size.new
-#   new_size.name = "12-18 M"
-#   new_size.save
-# end
+# new_size = Size.new
+# new_size.name = "12-18 M"
+# new_size.save
 #
-# 1.times do |i|
-#   new_size = Size.new
-#   new_size.name = "18-24 M"
-#   new_size.save
-# end
+# new_size = Size.new
+# new_size.name = "18-24 M"
+# new_size.save
 #
 # 7.times do |i|
 #   new_size = Size.new
@@ -53,3 +48,12 @@
 #   new_style.name = style
 #   new_style.save
 # end
+
+# START SEEDING FOR LOAN STATUS
+# loan_status_values = ["Preparing", "Delivering", "With Customer", "Returned"]
+# loan_status_values.each do |e|
+#   loan_status = LoanStatus.new
+#   loan_status.name = e
+#   loan_status.save
+# end
+# END SEEDING FOR LOAN STATUS
