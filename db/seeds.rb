@@ -45,3 +45,11 @@
 #   new_size.save
 # end
 # END SEEDING FROM HERE FOR SIZE
+
+# START SEEDING FROM HERE FOR STYLE
+# style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
+# style_array.each do |style|
+#   new_style = Style.new
+#   new_style.name = style
+#   new_style.save
+# end
