@@ -41,13 +41,13 @@
 # end
 # END SEEDING FOR SIZE
 
-# START SEEDING FROM HERE FOR STYLE
-style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
-style_array.each do |style|
-  new_style = Style.new
-  new_style.name = style
-  new_style.save
-end
+# START SEEDING FOR STYLE
+# style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
+# style_array.each do |style|
+#   new_style = Style.new
+#   new_style.name = style
+#   new_style.save
+# end
 # END SEEDING FOR STYLE
 
 # START SEEDING FOR LOAN STATUS
@@ -60,10 +60,10 @@ end
 # END SEEDING FOR LOAN STATUS
 
 # START SEEDING FOR STOCK STATUS
-stock_status_array = ["In Stock", "With Customer", "Processing"]
-stock_status_array.each do |stat|
-  new_stock_status = StockStatus.new
-  new_stock_status.name = stat
-  new_stock_status.save
-end
+# stock_status_array = ["In Stock", "With Customer", "Processing"]
+# stock_status_array.each do |stat|
+#   new_stock_status = StockStatus.new
+#   new_stock_status.name = stat
+#   new_stock_status.save
+# end
 # END SEEDING FOR STOCK STATUS
