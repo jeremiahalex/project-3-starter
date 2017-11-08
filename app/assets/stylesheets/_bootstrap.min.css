@@ -235,7 +235,7 @@ td, th {
   h2, h3 {
     page-break-after: avoid
   }
-  .navbar {
+  .navbar
     display: none
   }
   .btn>.caret, .dropup>.btn>.caret {
@@ -251,9 +251,8 @@ td, th {
     background-color: #fff!important
   }
   .table-bordered td, .table-bordered th {
-    border: 1px solid #ddd!important
+    border: 1px solid #fff!important
   }
-}
 
 @font-face {
   font-family: 'Glyphicons Halflings';
