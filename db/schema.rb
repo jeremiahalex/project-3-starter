@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20171108092936) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "styles", force: :cascade do |t|
+  create_table "stock_statuses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "stock_statuses", force: :cascade do |t|
+  create_table "styles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

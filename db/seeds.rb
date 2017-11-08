@@ -16,7 +16,7 @@
 #   new_user.save
 # end
 
-# START SEEDING FROM HERE FOR SIZE
+# START SEEDING FOR SIZE
 # 4.times do |i|
 #   new_size = Size.new
 #   lower_bound = i*3
@@ -39,15 +39,16 @@
 #   new_size.name = "#{start_size} Y"
 #   new_size.save
 # end
-# END SEEDING FROM HERE FOR SIZE
+# END SEEDING FOR SIZE
 
 # START SEEDING FROM HERE FOR STYLE
-# style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
-# style_array.each do |style|
-#   new_style = Style.new
-#   new_style.name = style
-#   new_style.save
-# end
+style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
+style_array.each do |style|
+  new_style = Style.new
+  new_style.name = style
+  new_style.save
+end
+# END SEEDING FOR STYLE
 
 # START SEEDING FOR LOAN STATUS
 # loan_status_values = ["Preparing", "Delivering", "With Customer", "Returned"]
@@ -58,10 +59,11 @@
 # end
 # END SEEDING FOR LOAN STATUS
 
-
+# START SEEDING FOR STOCK STATUS
 stock_status_array = ["In Stock", "With Customer", "Processing"]
 stock_status_array.each do |stat|
   new_stock_status = StockStatus.new
   new_stock_status.name = stat
   new_stock_status.save
 end
+# END SEEDING FOR STOCK STATUS
