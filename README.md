@@ -7,8 +7,8 @@
 
 ## Wireframes
 These wireframes are subject to changes.
-![](public/assets/img/wireframe1.png)
-![](public/assets/img/wireframe2.png)
-![](public/assets/img/wireframe3.png)
-![](public/assets/img/wireframe4.png)
-![](public/assets/img/wireframe5.png)
+![](/assets/images/wireframe1.png)
+![](/assets/images/wireframe2.png)
+![](/assets/images/wireframe3.png)
+![](/assets/images/wireframe4.png)
+![](/assets/images/wireframe5.png)
