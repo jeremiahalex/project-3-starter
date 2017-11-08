@@ -45,3 +45,26 @@
 #   new_size.save
 # end
 # END SEEDING FROM HERE FOR SIZE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+stock_status_array = ["In Stock", "With Customer", "Processing"]
+stock_status_array.each do |stat|
+  new_stock_status = StockStatus.new
+  new_stock_status.name = stat
+  new_stock_status.save
+end

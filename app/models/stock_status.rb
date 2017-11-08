@@ -1,0 +1,2 @@
+class StockStatus < ApplicationRecord
+end
