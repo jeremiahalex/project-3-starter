@@ -1,4 +1,4 @@
-Project 3 - Siya, Hazel, Mingyi 1 TEST
+
 ## Project-3 - Siya, Hazel, Mingyi
 
 # README
@@ -42,17 +42,28 @@ Admin
 - Admin can view all new monthly requests
 
 ## ERD
-![Image of flowchart](public/assets/img/ERD_new.jpg)
+![Image of flowchart](app/assets/readme_img/ERD_nov7.png)
 
 ## Use Case
-![Image of flowchart](public/assets/img/use_case.png)
+![Image of flowchart](app/assets/readme_img/use_case.png)
 
 ---
 
-## wireframe
-![Screenshot 1](/public/assets/img/homepage.png)  |  ![Screenshot 2](/public/assets/img/admin_register.png)
+## Wireframe
+![Screenshot 1](/app/assets/readme_img/homepage.png)  |  ![Screenshot 2](/app/assets/readme_img/admin_register.png)
 :------------------------------------------------:|:-------------------------------------------------:
-![Screenshot 3](/public/assets/img/profile.png)  |  ![Screenshot 4](/public/assets/img/search.png)
+![Screenshot 3](/app/assets/readme_img/profile.png)  |  ![Screenshot 4](/app/assets/readme_img/search.png)
 
 -------
-## routes list
+## Routes List
+
+---------
+## Development Log
+
+6 Nov 2017
+* Readme added with user stories, use case, ERD and wireframe
+
+7 Nov 2017
+* Working home page
+* Devise added: allow for user register, login and logout.
+* Edit ERD diagram
