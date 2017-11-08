@@ -16,11 +16,32 @@
 #   new_user.save
 # end
 
-4.times do |i|
-  new_size = Size.new
-  lower_bound = i*3
-  upper_bound = i*3+3
-
-  new_size.name = "#{lower_bound} - #{upper_bound} M"
-  new_size.save
-end
+# START SEEDING FROM HERE FOR SIZE
+# 4.times do |i|
+#   new_size = Size.new
+#   lower_bound = i*3
+#   upper_bound = i*3+3
+#
+#   new_size.name = "#{lower_bound} - #{upper_bound} M"
+#   new_size.save
+# end
+#
+# 1.times do |i|
+#   new_size = Size.new
+#   new_size.name = "12-18 M"
+#   new_size.save
+# end
+#
+# 1.times do |i|
+#   new_size = Size.new
+#   new_size.name = "18-24 M"
+#   new_size.save
+# end
+#
+# 7.times do |i|
+#   new_size = Size.new
+#   start_size = i+2
+#   new_size.name = "#{start_size} Y"
+#   new_size.save
+# end
+# END SEEDING FROM HERE FOR SIZE
