@@ -7,6 +7,8 @@ end
 
 gem 'bootstrap'
 gem 'devise'
+gem 'jquery-rails'
+gem 'bootstrap_form'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
