@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108092936) do
+ActiveRecord::Schema.define(version: 20171108101325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 20171108092936) do
     t.datetime "updated_at", null: false
     t.index ["size_id"], name: "index_children_on_size_id"
     t.index ["user_id"], name: "index_children_on_user_id"
+  end
+
+  create_table "clothes_sets", force: :cascade do |t|
+    t.string "name"
+    t.bigint "style_id"
+    t.bigint "size_id"
+    t.bigint "stock_status_id"
+    t.string "photo_URL"
+    t.integer "points", default: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["size_id"], name: "index_clothes_sets_on_size_id"
+    t.index ["stock_status_id"], name: "index_clothes_sets_on_stock_status_id"
+    t.index ["style_id"], name: "index_clothes_sets_on_style_id"
   end
 
   create_table "loan_statuses", force: :cascade do |t|
@@ -57,6 +71,9 @@ ActiveRecord::Schema.define(version: 20171108092936) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.boolean "admin", default: false
+    t.integer "points", default: 0
+    t.boolean "subscription_type", default: false
     t.integer "phone"
     t.string "street"
     t.string "unit"
@@ -73,4 +90,7 @@ ActiveRecord::Schema.define(version: 20171108092936) do
 
   add_foreign_key "children", "sizes"
   add_foreign_key "children", "users"
+  add_foreign_key "clothes_sets", "sizes"
+  add_foreign_key "clothes_sets", "stock_statuses"
+  add_foreign_key "clothes_sets", "styles"
 end

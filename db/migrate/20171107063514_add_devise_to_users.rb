@@ -11,6 +11,14 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
+# .MY Admin, points, subscription_type
+      t.boolean :admin, default: false
+
+      t.integer :points, default: 0
+
+      t.boolean :subscription_type, default: false
+
+
       # custom phone
       t.integer :phone
 
