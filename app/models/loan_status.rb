@@ -1,0 +1,2 @@
+class LoanStatus < ApplicationRecord
+end
