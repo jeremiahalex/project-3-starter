@@ -11,6 +11,24 @@
   </div>
 
   <div class="field">
+    <%= f.label :gender, "Gender"%><br />
+    <%= f.label :gender, "Male" %>
+    <%= f.radio_button :gender, value="male"%>
+    <%= f.label :gender, "Female" %>
+    <%= f.radio_button :gender, value="female"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :reg_tutor, "Check to be a tutor" %><br />
+    <%= f.check_box :reg_tutor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo, "Upload your profile pic" %><br />
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email%>
   </div>

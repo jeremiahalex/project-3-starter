@@ -9,6 +9,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'bootstrap_form'
+gem 'cloudinary'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
