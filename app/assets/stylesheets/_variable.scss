@@ -1,6 +1,7 @@
 $primary-bg: #ffffff;
 $color2: #D6BA73;
 $font-color: #000000;
+$footer-color: #bdbdbd;
 
 nav {
   background-color: $primary-bg;
@@ -25,4 +26,8 @@ nav ul a{
 
 .carousel {
   height: 640px;
+}
+
+.page-footer {
+  background: $footer-color;
 }
