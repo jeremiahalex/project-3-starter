@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get  'static_pages/home'
 
   devise_for :users, path: '', path_names: {
-    sign_in: 'login', sign_out: 'logout',
-    sign_up: 'register' }
+    sign_in: 'login',
+    sign_out: 'logout',
+    sign_up: 'register'
+  }
+  
   resources :users, only: [:index]
   get '/users/:name', to: 'users#show'
   get 'profile', to: 'devise/registrations#edit'
