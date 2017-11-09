@@ -42,7 +42,7 @@ Admin
 - Admin can view all new monthly requests
 
 ## ERD
-![Image of flowchart](app/assets/readme_img/ERD_nov7.png)
+![Image of flowchart](app/assets/readme_img/ERD_nov8.png)
 
 ## Use Case
 ![Image of flowchart](app/assets/readme_img/use_case.png)
@@ -55,7 +55,32 @@ Admin
 ![Screenshot 3](/app/assets/readme_img/profile.png)  |  ![Screenshot 4](/app/assets/readme_img/search.png)
 
 -------
-## Routes List
+## Routes List (to be finalise)
+
+```
+/
+/register (for register)
+/login (for login)
+/logout (for logout)
+/edit (for edit of user account)
+```
+
+to be added
+
+```
+/profile (user profile)
+/profile/child (to show child's details if user has add the child's information )
+/profile/child (to replace /children/add (for adding child's information))
+
+/admin/add_collection (adding clothes_set)
+/admin/loaned_item (to view all the loaned_item request that is not settled)
+/admin/loaned_item/:id (put, for update loaded_item)
+/admin/customer (to view all customer acct)
+
+/collection/:id/add_cart (post: allow for customer to add item to cart)
+
+/children/add (for adding children's information)
+```
 
 ---------
 ## Development Log
@@ -66,4 +91,11 @@ Admin
 7 Nov 2017
 * Working home page
 * Devise added: allow for user register, login and logout.
+* Allow for registration with the necessary information recorded in additional of email and password.
 * Edit ERD diagram
+
+8 Nov 2017
+* Add model: child, size, loan_status, style, stock_status, clothes_set, cart_item and loaned_item.
+* Add migrate files for all models
+* Add db seed for loan_status, style, stock_status
+* Add controller for children, user are able to create child's details under their account.
