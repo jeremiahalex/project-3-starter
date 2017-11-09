@@ -3,12 +3,12 @@ class ChildrenController < ApplicationController
   before_action :authenticate_user!, only: :index
 
   def index
-    @new_child = current_user.child
+    @new_childs = current_user.child
   end
 
   def show
-    @new_child = Child.find(params[:id])
-    render json: @new_child
+    @child = Child.find(params[:id])
+    render json: @child
   end
 
   def create
@@ -24,7 +24,16 @@ class ChildrenController < ApplicationController
 
   def edit
     @current_child = current_user.child
-    # render json: @current_child
+  end
+
+  def update
+    @new_child = Child.find(params[:id])
+
+    if @new_child.update(params.require(:child).permit(:name, :gender, :birthday, :size_id))
+      redirect_to'/profile'
+    else
+      render @new_child
+    end
   end
 
 end

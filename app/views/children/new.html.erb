@@ -16,10 +16,10 @@
 
      <%= f.label :size_id %><br />
      <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}) %>
-  
 
 
-     <%= f.submit("Create Child Infor", class: 'btn') %>
+
+     <%= f.submit("Add Child", class: 'btn') %>
    <% end %>
  </div>
 </div>

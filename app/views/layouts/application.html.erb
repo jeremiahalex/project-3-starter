@@ -6,17 +6,17 @@
     <%= stylesheet_link_tag    'application', media: 'all',
                                               'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= render 'layouts/shim' %>
+    <%= render 'partials/shim' %>
   </head>
   <body>
 
 
-    <%= render 'layouts/header' %>
+    <%= render 'partials/header' %>
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
+    <%= render 'partials/footer' %>
   </body>
 </html>

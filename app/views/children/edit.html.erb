@@ -1,1 +1,19 @@
 <h1>Edit <%= @current_child[0].name %></h1>
+
+<%= form_for(@current_child[0]) do |f| %>
+  <%= f.label("Name:") %>
+  <%= f.text_field :name %>
+  <%= f.label("Gender") %>
+  <%= f.radio_button(:gender, "Male") %>
+  <%= f.label(:gender_male, "Male") %>
+  <%= f.radio_button(:gender, "Female") %>
+  <%= f.label(:gender_female, "Female")  %>
+   <br>
+  <%= f.label("Birthday") %>
+  <%= f.date_field :birthday %>
+
+  <%= f.label :size_id %><br />
+  <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}) %>
+
+  <%= f.submit("Update Child", class: 'btn') %>
+<% end %>
