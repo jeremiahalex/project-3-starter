@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get  'static_pages/home'
 
   devise_scope :user do
-  get 'profile', to: 'devise/registrations#edit'
+  get 'profile/edit', to: 'devise/registrations#edit'
   end
 
   devise_for :users, path: '', path_names: {
