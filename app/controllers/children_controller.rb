@@ -22,4 +22,9 @@ class ChildrenController < ApplicationController
     @new_child = Child.new
   end
 
+  def edit
+    @current_child = current_user.child
+    # render json: @current_child
+  end
+
 end
