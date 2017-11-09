@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     sign_in: 'login', sign_out: 'logout',
      sign_up: 'register' }
   resources :users, only: [:index]
-  get '/users/:name', to: 'users#show'
+  # get '/users/:name', to: 'users#show'
 
   resources :children
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

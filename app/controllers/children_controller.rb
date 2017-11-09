@@ -2,12 +2,19 @@ class ChildrenController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_user!, only: :index
 
-  def create
-    current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
-    redirect_to root_path
+  def index
+    @new_child = current_user.child
   end
 
   def show
+    @new_child = Child.find(params[:id])
+
+    render json: @new_child
+  end
+
+  def create
+    current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
+    redirect_to root_path
   end
 
   def new
