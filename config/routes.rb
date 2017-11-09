@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get  'static_pages/home'
 
   devise_scope :user do
-  get 'profile/edit', to: 'devise/registrations#edit'
+    get '/profile', to: 'profile#show'
+    get 'profile/edit', to: 'devise/registrations#edit'
   end
 
   devise_for :users, path: '', path_names: {
@@ -13,11 +14,6 @@ Rails.application.routes.draw do
     sign_out: 'logout',
     sign_up: 'register'
   }
-
-  resources :users, only: [:index]
-  get '/users/:name', to: 'users#show'
-
-
 
   resources :children
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

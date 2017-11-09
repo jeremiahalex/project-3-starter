@@ -1,0 +1,24 @@
+<h1>Profile</h1>
+
+<h4>User Information</h4>
+<p>
+  Username: [Show current user name]<br>
+  Email: [Show current user email]<br>
+  Address: [Show current user address]<br>
+  Phone No: [Show current user phone]<br>
+  Points: [Show current user points]<br>
+  Subscription: [Show current user subsc.]
+</p>
+
+<%= link_to '<button type="button">Edit profile</button>'.html_safe, '/profile/edit' %>
+
+<h4>Children Information</h4>
+
+<p>
+  Name: [Show user child name] <br>
+  Gender: [Show user child gender] <br>
+  Birthday:[Show user child birthday] <br>
+  Clothes size: [Show user child size] <br>
+</p>
+
+<%= link_to '<button type="button">Add children information</button>'.html_safe, '/children/new' %>
