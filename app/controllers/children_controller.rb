@@ -8,7 +8,6 @@ class ChildrenController < ApplicationController
 
   def show
     @new_child = Child.find(params[:id])
-
     render json: @new_child
   end
 

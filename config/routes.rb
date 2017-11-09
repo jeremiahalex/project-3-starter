@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'static_pages#home'
+
   get  'static_pages/home'
 
   devise_for :users, path: '', path_names: {
