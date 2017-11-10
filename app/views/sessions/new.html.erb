@@ -1,9 +1,10 @@
-<h1>New session</h1>
+<br /><br /><h1>New session</h1>
 
   <%= bootstrap_form_for(@new_session) do |f| %>
   <%= f.number_field :price, in: 1..200 ,required: true  %>
   <%= f.number_field :duration, in: 1..24 ,required: true %>
   <%= f.datetime_select :datetime ,required: true %>
+  <%= f.hidden_field :tutor_id, value: current_user.id %>
   <%= f.submit "Create" %>
 
 <% end %>

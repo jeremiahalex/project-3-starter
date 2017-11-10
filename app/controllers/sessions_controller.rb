@@ -15,7 +15,7 @@ before_action :authenticate_user!, only: :index
 
   def create
 
-    @new_session = current_user.sessions.create(params.require(:session).permit(:duration, :price, :datetime))
+    @new_session = current_user.sessions.create(params.require(:session).permit(:duration, :price, :datetime, :tutor_id))
 
     if @new_session.save
       redirect_to root_path
@@ -24,8 +24,4 @@ before_action :authenticate_user!, only: :index
     end
 
   end
-    # private
-    # def session_params
-    #   params.require(:session).permit(:duration, :price)
-    # end
 end

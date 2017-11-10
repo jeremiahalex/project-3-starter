@@ -6,12 +6,12 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name:"%><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :gender, "Gender"%><br />
+    <%= f.label :gender, "Gender:"%><br />
     <%= f.label :gender, "Male" %>
     <%= f.radio_button :gender, value="male"%>
     <%= f.label :gender, "Female" %>

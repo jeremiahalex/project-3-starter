@@ -1,3 +1,3 @@
 class Session < ApplicationRecord
-  # belongs_to :user
+  belongs_to :tutor, :class_name => 'User'
 end
