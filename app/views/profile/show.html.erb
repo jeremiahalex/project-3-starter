@@ -15,12 +15,15 @@
 
 <h4>Children Information</h4>
 
+<% unless current_user.child[0].present? %>
+<% else %>
 <p>
   Name: <%= current_user.child[0].name %> <br>
   Gender: <%= current_user.child[0].gender%> <br>
   Birthday: <%= current_user.child[0].birthday %><br>
   Clothes size: <%= current_user.child[0].size.name %> <br>
 </p>
+<% end %>
 
 <% unless current_user.child[0].present? %>
 <%= link_to '<button type="button">Add child information</button>'.html_safe, 'profile/children/new' %>

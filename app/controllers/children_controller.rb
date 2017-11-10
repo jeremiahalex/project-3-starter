@@ -13,7 +13,8 @@ class ChildrenController < ApplicationController
 
   def create
     current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
-    redirect_to root_path
+    redirect_to '/profile'
+
   end
 
   def new
@@ -30,10 +31,15 @@ class ChildrenController < ApplicationController
     @new_child = Child.find(params[:id])
 
     if @new_child.update(params.require(:child).permit(:name, :gender, :birthday, :size_id))
-      redirect_to'/profile'
+      redirect_to '/profile'
     else
       render @new_child
     end
+  end
+
+  def destroy
+    Child.destroy(current_user.child[0]['id'])
+    redirect_to '/profile'
   end
 
 end

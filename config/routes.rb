@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   resources :children, except: [:edit, :new]
   get 'profile/children/edit', to: 'children#edit'
   get 'profile/children/new', to: 'children#new'
-
+  get 'profile/children/delete', to: 'children#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
