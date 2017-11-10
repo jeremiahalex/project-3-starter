@@ -2,12 +2,13 @@
 
 <h4>User Information</h4>
   <ul>
-  <li>Username: [show current user name]</li>
-  <li>Email: [Show current user email]</li>
-  <li>Address: [Show current user address]</li>
-  <li>Phone No: [Show current user phone]</li>
-  <li>Points: [Show current user points]</li>
-  <li>Subscription: [Show current user subsc.]
+  <li>Username: <%= current_user.name %></li>
+  <li>Email:  <%= current_user.email%></li>
+  <li>Address:  <%= current_user.street %> <%= current_user.unit %></li>
+  <li>Postal Code:  s(<%= current_user.postalcode %>)</li>
+  <li>Phone No:  <%= current_user.phone %></li>
+  <li>Points:  <%= current_user.points %></li>
+  <li>Subscription:  <%= current_user.subscription_type %>
   </ul>
 
 <%= link_to '<button type="button">Edit profile</button>'.html_safe, '/profile/edit' %>
@@ -15,10 +16,13 @@
 <h4>Children Information</h4>
 
 <p>
-  Name: [user name] <br>
-  Gender: [Show user child gender] <br>
-  Birthday:[Show user child birthday] <br>
-  Clothes size: [Show user child size] <br>
+  Name: <%= current_user.child[0].name %> <br>
+  Gender: <%= current_user.child[0].gender%> <br>
+  Birthday: <%= current_user.child[0].birthday %><br>
+  Clothes size: <%= current_user.child[0].size.name %> <br>
 </p>
 
-<%= link_to '<button type="button">Add children information</button>'.html_safe, 'profile/children/new' %>
+<%= link_to '<button type="button">Add child information</button>'.html_safe, 'profile/children/new' %>
+
+<%= link_to '<button type="button">Edit child information</button>'.html_safe, 'profile/children/edit' %>
+<%= link_to '<button type="button">Delete child information</button>'.html_safe, 'profile/children/delete' %>

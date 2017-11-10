@@ -99,3 +99,9 @@ to be added
 * Add migrate files for all models
 * Add db seed for loan_status, style, stock_status
 * Add controller for children, user are able to create child's details under their account.
+
+9 Nov 2017
+* Add profile page to user account.
+* Add edit routes for editing children's information
+* Edit user_account_update routes from "/edit" to "/profile/edit"
+* Edit model : added relationships between models
