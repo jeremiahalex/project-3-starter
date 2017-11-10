@@ -70,7 +70,7 @@
 
 # START SEEDING FOR CLOTHES SET SHOW
 # ClothesSet.destroy_all
-5.times do
+20.times do
   ClothesSet.create(
     name: Faker::Commerce.product_name,
     style_id: Style.all.sample.id,
