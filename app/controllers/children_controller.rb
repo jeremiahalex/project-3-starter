@@ -23,7 +23,7 @@ class ChildrenController < ApplicationController
   end
 
   def edit
-    @current_child = current_user.child
+    @current_child = current_user.child[0]
   end
 
   def update

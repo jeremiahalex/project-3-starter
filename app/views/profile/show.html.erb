@@ -22,7 +22,9 @@
   Clothes size: <%= current_user.child[0].size.name %> <br>
 </p>
 
+<% unless current_user.child[0].present? %>
 <%= link_to '<button type="button">Add child information</button>'.html_safe, 'profile/children/new' %>
-
+<% else %>
 <%= link_to '<button type="button">Edit child information</button>'.html_safe, 'profile/children/edit' %>
 <%= link_to '<button type="button">Delete child information</button>'.html_safe, 'profile/children/delete' %>
+<% end %>
