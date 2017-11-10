@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require_tree .
 //= require jquery
 //= require jquery.turbolinks
 //= require materialize
+//= require turbolinks
+//= require_tree .
 
-$( document ).ready(function(){
+$(document).on('turbolinks:load',
+function(){
   $(".button-collapse").sideNav();
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $('.slider').slider();
