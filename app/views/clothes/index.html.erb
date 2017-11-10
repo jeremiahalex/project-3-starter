@@ -1,0 +1,12 @@
+<h1>Browse Clothes!</h1>
+
+<div class="row">
+  <% @all_clothes.each do |set| %>
+  <div class="col s4">
+    <h3><%= set.name %></h3>
+    <div class="">
+      <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
+    </div>
+  </div>
+  <% end %>
+</div>

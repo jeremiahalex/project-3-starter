@@ -7,6 +7,8 @@ end
 
 gem 'pry'
 gem 'jquery-turbolinks'
+gem 'sprockets', '>=3.0.0.beta'
+gem 'sprockets-es6'
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 # Bootstrap 4

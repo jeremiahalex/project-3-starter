@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   get 'profile/children/edit', to: 'children#edit'
   get 'profile/children/new', to: 'children#new'
   get 'profile/children/delete', to: 'children#destroy'
+
+
+  get '/browse', to: 'clothes#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -68,8 +68,8 @@
 # end
 # END SEEDING FOR STOCK STATUS
 
-ClothesSet.destroy_all
 # START SEEDING FOR CLOTHES SET SHOW
+# ClothesSet.destroy_all
 5.times do
   ClothesSet.create(
     name: Faker::Commerce.product_name,
