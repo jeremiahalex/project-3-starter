@@ -2,11 +2,20 @@
 
 <div class="row">
   <% @all_clothes.each do |set| %>
+  <!--  filter stock status, size, and style  -->
+  <%
+    @user_size = 5
+    @user_style = 7
+  %>
+
+  <% if set.stock_status_id == 1 && set.size_id == @user_size && set.style_id == @user_style %>
   <div class="col s3">
     <h6><%= set.name %></h6>
     <div class="">
       <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
     </div>
   </div>
+  <% else %>
+  <% end %>
   <% end %>
 </div>
