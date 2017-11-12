@@ -12,4 +12,5 @@ class User < ApplicationRecord
 
   has_many :testimonials, :class_name => 'testimonials', :foreign_key => 'tutor_id'
   has_many :testimonials, :class_name => 'testimonials', :foreign_key => 'author_id'
+  has_uploadcare_file :photo 
 end
