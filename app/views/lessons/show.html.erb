@@ -1,0 +1,143 @@
+<!-- <h2><%= @lesson.inspect %></h2> -->
+  <!--Lesson Info-->
+  <div class="content-lg container" style="width: 900px;">
+  <div class="row">
+    <div class="col-sm-4">
+      <h5>LANGUAGE</h5>
+      <h3><%=@lesson.language_taught%></h3>
+    </div>
+    <div class="col-sm-8">
+      <ul>
+      <li>Lesson Id: <%=@lesson.id%></li>
+      <li>Price: <%=@lesson.price%></li>
+      <li>Date & Time: <%=@lesson.datetime%></li>
+      <!-- <h4>Time:<%=@lesson.datetime%></h4> -->
+      <li>Duration: <%=@lesson.duration%> hours</li>
+      <li>Venue: <%=@lesson.venue%></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" style="height: 120px">
+    <h3>OTHER DETAILS</h3>
+    <ul>
+    <li>Bring your own laptop</li>
+    <li>Please install all gems prior to the lesson</li>
+    </ul>
+  </div>
+
+<!--Tutor info-->
+<!-- <h2><%= @lesson_tutor.inspect %></h2> -->
+    <h4>About Tutor</h4>
+  <div class="row">
+  <div class="col-sm-4">
+    <img class="rounded-circle" src="<%@lesson_tutor.photo%>" alt="Generic placeholder image">
+  </div>
+  <div class="col-sm-8">
+    <h4>More details about tutor</h4>
+    <p>Name: <%=@lesson_tutor.name%></p>
+    <p>Gender: <%=@lesson_tutor.gender%></p>
+    <p>Past Experiences: <%=@lesson_tutor.past_experience%></p>
+    <p>Github: <%=@lesson_tutor.github%> </p>
+  </div>
+  </div>
+
+<!--Tutor's other lessons in cards-->
+  <div class="row justify-content-md-center">
+     <div class="col-md-auto">
+       <h2 class="text-center">Check out his other Lessons!</h2>
+       </div>
+     </div>
+
+     <div class="row">
+       <% @tutor_lessons.each do |l| %>
+       <div class="col-md-4 col-sm-6">
+
+         <div class="card-container manual-flip">
+           <div class="card">
+             <div class="front">
+               <div class="cover">
+                 <!-- <%= image_tag "alex.jpg", class:"img-responsive" %> -->
+
+                 <!-- <img src="images/rotating_card_thumb.png"/> -->
+               </div>
+               <div class="user">
+                 <%= image_tag "shumin.jpg", class:"img-circle" %>
+
+                 <!-- <img class="img-circle" src="images/rotating_card_profile2.png"/> -->
+               </div>
+               <div class="content">
+                 <div class="main">
+                   <h3 class="name"><%= l.language_taught %></h3>
+
+                   <div class="text-center">
+                     <p class="profession">Ruby</p>
+                   </div>
+                   <br>
+
+                   <p class="text-center">11 Nov 2017
+                     <br>
+                     11am - 1pm</p>
+
+                   <div class="rate">
+                     S$75/hrs
+                   </div>
+                   <!-- <p class="text-center">"I am certify by microsoft! <br> Weee <br> pick me as tutor </p> -->
+                   <!-- <div class="class-card-price"> <div class="class-card-price-inner"> $185 </div> </div> -->
+                 </div>
+
+                 <div class="footer">
+                   <button class="btn btn-simple" onclick="rotateCard(this)">
+                     <i class="fa fa-mail-forward"></i>
+                     Click here to view more
+                   </button>
+                 </div>
+               </div>
+             </div>
+             <!-- end front panel -->
+             <div class="back">
+               <div class="header">
+                 <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+               </div>
+               <div class="content">
+                 <div class="main">
+                   <h4 class="text-center">Ruby</h4>
+                   <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+
+                   <div class="text-center">
+                     <input type="button" class="btn" value="Book Lesson">
+                   </div>
+
+                 </div>
+               </div>
+               <div class="footer">
+                 <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                   <i class="fa fa-reply"></i>
+                   Back
+                 </button>
+                 <div class="social-links text-center">
+                   <a href="http://creative-tim.com" class="facebook">
+                     <i class="fa fa-facebook fa-fw"></i>
+                   </a>
+                   <a href="http://creative-tim.com" class="google">
+                     <i class="fa fa-google-plus fa-fw"></i>
+                   </a>
+                   <a href="http://creative-tim.com" class="twitter">
+                     <i class="fa fa-twitter fa-fw"></i>
+                   </a>
+                 </div>
+               </div>
+             </div>
+             <!-- end back panel -->
+           </div>
+
+           <!-- end card -->
+         </div>
+
+         <!-- end card-container -->
+       </div>
+       <% end %>
+       <!-- end col sm 3 -->
+
+
+</div>

@@ -7,6 +7,12 @@ before_action :authenticate_user!, only: :index
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    # render json: @lesson
+    tutor = @lesson.tutor_id
+    @lesson_tutor = User.find(tutor)
+    @tutor_lessons = Lesson.where(id:tutor)
+
   end
 
   def new
