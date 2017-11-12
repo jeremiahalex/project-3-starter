@@ -1,6 +1,6 @@
 <!-- <h2><%= @lesson.inspect %></h2> -->
   <!--Lesson Info-->
-  <div class="content-lg container" style="width: 900px;">
+  <div class="content-lg container" style="width: 900px; padding-top: 30px">
   <div class="row">
     <div class="col-sm-4">
       <h5>LANGUAGE</h5>
@@ -68,19 +68,15 @@
                </div>
                <div class="content">
                  <div class="main">
-                   <h3 class="name"><%= l.language_taught %></h3>
-
                    <div class="text-center">
-                     <p class="profession">Ruby</p>
+                     <p class="profession"><%= l.language_taught %></p>
                    </div>
                    <br>
 
-                   <p class="text-center">11 Nov 2017
-                     <br>
-                     11am - 1pm</p>
+                   <p class="text-center"><%= l.datetime %></p>
 
                    <div class="rate">
-                     S$75/hrs
+                     $<%= l.price %>/hr
                    </div>
                    <!-- <p class="text-center">"I am certify by microsoft! <br> Weee <br> pick me as tutor </p> -->
                    <!-- <div class="class-card-price"> <div class="class-card-price-inner"> $185 </div> </div> -->
