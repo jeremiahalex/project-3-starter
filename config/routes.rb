@@ -22,5 +22,15 @@ Rails.application.routes.draw do
 
 
   get '/browse', to: 'clothes#index'
+
+  resources :cart
+
+  post 'cart/checkout', to: 'cart#checkout'
+
+
+  get '/loaned_item', to: 'loaned_item#index'
+  get '/loaned_history', to: 'loaned_item#history'
+
+  # resources :loaned_item
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
