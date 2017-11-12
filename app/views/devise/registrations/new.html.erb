@@ -1,3 +1,5 @@
+# <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
+
 <div class="content-lg container">
 <div class="login">
 <h2>Sign up</h2>
@@ -6,12 +8,12 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name:"%><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :gender, "Gender"%><br />
+    <%= f.label :gender, "Gender:"%><br />
     <%= f.label :gender, "Male" %>
     <%= f.radio_button :gender, value="male"%>
     <%= f.label :gender, "Female" %>
@@ -23,10 +25,15 @@
     <%= f.check_box :reg_tutor %>
   </div>
 
+<% if f.check_box :reg_tutor %>
+  <h2>hi</h2>
+<% end %>
+
   <div class="field">
     <%= f.label :photo, "Upload your profile pic" %><br />
-    <%= f.file_field :photo %>
+    <%= f.uploadcare_uploader :photo %>
   </div>
+
 
   <div class="field">
     <%= f.label :email %><br />

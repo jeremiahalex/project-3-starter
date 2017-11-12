@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'cloudinary'
+gem 'uploadcare-rails'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

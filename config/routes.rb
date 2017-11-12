@@ -8,10 +8,13 @@ Rails.application.routes.draw do
   password:'secret',
   registration: 'register', edit: 'edit/profile'
   }
+
+  devise_scope :user do
+   root to: 'pages#home'
+   match '/sessions/user', to: 'devise/sessions#create', via: :post
+
+ end
   # get 'pages/home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # resources :users, param: :name do
-    resources :sessions, :testimonials
-  # end
-
+    resources :lessons
 end
