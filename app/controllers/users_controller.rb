@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @all_lessons = Lessons.all
   end
 
   def create

@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   devise_scope :user do
    root to: 'pages#home'
    match '/sessions/user', to: 'devise/sessions#create', via: :post
-   
+
  end
   # get 'pages/home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    resources :sessions
+    resources :lessons
 end

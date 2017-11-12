@@ -25,6 +25,10 @@
     <%= f.check_box :reg_tutor %>
   </div>
 
+<% if f.check_box :reg_tutor %>
+  <h2>hi</h2>
+<% end %>
+
   <div class="field">
     <%= f.label :photo, "Upload your profile pic" %><br />
     <%= f.uploadcare_uploader :photo %>
