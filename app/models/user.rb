@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :sessions, :foreign_key => 'tutor_id'
   has_many :bookings, through: :sessions
 
-  has_many :testimonials, :class_name => 'testimonials', :foreign_key => 'tutor_id'
-  has_many :testimonials, :class_name => 'testimonials', :foreign_key => 'author_id'
+  has_many :testimonials, :foreign_key => 'tutor_id'
+  has_many :testimonials, :foreign_key => 'author_id'
 end
