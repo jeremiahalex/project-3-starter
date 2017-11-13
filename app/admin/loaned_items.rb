@@ -22,7 +22,7 @@ ActiveAdmin.register LoanedItem do
     selectable_column
     id_column
     column :user_id
-    column :clothes_sets_id
+    column :clothes_set_id
     column :loan_status
     column :date_of_submission
     actions
