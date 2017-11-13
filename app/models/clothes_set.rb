@@ -5,6 +5,10 @@ class ClothesSet < ApplicationRecord
   has_many :loaned_item
   has_many :cart_item
 
+  scope :in_stock_size_style, -> (size_id, style_id) do
+    where stock_status_id: 1, size_id: size_id, style_id: style_id
+  end
+
   def add_to_cart(user_id)
     @current_user = User.find(user_id)
     @current_user.cart_item.create(clothes_set_id: self.id)
