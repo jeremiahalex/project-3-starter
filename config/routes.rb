@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   get 'profile/children/new', to: 'children#new'
   get 'profile/children/delete', to: 'children#destroy'
 
-
   get '/browse', to: 'clothes#index'
 
   resources :cart
@@ -34,5 +33,9 @@ Rails.application.routes.draw do
   get '/loaned_history', to: 'loaned_item#history'
 
   # resources :loaned_item
+  get '/choose_size_style', to: 'filter_form#index'
+  get '/choose_size_style/1', to: 'filter_form#form1'
+  get '/choose_size_style/2', to: 'filter_form#form2'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
