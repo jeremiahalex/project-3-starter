@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'cloudinary'
