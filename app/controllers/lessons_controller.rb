@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
     # render json: @lesson
     tutor = @lesson.tutor_id
     @lesson_tutor = User.find(tutor)
-    @tutor_lessons = Lesson.where(id: tutor)
+    @tutor_lessons = Lesson.where(tutor_id: tutor)
   end
 
   def new
