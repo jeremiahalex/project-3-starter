@@ -31,7 +31,6 @@ class ChildrenController < ApplicationController
     @new_child = Child.find(params[:id])
 
     if @new_child.update(params.require(:child).permit(:name, :gender, :birthday, :size_id))
-      redirect_to '/profile'
     else
       render @new_child
     end
@@ -40,6 +39,14 @@ class ChildrenController < ApplicationController
   def destroy
     Child.destroy(current_user.child[0]['id'])
     redirect_to '/profile'
+  end
+
+  def update_size
+    @current_child = current_user.child[0]
+    @current_child.update(params.require(:child).permit(:size_id))
+    # current_size = params[:size_id]
+    # @current_child.change_size(current_size)
+    redirect_to "/choose_size_style/#{@current_child.size_id}/0"
   end
 
 end
