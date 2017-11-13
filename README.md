@@ -114,3 +114,9 @@ to be added
 12 Nov 2017
 * add cart function: able to add item to cart, remove and checkout cart.
 * add admin function: admin able to add other admin account, admin able to see all the loaned item and edit it.
+
+13 Nov 2017
+* add filter clothes function: able to filter clothes by size & style
+* edit cart function: Add ajax cart function
+* fix: double creation of cart_items
+* Improve css

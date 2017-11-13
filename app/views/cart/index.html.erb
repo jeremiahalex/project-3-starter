@@ -1,17 +1,17 @@
 <h1>Cart</h1>
 
-<div class="row">
+<div class="row cart">
 
   <% @all_cart_item.each do |item| %>
 
   <div class="col s3">
     <% clothes_set = ClothesSet.find(item.clothes_set_id) %>
     <h6><%= clothes_set.name %></h6>
-    <%= check_box_tag "product_ids[]", item.id %>
+    <input type="hidden" value="<%=clothes_set.id%>" class='setId'>
     <div class="">
       <img src="<%= clothes_set.photo_URL %>" alt="<%= clothes_set.name %>">
     </div>
-    <%= button_to 'Remove from Cart', cart_path(item.id), :form => { :class => "removeBtn" }, remote: true, method: :delete %>
+    <%= button_to 'Remove from Cart', cart_path(item.id), :form => { :class => "removeCartBtn" }, remote: true, method: :delete %>
 
 
   </div>
