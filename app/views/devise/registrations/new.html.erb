@@ -20,18 +20,18 @@
     <%= f.radio_button :gender, value="female"%>
   </div>
 
-  <div class="field">
+  <div class="test_field">
     <%= f.label :reg_tutor, "Check to be a tutor" %><br />
-    <%= f.check_box :reg_tutor %>
+    <%= f.check_box :reg_tutor, :id => 'test_id'%>
   </div>
 
-<% if f.check_box :reg_tutor %>
+<div class="is_tutor" style="display:none">
 <%= f.label :github, "Your github url:" %><br />
 <%= f.text_field :github %>
 
 <%= f.label :past_experience, "Please include your past experiences:" %><br />
 <%= f.text_area :past_experience %>
-<% end %>
+</div>
 
   <div class="field">
     <%= f.label :photo, "Upload your profile pic" %><br />
