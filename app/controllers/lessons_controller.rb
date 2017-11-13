@@ -28,7 +28,14 @@ class LessonsController < ApplicationController
     else
       render 'new'
     end
+  end
 
+  def update
+      if @lesson.update(create)
+        redirect_to lesson_path(@lesson)
+      else
+        render 'edit'
+      end
   end
 
   # private
