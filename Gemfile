@@ -11,6 +11,8 @@ gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'cloudinary'
 gem 'uploadcare-rails'
+gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
+gem 'stripe'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
