@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @all_lessons = Lesson.all.order("created_at DESC")
     @lesson = Lesson.find(params[:id])
     # render json: @lesson
     tutor = @lesson.tutor_id
