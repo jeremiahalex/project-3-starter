@@ -16,6 +16,9 @@
             <li><%= link_to "Register", new_user_registration_path %></li>
             <% else %>
             <li><a href="/profile"><%= current_user.email %></a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/loaned_item">Loaned Item</a></li>
+
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete%></a></li>
             <% end %>
             </ul>

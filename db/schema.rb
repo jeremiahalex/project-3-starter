@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20171111214529) do
 
   create_table "cart_items", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "clothes_sets_id"
+    t.bigint "clothes_set_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clothes_sets_id"], name: "index_cart_items_on_clothes_sets_id"
+    t.index ["clothes_set_id"], name: "index_cart_items_on_clothes_set_id"
     t.index ["user_id"], name: "index_cart_items_on_user_id"
   end
 
@@ -89,12 +89,12 @@ ActiveRecord::Schema.define(version: 20171111214529) do
 
   create_table "loaned_items", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "clothes_sets_id"
+    t.bigint "clothes_set_id"
     t.bigint "loan_status_id"
     t.date "date_of_submission"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clothes_sets_id"], name: "index_loaned_items_on_clothes_sets_id"
+    t.index ["clothes_set_id"], name: "index_loaned_items_on_clothes_set_id"
     t.index ["loan_status_id"], name: "index_loaned_items_on_loan_status_id"
     t.index ["user_id"], name: "index_loaned_items_on_user_id"
   end
@@ -140,14 +140,14 @@ ActiveRecord::Schema.define(version: 20171111214529) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cart_items", "clothes_sets", column: "clothes_sets_id"
+  add_foreign_key "cart_items", "clothes_sets"
   add_foreign_key "cart_items", "users"
   add_foreign_key "children", "sizes"
   add_foreign_key "children", "users"
   add_foreign_key "clothes_sets", "sizes"
   add_foreign_key "clothes_sets", "stock_statuses"
   add_foreign_key "clothes_sets", "styles"
-  add_foreign_key "loaned_items", "clothes_sets", column: "clothes_sets_id"
+  add_foreign_key "loaned_items", "clothes_sets"
   add_foreign_key "loaned_items", "loan_statuses"
   add_foreign_key "loaned_items", "users"
 end

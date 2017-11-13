@@ -1,0 +1,22 @@
+<h1>Cart</h1>
+
+<div class="row">
+
+  <% @all_cart_item.each do |item| %>
+
+  <div class="col s3">
+    <% clothes_set = ClothesSet.find(item.clothes_set_id) %>
+    <h6><%= clothes_set.name %></h6>
+    <%= check_box_tag "product_ids[]", item.id %>
+    <div class="">
+      <img src="<%= clothes_set.photo_URL %>" alt="<%= clothes_set.name %>">
+    </div>
+    <%= link_to '<button type="button">Remove from Cart</button>'.html_safe, cart_path(@post, :id => item.id), method: :delete, remote: true%>
+
+
+  </div>
+
+  <% end %>
+  <%= link_to '<button type="button">Checkout</button>'.html_safe, cart_checkout_path, method: :post, remote: true%>
+
+</div>

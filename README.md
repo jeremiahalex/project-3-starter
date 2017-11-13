@@ -105,3 +105,12 @@ to be added
 * Add edit routes for editing children's information
 * Edit user_account_update routes from "/edit" to "/profile/edit"
 * Edit model : added relationships between models
+
+10 Nov 2017
+* add edit & delete routes for child
+* add necessary gem files
+* add browse function
+
+12 Nov 2017
+* add cart function: able to add item to cart, remove and checkout cart.
+* add admin function: admin able to add other admin account, admin able to see all the loaned item and edit it.

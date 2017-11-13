@@ -1,0 +1,17 @@
+
+
+<div class="row">
+  <% @all_loaned_item.each do |item| %>
+
+  <div class="col s3">
+    <% clothes_set = ClothesSet.find(item.clothes_set_id) %>
+    <h6><%= clothes_set.name %></h6>
+    <div class="">
+      <img src="<%= clothes_set.photo_URL %>" alt="<%= clothes_set.name %>">
+    </div>
+    <%= LoanStatus.find(item.loan_status_id).name %>
+  </div>
+
+  <% end %>
+
+</div>
