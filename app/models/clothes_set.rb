@@ -5,6 +5,7 @@ class ClothesSet < ApplicationRecord
   has_many :loaned_item
   has_many :cart_item
 
+
   def add_to_cart(user_id)
     @current_user = User.find(user_id)
     @current_user.cart_item.create(clothes_set_id: self.id)
