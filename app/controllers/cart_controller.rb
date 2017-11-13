@@ -12,11 +12,10 @@ class CartController < ApplicationController
     @clothes_set_id = params[:clothes_set_id]
     @current_clothes_set = ClothesSet.find(@clothes_set_id)
     @current_clothes_set.add_to_cart(@user_id)
-    redirect_to '/browse'
   end
 
   def new
-    @new_cart_item = current_user.cart_item
+
   end
 
   def show
@@ -29,7 +28,7 @@ class CartController < ApplicationController
 
   def destroy
     CartItem.destroy(params[:id])
-    redirect_to '/browse'
+    # redirect_to '/browse'
   end
 
   def checkout
