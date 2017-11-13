@@ -21,7 +21,7 @@ before_action :authenticate_user!, only: :index
 
   def create
 
-    @new_lesson = current_user.lessons.create(params.require(:lesson).permit(:duration, :price, :datetime, :venue, :language_taught, :tutor_id))
+    @new_lesson = current_user.lessons.create(params.require(:lesson).permit(:duration, :price, :datetime, :venue, :language_taught, :tutor_id, :name, :details))
 
     if @new_lesson.save
       redirect_to root_path
