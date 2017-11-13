@@ -28,6 +28,19 @@ nav ul a{
   height: 640px;
 }
 
+.slider {
+  height: 680px !important;
+}
+
+ul.slides {
+  height: 640px !important;
+}
+
+.section {
+  height: 640px;
+  margin-top: 23px;
+}
+
 .page-footer {
   background: $footer-color;
 }

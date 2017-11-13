@@ -24,13 +24,22 @@ ActiveAdmin.register LoanedItem do
     column :user_id
     column :clothes_set_id
     column :loan_status
-    column :date_of_submission
+    column :created_at
     actions
   end
 
   filter :user
   filter :clothes_set
   filter :loan_status
-  filter :date_of_submission
+  filter :created_at
+
+  form do |f|
+  f.inputs "Loan Details" do
+    f.input :user
+    f.input :clothes_set
+    f.input :loan_status
+  end
+  f.actions
+  end
 
 end
