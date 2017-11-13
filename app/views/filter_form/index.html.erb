@@ -1,0 +1,10 @@
+<h1>Filter Form</h1>
+<p>
+  Hi <%= current_user.name %>, glad you're back! <br>
+  How are you and your family doing? <br>
+  Has <%= current_user.child[0].name %> grown in size over the last month?
+  <br>
+  <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/1' %>
+  <%= link_to '<button type="button">No</button>'.html_safe, '/choose_size_style/2' %>
+
+</p>
