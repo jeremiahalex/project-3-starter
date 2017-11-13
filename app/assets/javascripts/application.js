@@ -11,19 +11,9 @@
 // about supported directives.
 //
 
-// = require active_admin/base
-//= require jquery
-//= require jquery.turbolinks
 //= require rails-ujs
-//= require materialize
 //= require turbolinks
+//= require jquery
+// = require active_admin/base
+//= require materialize
 //= require_tree .
-
-
-
-$(document).on('turbolinks:load',
-function(){
-  $(".button-collapse").sideNav();
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
-  $('.slider').slider();
-})

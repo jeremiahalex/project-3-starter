@@ -9,10 +9,10 @@
       <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
     </div>
     <% unless set.in_cart(current_user.id) %>
-    <%= link_to '<button type="button">Add to Cart</button>'.html_safe, cart_index_path(:clothes_set_id => set.id), :method => :post, remote: true%>
-    <% else  %>
+    <%= button_to 'Add to Cart', cart_index_path(:clothes_set_id => set.id), remote: true, method: :post %>
+    <% else %>
     <% @cart_item_id = set.cart_id(current_user.id) %>
-    <%= link_to '<button type="button">Remove from Cart</button>'.html_safe, cart_path(@post, :id => @cart_item_id), method: :delete, remote: true%>
+    <%= button_to 'Remove from Cart', cart_path(@cart_item_id), remote: true, method: :delete %>
     <% end %>
 
   </div>

@@ -6,10 +6,8 @@ class ClothesSet < ApplicationRecord
   has_many :cart_item
 
   def add_to_cart(user_id)
-    @clothes_set = ClothesSet.find(self.id)
     @current_user = User.find(user_id)
-    @clothes_set.cart_item.create(user_id: user_id)
-    # @current_user.remove_point(10)
+    @current_user.cart_item.create(clothes_set_id: self.id)
   end
 
   def in_cart(user_id)
