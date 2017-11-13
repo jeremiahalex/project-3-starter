@@ -43,9 +43,9 @@
               <!-- <img src="images/rotating_card_thumb.png"/> -->
             </div>
             <div class="user">
-              <%= image_tag "shumin.jpg", class:"img-circle" %>
 
-              <!-- <img class="img-circle" src="images/rotating_card_profile2.png"/> -->
+              <img src="<%= lesson.tutor.photo %>" class="img-circle">
+
             </div>
             <div class="content">
               <div class="main">
@@ -57,11 +57,12 @@
                 <br>
 
                 <p class="text-center">
-                  <%= lesson.datetime %>
+                  <%= lesson.datetime %><br>
+                  <b><%= lesson.venue %></b>
                 </p>
 
                 <div class="rate">
-                  S$75/hrs
+                  $<%= lesson.price %>/hrs
                 </div>
                 <!-- <p class="text-center">"I am certify by microsoft! <br> Weee <br> pick me as tutor </p> -->
                 <!-- <div class="class-card-price"> <div class="class-card-price-inner"> $185 </div> </div> -->
@@ -78,15 +79,14 @@
           <!-- end front panel -->
           <div class="back">
             <div class="header">
-              <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+              <h5 class="motto">"Learn to code with Us"</h5>
             </div>
             <div class="content">
               <div class="main">
-                <h4 class="text-center">Ruby</h4>
-                <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                <h4 class="text-center"><%= lesson.name %></h4>
+                <p class="text-center"><%= lesson.details %></p>
 
                 <div class="text-center">
-                  
                   <input type="button" class="btn" value="Book Lesson" >
                 </div>
 
@@ -97,17 +97,6 @@
                 <i class="fa fa-reply"></i>
                 Back
               </button>
-              <div class="social-links text-center">
-                <a href="http://creative-tim.com" class="facebook">
-                  <i class="fa fa-facebook fa-fw"></i>
-                </a>
-                <a href="http://creative-tim.com" class="google">
-                  <i class="fa fa-google-plus fa-fw"></i>
-                </a>
-                <a href="http://creative-tim.com" class="twitter">
-                  <i class="fa fa-twitter fa-fw"></i>
-                </a>
-              </div>
             </div>
           </div>
           <!-- end back panel -->
