@@ -1,12 +1,93 @@
-<h1>Hello</h1>
+<div class="content-lg container" style="width: 1000px; padding-top: 30px">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <h2 class="text-center">Check out all our Lessons!</h2>
+    </div>
+  </div>
 
-<% @lessons.each do |lesson|%>
-<h2><%= lesson.tutor.name %></h2>
-<h2><%= lesson.tutor.email %></h2>
-<h2><img src="<%= lesson.tutor.photo %>" alt="Display pic"></h2>
-<h2><%= lesson.duration %></h2>
-<h2><%= lesson.language_taught %></h2>
-<h2><%= lesson.price %></h2>
+  <div class="row">
+    <% @lessons.each do |l| %>
+      <div class="col-md-4 col-sm-6">
 
-<h2>test</h2>
-<% end %>
+        <div class="card-container manual-flip">
+          <div class="card">
+            <div class="front">
+              <div class="cover">
+                <!-- <%= image_tag "alex.jpg", class:"img-responsive" %> -->
+
+                <!-- <img src="images/rotating_card_thumb.png"/> -->
+              </div>
+              <div class="user">
+                <%= image_tag "shumin.jpg", class:"img-circle" %>
+
+                <!-- <img class="img-circle" src="images/rotating_card_profile2.png"/> -->
+              </div>
+              <div class="content">
+                <div class="main">
+                  <div class="text-center">
+                    <p class="profession"><%= l.language_taught %></p>
+                  </div>
+                  <br>
+
+                  <p class="text-center"><%= l.datetime %></p>
+
+                  <div class="rate">
+                    $<%= l.price %>/hr
+                  </div>
+                  <!-- <p class="text-center">"I am certify by microsoft! <br> Weee <br> pick me as tutor </p> -->
+                  <!-- <div class="class-card-price"> <div class="class-card-price-inner"> $185 </div> </div> -->
+                </div>
+
+                <div class="footer">
+                  <button class="btn btn-simple" onclick="rotateCard(this)">
+                    <i class="fa fa-mail-forward"></i>
+                    Click here to view more
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- end front panel -->
+            <div class="back">
+              <div class="header">
+                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+              </div>
+              <div class="content">
+                <div class="main">
+                  <h4 class="text-center">Ruby</h4>
+                  <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+
+                  <div class="text-center">
+                    <input type="button" class="btn" value="Book Lesson">
+                  </div>
+
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                  <i class="fa fa-reply"></i>
+                  Back
+                </button>
+                <div class="social-links text-center">
+                  <a href="http://creative-tim.com" class="facebook">
+                    <i class="fa fa-facebook fa-fw"></i>
+                  </a>
+                  <a href="http://creative-tim.com" class="google">
+                    <i class="fa fa-google-plus fa-fw"></i>
+                  </a>
+                  <a href="http://creative-tim.com" class="twitter">
+                    <i class="fa fa-twitter fa-fw"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- end back panel -->
+          </div>
+
+          <!-- end card -->
+        </div>
+
+        <!-- end card-container -->
+      </div>
+    <% end %>
+    <!-- end col sm 3 -->
+  </div>

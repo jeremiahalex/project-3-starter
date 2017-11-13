@@ -3,7 +3,8 @@ skip_before_action :verify_authenticity_token
 before_action :authenticate_user!, only: :index
 
   def index
-    @lessons = Lesson.all.order("created_at DESC")
+    # @lessons = Lesson.all.order("created_at DESC")
+    redirect_to root_path
   end
 
   def show
