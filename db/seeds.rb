@@ -78,6 +78,6 @@ end
     photo_URL: Faker::LoremPixel.image("100x100", false, 'cats')
   )
 end
-# END SEEDING FOR CLOTHES SET SHOW
+# END SEEDING FOR LOANITEM
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
