@@ -31,6 +31,7 @@ class ChildrenController < ApplicationController
     @new_child = Child.find(params[:id])
 
     if @new_child.update(params.require(:child).permit(:name, :gender, :birthday, :size_id))
+      redirect_to "/profile"
     else
       render @new_child
     end

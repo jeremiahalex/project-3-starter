@@ -1,5 +1,8 @@
 <h1>Browse Clothes</h1>
 
+<%= select_tag "style", options_from_collection_for_select(@styles, "id", "name"), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
+
+
 <div class="row">
   <% @filtered_clothes.each do |set| %>
 
