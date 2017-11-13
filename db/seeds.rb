@@ -82,14 +82,14 @@
 
 # START SEEDING FOR LOANITEM
 # LoanedItem .destroy_all
-20.times do
-  LoanedItem.create(
-    user_id: User.all.sample.id,
-    clothes_set_id: ClothesSet.all.sample.id,
-    loan_status_id: LoanStatus.all.sample.id,
-    date_of_submission: Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
-  )
-end
+# 20.times do
+#   LoanedItem.create(
+#     user_id: User.all.sample.id,
+#     clothes_set_id: ClothesSet.all.sample.id,
+#     loan_status_id: LoanStatus.all.sample.id,
+#     date_of_submission: Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
+#   )
+# end
 # END SEEDING FOR LOANITEM
 
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
