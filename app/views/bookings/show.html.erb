@@ -9,10 +9,9 @@
   Price: $<%=@lesson.price%>
 
   <h1>Terms and Conditions</h1>
-  <p>ldlsnnlnsdn;sdn;dsn;fnsd;lnf;dslf</p>
 
-  <h4><%= link_to "Confirm Booking"  %></h4>
   <%= form_tag charges_path do %>
+  <%= hidden_field_tag 'amount', @lesson.price * @lesson.duration * 100 %>
     <article>
       <% if flash[:error].present? %>
         <div id="error_explanation">
@@ -20,7 +19,9 @@
         </div>
       <% end %>
       <label class="amount">
-        <span>Amount: $<%=@lesson.price * @lesson.duration%></span>
+        <span>Amount: $<%=@lesson.price * @lesson.duration  %></span>
+        <div class="field">
+        </div>
       </label>
     </article>
 
