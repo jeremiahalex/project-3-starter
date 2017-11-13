@@ -3,14 +3,13 @@
   <div class="content-lg container" style="width: 900px; padding-top: 30px">
   <div class="row">
     <div class="col-sm-4">
-      <h5>Lesson</h5>
       <h2><%=@lesson.name%></h2>
-      <h3><%=@lesson.language_taught%></h3>
+      <h3>Language: <%=@lesson.language_taught%></h3>
     </div>
     <div class="col-sm-8">
-      <ul>
+
       <li>Lesson Id: <%=@lesson.id%></li>
-      <li>Price: <%=@lesson.price%></li>
+      <li>Price: $<%=@lesson.price%>/hr</li>
       <li>Date & Time: <%=@lesson.datetime%></li>
       <!-- <h4>Time:<%=@lesson.datetime%></h4> -->
       <li>Duration: <%=@lesson.duration%> hours</li>
@@ -19,16 +18,17 @@
     </div>
   </div>
 
-  <div class="container" style="height: 120px">
+  <!-- <div class="container" style="height: 120px"> -->
+    <div class="row">
+      <div class="col">
     <h3>OTHER DETAILS</h3>
-    <p>
-      <%=@lesson.details%>
-    </p>
-    <ul>
-    <li>Bring your own laptop</li>
-    <li>Please install all gems prior to the lesson</li>
-    </ul>
+    <div>
+    <h5><%=@lesson.details%></h5>
+    </div>
   </div>
+</div>
+
+
 
 <!--Tutor info-->
 <!-- <h2><%= @lesson_tutor.inspect %></h2> -->
@@ -140,4 +140,5 @@
        <!-- end col sm 3 -->
 
 
+</div>
 </div>
