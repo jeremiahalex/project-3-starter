@@ -8,7 +8,7 @@
   <%= f.datetime_select :datetime ,required: true %>
   <%= f.select :language_taught, ['Ruby', 'Javascript', 'CSS'],required: true %>
   <%= f.text_field :venue ,required: true %>
-  <%= f.text_field :details, required: true%>
+  <%= f.text_area :details, size: "60x12", required: true%>
 
 
   <%= f.submit "Create" %>
