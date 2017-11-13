@@ -69,15 +69,27 @@
 
 # START SEEDING FOR CLOTHES SET SHOW
 # ClothesSet.destroy_all
-300.times do
-  ClothesSet.create(
-    name: Faker::Commerce.product_name,
-    style_id: Style.all.sample.id,
-    size_id: Size.all.sample.id,
-    stock_status_id: StockStatus.all.sample.id,
-    photo_URL: Faker::LoremPixel.image("100x100", false, 'cats')
-  )
-end
+# 300.times do
+#   ClothesSet.create(
+#     name: Faker::Commerce.product_name,
+#     style_id: Style.all.sample.id,
+#     size_id: Size.all.sample.id,
+#     stock_status_id: StockStatus.all.sample.id,
+#     photo_URL: Faker::LoremPixel.image("100x100", false, 'cats')
+#   )
+# end
 # END SEEDING FOR CLOTHES SET SHOW
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# START SEEDING FOR LOANITEM
+# LoanedItem .destroy_all
+20.times do
+  LoanedItem.create(
+    user_id: User.all.sample.id,
+    clothes_set_id: ClothesSet.all.sample.id,
+    loan_status_id: LoanStatus.all.sample.id,
+    date_of_submission: Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
+  )
+end
+# END SEEDING FOR LOANITEM
+
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
