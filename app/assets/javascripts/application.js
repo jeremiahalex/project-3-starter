@@ -10,12 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+
+// = require active_admin/base
 //= require jquery
 //= require jquery.turbolinks
+//= require rails-ujs
 //= require materialize
 //= require turbolinks
 //= require_tree .
+
+
 
 $(document).on('turbolinks:load',
 function(){

@@ -9,7 +9,6 @@
 
 # 5.times do
 #   new_user = User.new
-#   new_user.name = Faker::Hobbit.character
 #   new_user.email = Faker::Internet.email
 #   new_user.password = 'test123'
 #
@@ -80,3 +79,5 @@
   )
 end
 # END SEEDING FOR CLOTHES SET SHOW
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -18,6 +18,7 @@ gem 'materialize-sass'
 # materialize jquery
 gem 'jquery-rails'
 # devise
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
