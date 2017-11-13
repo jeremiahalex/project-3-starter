@@ -11,12 +11,12 @@
     <div class="">
       <img src="<%= clothes_set.photo_URL %>" alt="<%= clothes_set.name %>">
     </div>
-    <%= link_to '<button type="button">Remove from Cart</button>'.html_safe, cart_path(@post, :id => item.id), method: :delete, remote: true%>
+    <%= button_to 'Remove from Cart', cart_path(item.id), :form => { :class => "removeBtn" }, remote: true, method: :delete %>
 
 
   </div>
 
   <% end %>
-  <%= link_to '<button type="button">Checkout</button>'.html_safe, cart_checkout_path, method: :post, remote: true%>
+  <%= button_to 'Checkout', cart_checkout_path, :form => { :class => "checkoutBtn" }, remote: true, method: :post %>
 
 </div>
