@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_user!, only: :index
+  before_action :authorize_tutor, only: :new
   # before_action :find_lesson, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -36,6 +37,12 @@ class LessonsController < ApplicationController
       else
         render 'edit'
       end
+  end
+
+  def authorize_tutor
+    if current_user.reg_tutor == false
+      redirect_to root_path
+    end
   end
 
   # private
