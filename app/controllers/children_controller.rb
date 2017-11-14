@@ -13,8 +13,7 @@ class ChildrenController < ApplicationController
 
   def create
     current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
-    redirect_to '/choose_size_style'
-
+    redirect_to "/choose_size_style/#{current_user.child[0].size_id}/0"
   end
 
   def new
