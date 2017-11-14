@@ -5,8 +5,8 @@ class BookingsController < ApplicationController
 
   def index
     @user_lesson = current_user.lessons
-    @booked = Booking.all
-    # render json: @booked
+    @all_bookings = Booking.all
+    # render json: @all_bookings
   end
 
   def show

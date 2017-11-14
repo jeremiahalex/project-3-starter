@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
 
     @new_booking = Booking.create(
       student_id: current_user.id,
-      lessons_id: params[:lessonId]
+      lesson_id: params[:lessonId]
     )
 
     customer = Stripe::Customer.create(

@@ -2,6 +2,8 @@
 
   <!-- my booked lessons -->
 
-  <% @booked.each do |book| %>
-  <%= book.lesson %>
+  <% @all_bookings.each do |booking| %>
+  <%= booking.student.name %>
+  <br>
+  <%= booking.lesson.name %>
   <% end %>
