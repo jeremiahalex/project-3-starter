@@ -1,7 +1,6 @@
 $primary-bg: #ffffff;
 $color2: #D6BA73;
 $font-color: #000000;
-$footer-color: #bdbdbd;
 
 nav {
   background-color: $primary-bg;
@@ -13,7 +12,7 @@ nav ul a{
 }
 
 .container {
-  width: 85%;
+  width: 90%;
 }
 
 #logo-container {
@@ -36,13 +35,14 @@ ul.slides {
   height: 640px !important;
 }
 
-.section {
-  height: 640px;
-  margin-top: 23px;
+.row.about {
+  position: absolute;
+  margin-top: -33.5%;
+  padding: 0px 10px;
 }
 
-.page-footer {
-  background: $footer-color;
+.footer {
+  padding: 10px 0px;
 }
 
 .des {

@@ -1,3 +1,4 @@
+<div class="container">
 <!-- SLIDER -->
 <div class="slider">
     <ul class="slides">
@@ -17,7 +18,7 @@
       </li>
       <li>
         <%= image_tag('banner_06.jpg') %> <!-- random image -->
-        <div class="caption right-align">
+        <div class="caption left-align">
           <h3>Right Aligned Caption</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
@@ -32,50 +33,49 @@
     </ul>
 </div>
 
-<!-- HOW WE WORK -->
-<div id="intro" class="section scrollspy yellow lighten-2">
-    <div class="row">
-      <div  class="col s12" style="margin-bottom: 20px;">
-        <h5 class="header text_h5"> How We Work<span class="span_h5"> laoreet quis.</span> </h5>
-      </div>
+<div class="divider" style="margin: 30px 0px;"></div>
 
+<h4 style="position:absolute;">01 - <span class="light grey-text darken-2" style="font-size: 26px;">About Us</span></h4>
+<%= image_tag "about.png", class: "about_bg" %>
+  <div class="row about">
+    <div class="col m5 offset-m2">
+      <div class="card-panel z-depth-1 teal lighten-4" style="border-radius: 0px; border: solid 4px white; box-shadow:none;">
+        <h5> Hello!<br/> Welcome to baby:vanity </h5>
+        <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+        </span>
+      </div>
+    </div>
+  </div>
+
+<div class="divider" style="margin: 30px 0px;"></div>
+
+<!-- HOW WE WORK -->
+<div id="intro" class="section scrollspy">
+    <div class="row">
       <div  class="col s12 m4 l4">
         <div class="center promo promo-example">
           <i class="material-icons medium">redeem</i>
           <h5 class="promo-caption">Rent 3 Pieces At A Time</h5>
-          <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+          <p class="light center">Choose from the latest styles of 100+ kid clothes.</p>
         </div>
       </div>
       <div class="col s12 m4 l4">
         <div class="center promo promo-example">
           <i class="material-icons medium">insert_emoticon</i>
           <h5 class="promo-caption">Swap Whenever You Want</h5>
-          <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          <p class="light center">Keep the pieces for as long as you want! Whenever you want to try something new, return and choose your next 3.</p>
         </div>
       </div>
       <div class="col s12 m4 l4">
         <div class="center promo promo-example">
         <i class="material-icons medium">local_laundry_service</i>
         <h5 class="promo-caption">Free Shipping & Dry Cleaning</h5>
-        <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+        <p class="light center">All deliveries, returns and cleaning fees are covered in your subscription. Just enjoy your outfits!</p>
         </div>
       </div>
     </div>
 </div>
 
-<!-- ABOUT US -->
-<div class="section brown lighten-4">
-  <div class="aboutus row">
-    <div class="col s12 m4 offset-m1"><p>
-      <div class="materialboxed" width="100px">
-        <%= image_tag('cats_cute.jpg', :size => "300x300") %>
-      </div>
-    </div>
-    <div class="col s12 m7">
-      <div class="des">
-      <h4 class="title center">About Us</h4>
-      <p class="caption center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-      </div>
-    </div>
-  </div>
+<div class="divider"></div>
 </div>

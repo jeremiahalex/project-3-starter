@@ -4,4 +4,5 @@ function(){
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $('.slider').slider();
   $('select').material_select();
+  $('.collapsible').collapsible();
 })
