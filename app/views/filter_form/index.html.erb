@@ -1,11 +1,25 @@
-<h1>Filter Form</h1>
-<p>
-  Hi <%= current_user.name %>, glad you're back! <br>
-  How are you and your family doing? <br>
-  Has <%= current_user.child[0].name %> grown in size over the last month?
-  <br>
+<div class="filter red lighten-5">
+  <%= image_tag('dots.png') %>
 
-  <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
-  <%= link_to '<button type="button">No</button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+  <div class="row filernote" style="position:absolute;">
+    <div class="col s12 m2 l7"></div>
+    <div class="col s12 m8 l6">
+      <div class="card-panel filter" style="border-radius: 0px; border: solid 4px black; padding: 65px;">
 
-</p>
+      <h4 class="center-align">
+        Hi <%= current_user.name %>, glad you're back! <br>
+        <p> How are you and your family doing? <br>
+        Has <%= current_user.child[0].name %> grown in size over the last month?</p>
+        <br>
+      </h4>
+      
+        <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
+        <%= link_to '<button type="button">No</button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+
+    </div>
+    </div>
+
+    <div class="col s12 m2 "></div>
+
+  </div>
+</div>

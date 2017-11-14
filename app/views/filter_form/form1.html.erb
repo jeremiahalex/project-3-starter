@@ -1,10 +1,24 @@
-<h1>Filter Form</h1>
-<p>
-  Glad to hear <%= current_user.child[0].name %> is growing healthily, what size is <%= current_user.child[0].name %> now?
-</p>
+<div class="filter red lighten-5">
+  <%= image_tag('dots.png') %>
 
-<%= form_for @child, url: profile_children_update_child_size_path, method: :patch do |f| %>
-  <%= f.label :size_id %><br />
-  <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @child.size_id) %>
-  <%= f.submit("Update Child", class: 'btn') %>
-<% end %>
+  <div class="row filernote" style="position:absolute;">
+    <div class="col s12 m2 l7"></div>
+    <div class="col s12 m8 l6">
+      <div class="card-panel filter" style="border-radius: 0px; border: solid 4px black; padding: 65px;">
+
+        <h4 class="center-align">
+          Glad to hear <%= current_user.child[0].name %> is growing healthily, what size is <%= current_user.child[0].name %> now?
+        </h4>
+
+        <%= form_for @child, url: profile_children_update_child_size_path, method: :patch do |f| %>
+          <%= f.label :size_id %><br />
+          <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @child.size_id) %>
+          <%= f.submit("Update Child", class: 'btn') %>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="col s12 m2 "></div>
+  </div>
+
+</div>

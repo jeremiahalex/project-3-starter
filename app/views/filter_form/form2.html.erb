@@ -1,6 +1,21 @@
-<h1>Filter Form</h1>
-<p>
-  Wonderful! Now, what style of dressing would <%= current_user.child[0].name %> like to try next month?
-</p>
 
-<%= select_tag "style", options_from_collection_for_select(@styles, "id", "name"), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
+<div class="filter red lighten-5">
+  <%= image_tag('dots.png') %>
+
+  <div class="row filernote" style="position:absolute;">
+    <div class="col s12 m2 l7"></div>
+    <div class="col s12 m8 l6">
+      <div class="card-panel filter" style="border-radius: 0px; border: solid 4px black; padding: 65px;">
+
+      <h4 class="center-align">
+        Wonderful! Now, what style of dressing would <%= current_user.child[0].name %> like to try next month?
+      </h4>
+
+      <%= select_tag "style", options_from_collection_for_select(@styles, "id", "name"), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
+    </div>
+    </div>
+
+    <div class="col s12 m2 "></div>
+    
+  </div>
+</div>
