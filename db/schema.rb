@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20171111214529) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -127,15 +127,22 @@ ActiveRecord::Schema.define(version: 20171111214529) do
     t.integer "points", default: 0
     t.boolean "subscription_type", default: false
     t.integer "phone"
-    t.string "street"
-    t.string "unit"
-    t.string "postalcode"
+    t.string "street", null: false
+    t.string "unit", null: false
+    t.string "postalcode", null: false
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

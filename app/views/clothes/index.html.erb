@@ -1,6 +1,6 @@
 <h1>Browse Clothes</h1>
 
-<%= select_tag "style", options_from_collection_for_select(@styles, "id", "name"), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
+<%= select_tag "style", options_from_collection_for_select(@styles, "id", "name", @clothes_style_id), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
 
 <input type="hidden" value="<%=current_user.points%>" class='userPoints'>
 
