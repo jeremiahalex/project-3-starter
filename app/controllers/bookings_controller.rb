@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
 
   def index
     @user_lesson = current_user.lessons
-    @booked = Booking.all
+    @booked = Booking.where(student_id: current_user.id)
     # render json: @booked
   end
 
