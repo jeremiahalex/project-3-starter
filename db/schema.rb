@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113090015) do
+ActiveRecord::Schema.define(version: 20171113075935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "student_id"
-    t.bigint "session_id"
+    t.bigint "lessons_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "card_token"
-    t.index ["session_id"], name: "index_bookings_on_session_id"
+    t.index ["lessons_id"], name: "index_bookings_on_lessons_id"
     t.index ["student_id"], name: "index_bookings_on_student_id"
   end
 
@@ -36,10 +35,10 @@ ActiveRecord::Schema.define(version: 20171113090015) do
     t.bigint "tutor_id"
     t.integer "duration"
     t.integer "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "venue"
     t.string "language_taught"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "name"
     t.text "details"
     t.index ["tutor_id"], name: "index_lessons_on_tutor_id"
@@ -87,7 +86,7 @@ ActiveRecord::Schema.define(version: 20171113090015) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "lessons", column: "session_id"
+  add_foreign_key "bookings", "lessons", column: "lessons_id"
   add_foreign_key "bookings", "users", column: "student_id"
   add_foreign_key "lessons", "users", column: "tutor_id"
   add_foreign_key "skills", "languages"
