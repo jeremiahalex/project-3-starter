@@ -5,7 +5,8 @@ class BookingsController < ApplicationController
 
   def index
     @user_lesson = current_user.lessons
-    # render json: @user_lesson
+    @booked = Booking.all
+    # render json: @booked
   end
 
   def show
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
 
   def authorize_author
     unless current_user.id == find_current_lesson.tutor_id
-      redirect_to root_path    
+      redirect_to root_path
     end
   end
 

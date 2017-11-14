@@ -57,6 +57,7 @@ d. If the Student is late for a session, the Tutor may choose to but is not obli
 
 <%= form_tag charges_path do %>
   <%= hidden_field_tag 'amount', @lesson.price * @lesson.duration * 100 %>
+  <%= hidden_field_tag 'lessonId', @lesson.id %>
     <article>
       <% if flash[:error].present? %>
         <div id="error_explanation">

@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
 
   def index
       @lessons = Lesson.all.order("created_at DESC")
+      render json: @lessons
     #redirect_to root_path
   end
 

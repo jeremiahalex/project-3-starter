@@ -3,6 +3,12 @@ class ChargesController < ApplicationController
   end
 
   def create
+
+    @new_booking = Booking.create(
+      student_id: current_user.id,
+      lessons_id: params[:lessonId]
+    )
+
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
