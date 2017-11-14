@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     resources :lessons
     resources :bookings
     resources :charges
+    resources :testimonials
+
 end
