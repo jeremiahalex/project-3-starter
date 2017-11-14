@@ -5,6 +5,7 @@ function(){
   $('.slider').slider();
   $('select').material_select();
   $('.collapsible').collapsible();
+  $(".dropdown-button").dropdown();
 
   var userPoints = Number($('.userPoints').val())
 
