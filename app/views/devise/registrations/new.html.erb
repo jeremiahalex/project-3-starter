@@ -35,22 +35,22 @@
 
     <div class="field">
       <%= f.label :phone_number %><br />
-      <%= f.text_field :phone, autofocus: true %>
+      <%= f.text_field :phone, autofocus: true, :required => true  %>
     </div>
 
     <div class="field">
       <%= f.label :street_address %><br />
-      <%= f.text_field :street, autofocus: true %>
+      <%= f.text_field :street, autofocus: true, :required => true  %>
     </div>
 
     <div class="field">
       <%= f.label :unit_no %><br />
-      <%= f.text_field :unit, autofocus: true %>
+      <%= f.text_field :unit, autofocus: true, :required => true  %>
     </div>
 
     <div class="field">
       <%= f.label :postal_code %><br />
-      <%= f.text_field :postalcode, autofocus: true %>
+      <%= f.text_field :postalcode, autofocus: true, :required => true %>
     </div>
 
     <div class="actions">
