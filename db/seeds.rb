@@ -8,7 +8,7 @@
 
 
 # 5.times do
-#   new_user = User.new
+#   new_user.name = Faker::Name.name
 #   new_user.email = Faker::Internet.email
 #   new_user.password = 'test123'
 #
@@ -69,7 +69,7 @@
 
 # START SEEDING FOR CLOTHES SET SHOW
 # ClothesSet.destroy_all
-# 300.times do
+# 10.times do
 #   ClothesSet.create(
 #     name: Faker::Commerce.product_name,
 #     style_id: Style.all.sample.id,
@@ -82,7 +82,7 @@
 
 # START SEEDING FOR LOANITEM
 # LoanedItem .destroy_all
-# 20.times do
+# 10.times do
 #   LoanedItem.create(
 #     user_id: User.all.sample.id,
 #     clothes_set_id: ClothesSet.all.sample.id,
@@ -92,4 +92,4 @@
 # end
 # END SEEDING FOR LOANITEM
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
