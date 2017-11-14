@@ -11,8 +11,7 @@ function(){
 
 
 
-
-  $clothes = $('.clothes')
+  const $clothes = $('.clothes')
 
   $clothes.on('click', '.addBtn', function () {
 
