@@ -10,6 +10,7 @@ function(){
 
 
 
+
   $clothes = $('.clothes')
 
   $clothes.on('click', '.addBtn', function () {
