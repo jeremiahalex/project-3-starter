@@ -2,7 +2,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
   def self.up
     create_table :users do |t|
       # custom field for db
-      t.string :name
+      t.string :name, null: false
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -20,13 +20,13 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
       t.integer :phone
 
       # custom street address
-      t.string :street
+      t.string :street, null: false
 
       # custom unit no
-      t.string :unit
+      t.string :unit, null: false
 
       # custom postal code
-      t.string :postalcode
+      t.string :postalcode, null: false
 
       ## Rememberable
       t.datetime :remember_created_at
@@ -39,15 +39,15 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
       t.inet     :last_sign_in_ip
 
       ## Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
-      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
-      # t.string   :unlock_token # Only if unlock strategy is :email or :both
-      # t.datetime :locked_at
+      t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      t.string   :unlock_token # Only if unlock strategy is :email or :both
+      t.datetime :locked_at
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
