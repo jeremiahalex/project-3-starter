@@ -4,6 +4,11 @@
 
 <input type="hidden" value="<%=current_user.points%>" class='userPoints'>
 
+<h4>Current Balance:</h4>
+<div class="pointsDisplay">
+  <h5><%= current_user.points %> points</h5>
+</div>
+
 <div class="row clothes">
   <% @filtered_clothes.each do |set| %>
 
