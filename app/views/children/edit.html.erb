@@ -13,7 +13,7 @@
   <%= f.date_field :birthday %>
 
   <%= f.label :size_id %><br />
-  <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}) %>
+  <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @current_child.size_id) %>
 
   <%= f.submit("Update Child", class: 'btn') %>
 <% end %>
