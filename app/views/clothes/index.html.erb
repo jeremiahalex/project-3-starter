@@ -6,6 +6,13 @@
   <%= select_tag "style", options_from_collection_for_select(@styles, "id", "name", @clothes_style_id), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
 
   <input type="hidden" value="<%=current_user.points%>" class='userPoints'>
+<h4>Current Balance:</h4>
+<div class="pointsDisplay">
+  <h5><%= current_user.points %> points</h5>
+</div>
+
+<div class="row clothes">
+  <% @filtered_clothes.each do |set| %>
 
   <div class="row clothes">
     <% @filtered_clothes.each do |set| %>

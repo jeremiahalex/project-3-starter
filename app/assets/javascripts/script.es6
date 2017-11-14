@@ -9,19 +9,22 @@ function(){
 
   var userPoints = Number($('.userPoints').val())
 
-
-
-
   const $clothes = $('.clothes')
 
   $clothes.on('click', '.addBtn', function () {
+    // MING TEST
+    var $pointsDisplay = $('.pointsDisplay')
 
     console.log(userPoints)
     if (userPoints <= 0){
       alert('You have exceed the number of clothes you can select, Please remove before adding')
     }
     else if(userPoints > 0) {
+      // MING TEST
+      $pointsDisplay.empty()
       userPoints -= 10
+      $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
+
       var clothes_set_id = $(this).parent().find('.setId').val()
       var json = JSON.stringify({
         clothes_set_id
@@ -45,8 +48,11 @@ function(){
   })
 
   $clothes.on('click', '.removeBtn', function () {
-
+    var $pointsDisplay = $('.pointsDisplay')
+    $pointsDisplay.empty()
     userPoints += 10
+    $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
+
     var clothes_set_id = $(this).parent().find('.setId').val()
     // var id = this.id
     var json = JSON.stringify({
