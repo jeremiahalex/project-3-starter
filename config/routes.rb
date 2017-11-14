@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   post 'cart/checkout', to: 'cart#checkout'
 
 
-  get '/loaned_item', to: 'loaned_item#index'
+  get '/my_order', to: 'loaned_item#index'
   get '/loaned_history', to: 'loaned_item#history'
 
   # resources :loaned_item
