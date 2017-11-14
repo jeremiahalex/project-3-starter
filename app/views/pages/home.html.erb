@@ -8,29 +8,23 @@
   <div class="searchbox">
     <div class="row">
       <%= form_tag(root_path, method: :get) do %>
-    <div class="input-field col s5 m4 l4">
-      <%= select_tag(:language_taught, options_for_select(@all_languages), include_blank: 'Filter by Programming Language') %>
-    </div>
 
 
 
-    <div class="input-field col s2 m3 l3">
-      <%= submit_tag 'Search', name: nil, class: 'btn waves-effect waves-light' %>
+      <div class="col-md-5">
+        <div class="form-control category">
+          <%= select_tag(:price, options_for_select(@all_prices), include_blank: 'Filter by Price') %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-control category">
+          <%= select_tag(:language_taught, options_for_select(@all_languages), include_blank: 'Filter by Programming Language') %>
+        </div>
+      </div>
+      <div class="col-md-1"><%= submit_tag 'Search', name: nil, class: 'btn' %></div>
     </div>
     <% end %>
-      <div class="col-md-5"><input type="text" class="form-control" placeholder="Search by Keywords..."></div>
-      <div class="col-md-3"><input type="text" class="form-control" placeholder="Price"></div>
-      <div class="col-md-3">
-        <select class="form-control category">
-          <option>Language</option>
-          <option>C++</option>
-          <option>C</option>
-          <option>Python</option>
-          <option>PHP</option>
-        </select>
-      </div>
-      <div class="col-md-1"><input type="button" class="btn" value="Search"></div>
-    </div>
   </div>
 
   <br>
@@ -42,8 +36,8 @@
 
 
   <div class="row">
-    <% @all_result.each do |lesson| %>
-    
+    <% @all_requests.each do |lesson| %>
+
     <div class="col-md-4 col-sm-6">
 
       <div class="card-container manual-flip">
