@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
 
   def show
     @all_lessons = Lesson.all.order("created_at DESC")
-    @lesson = Lesson.find(params[:id])
+    find_lesson
     # render json: @lesson
     tutor = @lesson.tutor_id
     @lesson_tutor = User.find(tutor)
@@ -23,7 +23,7 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @new_lesson = current_user.lessons.create(params.require(:lesson).permit(:duration, :price, :datetime, :venue, :language_taught, :tutor_id, :name, :details))
+    @new_lesson = current_user.lessons.create(lesson_params)
 
     if @new_lesson.save
       redirect_to root_path
@@ -33,11 +33,14 @@ class LessonsController < ApplicationController
   end
 
   def update
-      if @lesson.update(create)
+    if current_user.id == find_lesson.tutor_id
+      @lesson = Lesson.find(params[:id])
+      if @lesson.update(lesson_params)
         redirect_to lesson_path(@lesson)
       else
         render 'edit'
       end
+    end
   end
 
   def authorize_tutor
@@ -46,8 +49,12 @@ class LessonsController < ApplicationController
     end
   end
 
-  # private
-  # def find_lesson
-  #   @lesson = Lesson.find(params[:id])
-  # end
+  def lesson_params
+    params.require(:lesson).permit(:duration, :price, :datetime, :venue, :language_taught, :tutor_id, :name, :details)
+  end
+
+  private
+  def find_lesson
+    @lesson = Lesson.find(params[:id])
+  end
 end
