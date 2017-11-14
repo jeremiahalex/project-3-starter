@@ -12,6 +12,7 @@ class CartController < ApplicationController
     @clothes_set_id = params[:clothes_set_id]
     @current_clothes_set = ClothesSet.find(@clothes_set_id)
     @current_clothes_set.add_to_cart(@user_id)
+    current_user.remove_point(@current_clothes_set.points)
   end
 
   def new
@@ -28,12 +29,14 @@ class CartController < ApplicationController
 
   def destroy
     CartItem.destroy(params[:id])
+    current_user.add_point(10)
     # redirect_to '/browse'
   end
 
   def checkout
     current_user.create_loaned_item
-    redirect_to '/loaned_item'
+
+    redirect_to '/'
   end
 
 

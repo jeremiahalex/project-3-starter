@@ -2,23 +2,26 @@
 
 <%= select_tag "style", options_from_collection_for_select(@styles, "id", "name"), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
 
+<input type="hidden" value="<%=current_user.points%>" class='userPoints'>
 
-<div class="row">
+<div class="row clothes">
   <% @filtered_clothes.each do |set| %>
 
-  <div class="col s3">
+  <div class="col s3 ">
     <h6><%= set.name %></h6>
+    <input type="hidden" value="<%=set.id%>" class='setId'>
+
     <div class="">
       <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
     </div>
     <% unless set.in_cart(current_user.id) %>
-    <%= button_to 'Add to Cart', cart_index_path(:clothes_set_id => set.id), remote: true, method: :post %>
+      <button class = "addBtn">Add To cart</button>
     <% else %>
-    <% @cart_item_id = set.cart_id(current_user.id) %>
-    <%= button_to 'Remove from Cart', cart_path(@cart_item_id), remote: true, method: :delete %>
+      <button class = "removeBtn"> Remove from cart</button>
     <% end %>
 
   </div>
+
 
   <% end %>
 </div>
