@@ -4,6 +4,12 @@ html, body {
   width: 100%
 }
 
+.booking {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
 .rate {
   background-color: #4ECDC4;
   color: #fff;
