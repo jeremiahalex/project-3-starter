@@ -653,7 +653,7 @@ em, li, li a {
 }
 
 a {
-  color: #81848f
+  color: #ffffff;
 }
 
 a:active, a:focus, a:hover {
@@ -1192,7 +1192,7 @@ h3, h4 {
     background: #fff
   }
   .header .navbar-toggle {
-    display: block
+    display: block;
   }
   .header .navbar-collapse.collapse {
     display: none!important
@@ -1232,6 +1232,12 @@ h3, h4 {
   .header .nav-item-hover:after {
     position: absolute;
     top: 19px
+  }
+  .header .navbar > .container > .nav-collapse {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

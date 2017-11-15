@@ -19,6 +19,7 @@ class LessonsController < ApplicationController
     tutor = @lesson.tutor_id
     @lesson_tutor = User.find(tutor)
     @tutor_lessons = Lesson.where(tutor_id: tutor)
+    @booked = Booking.all
   end
 
   def new
