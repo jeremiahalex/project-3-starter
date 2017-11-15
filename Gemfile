@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'stripe'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'pry'
 gem 'jquery-turbolinks'
