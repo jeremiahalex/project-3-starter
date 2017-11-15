@@ -4,24 +4,22 @@
   <% if user_signed_in? %>
     <!-- filter form  -->
     <div class="filter red lighten-5">
-    <%= image_tag('dots.png') %>
-    <div class="row filernote" style="position:absolute;">
-      <div class="col s12 m2 l7"></div>
-      <div class="col s12 m8 l6">
-        <div class="card-panel filter" style="border-radius: 0px; border: solid 4px black; padding: 65px;">
-          <h4 class="center-align">
-            Hi <%= current_user.name %>, glad you're back! <br>
-            <p> How are you and your family doing? <br>
-            Has <%= current_user.child[0].name %> grown in size over the last month?</p>
-            <br>
-          </h4>
-          <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
-          <%= link_to '<button type="button">No</button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+      <div class="row filernote">
+        <div class="col s12 m8">
+          <div class="card-panel filter">
+            <h4 class="greettxt left-align">
+              Hi <span style="color:blue;"><%= current_user.name %></span>, glad you're back! <br>
+              <p> How are you and your family doing? <br>
+              Has <span style="color:blue";><%= current_user.child[0].name %></span> grown in size over the last month?</p>
+              <br>
+            </h4>
+            <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
+            <%= link_to '<button type="button">No</button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+          </div>
         </div>
       </div>
-      <div class="col s12 m2 "></div>
     </div>
-  </div>
+    <!-- end filter form  -->
   <% else %>
   <div class="slider">
     <ul class="slides">
@@ -66,12 +64,14 @@
     <div class="row about">
       <div class="col m5 offset-m2">
         <div class="card-panel z-depth-1 teal lighten-4" style="border-radius: 0px; border: solid 4px white; box-shadow:none;">
+          <blockquote>
           <h5>
             Hello!<br/> Welcome to Precious Tots
           </h5>
           <span class="white-text">
             We believe in offering our customers and their children with more than just a product or service. Here at Precious Tots, we provide families with a lifestyle experience through variety and fashion. Let your little ones try out new outfits every month and record them growing up in style.
           </span>
+          </blockquote>
         </div>
       </div>
     </div>

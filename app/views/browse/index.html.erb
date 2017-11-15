@@ -1,32 +1,35 @@
 <div class="filter red lighten-5">
   <div class="row" style="border-top: 1px solid black;">
-    <div class="container">
 
       <!-- left side bar  -->
       <div class="col m3 s12" style="padding: 20px 20px 10% 20px;">
-        <label>Filter By Style</label>
-        <% size_name = Size.find(current_user.child[0].size_id).name %>
-        <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name"), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value)" %>
 
         <input type="hidden" value="<%=current_user.points%>" class='userPoints'>
 
-        <h4>Current Balance:</h4>
         <div class="pointsDisplay">
-          <h5><%= current_user.points %> points</h5>
+          <h5>Current Balance:</h5>
+          <span class="new badge" data-badge-caption="Points"><%= current_user.points %></span>
         </div>
+
+        <div class="divider" style="margin-bottom: 20px;"></div>
+
+        <label>Filter By Style</label>
+        <% size_name = Size.find(current_user.child[0].size_id).name %>
+        <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name"), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value)" %>
       </div>
 
       <!-- right side  -->
       <div class="leftside col m9 s12 brown lighten-5" style="padding-bottom:10%;">
+        <div class="container">
         <h4>Browse Clothes</h4>
 
       <div class="row clothes">
         <% @filtered_clothes.each do |set| %>
 
-      <div class="col s12 m6 l3">
+      <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
-              <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
+              <img src="<%= set.photo_URL %>" class="cart-img" alt="<%= set.name %>">
 
           <% unless set.in_cart(current_user.id) %>
 
@@ -39,11 +42,10 @@
               <a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>
             </div>
           <% end %>
-
-            <div class="card-content">
+          </div>
+          <div class="card-content">
             <h6><%= set.name %></h6>
             <input type="hidden" value="<%=set.id%>" class='setId'>
-            </div>
           </div>
       </div>
     </div>
@@ -52,5 +54,6 @@
         <% end %>
       </div>
       </div>
-    </div>
+      </div>
   </div>
+</div>

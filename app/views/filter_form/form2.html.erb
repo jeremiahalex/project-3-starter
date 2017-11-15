@@ -1,21 +1,16 @@
 <div class="container">
   <div class="filter red lighten-5">
-  <%= image_tag('dots.png') %>
+  <div class="row filernote">
+    <div class="col s12 m8">
+      <div class="card-panel filter">
 
-  <div class="row filernote" style="position:absolute;">
-    <div class="col s12 m2 l7"></div>
-    <div class="col s12 m8 l6">
-      <div class="card-panel filter" style="border-radius: 0px; border: solid 4px black; padding: 65px;">
-
-      <h4 class="center-align">
+      <h4 class="left-align">
         Wonderful! Now, what style of dressing would <%= current_user.child[0].name %> like to try next month?
       </h4>
       <% size_name = Size.find(current_user.child[0].size_id).name %>
       <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name"), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value)" %>
     </div>
-
-    <div class="col s12 m2 "></div>
-
+    </div>
+  </div>
   </div>
 </div>
-<div>

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Heebo');
+
+$title-font: 'Heebo', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+
+h4 {
+  font-family: $title-font;
+}
+
+span {
+  font-family: $body-font;
+}

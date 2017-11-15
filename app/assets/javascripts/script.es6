@@ -72,13 +72,13 @@ function () {
 
 // Cart - remove from cart btn
   $('.cart').on('click', '.removeCartBtn', function () {
-    var clothes_set_id = $(this).parent().find('.setId').val()
+    var clothes_set_id = $(this).parent().parent().find('.setId').val()
     $.ajax({
       url: `/clothes/${clothes_set_id}`,
       type: 'DELETE',
       success: function (result) {}
     })
-    var cartItemResult = $(this).parent()
+    var cartItemResult = $(this).parent().parent().parent()
     cartItemResult.remove()
   // Cart number change - AJAX
     var $cartNumber = $('#cart_item_count')

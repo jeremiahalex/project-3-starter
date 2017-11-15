@@ -1,6 +1,5 @@
 <div class="filter red lighten-5">
   <div class="row" style="border-top: 1px solid black;">
-    <div class="container">
       <!-- left side bar  -->
       <div class="col m3 s12 filter" style="padding: 20px 20px 10% 0px;">
         <label>Filter By Style</label>
@@ -8,7 +7,7 @@
 
         <input type="hidden" value="<%=current_user.points%>" class='userPoints'>
 
-        <h4>Current Balance:</h4>
+        <h4>Balance:</h4>
         <div class="pointsDisplay">
           <h5><%= current_user.points %> points</h5>
         </div>
@@ -26,12 +25,12 @@
                   <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
                   <% unless set.in_cart(current_user.id) %>
                     <div class="parent_test">
-                    <a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                  </div>
-                <% else %>
-                  <div class="parent_test">
-                    <a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>
-                  </div>
+                      <a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
+                  <% else %>
+                    <div class="parent_test">
+                      <a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>
+                    </div>
                   <% end %>
                 </div>
                 <div class="card-content">
@@ -43,6 +42,5 @@
           <% end %>
         </div>
       </div>
-    </div>
   </div>
 </div>
