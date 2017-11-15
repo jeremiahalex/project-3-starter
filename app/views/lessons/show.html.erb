@@ -46,7 +46,7 @@
 
               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="A month's subscription"
+                      data-description="Booking: <%= @lesson.name %>"
                       data-amount="<%=@lesson.price * @lesson.duration%>00"
                       data-locale="auto"
                       data-currency="SGD"></script>

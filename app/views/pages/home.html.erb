@@ -38,13 +38,11 @@
       <div class="card-container manual-flip">
         <div class="card">
           <div class="front">
-            <% @booked.each do |booking| %>
-            <% if booking.lesson.id == lesson.id %>
+            
+            <% if @booked.include? lesson.id%>
             <span class="badge badge-pill badge-danger">Booked</span>
-            <% else %>
-            <span class="badge badge-pill badge-success">Available</span>
-            <% end %>
             <% end  %>
+
             <div class="cover">
             </div>
             <div class="user">
