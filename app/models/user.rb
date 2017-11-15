@@ -37,6 +37,7 @@ class User < ApplicationRecord
   end
 
   def add_point(amt)
+  
     @current_user = User.find(self.id)
     @current_user.points += amt
     @current_user.save
