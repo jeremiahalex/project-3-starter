@@ -13,7 +13,13 @@ class ChildrenController < ApplicationController
 
   def create
     current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
-    redirect_to "/choose_size_style/#{current_user.child[0].size_id}/0"
+    if current_user.points == 0
+      flash[:notice] = "Your child information have been added. Please proceed to payment"
+      redirect_to "/profile"
+    else
+      redirect_to "/profile"
+    end
+
   end
 
   def new

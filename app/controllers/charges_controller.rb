@@ -23,11 +23,11 @@ class ChargesController < ApplicationController
     current_user.subscription_type = true
     current_user.save
 
-    flash[:notice] = "Thank you. You have paid $39.90"
+    flash[:notice] = "Thank you. You have paid $39.90. 30 points have been added to your account"
     redirect_to profile_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path
+    redirect_to "/choose_size_style/#{current_user.child[0].size_id}/0"
   end
 end

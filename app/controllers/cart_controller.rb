@@ -29,12 +29,13 @@ class CartController < ApplicationController
   def destroy
     CartItem.destroy(params[:id])
     current_user.add_point(10)
-    # redirect_to '/browse'
+
   end
 
   def checkout
     current_user.create_loaned_item
-    redirect_to '/'
+    flash[:notice] = "Your request have been submited. Have a nice day"
+    redirect_to '/my_order'
   end
 
 end
