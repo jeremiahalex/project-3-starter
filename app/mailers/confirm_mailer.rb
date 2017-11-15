@@ -10,6 +10,5 @@ class ConfirmMailer < ApplicationMailer
 
     mail to: @student,
          subject: "Thank you for your purchase!"
-    # not sure about this
   end
 end
