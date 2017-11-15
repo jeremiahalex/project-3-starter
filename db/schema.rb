@@ -24,11 +24,6 @@ ActiveRecord::Schema.define(version: 20171113075935) do
     t.index ["student_id"], name: "index_bookings_on_student_id"
   end
 
-  create_table "languages", force: :cascade do |t|
-    t.text "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "lessons", force: :cascade do |t|
     t.datetime "datetime"
@@ -44,14 +39,6 @@ ActiveRecord::Schema.define(version: 20171113075935) do
     t.index ["tutor_id"], name: "index_lessons_on_tutor_id"
   end
 
-  create_table "skills", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "language_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["language_id"], name: "index_skills_on_language_id"
-    t.index ["user_id"], name: "index_skills_on_user_id"
-  end
 
   create_table "testimonials", force: :cascade do |t|
     t.string "title"
@@ -89,8 +76,6 @@ ActiveRecord::Schema.define(version: 20171113075935) do
   add_foreign_key "bookings", "lessons"
   add_foreign_key "bookings", "users", column: "student_id"
   add_foreign_key "lessons", "users", column: "tutor_id"
-  add_foreign_key "skills", "languages"
-  add_foreign_key "skills", "users"
   add_foreign_key "testimonials", "users", column: "author_id"
   add_foreign_key "testimonials", "users", column: "tutor_id"
 end

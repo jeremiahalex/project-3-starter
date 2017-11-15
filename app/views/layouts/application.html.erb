@@ -7,9 +7,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= uploadcare_settings %>
-    <script>
-      UPLOADCARE_PUBLIC_KEY = ENV['UPLOADCARE_PUBLIC_KEY'];
-    </script>
   </head>
 
   <body>
@@ -21,8 +18,8 @@
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="menu-container">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="toggle-icon"></span>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="toggle-icon"></span>
             </button>
 
             <!-- Logo -->
@@ -39,7 +36,7 @@
             <div class="menu-container">
               <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item">
-                  <a class="nav-item-child nav-item-hover active" href="/">Home</a>
+                  <a class="nav-item-child nav-item-hover" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-item-child nav-item-hover" href="#">About</a>
@@ -55,21 +52,16 @@
                 <% unless user_signed_in? %>
                   <li class="nav-item">
                     <a class="nav-item-child nav-item-hover"<%= link_to "Login", new_user_session_path %></a>
-                    <!-- <a class="nav-item-child nav-item-hover" href="users/sign_in">Login</a> -->
                   </li>
                   <li class="nav-item">
                     <a class="nav-item-child nav-item-hover"<%= link_to "Register", new_user_registration_path %></a>
-                    <!-- <a class="nav-item-child nav-item-hover" href="users/sign_up">Register</a> -->
                   </li>
                 <% else %>
-
                   <li class="nav-item">
                     <a class="nav-item-child nav-item-hover"<%= link_to current_user.email , edit_user_registration_path %></a>
-                    <!-- <a class="nav-item-child nav-item-hover" href="/users/edit"><%= current_user.email %></a> -->
                   </li>
                   <li class="nav-item">
                     <a class="nav-item-child nav-item-hover"<%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
-                    <!-- <a class="nav-item-child nav-item-hover" href="#">Logout</a> -->
                   </li>
                 <% end %>
               </ul>

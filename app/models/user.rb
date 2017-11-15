@@ -4,9 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :skills
-  has_many :languages, through: :skills
-
 
   has_many :lessons , :foreign_key => 'tutor_id'
   has_many :bookings, through: :lessons
