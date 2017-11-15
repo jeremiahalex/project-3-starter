@@ -3,13 +3,18 @@ class ChargesController < ApplicationController
   end
 
   def create
+    # render json: [:tutor_email]
 
     @new_booking = Booking.create(
       student_id: current_user.id,
       lesson_id: params[:lessonId]
     )
 
-    ConfirmMailer.new_confirmation.deliver_later
+    @tutor_email = @new_booking.lesson.tutor.email
+    @student_email = @new_booking.student.email
+
+    LessonRegistrationMailer.new_registration(@tutor_email).deliver_later
+    ConfirmMailer.new_confirmation(@student_email).deliver_later
 
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
@@ -23,10 +28,8 @@ class ChargesController < ApplicationController
       currency: 'sgd'
     )
 
-
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path
+    redirect_to bookings_path
   end
-
 end
