@@ -1,6 +1,8 @@
 class ChargesController < ApplicationController
   def new
+    # redirect_to bookings_path
   end
+
 
   def create
     # render json: [:tutor_email]
@@ -28,8 +30,12 @@ class ChargesController < ApplicationController
       currency: 'sgd'
     )
 
+    redirect_to bookings_path
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to bookings_path
+
+    redirect_to new_charge_path
+
   end
 end
