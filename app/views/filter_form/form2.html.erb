@@ -10,12 +10,11 @@
       <h4 class="center-align">
         Wonderful! Now, what style of dressing would <%= current_user.child[0].name %> like to try next month?
       </h4>
-
-      <%= select_tag "style", options_from_collection_for_select(@styles, "id", "name"), onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
-    </div>
+      <% size_name = Size.find(current_user.child[0].size_id).name %>
+      <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name"), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value)" %>
     </div>
 
     <div class="col s12 m2 "></div>
-    
+
   </div>
 </div>
