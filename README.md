@@ -3,12 +3,6 @@
 
 ## PeerTutor Project
 
- THIS IS THE MASTER BRANCH
+ https://learntocodewithus.herokuapp.com/
 
 ## Wireframes
-These wireframes are subject to changes.
-![](/app/assets/images/wireframe1.png)
-![](/app/assets/images/wireframe2.png)
-![](/app/assets/images/wireframe3.png)
-![](/app/assets/images/wireframe4.png)
-![](/app/assets/images/wireframe5.png)
