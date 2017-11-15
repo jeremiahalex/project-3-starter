@@ -5,9 +5,10 @@ class ConfirmMailer < ApplicationMailer
   #
   #   en.confirm_mailer.new_confirmation.subject
   #
-  def new_confirmation
+  def new_confirmation(email)
+    @student = email
 
-    mail to: "nurhsans@gmail.com",
+    mail to: @student,
          subject: "Thank you for your purchase!"
     # not sure about this
   end

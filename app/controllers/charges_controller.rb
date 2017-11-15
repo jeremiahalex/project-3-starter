@@ -9,7 +9,11 @@ class ChargesController < ApplicationController
       lesson_id: params[:lessonId]
     )
 
-    ConfirmMailer.new_confirmation.deliver_later
+    @student_email = current_user.email
+
+    #  render json: @student_email
+
+    ConfirmMailer.new_confirmation(@student_email).deliver_later
 
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
