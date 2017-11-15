@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     get '/profile', to: 'profile#show'
     get 'profile/edit', to: 'devise/registrations#edit'
   end
-  devise_for :users, :controllers => {:registrations => "users/registrations"},
+  devise_for :users, :controllers => {
+    registrations: "users/registrations",
+    sessions: "users/sessions"
+  },
   path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
