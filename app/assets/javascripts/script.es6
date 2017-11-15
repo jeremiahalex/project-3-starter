@@ -21,7 +21,12 @@ function () {
       $pointsDisplay.empty()
       userPoints -= 10
       $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
-      var clothes_set_id = $(this).parent().parent().find('.setId').val()
+      var clothes_set_id = $(this).parent().parent().parent().find('.setId').val()
+      var json = JSON.stringify({
+        clothes_set_id
+      })
+      // console.log(json)
+      // console.log($(this), clothes_set_id)
       $.ajax({
         url: `/cart`,
         type: 'POST',
@@ -47,7 +52,12 @@ function () {
     var $pointsDisplay = $('.pointsDisplay')
     $pointsDisplay.empty()
     $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
-    var clothes_set_id = $(this).parent().parent().find('.setId').val()
+    var clothes_set_id = $(this).parent().parent().parent().find('.setId').val()
+    // var id = this.id
+    var json = JSON.stringify({
+      clothes_set_id
+    })
+    // console.log($(this), clothes_set_id )
     $.ajax({
       url: `/clothes/${clothes_set_id}`,
       type: 'DELETE',
