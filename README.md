@@ -11,7 +11,7 @@ Link To Website: [Precious-tots](https://precious-tots.herokuapp.com)
 **Observed Problem:** <br>
 Kids grow up too fast. Many parents wish to dress up their kids in pretty cloths but are reluctant to buy new sets due to the fact that they outgrow the clothes in a matter of months.<br><br>
 **Proposed Solution:** <br>
-We aim to solve this problem by providing a service enabling parents to rent outfits for their children on a monthly basis.
+We aim to solve this problem by providing a service enabling parents to rent different outfits for their children on a monthly basis.
 
 ---
 
@@ -94,40 +94,49 @@ to be added
 ## Development Log
 
 6 Nov 2017
-* Readme added with user stories, use case, ERD and wireframe
+* Add README with user stories, use case, ERD and wireframe
 
 7 Nov 2017
-* Working home page
-* Devise added: allow for user register, login and logout.
-* Allow for registration with the necessary information recorded in additional of email and password.
+* Add working home page
+* Add Devise: allow for user register, login and logout
+* Add registration feature. Allow for registration with the necessary information recorded i.e. email and password
 * Edit ERD diagram
 
 8 Nov 2017
-* Add model: child, size, loan_status, style, stock_status, clothes_set, cart_item and loaned_item.
+* Add models: child, size, loan_status, style, stock_status, clothes_set, cart_item and loaned_item
 * Add migrate files for all models
 * Add db seed for loan_status, style, stock_status
-* Add controller for children, user are able to create child's details under their account.
+* Add controllers for children. Users are able to create child's details under their account.
 
 9 Nov 2017
-* Add profile page to user account.
+* Add profile page to user account
 * Add edit routes for editing children's information
 * Edit user_account_update routes from "/edit" to "/profile/edit"
-* Edit model : added relationships between models
+* Edit models: added relationships between models
 
 10 Nov 2017
-* add edit & delete routes for child
-* add necessary gem files
-* add browse function
+* Add edit & delete routes for child
+* Add necessary gem files
+* Add browse function
 
 12 Nov 2017
-* add cart function: able to add item to cart, remove and checkout cart.
-* add admin function: admin able to add other admin account, admin able to see all the loaned item and edit it.
+* Add cart function: able to add item to cart, remove and checkout cart
+* Add admin function: admin able to add other admin account, admin able to see all the loaned item and edit it
 
 13 Nov 2017
-* add filter clothes function: able to filter clothes by size & style
-* edit cart function: Add ajax cart function
-* fix: double creation of cart_items
-* Improve css
+* Add filter clothes function: able to filter clothes by size & style
+* Edit cart function: add AJAX cart function
+* Fix: double creation of cart_items
+* Improve CSS
+
+15 Nov 2017
+* Add AJAX to in-cart quantity, add/remove button for clothes browsing
+* Add Stripe payment system
+* Edit user registration > add child > payment > filter form > browse page > cart > checkout > my orders route
+* Improve CSS
+* Push to Heroku
+* Soft launch
+* Edit README
 
 <!-- ## README
 

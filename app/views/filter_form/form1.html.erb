@@ -8,7 +8,7 @@
       <div class="card-panel filter" style="border-radius: 0px; border: solid 4px black; padding: 65px;">
 
         <h4 class="center-align">
-          Glad to hear <%= current_user.child[0].name %> is growing healthily, what size is <%= current_user.child[0].name %> now?
+          Glad to hear that <%= current_user.child[0].name %> is growing healthily, what size is <%= current_user.child[0].name %> now?
         </h4>
 
         <%= form_for @child, url: profile_children_update_child_size_path, method: :patch do |f| %>

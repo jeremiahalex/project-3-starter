@@ -8,7 +8,7 @@
           <h4 class="center-align">
             Hi <%= current_user.name %>, glad you're back! <br>
             <p> How are you and your family doing? <br>
-            Has <%= current_user.child[0].name %> grown in size over the last month?</p>
+            Has <%= current_user.child[0].name %> grown in size since your last visit?</p>
             <br>
           </h4>
           <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
