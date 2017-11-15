@@ -1,0 +1,94 @@
+
+p {
+  font-size: 30px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+    width: 95%;
+}
+nav{
+  background-color: $nav-bar;
+}
+div.container {
+  margin: 0 auto;
+}
+div.wrapper{
+	float:left; /* important */
+	position:relative; /* important(so we can absolutely position the description div */
+}
+div.title{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:40%; /* position will be on bottom */
+	width:100%;
+	color:#F45B69;
+	opacity:0.9; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+}
+h1.title{
+  font-size: 100px;
+  font-weight: 500;
+  font-family: $font-title;
+  text-align: center;
+}
+
+.hidden{
+  display: none;
+}
+
+#slide-out li i {
+  color: white;
+}
+
+
+.sideprofile{
+  font-size: 15px;
+  text-align: center;
+}
+#sideprofile{
+  font-size: 20px;
+  text-align: center;
+}
+#listheader{
+  background-color: $nav-bar;
+}
+#listitem{
+  background-color: $nav-bar;
+  color: black;
+}
+
+#homeOne{
+  width: 100%
+}
+
+
+#slide-out {
+  background-color: $nav-bar;
+  width: 11%;
+}
+#navOne {
+  padding: 10px 35% 0 35%;
+  margin: 8% 1%;
+  height: 100px;
+  width: 100%;
+  background-color: $nav-bar;
+  text-align: center;
+  color: white;
+}
+
+#navTwo {
+  padding: 15% 15%;
+  margin: 5% 0px;
+  width: 100%;
+  background-color: $nav-bar;
+}
+
+#table-out {
+  background-color: $nav-bar;
+  width: 20%;
+}

@@ -1,65 +1,69 @@
-# Your Project Name
+# aLifeTime
+##### Project Description
+Planning for a wedding can be a nightmare. WeddingTable to the rescue! This website is for couples who are planning for their wedding and need a solution to manage their guest-list. Our guest-list management tool helps you to build your guest-list, send invites and check who RSVP. Unlike existing wedding planner tools such as The Knot, we offer couples the service of planning their venue layout and assigning each individual guest to tables.
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+### Live Version
+ https://dashboard.heroku.com/apps/thawing-mountain-20143/logs
 
-## Getting Started
+### Home Page here
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+### Guest List Manager here
 
-### Prerequisites
+### User Stories
+![trello_user_story](/project-log/trello_user_story.png)
 
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
-
-### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
+### Entity Relationship Diagram (ERD)
+![erd](/project-log/erd.png)
 
 
-```
-Code example
-```
+### Wireframes
+![tableplanner](/project-log/tableplanner.png)
 
-More steps...
+#### Guest-List Manager
+![eventdetails](/project-log/guestlistaye.png)
 
-```
-until finished
-```
+#### Built with:
+Ruby v 2.4.2
+Rails v 5.1.4
+Postgresql Database
+Materialize
+Javascript
+
+#### Project by:
+Ray, Shui and Matthew
 
 
-## Tests
+<!--
 
-Did you write automated tests? If so, how do we run them.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
+Things you may want to cover:
 
-```
-Code example
-```
+* Ruby version
 
-## Live Version
+* System dependencies
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+* Configuration
 
-## Built With
+* Database creation
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+* Database initialization
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
+* How to run the test suite
 
-## Workflow
+* Services (job queues, cache servers, search engines, etc.)
 
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+* Deployment instructions
 
-## Authors
+* ...       -->
 
-Did you collaborate with others on this project, list them here
-
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
-
+the vows
+the proposal
+Lifetime forever
+LoveLast
+WeddingProposal
+LoveTrain
+aLifeTime
+SweetDove
+LoveCarriage
