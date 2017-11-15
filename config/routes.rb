@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   get '/choose_size_style/:size/:style', to: 'filter_form#form2'
   get '/choose_size_style/:size/:style/browse', to: 'clothes#index'
   resources :clothes, only: [:destroy]
+
+  get '/browse', to: 'browse#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :charges
