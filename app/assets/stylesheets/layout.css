@@ -35,7 +35,6 @@ html, body {
 
 .btn {
   background-color: #4ECDC4;
-  font-family:
 }
 
 .searchbox {
@@ -601,22 +600,6 @@ pre.prettyprint {
     visibility: visible;
   }
 }
-
-.login {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 300px;
-  margin: 0 auto 100px;
-  padding: 30px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  text-align: center;
-}
-
-
 
 .blockquote, .btn-theme, p {
   line-height: 1.4
