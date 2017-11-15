@@ -1,7 +1,5 @@
-ActiveAdmin.register LoanedItem do
-  # RENAME MENU
-  menu label: " Loaned List "
-
+ActiveAdmin.register User do
+  menu label: " User Details "
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -14,32 +12,36 @@ ActiveAdmin.register LoanedItem do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  actions :all, except: [:new]
+actions :all, except: [:new]
 
-  permit_params :loan_status_id, :date_of_submission
+permit_params :points, :subscription_type
 
   index do
     selectable_column
     id_column
-    column :user_id
-    column :clothes_set_id
-    column :loan_status
-    column :created_at
+    column :name
+    column :email
+    column :points
+    column :phone
+    column :street
+    column :unit
+    column :postalcode
+    column :subscription_type
     actions
   end
 
-  filter :user
+  filter :child
   filter :clothes_set
-  filter :loan_status
-  filter :created_at
+  filter :loaned_item
+  filter :cart_item
+  filter :stock_status
+  filter :subscription_type
 
   form do |f|
-  f.inputs "Loan Details" do
-    f.input :user
-    f.input :clothes_set
-    f.input :loan_status
+  f.inputs "Users Details" do
+    f.input :points
+    f.input :subscription_type
   end
   f.actions
   end
-
 end
