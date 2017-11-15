@@ -16,6 +16,7 @@
 # end
 
 # START SEEDING FOR SIZE
+Size.destroy_all
 4.times do |i|
   new_size = Size.new
   lower_bound = i*3
@@ -41,6 +42,7 @@ end
 # END SEEDING FOR SIZE
 
 # START SEEDING FOR STYLE
+Style.destroy_all
 style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
 style_array.each do |style|
   new_style = Style.new
@@ -50,6 +52,7 @@ end
 # END SEEDING FOR STYLE
 
 # START SEEDING FOR LOAN STATUS
+LoanStatus.destroy_all
 loan_status_values = ["Preparing", "Delivering", "With Customer", "Returned"]
 loan_status_values.each do |e|
   loan_status = LoanStatus.new
@@ -59,6 +62,7 @@ end
 # END SEEDING FOR LOAN STATUS
 
 # START SEEDING FOR STOCK STATUS
+StockStatus.destroy_all
 stock_status_array = ["In Stock", "With Customer", "Processing"]
 stock_status_array.each do |stat|
   new_stock_status = StockStatus.new
@@ -68,7 +72,7 @@ end
 # END SEEDING FOR STOCK STATUS
 
 # START SEEDING FOR CLOTHES SET SHOW
-# ClothesSet.destroy_all
+ClothesSet.destroy_all
 10.times do
   ClothesSet.create(
     name: Faker::Commerce.product_name,
