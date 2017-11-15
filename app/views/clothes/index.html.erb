@@ -2,7 +2,7 @@
   <div class="row" style="border-top: 1px solid black;">
     <div class="container">
       <!-- left side bar  -->
-      <div class="col m3 s12 filter" style="padding: 20px 20px 10% 20px;">
+      <div class="col m3 s12 filter" style="padding: 20px 20px 10% 0px;">
         <label>Filter By Style</label>
         <%= select_tag "style", options_from_collection_for_select(@styles, "id", "name", @clothes_style_id),  onchange: "window.location.replace('/choose_size_style/#{@child.size_id}/' + this.value + '/browse')" %>
 
