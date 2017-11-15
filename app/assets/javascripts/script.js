@@ -34,4 +34,9 @@ $(document).on("turbolinks:load", function() {
     }
   })
 
+  $(document).on('click', '.nav-pills li', function() {
+    $(".nav-pills li").removeClass("active");
+    $(this).addClass("active");
+});
+
 })

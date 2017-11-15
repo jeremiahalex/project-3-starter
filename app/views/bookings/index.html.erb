@@ -1,9 +1,102 @@
-
-
-  <!-- my booked lessons -->
-
-  <% @all_bookings.each do |booking| %>
-  <%= booking.student.name %>
-  <br>
-  <%= booking.lesson.name %>
-  <% end %>
+<div class="page-content tab-parallax">
+<div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <section class="icon-box-tabs ">
+                                <ul class="nav nav-pills">
+                                  <% if current_user.reg_tutor == true %>
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#tab-15" aria-expanded="true">
+                                            <h3>Lessons booked</h3>
+                                            <i class="fa fa-laptop"></i>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a data-toggle="tab" href="#tab-16" aria-expanded="false">
+                                            <h3>Lessons created</h3>
+                                            <i class="fa fa-file-text-o"></i>
+                                        </a>
+                                    </li>
+                                    <% else %>
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#tab-15" aria-expanded="true">
+                                            <h3>Lessons booked</h3>
+                                            <i class="fa fa-laptop"></i>
+                                        </a>
+                                    </li>
+                                    <% end %>
+                                </ul>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div id="tab-15" class="tab-pane active">
+                                            <div class="heading-title-alt">
+                                                <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
+                                                <h2 class="text-uppercase">table of lessons booked</h2>
+                                            </div>
+                                            <table class="table table-dark">
+                                              <thead>
+                                                <tr>
+                                                  <th scope="col">Language</th>
+                                                  <th scope="col">Tutor Name</th>
+                                                  <th scope="col">Venue</th>
+                                                  <th scope="col">DateTime</th>
+                                                  <th scope="col">Price</th>
+                                                  <th scope="col">Status</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                            <% @all_bookings.each do |booking| %>
+                                                <tr>
+                                                  <th scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get %></th>
+                                                  <td><%= booking.lesson.tutor.name %></td>
+                                                  <td><%= booking.lesson.venue %></td>
+                                                  <td><%= booking.lesson.datetime %></td>
+                                                  <td>$<%= booking.lesson.price %></td>
+                                                  <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
+                                                  <td>Attended</td>
+                                                  <% else %>
+                                                  <td>Not attended</td>
+                                                  <% end %>
+                                                </tr>
+                                            <% end %>
+                                            </tbody>
+                                            </table>
+                                            </div>
+                                        <div id="tab-16" class="tab-pane">
+                                            <div class="heading-title-alt">
+                                                <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
+                                                <h2 class="text-uppercase">Table of created lessons</h2>
+                                            </div>
+                                            <table class="table table-dark">
+                                              <thead>
+                                                <tr>
+                                                  <th scope="col">Language</th>
+                                                  <th scope="col">Tutor Name</th>
+                                                  <th scope="col">Venue</th>
+                                                  <th scope="col">Price</th>
+                                                  <th scope="col">Status</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                            <% @user_lesson.each do |lesson| %>
+                                                <tr>
+                                                  <th scope="row"><%= lesson.language_taught%></th>
+                                                  <td><%= lesson.tutor.name%></td>
+                                                  <td><%= lesson.venue%></td>
+                                                  <td>$<%= lesson.price %></td>
+                                                  <td>Attended</td>
+                                                  <td> <%= link_to "Edit", edit_booking_path(lesson) %>
+                                                        <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>       
+                                                  </td>
+                                                </tr>
+                                            <% end %>
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+	</div>
