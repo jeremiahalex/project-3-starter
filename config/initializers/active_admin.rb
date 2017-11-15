@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "BABY_vanity"
+  config.site_title = "Precious Tots"
   config.site_title_link  = "/admin"
 
   config.comments = false
@@ -285,7 +285,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  config.footer = 'Copyright @ baby vanity | 2017'
+  config.footer = 'Copyright @ Precious Tots | 2017'
 
   # == Sorting
   #

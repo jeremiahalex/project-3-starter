@@ -70,22 +70,20 @@ ul.slides {
 
 
 /*// Extra small devices (portrait phones, less than 576px)*/
-  @media (max-width: 575px) {
-    .row.filernote {
-      margin-top: -40%;
-      margin-left: 0px;
-    }
-
-    .card-panel.filter {
-      width: 100%;
-      height: 360px;
-    }
+@media (max-width: 575px) {
+  .row.filernote {
+    margin-top: -40%;
+    margin-left: 0px;
   }
-
-  /*// Small devices (landscape phones, less than 768px)*/
-  @media (max-width: 767px) {
-
+  .card-panel.filter {
+    width: 100%;
+    height: 360px;
   }
+}
+
+/*// Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767px) {
+}
 
 #cart_item_count {
   pointer-events: none;

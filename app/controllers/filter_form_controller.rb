@@ -18,5 +18,4 @@ class FilterFormController < ApplicationController
     # render json: @styles
   end
 
-
 end

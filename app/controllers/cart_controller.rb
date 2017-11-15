@@ -16,7 +16,6 @@ class CartController < ApplicationController
   end
 
   def new
-
   end
 
   def show
@@ -35,9 +34,7 @@ class CartController < ApplicationController
 
   def checkout
     current_user.create_loaned_item
-
     redirect_to '/'
   end
-
 
 end
