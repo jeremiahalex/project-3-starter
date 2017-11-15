@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
 
   def show
     find_current_lesson
-    # render json: @lesson
+    @all_bookings = Booking.all
+     render json: @all_bookings
   end
 
   def edit

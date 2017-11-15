@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script>
-      UPLOADCARE_PUBLIC_KEY = '5a876e172e46e56d9bca';
+      UPLOADCARE_PUBLIC_KEY = ENV['UPLOADCARE'];
     </script>
   </head>
 
@@ -43,9 +43,13 @@
                 <li class="nav-item">
                   <a class="nav-item-child nav-item-hover" href="#">About</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-item-child nav-item-hover" href="#">Find Tutor</a>
-                </li>
+
+                <% if current_user == nil %>
+                  <% elsif current_user.reg_tutor == true %>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover" href="lessons/new">Create Lesson</a>
+                  </li>
+                <% end %>
 
                 <% unless user_signed_in? %>
                   <li class="nav-item">
@@ -57,6 +61,7 @@
                     <!-- <a class="nav-item-child nav-item-hover" href="users/sign_up">Register</a> -->
                   </li>
                 <% else %>
+
                   <li class="nav-item">
                     <a class="nav-item-child nav-item-hover"<%= link_to current_user.email , edit_user_registration_path %></a>
                     <!-- <a class="nav-item-child nav-item-hover" href="/users/edit"><%= current_user.email %></a> -->
