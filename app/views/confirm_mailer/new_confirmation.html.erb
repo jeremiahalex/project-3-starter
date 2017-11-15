@@ -1,1 +1,42 @@
-<h1>Hi! Thank you for booking!</h1>
+<h1>Hi student,
+
+  Thank you for booking with CodeWithUs!</h1>
+
+  <div class="content-lg container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="booking">
+
+          <div class="invoice-title">
+            <h2>Booking Summary</h2>
+            <h3 class="pull-right"></h3>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-6">
+              <address>
+                <strong>Lesson Details :</strong>
+                <br>
+                Lesson Name :
+                <%= @lesson.name %>
+                <br>
+                Programming Language :
+                <%= @lesson.language_taught %>
+                <br>
+                Date :
+                <%= @lesson.datetime %>
+                <br>
+                Duration :
+                <%= @lesson.duration %>
+                hrs
+                <br>
+                Venue :
+                <%= @lesson.venue %>
+                <br>
+                Total Price : <b>$<%=@lesson.price * @lesson.duration %></b>
+                <br>
+              </address>
+            </div>
+          </div>
+        </div>
+        <br><br>

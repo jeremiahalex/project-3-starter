@@ -5,10 +5,16 @@ class ConfirmMailer < ApplicationMailer
   #
   #   en.confirm_mailer.new_confirmation.subject
   #
-  def new_confirmation(email)
-    @student = email
+  def new_confirmation(new_booking)
+    @new_booking = new_booking
+    @lesson = @new_booking.lesson
 
-    mail to: @student,
-         subject: "Thank you for your purchase!"
+    mail to: @new_booking.student.email,
+         subject: "Thank you for booking #{@lesson.name}!"
   end
 end
+
+
+# this is like a controller
+# but cannot get request params
+# so we can pass it over
