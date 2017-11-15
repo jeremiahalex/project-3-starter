@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   def new
+
   end
 
   def create
@@ -17,6 +18,13 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+
+    current_user.add_point(30)
+    current_user.subscription_type = true
+    current_user.save
+
+    flash[:notice] = "Thank you. You have paid $39.90"
+    redirect_to profile_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
