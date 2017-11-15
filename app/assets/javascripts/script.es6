@@ -25,8 +25,6 @@ function () {
       var json = JSON.stringify({
         clothes_set_id
       })
-      // console.log(json)
-      // console.log($(this), clothes_set_id)
       $.ajax({
         url: `/cart`,
         type: 'POST',
@@ -57,7 +55,6 @@ function () {
     var json = JSON.stringify({
       clothes_set_id
     })
-    // console.log($(this), clothes_set_id )
     $.ajax({
       url: `/clothes/${clothes_set_id}`,
       type: 'DELETE',
