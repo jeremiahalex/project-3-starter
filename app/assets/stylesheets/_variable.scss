@@ -86,3 +86,8 @@ ul.slides {
   @media (max-width: 767px) {
 
   }
+
+#cart_item_count {
+  pointer-events: none;
+  cursor: default;
+}
