@@ -5,7 +5,7 @@
       <div class="card-panel filter">
 
       <h4 class="left-align">
-        Wonderful! Now, what style of dressing would <%= current_user.child[0].name %> like to try next month?
+        Wonderful! Now, what style of outfit would <%= current_user.child[0].name %> like to try next month?
       </h4>
       <% size_name = Size.find(current_user.child[0].size_id).name %>
       <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name"), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value)" %>
