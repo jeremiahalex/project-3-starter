@@ -73,15 +73,15 @@
 
 # START SEEDING FOR CLOTHES SET SHOW
 # ClothesSet.destroy_all
-10.times do
-  ClothesSet.create(
-    name: Faker::Commerce.product_name,
-    style_id: Style.all.sample.id,
-    size_id: Size.all.sample.id,
-    stock_status_id: StockStatus.all.sample.id,
-    photo_URL: Faker::LoremPixel.image("100x100", false, 'cats')
-  )
-end
+# 10.times do
+#   ClothesSet.create(
+#     name: Faker::Commerce.product_name,
+#     style_id: Style.all.sample.id,
+#     size_id: Size.all.sample.id,
+#     stock_status_id: StockStatus.all.sample.id,
+#     photo_URL: Faker::LoremPixel.image("100x100", false, 'cats')
+#   )
+# end
 # END SEEDING FOR CLOTHES SET SHOW
 
 # START SEEDING FOR LOANITEM
