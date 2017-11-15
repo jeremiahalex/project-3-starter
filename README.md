@@ -1,51 +1,58 @@
+# PreciousTots
+Done By: Siya, Hazel, Mingyi <br>
 
-## Project-3 - Siya, Hazel, Mingyi
 
-# README
+![landing page](./app/assets/images/landing_page.png)
+Link To Website: [Precious-tots](https://precious-tots.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+## Design Idea
+**Observed Problem:** <br>
+Kids grow up too fast. Many parents wish to dress up their kids in pretty cloths but are reluctant to buy new sets due to the fact that they outgrow the clothes in a matter of months.<br><br>
+**Proposed Solution:** <br>
+We aim to solve this problem by providing a service enabling parents to rent outfits for their children on a monthly basis.
 
-* Ruby version
+---
 
-* System dependencies
+## Table of Contents
+1. Web App Design Idea
+1. Table of Contents
+1. User Story / Use Case
+1. ERD
+1. Wireframe
+1. Routes List
+1. Development Log
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+---
 
 ## User Story
-Users
-- Users can register for an account
-- Users can login to account
-- Users can subscribe / unsubscribe
-- Users can add details of children
-- Users can update details of children
-- Users can choose a new set of clothes to receive every month
-- Users have to return old set of clothes every month
+#### Users
+- can register for an account
+- can login to their account
+- can subscribe / unsubscribe to monthly plan
+- can receive points to their account upon subscription
+- can add details of their children
+- can update details of their children
+- can choose a new set of clothes to receive at the start of every month
+  - can view outfits that match their children's size and selected style
+  - can add and remove selected outfits to their shopping cart
+  - can checkout their shopping cart to start the processing
+- have to return previously rented outfits when they receive newly requested ones
 
-Admin
-- Admin can register account with secret code
-- Admin can login to account
-- Admin can view all new monthly requests
+#### Admins
+- can add new admins
+- can login to admin site
+- can view / edit all users in database
+- can view / edit all user outfit requests
+- can view / edit all clothes in database
+- can add new clothes into database
+
+#### Use Case
+![Image of flowchart](app/assets/readme_img/use_case.png)
 
 ## ERD
 ![Image of flowchart](app/assets/readme_img/ERD_nov8.png)
-
-## Use Case
-![Image of flowchart](app/assets/readme_img/use_case.png)
 
 ---
 
@@ -54,8 +61,8 @@ Admin
 :------------------------------------------------:|:-------------------------------------------------:
 ![Screenshot 3](/app/assets/readme_img/profile.png)  |  ![Screenshot 4](/app/assets/readme_img/search.png)
 
--------
-## Routes List (to be finalise)
+---
+## Routes List (to be finalized)
 
 ```
 /
@@ -82,7 +89,8 @@ to be added
 /children/add (for adding children's information)
 ```
 
----------
+---
+
 ## Development Log
 
 6 Nov 2017
@@ -120,3 +128,28 @@ to be added
 * edit cart function: Add ajax cart function
 * fix: double creation of cart_items
 * Improve css
+
+<!-- ## README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ... -->
