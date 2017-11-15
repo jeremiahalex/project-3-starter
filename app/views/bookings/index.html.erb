@@ -75,6 +75,7 @@
                                                   <th scope="col">Venue</th>
                                                   <th scope="col">Price</th>
                                                   <th scope="col">Status</th>
+                                                  <th scope="col">Change</th>
                                                 </tr>
                                               </thead>
                                               <tbody>
@@ -84,9 +85,9 @@
                                                   <td><%= lesson.tutor.name%></td>
                                                   <td><%= lesson.venue%></td>
                                                   <td>$<%= lesson.price %></td>
-                                                  <td>Attended</td>
+                                                  <td>Yet to start</td>
                                                   <td> <%= link_to "Edit", edit_booking_path(lesson) %>
-                                                        <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>       
+                                                        <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
                                                   </td>
                                                 </tr>
                                             <% end %>

@@ -32,8 +32,13 @@
         4.0 stars
         <div style="margin-top:20px">
           <!-- <h4><%= button_to 'Book Now!', lesson_path(@lesson), method: :get %></h4> -->
+          <% unless @booking.present? %>
 
-        <h4><%= link_to "Book Now!", booking_path %></h4>
+          <h4><%= link_to "Book Now!", booking_path %></h4>
+          <% else %>
+          <span class="badge badge-pill badge-danger">Lesson has been booked by <%= @booking.student.name %></span>
+
+          <% end %>
 
         <!-- <h4><%= button_to 'Contact Tutor', lesson_path(@lesson), method: :get %></h4> -->
       </div>

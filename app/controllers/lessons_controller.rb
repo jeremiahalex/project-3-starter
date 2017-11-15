@@ -6,14 +6,16 @@ class LessonsController < ApplicationController
 
   def index
       @lessons = Lesson.all.order("created_at DESC")
-      render json: @lessons
-    #redirect_to root_path
+      # render json: @lessons
+    # redirect_to root_path
+      @all_bookings = Booking.all.order("created_at DESC")
   end
 
   def show
     @all_lessons = Lesson.all.order("created_at DESC")
     find_lesson
-    # render json: @lesson
+    @booking = Booking.find_by_lesson_id(params[:id])
+    # render json: @booking
     tutor = @lesson.tutor_id
     @lesson_tutor = User.find(tutor)
     @tutor_lessons = Lesson.where(tutor_id: tutor)

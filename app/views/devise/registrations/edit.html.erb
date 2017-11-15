@@ -10,6 +10,12 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+
+  <div class="test_field">
+    <%= f.label :reg_tutor, "Check to be a tutor" %><br />
+    <%= f.check_box :reg_tutor, :id => 'test_id'%>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
