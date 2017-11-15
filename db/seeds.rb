@@ -16,63 +16,63 @@
 # end
 
 # START SEEDING FOR SIZE
-Size.destroy_all
-4.times do |i|
-  new_size = Size.new
-  lower_bound = i*3
-  upper_bound = i*3+3
-  new_size.name = "#{lower_bound} - #{upper_bound} M"
-  new_size.save
-end
-
-new_size = Size.new
-new_size.name = "12-18 M"
-new_size.save
-
-new_size = Size.new
-new_size.name = "18-24 M"
-new_size.save
-
-7.times do |i|
-  new_size = Size.new
-  start_size = i+2
-  new_size.name = "#{start_size} Y"
-  new_size.save
-end
+# Size.destroy_all
+# 4.times do |i|
+#   new_size = Size.new
+#   lower_bound = i*3
+#   upper_bound = i*3+3
+#   new_size.name = "#{lower_bound} - #{upper_bound} M"
+#   new_size.save
+# end
+#
+# new_size = Size.new
+# new_size.name = "12-18 M"
+# new_size.save
+#
+# new_size = Size.new
+# new_size.name = "18-24 M"
+# new_size.save
+#
+# 7.times do |i|
+#   new_size = Size.new
+#   start_size = i+2
+#   new_size.name = "#{start_size} Y"
+#   new_size.save
+# end
 # END SEEDING FOR SIZE
 
 # START SEEDING FOR STYLE
-Style.destroy_all
-style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
-style_array.each do |style|
-  new_style = Style.new
-  new_style.name = style
-  new_style.save
-end
+# Style.destroy_all
+# style_array = ["Casual","Hipster","Sporty","Dressy","Vintage","Cool Kid","Formal","Cute"]
+# style_array.each do |style|
+#   new_style = Style.new
+#   new_style.name = style
+#   new_style.save
+# end
 # END SEEDING FOR STYLE
 
 # START SEEDING FOR LOAN STATUS
-LoanStatus.destroy_all
-loan_status_values = ["Preparing", "Delivering", "With Customer", "Returned"]
-loan_status_values.each do |e|
-  loan_status = LoanStatus.new
-  loan_status.name = e
-  loan_status.save
-end
+# LoanStatus.destroy_all
+# loan_status_values = ["Preparing", "Delivering", "With Customer", "Returned"]
+# loan_status_values.each do |e|
+#   loan_status = LoanStatus.new
+#   loan_status.name = e
+#   loan_status.save
+# end
 # END SEEDING FOR LOAN STATUS
 
 # START SEEDING FOR STOCK STATUS
-StockStatus.destroy_all
-stock_status_array = ["In Stock", "With Customer", "Processing"]
-stock_status_array.each do |stat|
-  new_stock_status = StockStatus.new
-  new_stock_status.name = stat
-  new_stock_status.save
-end
+# StockStatus.destroy_all
+# stock_status_array = ["In Stock", "With Customer", "Processing"]
+# stock_status_array.each do |stat|
+#   new_stock_status = StockStatus.new
+#   new_stock_status.name = stat
+#   new_stock_status.save
+# end
 # END SEEDING FOR STOCK STATUS
 
 # START SEEDING FOR CLOTHES SET SHOW
-ClothesSet.destroy_all
+# ClothesSet.destroy_all
 10.times do
   ClothesSet.create(
     name: Faker::Commerce.product_name,
@@ -96,4 +96,4 @@ end
 # end
 # END SEEDING FOR LOANITEM
 
-# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
