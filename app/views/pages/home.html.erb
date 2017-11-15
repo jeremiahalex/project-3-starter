@@ -9,19 +9,14 @@
     <div class="row">
       <%= form_tag(root_path, method: :get) do %>
 
-
+      <div class="col-md-5">
+          <%= select_tag(:price, options_for_select(@all_prices), include_blank: 'Filter by Price', class: 'form-control') %>
+      </div>
 
       <div class="col-md-5">
-        <div class="form-control category">
-          <%= select_tag(:price, options_for_select(@all_prices), include_blank: 'Filter by Price') %>
-        </div>
+          <%= select_tag(:language_taught, options_for_select(@all_languages), include_blank: 'Filter by Programming Language' , class: 'form-control') %>
       </div>
 
-      <div class="col-md-3">
-        <div class="form-control category">
-          <%= select_tag(:language_taught, options_for_select(@all_languages), include_blank: 'Filter by Programming Language') %>
-        </div>
-      </div>
       <div class="col-md-1"><%= submit_tag 'Search', name: nil, class: 'btn' %></div>
     </div>
     <% end %>

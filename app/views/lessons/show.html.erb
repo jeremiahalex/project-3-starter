@@ -1,4 +1,4 @@
-<div class="content-lg container" style="width: 960px; padding-top: 30px">
+<div class="content-lg container">
   <div class="card mt-4" style="padding:20px">
     <h1 class="my-4"><%=@lesson.name%><br/></h1>
     <h3>Language:
@@ -32,8 +32,26 @@
         4.0 stars
         <div style="margin-top:20px">
           <!-- <h4><%= button_to 'Book Now!', lesson_path(@lesson), method: :get %></h4> -->
+          <!-- <% @all_bookings%> -->
 
-        <h4><%= link_to "Book Now!", booking_path %></h4>
+          <%= form_tag charges_path do %>
+            <%= hidden_field_tag 'amount', @lesson.price * @lesson.duration * 100 %>
+            <%= hidden_field_tag 'lessonId', @lesson.id %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="A month's subscription"
+                      data-amount="<%=@lesson.price * @lesson.duration%>00"
+                      data-locale="auto"
+                      data-currency="SGD"></script>
+            <% end %>
 
         <!-- <h4><%= button_to 'Contact Tutor', lesson_path(@lesson), method: :get %></h4> -->
       </div>
