@@ -341,7 +341,7 @@ body {
 }
 
 .card .cover {
-  height: 105px;
+  height: 86px;
   overflow: hidden;
   border-radius: 4px 4px 0 0;
 }
@@ -372,7 +372,7 @@ body {
 }
 
 .card .content .main {
-  min-height: 160px;
+  min-height: 155px;
 }
 
 .card .back .content .main {
