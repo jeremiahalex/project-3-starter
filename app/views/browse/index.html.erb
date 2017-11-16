@@ -20,37 +20,43 @@
       <div class="leftside col m9 s12 brown lighten-5" style="padding-bottom:10%;">
         <h4>Browse Clothes</h4>
 
-      <div class="row clothes">
-        <% @filtered_clothes.each do |set| %>
+        <div class="row clothes">
+          <% @filtered_clothes.each do |set| %>
+          <div class="col s12 m6 l3">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
 
-      <div class="col s12 m6 l3">
-          <div class="card">
-            <div class="card-image">
-              <img src="<%= set.photo_URL %>" alt="<%= set.name %>">
+                <% unless set.in_cart(current_user.id) %>
 
-          <% unless set.in_cart(current_user.id) %>
+                <div class="parent_test">
+                  <a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
 
-            <div class="parent_test">
-              <a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
+                <% else %>
+                <div class="parent_test">
+                  <a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>
+                </div>
+                <% end %>
 
-          <% else %>
-            <div class="parent_test">
-              <a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>
-            </div>
-          <% end %>
-
-            <div class="card-content">
-            <h6><%= set.name %></h6>
-            <input type="hidden" value="<%=set.id%>" class='setId'>
+                <div class="card-content">
+                  <h6><%= set.name %></h6>
+                  <input type="hidden" value="<%=set.id%>" class='setId'>
+                </div>
+              </div>
             </div>
           </div>
-      </div>
-    </div>
 
+          <% end %>
 
-        <% end %>
-      </div>
+          <div class="fixed-action-btn" style="bottom: 155px; right: 45px;">
+            <a href="/cart"><h5 class= "cart_item_count"><%= current_user.cart_item.count %></h5></a>
+          </div>
+          <div class="fixed-action-btn" style="bottom: 100px; right: 40px;">
+            <a href="/cart"><i class="large material-icons">shopping_basket</i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>

@@ -10,34 +10,13 @@ class User < ApplicationRecord
   # has_many :clothes_set, through: :cart_items
   has_many :clothes_set, through: :loaned_item
 
-
-  # to be delete
-  # def add_cart_item(clothes_set_id)
-  #
-  #   @current_user = User.find(self.id)
-  #   @current_user.cart_item.create(clothes_set_id: clothes_set_id)
-  #
-  #
-  # end
-  #
-
-  #  this method able to get the length of cart
-  # def cart_amt
-  #   @current_user = User.find(self.id)
-  #   @current_user.cart_item.length
-  #
-  # end
-
-
   def remove_point(amt)
     @current_user = User.find(self.id)
     @current_user.points -= amt
     @current_user.save
-
   end
 
-  def add_point(amt)
-  
+  def add_point(amt)  
     @current_user = User.find(self.id)
     @current_user.points += amt
     @current_user.save

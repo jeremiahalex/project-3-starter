@@ -9,7 +9,8 @@ function () {
   $(".dropdown-button").dropdown()
   var userPoints = Number($('.userPoints').val())
   const $clothes = $('.clothes')
-
+  const $bigCartNumber = $('.cart_item_count')
+  const $cartNumber = $('#cart_item_count')
 // Browse - add to cart btn
   $clothes.on('click', '.addBtn', function () {
     if (userPoints <= 0) {
@@ -36,10 +37,10 @@ function () {
       var $button = $(this).parent()
       $button.empty().append('<a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>')
     // Cart number change - AJAX
-      var $cartNumber = $('#cart_item_count')
       var numberInCart = Number($cartNumber.html())
       numberInCart += 1
       $cartNumber.empty().append(numberInCart)
+      $bigCartNumber.text(numberInCart)
     }
   })
 
@@ -64,10 +65,11 @@ function () {
     var $button = $(this).parent()
     $button.empty().append('<a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>')
   // Cart number change - AJAX
-    var $cartNumber = $('#cart_item_count')
+
     var numberInCart = Number($cartNumber.html())
     numberInCart -= 1
     $cartNumber.empty().append(numberInCart)
+    $bigCartNumber.text(numberInCart)
   })
 
 // Cart - remove from cart btn
@@ -81,7 +83,6 @@ function () {
     var cartItemResult = $(this).parent()
     cartItemResult.remove()
   // Cart number change - AJAX
-    var $cartNumber = $('#cart_item_count')
     var numberInCart = Number($cartNumber.html())
     numberInCart -= 1
     $cartNumber.empty().append(numberInCart)

@@ -1,21 +1,30 @@
 class FilterFormController < ApplicationController
-  def index
-    # render json: current_user.child[0].name
-    # @current_user_child_size = current_user.child[0].size_id
-    # render json: @current_user_child_size
-    # @link = '/choose_size_style/#{current_user.child[0].size_id}'
-    # render json: @link
-  end
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, only: :index
+  before_action :has_child
 
   def form1
-    @sizes = Size.all
-    @child = current_user.child[0]
+    if current_user.child[0].present?
+      @sizes = Size.all
+      @child = current_user.child[0]
+    else
+      flash[:notice] = "Please enter your child information first"
+      redirect_to profile_children_new_path
+    end
   end
 
   def form2
     @child = current_user.child[0]
     @styles = Style.all
-    # render json: @styles
+  end
+
+  private
+
+  def has_child
+    unless current_user.child[0].present?
+      flash[:notice] = "Please enter your child information first"
+      redirect_to profile_children_new_path
+    end
   end
 
 end
