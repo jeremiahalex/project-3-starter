@@ -15,4 +15,7 @@
 //= require jquery
 //= require popper
 //= require bootstrap-sprockets
+//= require pickadate/picker
+//= require pickadate/picker.date
+//= require pickadate/picker.time
 //= require_tree .

@@ -1,4 +1,13 @@
-<div class="page-content tab-parallax">
+<% if current_user.reg_tutor == true %>
+<div class="">
+  <img src="<%=current_user.photo%>" alt="">
+  <h2>I'm a tutor</h2>
+  
+</div>
+<% else %>
+  <h2>bye</h2>
+<% end %>
+
 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -17,11 +26,25 @@
                                             <i class="fa fa-file-text-o"></i>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+                                            <h3>Lessons history</h3>
+                                            <i class="fa fa-test"></i>
+                                        </a>
+                                    </li>
+
                                     <% else %>
                                     <li class="active">
                                         <a data-toggle="tab" href="#tab-15" aria-expanded="true">
                                             <h3>Lessons booked</h3>
                                             <i class="fa fa-laptop"></i>
+                                        </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+                                            <h3>Lessons history</h3>
+                                            <i class="fa fa-test"></i>
                                         </a>
                                     </li>
                                     <% end %>
@@ -39,7 +62,8 @@
                                                   <th scope="col">Language</th>
                                                   <th scope="col">Tutor Name</th>
                                                   <th scope="col">Venue</th>
-                                                  <th scope="col">DateTime</th>
+                                                  <th scope="col">Date/time</th>
+                                                  <th scope="col">Duration</th>
                                                   <th scope="col">Price</th>
                                                   <th scope="col">Status</th>
                                                 </tr>
@@ -50,18 +74,20 @@
                                                   <th scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get %></th>
                                                   <td><%= booking.lesson.tutor.name %></td>
                                                   <td><%= booking.lesson.venue %></td>
-                                                  <td><%= booking.lesson.datetime %></td>
-                                                  <td>$<%= booking.lesson.price %></td>
+                                                  <td><%= booking.lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
+                                                  <td><%= booking.lesson.duration %>hrs</td>
+                                                  <td>$<%= booking.lesson.price * booking.lesson.duration %></td>
                                                   <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
-                                                  <td>Attended</td>
+                                                  <td>Completed</td>
                                                   <% else %>
-                                                  <td>Not attended</td>
+                                                  <td>Not completed</td>
                                                   <% end %>
                                                 </tr>
                                             <% end %>
                                             </tbody>
                                             </table>
                                             </div>
+
                                         <div id="tab-16" class="tab-pane">
                                             <div class="heading-title-alt">
                                                 <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
@@ -74,7 +100,8 @@
                                                   <th scope="col">Tutor Name</th>
                                                   <th scope="col">Venue</th>
                                                   <th scope="col">Price</th>
-                                                  <th scope="col">Status</th>
+                                                  <th scope="col">Date/date</th>
+                                                  <th scope="col">Student</th>
                                                   <th scope="col">Change</th>
                                                 </tr>
                                               </thead>
@@ -85,19 +112,57 @@
                                                   <td><%= lesson.tutor.name%></td>
                                                   <td><%= lesson.venue%></td>
                                                   <td>$<%= lesson.price %></td>
-                                                  <td>Yet to start</td>
-                                                  <td> <%= link_to "Edit", edit_booking_path(lesson) %>
-                                                        <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
+                                                  <td><%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
+                                                  <td><%= current_user.name %></td>
+
+                                                  <td><span class="badge badge-warning">Booked</span></td>
+                                                  <td><span class="badge badge-warning">Still open</span> <%= link_to "Edit", edit_booking_path(lesson) %>
+                                                    <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
                                                   </td>
                                                 </tr>
                                             <% end %>
+
                                             </tbody>
                                             </table>
-                                        </div>
+                                            </div>
+
+                                            <div id="tab-17" class="tab-pane">
+                                                <div class="heading-title-alt">
+                                                    <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
+                                                    <h2 class="text-uppercase">Table of created lessons</h2>
+                                                </div>
+                                                <table class="table table-dark">
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Language</th>
+                                                      <th scope="col">Tutor Name</th>
+                                                      <th scope="col">Venue</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Status</th>
+                                                      <th scope="col">Change</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                <% @user_lesson.each do |lesson| %>
+                                                    <tr>
+                                                      <th scope="row"><%= lesson.language_taught%></th>
+                                                      <td><%= lesson.tutor.name%><h1>hihi</h1></td>
+                                                      <td><%= lesson.venue%></td>
+                                                      <td>$<%= lesson.price %></td>
+                                                      <td>Yet to start</td>
+
+                                                      <td> <%= link_to "Edit", edit_booking_path(lesson) %>
+                                                            <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
+                                                      </td>
+                                                    </tr>
+                                                <% end %>
+
+                                                </tbody>
+                                                </table>
+                                                </div>
                                     </div>
                                 </div>
                             </section>
                         </div>
                     </div>
                 </div>
-	</div>

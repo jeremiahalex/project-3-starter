@@ -83,3 +83,15 @@ body {
     padding: 35px 30px;
 }
 }
+
+/* Scrollability of table */
+table { width: 500px; } /* fixed width table */
+thead tr { display: block; } /* makes it sizeable */
+tbody {
+  display: block; /* makes it sizeable */
+  height: 300px; /* height of scrollable area */
+  overflow: auto; /* scroll rather than overflow */
+  width: 100%; /* fill the box */
+}
+thead th { width: 250px; } /* fixed width for THs */
+tbody td { width: 242px; } /* fixed width for TDs */

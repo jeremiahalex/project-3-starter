@@ -6,7 +6,8 @@ class BookingsController < ApplicationController
   def index
     @user_lesson = current_user.lessons
     @all_bookings = Booking.where(student_id: current_user.id)
-    # render json: @all_bookings
+    @is_my_lesson_booked = current_user.lessons.where(tutor_id: current_user)
+    # render json: @user_lesson
   end
 
   def show

@@ -43,13 +43,17 @@
                   </div>
                 <% end %>
               </article>
-
+              <% if current_user %>
               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                       data-description="A month's subscription"
                       data-amount="<%=@lesson.price * @lesson.duration%>00"
                       data-locale="auto"
                       data-currency="SGD"></script>
+                      <% else %>
+                      <%=link_to "Please log in before you checkout", user_session_path %>
+            <% end %>
+
             <% end %>
           <% else %>
           <span class="badge badge-pill badge-danger">Lesson has been booked by <%= @booking.student.name %></span>
