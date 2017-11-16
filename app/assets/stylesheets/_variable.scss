@@ -64,6 +64,7 @@ ul.slides {
 }
 
 .row.about {
+  width: 90%;
   position: absolute;
   margin-top: -33.5%;
   padding: 0px 10px;
@@ -77,8 +78,8 @@ ul.slides {
   margin: 30px 0px;
 }
 
-.greettxt {
-
+.about-title {
+  margin-left: 16%;
 }
 
 .movebtn {
