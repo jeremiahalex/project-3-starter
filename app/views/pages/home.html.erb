@@ -38,9 +38,11 @@
       <div class="card-container manual-flip">
         <div class="card">
           <div class="front">
-            
+
             <% if @booked.include? lesson.id%>
             <span class="badge badge-pill badge-danger">Booked</span>
+            <% else %>
+            <span class="badge badge-pill badge-danger">Available</span>
             <% end  %>
 
             <div class="cover">

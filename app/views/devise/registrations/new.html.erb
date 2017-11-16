@@ -1,13 +1,16 @@
 <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
 
 <div class="content-lg container">
+  <div class="login-wrap">
+
+
 
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form">
     <%= f.label :name, "Name:"%><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
@@ -65,9 +68,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up" ,class: 'btn'%>
   </div>
 
 <% end %>
 
 </div>
+  </div>

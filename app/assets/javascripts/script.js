@@ -2,6 +2,27 @@
 $(document).on("turbolinks:load", function() {
   console.log('ready')
 
+ console.log($('.navbar-toggle'))
+
+ // $('.navbar-toggle').on('click', (event) => {
+ //   event.stopPropagation()
+ //   event.preventDefault()
+ //   console.log('clicked')
+ //   $('#navbar1').collapse('toggle')
+ //  // console.log($('#navbar1'))
+ // })
+
+ /*
+ <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse" aria-expanded="true">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="toggle-icon"></span>
+             </button>
+
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+                        </button>
+ */
 
   $('.flipping').on('click', function() {
 

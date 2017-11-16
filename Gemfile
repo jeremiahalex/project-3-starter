@@ -8,7 +8,7 @@ end
 gem 'devise'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'uploadcare-rails'
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
