@@ -4,7 +4,6 @@ class CartController < ApplicationController
 
   def index
     @all_cart_item = current_user.cart_item
-    @selected_item = []
   end
 
   def create
@@ -15,21 +14,9 @@ class CartController < ApplicationController
     current_user.remove_point(@current_clothes_set.points)
   end
 
-  def new
-  end
-
-  def show
-    @cart_items = CartItem.find(params[:id])
-  end
-
-  def edit
-    @cart_items = CartItem.find(params[:id])
-  end
-
   def destroy
     CartItem.destroy(params[:id])
     current_user.add_point(10)
-
   end
 
   def checkout

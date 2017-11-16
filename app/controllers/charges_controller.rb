@@ -1,33 +1,33 @@
 class ChargesController < ApplicationController
-  def new
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, only: :index
 
-  end
 
   def create
-    # Amount in cents
     @amount = 3990
-
+    points_given = 30
     customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+    :email => params[:stripeEmail],
+    :source  => params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+    :customer    => customer.id,
+    :amount      => @amount,
+    :description => 'Rails Stripe customer',
+    :currency    => 'usd'
     )
 
-    current_user.add_point(30)
+    current_user.add_point(points_given)
     current_user.subscription_type = true
     current_user.save
 
-    flash[:notice] = "Thank you. You have paid $39.90. 30 points have been added to your account"
-    redirect_to profile_path
+    flash[:notice] = "Thank you. You have paid $39.90. #{points_given} points have been added to your account"
+    redirect_to "/choose_size_style/#{current_user.child[0].size_id}/0"
+
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to "/choose_size_style/#{current_user.child[0].size_id}/0"
+    redirect_to profile_path
   end
 end
