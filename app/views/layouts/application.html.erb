@@ -9,12 +9,16 @@
     <%= render 'partials/shim' %>
   </head>
   <body>
+
     <%= render 'partials/header' %>
+
       <div class="grey lighten-2 center-align">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>
-      <%= yield %>
+      <div class="">
+        <%= yield %>
+      </div>
     <%= render 'partials/footer' %>
   </body>
 </html>

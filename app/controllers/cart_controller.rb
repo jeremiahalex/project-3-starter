@@ -20,7 +20,6 @@ class CartController < ApplicationController
   end
 
   def checkout
-
     @all_cart_item = current_user.cart_item
     not_available = []
     @all_cart_item.each do |item|
@@ -36,7 +35,7 @@ class CartController < ApplicationController
       flash[:notice] = "Your request have been submited. Have a nice day"
       redirect_to '/my_order'
     else
-      flash[:notice] = "Sorry. #{not_available} is currently unavailable"
+      flash[:notice] = "Sorry. #{not_available.to_sentence } is currently unavailable"
       redirect_to '/cart'
     end
 

@@ -99,6 +99,7 @@ ul.slides {
 }
 
 .grey.lighten-2 {
+  margin-top: 50px;
   background-color: beige !important;
 }
 
@@ -150,6 +151,15 @@ ul.slides {
   .greettxt {
     font-size: 25px;
   }
+}
+
+.btn-floating.btn-large {
+  width: 90px;
+  height: 90px
+}
+.btn-floating.btn-large i {
+  line-height: 90px;
+  font-size: 4rem;
 }
 
 /*// Small devices (landscape phones, less than 768px)*/
