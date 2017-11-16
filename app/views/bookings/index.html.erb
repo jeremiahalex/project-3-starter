@@ -272,7 +272,7 @@
                   <table class="table table-dark">
                     <thead>
                       <tr>
-                        <td scope="row">Language</th>
+                        <th scope="row">Language</th>
                         <th>Tutor Name</th>
                         <th>Venue</th>
                         <th>Date/time</th>
@@ -284,7 +284,7 @@
                       <% @all_bookings.each do |booking| %>
                         <tr>
                           <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
-                            <th scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get, class:"link" %></th>
+                            <td scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get, class:"link" %></th>
                             <td><%= booking.lesson.tutor.name %></td>
                             <td><%= booking.lesson.venue %></td>
                             <td><%= booking.lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
