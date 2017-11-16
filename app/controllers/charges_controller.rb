@@ -12,11 +12,11 @@ class ChargesController < ApplicationController
       lesson_id: params[:lessonId]
     )
 
-    @tutor_email = @new_booking.lesson.tutor.email
-    @student_email = @new_booking.student.email
+    # @tutor_email = @new_booking.lesson.tutor.email
+    # @student_email = @new_booking.student.email
 
-    LessonRegistrationMailer.new_registration(@tutor_email).deliver_later
-    ConfirmMailer.new_confirmation(@student_email).deliver_later
+    LessonRegistrationMailer.new_registration(@new_booking).deliver_later
+    ConfirmMailer.new_confirmation(@new_booking).deliver_later
 
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],

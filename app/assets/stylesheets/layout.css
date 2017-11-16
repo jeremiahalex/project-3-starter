@@ -3,7 +3,25 @@ html, body {
   height: 100%;
   width: 100%
 }
+.login-wrap{
+  width:400px;
+  margin: 0 auto;
+  margin-top:100px;
+  border:1px solid #eee;
+  padding:15px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
 
+.edit-wrap{
+  width:450px;
+  margin: 0 auto;
+  margin-top:100px;
+  border:1px solid #eee;
+  padding:15px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
 .booking {
   background-color: #ffffff;
   border-radius: 20px;
@@ -35,11 +53,12 @@ html, body {
 
 .btn {
   background-color: #4ECDC4;
+  color: white;
 }
 
 .searchbox {
   background-color: #fff;
-  padding: 10px 76px 10px 40px;
+  padding: 8px 40px 2px 49px;
   border-radius: 50px;
 }
 
@@ -66,8 +85,10 @@ html, body {
 }
 
 .searchbox .btn {
-  border-radius: 40px;
-  padding: 20px 40px;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  padding: 16px 30px;
 }
 
 /* ------ Select Chosen Styles ---- */
@@ -341,7 +362,7 @@ body {
 }
 
 .card .cover {
-  height: 105px;
+  height: 86px;
   overflow: hidden;
   border-radius: 4px 4px 0 0;
 }
@@ -372,7 +393,7 @@ body {
 }
 
 .card .content .main {
-  min-height: 160px;
+  min-height: 155px;
 }
 
 .card .back .content .main {
@@ -653,7 +674,7 @@ em, li, li a {
 }
 
 a {
-  color: #81848f
+  color: #ffffff;
 }
 
 a:active, a:focus, a:hover {
@@ -826,9 +847,7 @@ h3, h4 {
   border-color: transparent
 }
 
-.footer .footer-seperator, .header .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, .2)
-}
+
 
 .btn-theme-sm {
   font-size: 13px;
@@ -853,6 +872,7 @@ h3, h4 {
   padding-bottom: 110px;
   margin-top: 10px
 }
+
 
 @media (max-width:768px) {
   .pricing.pricing-active {
@@ -1034,9 +1054,10 @@ h3, h4 {
 
 .header .navbar {
   margin-bottom: 0;
-  transition-duration: .3s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition-duration: 300ms;
   transition-property: all;
-  transition-timing-function: cubic-bezier(.7, 1, .7, 1)
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
 
 .header .navbar-toggle {
@@ -1044,7 +1065,7 @@ h3, h4 {
   height: 25px;
   border: none;
   padding: 0;
-  margin: 35px 0
+  margin: 35px 0;
 }
 
 .header .navbar-toggle .toggle-icon {
@@ -1055,14 +1076,14 @@ h3, h4 {
   background: #515769;
   transition-duration: .3s;
   transition-property: all;
-  transition-timing-function: cubic-bezier(.7, 1, .7, 1)
+  transition-timing-function: cubic-bezier(.7, 1, .7, 1);
 }
 
 .header .navbar-toggle .toggle-icon:after, .header .navbar-toggle .toggle-icon:before {
   position: absolute;
   left: 0;
   background: #515769;
-  content: " "
+  content: " ";
 }
 
 .header .navbar-toggle .toggle-icon:before {
@@ -1074,7 +1095,7 @@ h3, h4 {
   transform: rotate(0);
   transition-duration: .3s;
   transition-property: all;
-  transition-timing-function: cubic-bezier(.7, 1, .7, 1)
+  transition-timing-function: cubic-bezier(.7, 1, .7, 1);
 }
 
 .header .navbar-toggle .toggle-icon:after {
@@ -1192,7 +1213,7 @@ h3, h4 {
     background: #fff
   }
   .header .navbar-toggle {
-    display: block
+    display: block;
   }
   .header .navbar-collapse.collapse {
     display: none!important
@@ -1233,10 +1254,18 @@ h3, h4 {
     position: absolute;
     top: 19px
   }
+  .header .navbar > .container > .nav-collapse {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (max-width:767px) {
   .header .menu-container {
+    background-color: #4ECDC4;
+
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 0;
@@ -1258,7 +1287,6 @@ h3, h4 {
     float: right
   }
   .page-on-scroll .header .navbar {
-    background: #ffffff;
     border-bottom-color: transparent;
     transition-duration: .3s;
     transition-property: all;

@@ -1,1 +1,22 @@
-<h1>Hi! Thank you for booking!</h1>
+<h3>Hi <%=@new_booking.student.name%>,</h3>
+
+<h3 style="color: red">Thank you for booking with CodeWithUs!</h3>
+
+<h2>Booking Summary</h2>
+<hr>
+<strong>Lesson Details :</strong>
+<ul>
+    <ol>Lesson Name :<%= @lesson.name %></ol>
+
+    <ol>Programming Language :<%= @lesson.language_taught %></ol>
+
+    <ol>Date : <%= @lesson.datetime %></ol>
+
+    <ol>Duration : <%= @lesson.duration %>hrs</ol>
+
+    <ol>Venue :<%= @lesson.venue %></ol>
+
+    <ol>Total Price : $<%=@lesson.price * @lesson.duration %></ol>
+</ul>
+
+Please note that 

@@ -32,18 +32,19 @@
 
   <div class="row">
     <% @all_requests.each do |lesson| %>
-    <% @booked.each do |booking| %>
 
     <div class="col-md-4 col-sm-6">
 
       <div class="card-container manual-flip">
         <div class="card">
           <div class="front">
-            <% if booking.lesson.id == lesson.id %>
+
+            <% if @booked.include? lesson.id%>
             <span class="badge badge-pill badge-danger">Booked</span>
             <% else %>
-            <span class="badge badge-pill badge-success">Available</span>
-            <% end %>
+            <span class="badge badge-pill badge-danger">Available</span>
+            <% end  %>
+
             <div class="cover">
             </div>
             <div class="user">
@@ -61,7 +62,7 @@
                 <br>
 
                 <p class="text-center">
-                  Lesson on: <%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p')%><br>
+                  <%= lesson.datetime %>
                 </p>
 
                 <div class="rate">
@@ -92,7 +93,7 @@
                 </p>
 
                 <div class="text-center">
-                  <%= link_to "View more Details", lesson_path(lesson) %>
+                  <%= link_to "View more Details", lesson_path(lesson), class: 'btn' %>
                 </div>
 
               </div>
@@ -112,7 +113,6 @@
 
       <!-- end card-container -->
     </div>
-    <% end %>
     <% end %>
     <!-- end col sm 3 -->
 
