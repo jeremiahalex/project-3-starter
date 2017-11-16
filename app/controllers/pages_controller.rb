@@ -6,7 +6,7 @@ class PagesController < ApplicationController
      @lessons_id = Lesson.ids
      @all_languages = Lesson.distinct.pluck(:language_taught).sort
      @all_prices = Lesson.distinct.pluck(:price).sort
-     @all_requests = Lesson.search(params[:language_taught], params[:price])
+     @all_requests = Lesson.search(params[:language_taught], params[:price]).order(:datetime)
      @booked = Booking.pluck(:lesson_id)
 
     #  render json: @allbooked

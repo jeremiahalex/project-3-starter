@@ -1,4 +1,5 @@
 <div class="content-lg container">
+  <br><br><br>
   <div class="card mt-4" style="padding:30px">
     <h1 class="my-4"><%=@lesson.name%><br/></h1>
     <h3>Language:
@@ -7,7 +8,7 @@
     <!-- Portfolio Item Row -->
     <div class="row">
 
-      <div class="col-md-6">
+      <div class="col-md-5">
         <img class="img-fluid" src="http://placehold.it/450x300" alt="">
       </div>
 
@@ -19,7 +20,7 @@
           <li>Lesson Id:
             <%=@lesson.id%></li>
           <li>Date & Time:
-            <%=@lesson.datetime%></li>
+            <%=@lesson.datetime.strftime('%a, %d %b %Y %I:%M %p')%></li>
           <!-- <h4>Time:<%=@lesson.datetime%></h4> -->
           <li>Duration:
             <%=@lesson.duration%>
@@ -51,7 +52,7 @@
                       data-locale="auto"
                       data-currency="SGD"></script>
                       <% else %>
-                      <%=link_to "Please log in before you checkout", user_session_path %>
+                      <%=link_to "Please log in before you checkout", user_session_path , class:'btn' %>
             <% end %>
 
             <% end %>
@@ -90,7 +91,7 @@
       <p>Past Experiences:
         <%=@lesson_tutor.past_experience%></p>
       <p>Github:
-        <%=@lesson_tutor.github%>
+        <a class="link" href="<%=@lesson_tutor.github%>"><%=@lesson_tutor.github%></a>
       </p>
     </div>
   </div>
@@ -136,7 +137,7 @@
                 <br>
 
                 <p class="text-center">
-                  <%= lesson.datetime %>
+                  <%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %>
                 </p>
 
                 <div class="rate">
