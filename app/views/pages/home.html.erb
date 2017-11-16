@@ -82,7 +82,7 @@
             <div class="content">
               <div class="main">
                 <h4 class="text-center"><%= lesson.name %></h4>
-                <p class="text-center"><%= lesson.details %><br>
+                <p class="text-center"><%=truncate( lesson.details , length: 100)%><br>
                   <b>Duration : <%= lesson.duration %> hrs</b><br>
                   <b>Venue : <%= lesson.venue %></b>
 
