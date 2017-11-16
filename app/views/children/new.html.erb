@@ -1,9 +1,9 @@
-<div class="editchild grey lighten-3">
+<div class="editchild red lighten-5">
 <div class="container">
   <div class="editchild row">
-    <div class="grid-example col s12 m4 l8 white" style="border: 1px solid black; padding-bottom: 20px;">
+    <div class="grid-example col s12 m4 l10 white" style="border: 1px solid black; padding-bottom: 20px;">
 
-   <h3>New Child Form</h3>
+   <h4 class="teal lighten-4" style="padding: 10px;">New Child Form</h4>
 
    <div class="divider"></div>
    <br/>
@@ -23,9 +23,16 @@
      <%= f.label :size_id %><br />
      <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}) %>
 
+     <div class="row">
+       <div class="input-field col s6 left-align">
+           <%= link_to "Back", :back, class: 'back btn'%>
+       </div>
 
+      <div class="input-field col s6 right-align">
+       <%= f.submit("Add Child", class: 'btn') %>
+      </div>
+    </div>
 
-     <%= f.submit("Add Child", class: 'btn') %>
    <% end %>
   </div>
   </div>

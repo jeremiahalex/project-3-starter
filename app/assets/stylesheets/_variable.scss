@@ -19,6 +19,10 @@ blockquote {
   border-left: 5px dashed $font-color;
 }
 
+label {
+  font-size: 16px;
+}
+
 .notice {
 }
 
@@ -116,7 +120,7 @@ ul.slides {
 }
 
 .editchild.row {
-  margin-left: 23%;
+  margin-left: 12%;
   padding-top: 60px;
   padding-bottom: 60px;
 }
