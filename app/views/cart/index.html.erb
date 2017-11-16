@@ -22,7 +22,7 @@
            </div>
             <input type="hidden" value="<%=clothes_set.id%>" class='setId'>
            <div class="card-action">
-             <%= button_to 'Remove from Cart', cart_path(item.id), :form => { :class => "removeCartBtn" }, remote: true, method: :delete %>
+             <%= button_to 'Remove from Cart', cart_path(item.id), :form => { :class => "removeCartBtn" }, remote: true, method: :delete, class: "removefromcart" %>
            </div>
          </div>
     </div>
