@@ -29,7 +29,7 @@
           <div class="col s12 m6 l4">
             <div class="card">
               <div class="card-image">
-                <img src="<%= set.photo_URL %>" class="materialboxed cart-img" width="650" alt="<%= set.name %>">
+                <img src="<%= set.photo_URL %>" class="materialboxed browse-img" width="650" alt="<%= set.name %>">
 
                 <input type="hidden" value="<%=set.id%>" class='setId'>
                 <% unless set.in_cart(current_user.id) %>
@@ -43,16 +43,16 @@
                 </div>
                 <% end %>
               </div>
+              <div class="card-content">
+                <h6><%= set.name %></h6>
+              </div>
 
-            </div>
-            <div class="card-content">
-              <h6><%= set.name %></h6>
             </div>
           </div>
           <% end %>
         </div>
         <div class="fixed-action-btn" id="fixedCartBtn" style="bottom: 40px; right: 20px;">
-          <a href="/cart" class="btn btn-floating btn-large green waves-effect waves-light">
+          <a href="/cart" class="btn btn-floating btn-large red waves-effect waves-light" style="border:2px solid pink">
             <h6 class="fixed-action-btn cart_item_count" style="bottom: 97px; right: 41px;"><%= current_user.cart_item.count %></h6>
             <i class="large material-icons">shopping_basket</i>
           </a>

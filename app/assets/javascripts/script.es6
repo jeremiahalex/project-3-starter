@@ -4,6 +4,7 @@ function () {
   $(".button-collapse").sideNav()
   $('.carousel.carousel-slider').carousel({fullWidth: true})
   $('.slider').slider()
+  $('.materialboxed').materialbox();
   $('select').material_select()
   $('.collapsible').collapsible()
   $(".dropdown-button").dropdown()

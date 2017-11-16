@@ -17,7 +17,7 @@
          <div class="card">
            <div class="card-image">
              <% clothes_set = ClothesSet.find(item.clothes_set_id) %>
-             <img src="<%= clothes_set.photo_URL %>" class="cart-img" alt="<%= clothes_set.name %>">
+             <img src="<%= clothes_set.photo_URL %>" class="cart-img materialboxed" width="650" alt="<%= clothes_set.name %>">
              <span class="card-title" style="color: black;"><%= clothes_set.name %></span>
            </div>
             <input type="hidden" value="<%=clothes_set.id%>" class='setId'>
