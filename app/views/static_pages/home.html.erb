@@ -10,7 +10,7 @@
             <h4 class="greettxt left-align">
               Hi <span class="teal-text";><%= current_user.name %></span>, glad you're back! <br>
               <p> How are you and your family doing? <br>
-              Has <span class="teal-text";><%= current_user.child[0].name %></span> grown in size since your last visit?</p>
+              Has <span class="teal-text";><%= current_user.child[0].name %> grown</span> in size since your last visit?</p>
               <br>
             </h4>
             <%= link_to '<button class="filterq center-align" type="button"><strong>Yes</strong></button>'.html_safe, '/choose_size_style/0' %>

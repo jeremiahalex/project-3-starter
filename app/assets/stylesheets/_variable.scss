@@ -74,6 +74,10 @@ ul.slides {
   margin-left: 16%;
 }
 
+.back {
+  background-color: black;
+}
+
 .movebtn {
   margin-left: 10px;
 }
@@ -171,6 +175,10 @@ span.badge.new {
 // edit child
 .editchild {
   padding: 20px 0px 20px 0px;
+}
+
+#ui-datepicker-div {
+  display: none !important;
 }
 
 /*// Small devices (landscape phones, less than 768px)*/

@@ -15,14 +15,23 @@
         <%= f.label(:gender_female, "Female")  %>
         <br/><br/>
         <%= f.label("Birthday") %>
-        <%= f.date_field :birthday %>
+        <%= f.date_field :birthday, class: 'datepicker' %>
 
         <%= f.label :size_id %><br />
         <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @current_child.size_id) %>
 
-        <div class="right-align">
-        <%= f.submit("Update Child", class: 'btn') %>
+        <div class="row">
+          <div class="input-field col s6 left-align">
+              <%= link_to "Back", :back, class: 'back btn'%>
+          </div>
+
+          <div class="input-field col s6 right-align">
+            <div class="actions">
+              <%= f.submit("Update Child", class: 'btn') %>
+            </div>
+          </div>
         </div>
+        
       <% end %>
     </div>
   </div>

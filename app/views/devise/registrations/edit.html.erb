@@ -1,7 +1,7 @@
 <div class="editchild grey lighten-3">
 <div class="container">
-  <div class="editchild row">
-    <div class="grid-example col s12 m4 l8 white" style="border: 1px solid black; padding-bottom: 20px;">
+  <div class="row" style="padding-left: 14%;">
+    <div class="grid-example col s12 m4 l10 white" style="border: 1px solid black; padding-bottom: 20px;">
 
     <h5 class="teal lighten-4" style="padding: 10px;">Edit <%= resource_name.to_s.humanize %></h5>
 
@@ -22,18 +22,20 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
+      <div class="row">
+      <div class="input-field col s6">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
       </div>
 
-      <div class="field">
+      <div class="input-field col s6">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
       </div>
 
       <div class="field">
@@ -46,31 +48,38 @@
         <%= f.text_field :phone, autofocus: true %>
       </div>
 
-      <div class="field">
-        <%= f.label :street_address %><br />
-        <%= f.text_field :street, autofocus: true %>
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.label :street_address %><br />
+          <%= f.text_field :street, autofocus: true %>
+        </div>
+
+        <div class="input-field col s4">
+          <%= f.label :unit_no %><br />
+          <%= f.text_field :unit, autofocus: true %>
+        </div>
+
+        <div class="input-field col s4">
+          <%= f.label :postal_code %><br />
+          <%= f.text_field :postalcode, autofocus: true %>
+        </div>
       </div>
 
-      <div class="field">
-        <%= f.label :unit_no %><br />
-        <%= f.text_field :unit, autofocus: true %>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="input-field col s6 left-align">
+            <%= link_to "Back", :back, class: 'back btn'%>
+        </div>
+
+        <div class="input-field col s6 right-align">
+          <div class="actions">
+            <%= f.submit "Update", class: 'btn' %>
+          </div>
+        </div>
       </div>
 
-      <div class="field">
-        <%= f.label :postal_code %><br />
-        <%= f.text_field :postalcode, autofocus: true %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Update" %>
-      </div>
     <% end %>
-
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-    <%= link_to "Back", :back %>
   </div>
 </div>
 </div>

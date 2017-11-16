@@ -5,7 +5,7 @@
       <div class="card-panel filter">
 
         <h4 class="left-align">
-          Glad to hear that <span class="teal-text";><%= current_user.child[0].name %></span> is growing healthily, what size is <%= current_user.child[0].name %> now?
+          Glad to hear that <%= current_user.child[0].name %> is growing healthily, what <span class="teal-text";>size</span> is <%= current_user.child[0].name %> now?
         </h4>
 
         <%= form_for @child, url: profile_children_update_child_size_path, method: :patch do |f| %>

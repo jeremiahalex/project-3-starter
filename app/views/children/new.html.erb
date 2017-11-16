@@ -1,6 +1,12 @@
+<div class="editchild grey lighten-3">
 <div class="container">
- <div class="row">
-   <h1>New Child Form</h1>
+  <div class="editchild row">
+    <div class="grid-example col s12 m4 l8 white" style="border: 1px solid black; padding-bottom: 20px;">
+
+   <h3>New Child Form</h3>
+
+   <div class="divider"></div>
+   <br/>
 
    <%= form_for @new_child do |f| %>
      <%= f.label("Name:") %>
@@ -21,5 +27,7 @@
 
      <%= f.submit("Add Child", class: 'btn') %>
    <% end %>
- </div>
+  </div>
+  </div>
+</div>
 </div>
