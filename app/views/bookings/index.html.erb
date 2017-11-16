@@ -1,19 +1,50 @@
 <% if current_user.reg_tutor == true %>
-  <div class="container">
-    <div class"row"="class" row""="row""">
-      <div class="class" "card-container">
-        <div class="card">
-          <div class="tutorcard">
-            <!-- <img src="<%=current_user.photo%>" alt="" class="img-circle" > -->
-            <h2>I'm a tutor</h2>
+<div class="container">
+  <div class"row">
+    <div class "card-container">
+        <div class="row margin-b-20">
+
+          <div class="col-sm-3">
+            <img src="<%=current_user.photo%>" class="img-circle img-responsive small">
           </div>
-        </div>
+
+          <div class="col-sm-4">
+            <div class="margin-b-30">
+              <h2><%=current_user.name%></h2>
+              <p><%=current_user.email%></p>
+              <p><%=current_user.github%></p>
+              <p><%=current_user.past_experience%></p>
+            </div>
+          </div>
+
       </div>
     </div>
   </div>
 
+
 <% else %>
-  <h2>bye</h2>
+<div class="container">
+  <div class"row">
+    <div class "card-container">
+        <div class="row margin-b-20">
+
+          <div class="col-sm-2">
+            <img src="<%=current_user.photo%>" class="img-circle img-responsive small">
+          </div>
+
+          <div class="col-sm-4">
+            <div class="margin-b-30">
+              <h2>Welcome back, <br> <%=current_user.name%></h2>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <% end %>
 
 <div class="container">
