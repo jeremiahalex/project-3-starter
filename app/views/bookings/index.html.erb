@@ -1,54 +1,87 @@
 <% if current_user.reg_tutor == true %>
-<div class="">
-  <img src="<%=current_user.photo%>" alt="">
-  <h2>I'm a tutor</h2>
-  
+<div class="container">
+  <div class"row">
+    <div class "card-container">
+      <div class="card">
+        <div class = "tutorcard">
+          <!-- <img src="<%=current_user.photo%>" alt="" class="img-circle" > -->
+          <h2>I'm a tutor</h2>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 <% else %>
   <h2>bye</h2>
 <% end %>
 
+
+
 <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <section class="icon-box-tabs ">
-                                <ul class="nav nav-pills">
-                                  <% if current_user.reg_tutor == true %>
-                                    <li class="active">
-                                        <a data-toggle="tab" href="#tab-15" aria-expanded="true">
-                                            <h3>Lessons booked</h3>
-                                            <i class="fa fa-laptop"></i>
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a data-toggle="tab" href="#tab-16" aria-expanded="false">
-                                            <h3>Lessons created</h3>
-                                            <i class="fa fa-file-text-o"></i>
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
-                                            <h3>Lessons history</h3>
-                                            <i class="fa fa-test"></i>
-                                        </a>
-                                    </li>
 
-                                    <% else %>
-                                    <li class="active">
-                                        <a data-toggle="tab" href="#tab-15" aria-expanded="true">
-                                            <h3>Lessons booked</h3>
-                                            <i class="fa fa-laptop"></i>
-                                        </a>
-                                    </li>
+  <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Bookings</a></li>
+  <li><a data-toggle="tab" href="#menu1">Listings</a></li>
+</ul>
 
-                                    <li class="">
-                                        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
-                                            <h3>Lessons history</h3>
-                                            <i class="fa fa-test"></i>
-                                        </a>
-                                    </li>
-                                    <% end %>
-                                </ul>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>Bookings </h3>
+    <p>- Show me which are the lessons that I've bought and have attended(completed)</p>
+    <div class="row">
+    <div class="col-md-12">
+        <section class="icon-box-tabs ">
+            <ul class="nav nav-pills">
+              <li class="active">
+                  <a data-toggle="tab" href="#tab-15" aria-expanded="true">
+                      <h3>Lessons booked</h3>
+                      <i class="fa fa-laptop"></i>
+                  </a>
+              </li>
+              <li class="">
+                  <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+                      <h3>Lessons history</h3>
+                      <i class="fa fa-test"></i>
+                  </a>
+              </li>
+
+  </div>
+</div>
+</div>
+
+
+  <div id="menu1" class="tab-pane fade">
+    <h3>Listings </h3>
+    <p>- Show me the lessons that I created and see which are booked or completed</p>
+    <div class="row">
+    <div class="col-md-12">
+        <section class="icon-box-tabs ">
+            <ul class="nav nav-pills">
+    <% if current_user.reg_tutor == true %>
+    <li class="active">
+        <a data-toggle="tab" href="#tab-16" aria-expanded="false">
+            <h3>Booked</h3>
+            <i class="fa fa-file-text-o"></i>
+        </a>
+    </li>
+    <li class="">
+        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+            <h3>Created</h3>
+            <i class="fa fa-test"></i>
+        </a>
+    </li>
+    <li class="">
+        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+            <h3>Completed</h3>
+            <i class="fa fa-test"></i>
+        </a>
+    </li>
+    <%else%>
+    <h3>Sorry, please update your account  profile to "Tutor" and you can start making lessons!</h3>
+    <%end%>
+  </div>
+</div>
                                 <div class="panel-body">
                                     <div class="tab-content">
                                         <div id="tab-15" class="tab-pane active">
@@ -165,4 +198,5 @@
                             </section>
                         </div>
                     </div>
+                  </div>
                 </div>
