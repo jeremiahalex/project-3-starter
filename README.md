@@ -18,11 +18,11 @@
 
 ## Wireframes
 These wireframes are subject to changes.
-![](/app/assets/images/wireframe1.png =100x100)
-![](/app/assets/images/wireframe2.png =100x100)
-![](/app/assets/images/wireframe3.png =100x100)
-![](/app/assets/images/wireframe4.png =100x100)
-![](/app/assets/images/wireframe5.png =100x100)
+![](/app/assets/images/wireframe1.png)
+![](/app/assets/images/wireframe2.png)
+![](/app/assets/images/wireframe3.png)
+![](/app/assets/images/wireframe4.png)
+![](/app/assets/images/wireframe5.png)
 
 ## Future Development
 1. Feature: For tutors to able to delete their account when the have no active bookings. Currently they are not able if they have any bookings at all.
