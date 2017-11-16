@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @user_lesson = current_user.lessons
     @all_bookings = Booking.where(student_id: current_user.id)
     @is_my_lesson_booked = current_user.lessons.where(tutor_id: current_user)
-    # render json: @user_lesson
+    # render json: @is_my_lesson_booked
   end
 
   def show
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-  
+
   end
 
   def destroy

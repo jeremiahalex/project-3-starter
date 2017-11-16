@@ -136,7 +136,7 @@
                                                   <th scope="col">Tutor Name</th>
                                                   <th scope="col">Venue</th>
                                                   <th scope="col">Price</th>
-                                                  <th scope="col">Date/date</th>
+                                                  <th scope="col">Date/time</th>
                                                   <th scope="col">Student</th>
                                                   <th scope="col">Change</th>
                                                 </tr>
@@ -150,9 +150,7 @@
                                                   <td>$<%= lesson.price %></td>
                                                   <td><%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
                                                   <td><%= current_user.name %></td>
-
-                                                  <td><span class="badge badge-warning">Booked</span></td>
-                                                  <td><span class="badge badge-warning">Still open</span> <%= link_to "Edit", edit_booking_path(lesson) %>
+                                                  <td> <%= link_to "Edit", edit_booking_path(lesson) %>
                                                     <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
                                                   </td>
                                                 </tr>
