@@ -12,7 +12,7 @@ ActiveAdmin.register ClothesSet do
 #   permitted
 # end
 
-  permit_params :name, :style_id, :size_id, :stock_status_id, :photo_URL, :points
+  permit_params :name, :style_id, :size_id, :stock_status_id, :photo_URL, :points, :gender
 
   index do
     selectable_column
@@ -23,6 +23,7 @@ ActiveAdmin.register ClothesSet do
     column :stock_status
     column :photo_URL
     column :points
+    column :gender
     actions
   end
 

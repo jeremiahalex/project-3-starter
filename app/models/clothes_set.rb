@@ -4,9 +4,11 @@ class ClothesSet < ApplicationRecord
   belongs_to :style
   has_many :loaned_item
   has_many :cart_item
+  enum gender: [ :Female, :Male]
 
-  scope :in_stock_size_style, -> (size_id, style_id) do
-    where stock_status_id: 1, size_id: size_id, style_id: style_id
+
+  scope :in_stock_size_style, -> (size_id, style_id, gender) do
+    where stock_status_id: 1, size_id: size_id, style_id: style_id, gender: gender
   end
 
   def add_to_cart(user_id)
