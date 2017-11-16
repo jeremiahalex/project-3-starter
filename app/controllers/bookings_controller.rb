@@ -20,6 +20,10 @@ class BookingsController < ApplicationController
     find_current_lesson
   end
 
+  def update
+  
+  end
+
   def destroy
     find_current_lesson
     @lesson.destroy

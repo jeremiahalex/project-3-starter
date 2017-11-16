@@ -16,9 +16,8 @@ class UsersController < ApplicationController
   end
 
   def update
-  end
-
-  def update
+    @user = User.find(current_user.id)
+    render json: @user
   end
 
   def destroy

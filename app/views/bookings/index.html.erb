@@ -34,13 +34,13 @@
         <section class="icon-box-tabs ">
             <ul class="nav nav-pills">
               <li class="active">
-                  <a data-toggle="tab" href="#tab-15" aria-expanded="true">
+                  <a data-toggle="tab" href="#tab-14" aria-expanded="true">
                       <h3>Lessons booked</h3>
                       <i class="fa fa-laptop"></i>
                   </a>
               </li>
               <li class="">
-                  <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+                  <a data-toggle="tab" href="#tab-15" aria-expanded="false">
                       <h3>Lessons history</h3>
                       <i class="fa fa-test"></i>
                   </a>
@@ -72,9 +72,9 @@
         </a>
     </li>
     <li class="">
-        <a data-toggle="tab" href="#tab-17" aria-expanded="false">
+        <a data-toggle="tab" href="#tab-18" aria-expanded="false">
             <h3>Completed</h3>
-            <i class="fa fa-test"></i>
+            <i class="fa fa-testtest"></i>
         </a>
     </li>
     <%else%>
@@ -84,7 +84,7 @@
 </div>
                                 <div class="panel-body">
                                     <div class="tab-content">
-                                        <div id="tab-15" class="tab-pane active">
+                                        <div id="tab-16" class="tab-pane active">
                                             <div class="heading-title-alt">
                                                 <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
                                                 <h2 class="text-uppercase">table of lessons booked</h2>
@@ -121,7 +121,10 @@
                                             </table>
                                             </div>
 
-                                        <div id="tab-16" class="tab-pane">
+
+
+                                        <div id="tab-17" class="tab-pane">
+                                          <!--TAB NUMBER WRONG   -->
                                             <div class="heading-title-alt">
                                                 <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
                                                 <h2 class="text-uppercase">Table of created lessons</h2>
@@ -159,7 +162,8 @@
                                             </table>
                                             </div>
 
-                                            <div id="tab-17" class="tab-pane">
+
+                                            <div id="tab-18" class="tab-pane">
                                                 <div class="heading-title-alt">
                                                     <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
                                                     <h2 class="text-uppercase">Table of created lessons</h2>
@@ -171,21 +175,24 @@
                                                       <th scope="col">Tutor Name</th>
                                                       <th scope="col">Venue</th>
                                                       <th scope="col">Price</th>
-                                                      <th scope="col">Status</th>
+                                                      <th scope="col">Date/date</th>
+                                                      <th scope="col">Student</th>
                                                       <th scope="col">Change</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
                                                 <% @user_lesson.each do |lesson| %>
                                                     <tr>
-                                                      <th scope="row"><%= lesson.language_taught%></th>
-                                                      <td><%= lesson.tutor.name%><h1>hihi</h1></td>
+                                                      <th scope="row"><%= lesson.language_taught%><h2>hi</h2></th>
+                                                      <td><%= lesson.tutor.name%></td>
                                                       <td><%= lesson.venue%></td>
                                                       <td>$<%= lesson.price %></td>
-                                                      <td>Yet to start</td>
+                                                      <td><%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %><h2>hi</h2></td>
+                                                      <td><%= current_user.name %></td>
 
-                                                      <td> <%= link_to "Edit", edit_booking_path(lesson) %>
-                                                            <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
+                                                      <td><span class="badge badge-warning">Booked</span></td>
+                                                      <td><span class="badge badge-warning">Still open</span> <%= link_to "Edit", edit_booking_path(lesson) %>
+                                                        <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
                                                       </td>
                                                     </tr>
                                                 <% end %>
@@ -193,6 +200,8 @@
                                                 </tbody>
                                                 </table>
                                                 </div>
+
+
                                     </div>
                                 </div>
                             </section>
