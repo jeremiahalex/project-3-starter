@@ -5,9 +5,10 @@ class BookingsController < ApplicationController
 
   def index
     @user_lesson = current_user.lessons
-    @all_bookings = Booking.where(student_id: current_user.id)
+    @is_created_lesson_booked = Booking.pluck(:lesson_id)
+    @all_bookings = Booking.where.not(student_id: current_user.id)
     @is_my_lesson_booked = current_user.lessons.where(tutor_id: current_user)
-    # render json: @is_my_lesson_booked
+    # render json: @is_created_lesson_booked
   end
 
   def show
