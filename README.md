@@ -129,6 +129,13 @@ to be added
 * Fix: double creation of cart_items
 * Improve CSS
 
+14 Nove 2017
+* Update user registration required field
+* Redirect to 'add child' on user register
+* Redirect to 'filter form' on child information added
+* Edit default values for style/size selection
+* Browse page display current user points, ajax: +/- points on add/remove cart item.
+
 15 Nov 2017
 * Add AJAX to in-cart quantity, add/remove button for clothes browsing
 * Add Stripe payment system
