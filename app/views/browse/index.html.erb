@@ -21,7 +21,7 @@
       <!-- right side  -->
       <div class="leftside col m9 s12 brown lighten-5" style="padding-bottom:10%;">
         <div class="container">
-          <h4>Browse Clothes</h4>
+          <h5 style="padding:30px 0px 10px 0px">Browse Clothes</h5>
 
           <div class="row clothes">
             <% @filtered_clothes.each do |set| %>
@@ -44,9 +44,9 @@
                   <% end %>
                 </div>
 
-              </div>
-              <div class="card-content">
-                <h6><%= set.name %></h6>
+                <div class="card-content">
+                  <h6><%= set.name %></h6>
+                </div>
               </div>
             </div>
             <% end %>
