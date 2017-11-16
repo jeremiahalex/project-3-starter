@@ -1,6 +1,6 @@
 class ClothesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
 
   def destroy
     @clothes_set = ClothesSet.find(params[:id])

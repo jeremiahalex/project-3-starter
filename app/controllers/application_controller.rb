@@ -9,5 +9,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :phone, :street, :unit, :postalcode])
   end
 
-  
+  private
+
+  def has_child
+    unless current_user.child[0].present?
+      flash[:notice] = "Please enter your child information first"
+      redirect_to profile_children_new_path
+    end
+  end
+
 end

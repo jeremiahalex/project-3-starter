@@ -1,6 +1,6 @@
 class FilterFormController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
   before_action :has_child
 
   def form1
@@ -18,13 +18,6 @@ class FilterFormController < ApplicationController
     @styles = Style.all
   end
 
-  private
 
-  def has_child
-    unless current_user.child[0].present?
-      flash[:notice] = "Please enter your child information first"
-      redirect_to profile_children_new_path
-    end
-  end
 
 end
