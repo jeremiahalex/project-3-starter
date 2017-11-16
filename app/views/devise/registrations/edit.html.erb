@@ -1,3 +1,5 @@
+<%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
+
 <div class="content-lg container">
   <div class="edit-wrap">
 
@@ -18,6 +20,19 @@
     <%= f.label :reg_tutor, "Check to be a tutor" %><br />
     <%= f.check_box :reg_tutor, :id => 'test_id'%>
   </div>
+
+  <div class="is_tutor" style="display:none">
+  <%= f.label :github, "Your github url:" %><br />
+  <%= f.text_field :github %>
+
+  <%= f.label :past_experience, "Please include your past experiences:" %><br />
+  <%= f.text_area :past_experience %>
+  </div>
+
+    <div class="field">
+      <%= f.label :photo, "Upload your profile pic" %><br />
+      <%= f.uploadcare_uploader :photo %>
+    </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
