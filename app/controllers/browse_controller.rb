@@ -10,4 +10,5 @@ class BrowseController < ApplicationController
     clothes_style_id = Style.find_by(name: clothes_style )
     @filtered_clothes = ClothesSet.in_stock_size_style(clothes_size_id, clothes_style_id)
   end
+  
 end

@@ -44,6 +44,10 @@
             <h6><%= set.name %></h6>
             <input type="hidden" value="<%=set.id%>" class='setId'>
           </div>
+          <% end %>
+          <div class="fixed-action-btn" style="bottom: 152px; right: 47px;">
+            <a href="/cart"><h5 class="cart_item_count"><%= current_user.cart_item.count %></h5></a>
+          </div>
           <div class="fixed-action-btn" style="bottom: 100px; right: 40px;">
             <a href="/cart"><i class="large material-icons">shopping_basket</i></a>
           </div>
@@ -51,4 +55,5 @@
       </div>
       </div>
   </div>
+</div>
 </div>

@@ -20,9 +20,27 @@ class CartController < ApplicationController
   end
 
   def checkout
-    current_user.create_loaned_item
-    flash[:notice] = "Your request have been submited. Have a nice day"
-    redirect_to '/my_order'
+
+    @all_cart_item = current_user.cart_item
+    not_available = []
+    @all_cart_item.each do |item|
+      @selected_clothes_set = ClothesSet.find(item.clothes_set_id)
+      if @selected_clothes_set.stock_status_id != 1
+        not_available <<  @selected_clothes_set.name
+        CartItem.destroy(item.id)
+      end
+    end
+
+    if not_available.length == 0
+      current_user.create_loaned_item
+      flash[:notice] = "Your request have been submited. Have a nice day"
+      redirect_to '/my_order'
+    else
+      flash[:notice] = "Sorry. #{not_available} is currently unavailable"
+      redirect_to '/cart'
+    end
+
+
   end
 
 end
