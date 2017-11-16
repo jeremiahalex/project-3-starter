@@ -15,7 +15,7 @@
 
       <label>Filter By Style</label>
       <% size_name = Size.find(current_user.child[0].size_id).name %>
-      <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name", @clothes_style), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value)" %>
+      <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name", @clothes_style), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value + '&&gender=#{current_user.child[0].gender}')" %>
     </div>
 
     <!-- right side  -->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111214529) do
+ActiveRecord::Schema.define(version: 20171116072405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20171111214529) do
     t.integer "points", default: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "file"
+    t.integer "gender"
     t.index ["size_id"], name: "index_clothes_sets_on_size_id"
     t.index ["stock_status_id"], name: "index_clothes_sets_on_stock_status_id"
     t.index ["style_id"], name: "index_clothes_sets_on_style_id"
@@ -118,7 +120,7 @@ ActiveRecord::Schema.define(version: 20171111214529) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -127,22 +129,20 @@ ActiveRecord::Schema.define(version: 20171111214529) do
     t.integer "points", default: 0
     t.boolean "subscription_type", default: false
     t.integer "phone"
-    t.string "street", null: false
-    t.string "unit", null: false
-    t.string "postalcode", null: false
+    t.string "street"
+    t.string "unit"
+    t.string "postalcode"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.string "unconfirmed_email"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token"
-    t.datetime "locked_at"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
