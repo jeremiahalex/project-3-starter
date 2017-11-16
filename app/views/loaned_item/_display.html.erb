@@ -6,7 +6,7 @@
        <div class="card">
          <div class="card-image">
           <% clothes_set = ClothesSet.find(item.clothes_set_id) %>
-          <img src="<%= clothes_set.photo_URL %>" class="order-img" alt="<%= clothes_set.name %>">
+          <img src="<%= clothes_set.photo_URL %>" class="materialboxed order-img" width="650" alt="<%= clothes_set.name %>">
            <span class="card-title order" style="color: black; padding: 10px; width: 100%;">
              <%= clothes_set.name %>
            </span>

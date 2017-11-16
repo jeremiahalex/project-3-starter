@@ -21,7 +21,7 @@
       <!-- right side  -->
       <div class="leftside col m9 s12 brown lighten-5" style="padding-bottom:10%;">
         <div class="container">
-          <h5 style="padding:30px 0px 10px 0px">Browse Clothes</h5>
+          <h5 style="padding:30px 0px 10px 0px; border-bottom: 1px dashed black;">Browse Clothes</h5>
 
           <div class="row clothes">
             <% @filtered_clothes.each do |set| %>
@@ -29,7 +29,7 @@
             <div class="col s12 m6 l4">
               <div class="card">
                 <div class="card-image">
-                  <img src="<%= set.photo_URL %>" class="cart-img" alt="<%= set.name %>">
+                  <img src="<%= set.photo_URL %>" class="materialboxed cart-img" width="650" alt="<%= set.name %>">
 
                   <input type="hidden" value="<%=set.id%>" class='setId'>
                   <% unless set.in_cart(current_user.id) %>
