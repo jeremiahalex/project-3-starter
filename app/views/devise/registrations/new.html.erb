@@ -1,77 +1,79 @@
 <%= include_uploadcare_widget_from_cdn version: "2.9.0", min: true %>
+<div id="loginPage">
+  <div class="content-lg container">
+    <div class="login-wrap">
 
-<div class="content-lg container">
-  <div class="login-wrap">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
+      <h2>Sign up</h2>
 
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-<h2>Sign up</h2>
+      <div class="form">
+        <%= f.label :name, "Name:"%><br/>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :gender, "Gender:"%><br/>
+        <%= f.label :gender, "Male" %>
+        <%= f.radio_button :gender, value="male"%>
+        <%= f.label :gender, "Female" %>
+        <%= f.radio_button :gender, value="female"%>
+      </div>
 
-  <div class="form">
-    <%= f.label :name, "Name:"%><br />
-    <%= f.text_field :name, autofocus: true %>
+      <div class="test_field">
+        <%= f.label :reg_tutor, "Check to be a tutor" %><br/>
+        <%= f.check_box :reg_tutor, :id => 'test_id'%>
+      </div>
+
+      <div class="is_tutor" style="display:none">
+        <%= f.label :github, "Your github url:" %><br/>
+        <%= f.text_field :github %>
+
+        <%= f.label :past_experience, "Please include your past experiences:" %><br/>
+        <%= f.text_area :past_experience %>
+      </div>
+
+      <div class="field">
+        <%= f.label :photo, "Upload your profile pic" %><br/>
+        <%= f.uploadcare_uploader :photo %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email%>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %>
+            characters minimum)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="test_field">
+        <%= f.label :terms, "Read the terms and condition" %>
+        <%= f.check_box :terms , required: true %>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" ,class: 'btn'%>
+      </div>
+
+    <% end %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :gender, "Gender:"%><br />
-    <%= f.label :gender, "Male" %>
-    <%= f.radio_button :gender, value="male"%>
-    <%= f.label :gender, "Female" %>
-    <%= f.radio_button :gender, value="female"%>
-  </div>
-
-  <div class="test_field">
-    <%= f.label :reg_tutor, "Check to be a tutor" %><br />
-    <%= f.check_box :reg_tutor, :id => 'test_id'%>
-  </div>
-
-<div class="is_tutor" style="display:none">
-<%= f.label :github, "Your github url:" %><br />
-<%= f.text_field :github %>
-
-<%= f.label :past_experience, "Please include your past experiences:" %><br />
-<%= f.text_area :past_experience %>
 </div>
-
-  <div class="field">
-    <%= f.label :photo, "Upload your profile pic" %><br />
-    <%= f.uploadcare_uploader :photo %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email%>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-
-
-  <div class="test_field">
-    <%= f.label :terms, "Read the terms and condition" %> <%= f.check_box :terms , required: true %>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" ,class: 'btn'%>
-  </div>
-
-<% end %>
-
 </div>
-  </div>

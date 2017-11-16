@@ -4,29 +4,36 @@ html, body {
   width: 100%
 }
 
+#loginPage {
+  background-image: url('wallpaper2.jpg');
+  background-size: cover;
+  height: 150vh;
+}
 
 .small{
   width: 150px;
   height: 150px;
 }
+
 .login-wrap{
   width:400px;
   margin: 0 auto;
   margin-top:100px;
-  border:1px solid #eee;
+  border:1px solid transparent;
   padding:15px;
-  background: rgba(0, 0, 0, 0.3)
-  border-radius: 10px;
+  background: rgba(255,255,255, 0.3);
+  border-radius: 12px;
+  text-align: center;
 }
 
 .edit-wrap{
   width:450px;
   margin: 0 auto;
-  margin-top:100px;
+  margin-top:50px;
   border:1px solid #eee;
-  padding:15px;
-  background: #FFFFFF;
-  border-radius: 10px;
+  padding:5px;
+  background: rgba(255,255,255, 0.3);
+  border-radius: 12px;
 }
 .booking {
   background-color: #ffffff;
