@@ -105,6 +105,7 @@ ul.slides {
 }
 
 .grey.lighten-2 {
+  margin-top: 50px;
   background-color: beige !important;
 }
 
@@ -181,6 +182,15 @@ span.badge.new {
   .order-img {
     height: 350px;
   }
+}
+
+.btn-floating.btn-large {
+  width: 90px;
+  height: 90px
+}
+.btn-floating.btn-large i {
+  line-height: 90px;
+  font-size: 4rem;
 }
 
 /*// Small devices (landscape phones, less than 768px)*/
