@@ -147,6 +147,28 @@ span.badge.new {
   padding: 20px;
 }
 
+.btn-floating.btn-large {
+  width: 90px;
+  height: 90px
+}
+.btn-floating.btn-large i {
+  line-height: 90px;
+  font-size: 4rem;
+}
+
+#cart_item_count {
+  pointer-events: none;
+  cursor: default;
+}
+
+// edit child
+.editchild {
+  padding: 20px 0px 20px 0px;
+}
+
+/*// Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767px) {
+}
 
 /*// Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
@@ -196,22 +218,4 @@ span.badge.new {
     width: 94%;
   }
 
-}
-
-.btn-floating.btn-large {
-  width: 90px;
-  height: 90px
-}
-.btn-floating.btn-large i {
-  line-height: 90px;
-  font-size: 4rem;
-}
-
-/*// Small devices (landscape phones, less than 768px)*/
-@media (max-width: 767px) {
-}
-
-#cart_item_count {
-  pointer-events: none;
-  cursor: default;
 }
