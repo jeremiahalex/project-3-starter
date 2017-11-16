@@ -106,7 +106,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% @all_bookings.each do |booking| %>
+                    <% @all_my_bookings.each do |booking| %>
                       <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) < booking.lesson.datetime %>
                         <tr>
                           <td scope="col"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get ,class:"link" %></th>
@@ -139,7 +139,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% @all_bookings.each do |booking| %>
+                    <% @all_my_bookings.each do |booking| %>
                       <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
                         <tr>
                           <td scope="col"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get ,class:'link' %></th>
