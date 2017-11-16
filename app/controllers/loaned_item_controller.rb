@@ -1,6 +1,6 @@
 class LoanedItemController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
 
   def index
     @all_loaned_item = LoanedItem.not_completed(current_user.id)

@@ -1,7 +1,8 @@
 class BrowseController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, only: :index
-
+  before_action :authenticate_user!
+  before_action :has_child
+  
   def index
     @styles = Style.all
     clothes_size_name = params['size']
