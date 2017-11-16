@@ -28,6 +28,9 @@ button {
   margin-right: 5%;
 }
 
+.notice {
+}
+
 .container {
   width: 90%;
 }
@@ -54,6 +57,11 @@ ul.slides {
 
 .row {
   margin-bottom: 0px;
+}
+
+.container.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .row.about {
@@ -106,6 +114,27 @@ ul.slides {
   height: 350px;
 }
 
+.order-img {
+  height: 240px;
+}
+
+.card-title {
+  line-height: 20px;
+}
+
+.card-title.order {
+  font-size: 16px;
+  background-color: rgba(255, 204, 204, 0.3);
+}
+
+span.badge.new {
+  padding: 8px;
+  height: 37px;
+  width: 121px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 .footer {
   padding: 10px 0px;
 }
@@ -149,6 +178,10 @@ ul.slides {
 
   .greettxt {
     font-size: 25px;
+  }
+
+  .order-img {
+    height: 350px;
   }
 }
 

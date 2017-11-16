@@ -1,5 +1,13 @@
-<h1>History</h1>
+<div class="filter red lighten-5">
 
-<%= render 'loaned_item/display' %>
+  <div class="container">
+  <div class="row" style="border-bottom: 2px dashed black;">
+    <div class="col s6 m6"><h3>My Order History</h3></div>
+    <div class="col s6 m6 right-align" style="margin-top: 30px;"><%= link_to '<button class="hello" type="button">My Orders</button>'.html_safe, '/my_order'  %></div>
+  </div>
+  </div>
 
-<%= link_to '<button type="button">My Orders</button>'.html_safe, '/my_order'  %>
+  <div class="teal lighten-5">
+  <%= render 'loaned_item/display' %>
+  </div>
+</div>
