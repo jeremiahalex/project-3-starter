@@ -3,13 +3,19 @@ html, body {
   height: 100%;
   width: 100%
 }
+
+
+.small{
+  width: 150px;
+  height: 150px;
+}
 .login-wrap{
   width:400px;
   margin: 0 auto;
   margin-top:100px;
   border:1px solid #eee;
   padding:15px;
-  background: #FFFFFF;
+  background: rgba(0, 0, 0, 0.3)
   border-radius: 10px;
 }
 
