@@ -108,16 +108,23 @@
       <div class="card-container manual-flip">
         <div class="card">
           <div class="front">
+
+            <% if @booked.include? lesson.id%>
+            <span class="badge badge-pill badge-danger">Booked</span>
+            <% else %>
+            <span class="badge badge-pill badge-danger">Available</span>
+            <% end  %>
+
             <div class="cover">
             </div>
             <div class="user">
 
-              <img src="<%= @lesson_tutor.photo %>" class="img-circle">
+              <img src="<%= lesson.tutor.photo %>" class="img-circle">
 
             </div>
             <div class="content">
               <div class="main">
-                <h3 class="name"><%= @lesson_tutor.name %></h3>
+                <h3 class="name"><%= lesson.tutor.name %></h3>
 
                 <div class="text-center">
                   <p class="profession"><%= lesson.language_taught %></p>
@@ -125,18 +132,16 @@
                 <br>
 
                 <p class="text-center">
-                  <%= lesson.datetime %><br>
-                  <b><%= lesson.venue %></b>
+                  <%= lesson.datetime %>
                 </p>
 
                 <div class="rate">
                   $<%= lesson.price %>/hrs
                 </div>
-                <!-- <p class="text-center">"I am certify by microsoft! <br> Weee <br> pick me as tutor </p> -->
-                <!-- <div class="class-card-price"> <div class="class-card-price-inner"> $185 </div> </div> -->
               </div>
+
               <div class="footer">
-                <button class="btn btn-simple flipping" onclick="rotateCard(this)">
+                <button class="btn btn-simple flipping" >
                   <i class="fa fa-mail-forward"></i>
                   Click here to view more
                 </button>
@@ -151,16 +156,20 @@
             <div class="content">
               <div class="main">
                 <h4 class="text-center"><%= lesson.name %></h4>
-                <p class="text-center"><%= lesson.details %></p>
+                <p class="text-center"><%= lesson.details %><br>
+                  <b>Duration : <%= lesson.duration %> hrs</b><br>
+                  <b>Venue : <%= lesson.venue %></b>
+
+                </p>
 
                 <div class="text-center">
-                  <input type="button" class="btn" value="Book Lesson" >
+                  <%= link_to "View more Details", lesson_path(lesson), class: 'btn' %>
                 </div>
 
               </div>
             </div>
             <div class="footer">
-              <button class="btn btn-simple flipping" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+              <button class="btn btn-simple flipping" rel="tooltip" title="Flip Card">
                 <i class="fa fa-reply"></i>
                 Back
               </button>
