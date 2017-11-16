@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :bookings
     resources :charges
     resources :testimonials
+    get '/about', to: 'pages#about'
 
 end
