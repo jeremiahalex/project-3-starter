@@ -11,6 +11,15 @@
 <p>Register (if you have not yet done so), select a tutor according to your programming language and book a lesson. </p>
 
   <p><i>Leadership and learning are indispensable to each other.</i>John F. Kennedy</p>
+  
+  ## User Stories
+   1. Users can search for tutors and their timings based on the languages available (based on what the teachers have offered)
+    2. Users can sign up as a tutor nd post their available lesson time  - which is really tuition time
+    3. Tutors can set, edit and delete lessons that they make - but once it is booked neither student nor tutor can delete it.
+    4. Users can book lessons from tutors and make payment
+    5. Email will be sent to both tutor and student to confirm the booking
+    6. Users, both students and tutors, can view their bookings through the bookings page
+    7. Both can also track which bookings are upcoming and which are completed. We based the completion status on the date time - if it has passed, it is considered done.
 
 ## ERD
 
