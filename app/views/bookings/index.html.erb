@@ -253,8 +253,8 @@
                             <td>$<%= lesson.price %></td>
                             <td><%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
                             <td>
-                              <%= link_to "Edit", edit_booking_path(lesson) %>
-                              <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"} %>
+                              <%= link_to "Edit", edit_booking_path(lesson), class:'link' %>
+                              <%= link_to "Delete", booking_path(lesson), method: :delete, data: { confirm: "Are you sure?"}, class:'link' %>
                             </td>
                           </tr>
                         <% end %>

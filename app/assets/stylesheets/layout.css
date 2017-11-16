@@ -710,7 +710,7 @@ a:active, a:focus, a:hover {
 .link:after {
 
   top: 8px;
-  right: -15px;
+  margin: 2px;
   width: 9px;
   height: 2px;
   background: #FF6B6B;
