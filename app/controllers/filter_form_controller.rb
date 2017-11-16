@@ -18,6 +18,4 @@ class FilterFormController < ApplicationController
     @styles = Style.all
   end
 
-
-
 end

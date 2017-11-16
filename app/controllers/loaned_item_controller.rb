@@ -9,4 +9,5 @@ class LoanedItemController < ApplicationController
   def history
     @all_loaned_item = LoanedItem.completed(current_user.id)
   end
+  
 end

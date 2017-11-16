@@ -16,14 +16,12 @@ Link To Website: [Precious-tots](https://precious-tots.herokuapp.com)
 
 ![solution](./app/assets/readme_img/solution.png)
 
-
 ---
 
 ## Table of Contents
 1. Design Idea
 1. Table of Contents
 1. User Story
-<!-- 1. Use Case -->
 1. ERD
 1. Wireframe
 1. Development Log
@@ -55,9 +53,6 @@ Link To Website: [Precious-tots](https://precious-tots.herokuapp.com)
 - can view / edit all user outfit requests
 - can view / edit all clothes in database
 - can add new clothes into database
-
-<!-- #### Use Case
-![Image of flowchart](app/assets/readme_img/use_case.png) -->
 
 ---
 

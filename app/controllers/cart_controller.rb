@@ -29,7 +29,6 @@ class CartController < ApplicationController
         CartItem.destroy(item.id)
       end
     end
-
     if not_available.length == 0
       current_user.create_loaned_item
       flash[:notice] = "Your cart items have been submited. You can view their individual status on this page. Have a great day!"
@@ -40,8 +39,6 @@ class CartController < ApplicationController
       current_user.add_point(points_to_add_back)
       redirect_to '/cart'
     end
-
-
   end
-
+  
 end
