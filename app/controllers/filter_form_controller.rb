@@ -8,7 +8,7 @@ class FilterFormController < ApplicationController
       @sizes = Size.all
       @child = current_user.child[0]
     else
-      flash[:notice] = "Please enter your child information first"
+      flash[:notice] = "You currently have no child information recorded in the system. Please set up your child's profile first."
       redirect_to profile_children_new_path
     end
   end

@@ -24,14 +24,15 @@ function () {
 // Browse - add to cart btn
   $clothes.on('click', '.addBtn', function () {
     if (userPoints <= 0) {
-      alert('You have exceed the number of clothes you can select, Please remove before adding')
+      alert('You have insufficient points for this outfit.')
     }
     else if (userPoints > 0) {
     // Points display - AJAX
       var $pointsDisplay = $('.pointsDisplay')
       $pointsDisplay.empty()
       userPoints -= 10
-      $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
+      $pointsDisplay.append($('<span class="new badge" data-badge-caption="Points">' + userPoints + '</span>'))
+      // $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
       var clothes_set_id = $(this).parent().parent().parent().find('.setId').val()
       var json = JSON.stringify({
         clothes_set_id
@@ -61,7 +62,8 @@ function () {
   // Points display - AJAX
     var $pointsDisplay = $('.pointsDisplay')
     $pointsDisplay.empty()
-    $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
+    $pointsDisplay.append($('<span class="new badge" data-badge-caption="Points">' + userPoints + '</span>'))
+    // $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
     var clothes_set_id = $(this).parent().parent().parent().find('.setId').val()
     // var id = this.id
     var json = JSON.stringify({
