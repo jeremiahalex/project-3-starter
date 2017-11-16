@@ -36,6 +36,7 @@ function () {
     // Cart add/remove button change - AJAX
       var $button = $(this).parent()
       $button.empty().append('<a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>')
+      Materialize.toast('Added to Cart', 2500, 'rounded')
     // Cart number change - AJAX
       var numberInCart = Number($cartNumber.html())
       numberInCart += 1
@@ -64,6 +65,7 @@ function () {
   // Cart add/remove button change AJAX
     var $button = $(this).parent()
     $button.empty().append('<a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>')
+    Materialize.toast('Remove from Cart', 2500,  'rounded')
   // Cart number change - AJAX
 
     var numberInCart = Number($cartNumber.html())
@@ -82,9 +84,11 @@ function () {
     })
     var cartItemResult = $(this).parent().parent().parent()
     cartItemResult.remove()
+    Materialize.toast('Remove from Cart', 2500, 'rounded')
   // Cart number change - AJAX
     var numberInCart = Number($cartNumber.html())
     numberInCart -= 1
     $cartNumber.empty().append(numberInCart)
   })
+  Materialize.Toast.removeAll()
 })
