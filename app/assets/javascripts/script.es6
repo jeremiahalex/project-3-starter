@@ -15,12 +15,13 @@ function () {
     clear: 'Clear',
     close: 'Ok',
     closeOnSelect: false // Close upon selecting a date,
-  });
+  })
 
   var userPoints = Number($('.userPoints').val())
   const $clothes = $('.clothes')
   const $bigCartNumber = $('.cart_item_count')
   const $cartNumber = $('#cart_item_count')
+
 // Browse - add to cart btn
   $clothes.on('click', '.addBtn', function () {
     if (userPoints <= 0) {
@@ -32,7 +33,6 @@ function () {
       $pointsDisplay.empty()
       userPoints -= 10
       $pointsDisplay.append($('<span class="new badge" data-badge-caption="Points">' + userPoints + '</span>'))
-      // $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
       var clothes_set_id = $(this).parent().parent().parent().find('.setId').val()
       var json = JSON.stringify({
         clothes_set_id
@@ -63,9 +63,7 @@ function () {
     var $pointsDisplay = $('.pointsDisplay')
     $pointsDisplay.empty()
     $pointsDisplay.append($('<span class="new badge" data-badge-caption="Points">' + userPoints + '</span>'))
-    // $pointsDisplay.append($('<h5>' + userPoints + ' points</h5>'))
     var clothes_set_id = $(this).parent().parent().parent().find('.setId').val()
-    // var id = this.id
     var json = JSON.stringify({
       clothes_set_id
     })
@@ -79,7 +77,6 @@ function () {
     $button.empty().append('<a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>')
     Materialize.toast('Remove from Cart', 2500,  'rounded')
   // Cart number change - AJAX
-
     var numberInCart = Number($cartNumber.html())
     numberInCart -= 1
     $cartNumber.empty().append(numberInCart)

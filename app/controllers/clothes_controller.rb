@@ -8,4 +8,5 @@ class ClothesController < ApplicationController
     CartItem.destroy(cart_item_id)
     current_user.add_point(@clothes_set.points)
   end
+  
 end

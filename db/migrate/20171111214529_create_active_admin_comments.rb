@@ -8,10 +8,10 @@ class CreateActiveAdminComments < ActiveRecord::Migration::Current
       t.timestamps
     end
     add_index :active_admin_comments, [:namespace]
-
   end
 
   def self.down
     drop_table :active_admin_comments
   end
+  
 end

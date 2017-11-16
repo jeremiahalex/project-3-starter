@@ -7,7 +7,6 @@ class ChildrenController < ApplicationController
     @new_childs = current_user.child
   end
 
-
   def create
     current_user.child.create(params.require(:child).permit(:name, :gender, :birthday, :size_id))
     if current_user.points == 0
@@ -27,7 +26,7 @@ class ChildrenController < ApplicationController
     @current_child = current_user.child[0]
   end
 
-  def update ###check if needed
+  def update
     @new_child = Child.find(params[:id])
     if @new_child.update(params.require(:child).permit(:name, :gender, :birthday, :size_id))
       redirect_to "/profile"
