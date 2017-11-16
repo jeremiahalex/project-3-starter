@@ -1,20 +1,20 @@
 <div class="container">
 <!-- SLIDER -->
 
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.child[0].present? %>
     <!-- filter form  -->
     <div class="filter red lighten-5">
       <div class="row filernote">
         <div class="col s12 m8">
           <div class="card-panel filter">
             <h4 class="greettxt left-align">
-              Hi <span style="color:blue;"><%= current_user.name %></span>, glad you're back! <br>
+              Hi <span class="teal-text";><%= current_user.name %></span>, glad you're back! <br>
               <p> How are you and your family doing? <br>
-              Has <span style="color:blue";><%= current_user.child[0].name %></span> grown in size since your last visit?</p>
+              Has <span class="teal-text";><%= current_user.child[0].name %></span> grown in size since your last visit?</p>
               <br>
             </h4>
-            <%= link_to '<button type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
-            <%= link_to '<button type="button">No</button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+            <%= link_to '<button class="filterq center-align" type="button"><strong>Yes</strong></button>'.html_safe, '/choose_size_style/0' %>
+            <%= link_to '<button class="filterq center-align" type="button"><strong>No</strong></button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
           </div>
         </div>
       </div>

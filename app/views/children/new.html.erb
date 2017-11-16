@@ -10,9 +10,9 @@
      <%= f.label(:gender_male, "Male") %>
      <%= f.radio_button(:gender, "Female") %>
      <%= f.label(:gender_female, "Female")  %>
-      <br>
+      <br/><br/>
      <%= f.label("Birthday") %>
-     <%= f.date_field :birthday %>
+     <%= f.text_field :birthday, class: 'datepicker' %>
 
      <%= f.label :size_id %><br />
      <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}) %>

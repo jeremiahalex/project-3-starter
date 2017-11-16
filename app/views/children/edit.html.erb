@@ -1,18 +1,19 @@
 <div class="editchild red lighten-5">
 <div class="container">
-  <div class="row">
-    <div class="grid-example col s12 m4 l8">
-      <h3>Edit <%= @current_child.name %> details</h3>
+  <div class="editchild row">
+    <div class="grid-example col s12 m4 l8 white" style="border: 1px solid black; padding-bottom: 20px;">
+      <h5 class="teal lighten-4" style="padding: 10px;">Edit <%= @current_child.name %> details</h5>
 
       <%= form_for(@current_child) do |f| %>
         <%= f.label("Name:") %>
         <%= f.text_field :name %>
         <%= f.label("Gender") %>
+        <br/>
         <%= f.radio_button(:gender, "Male") %>
         <%= f.label(:gender_male, "Male") %>
         <%= f.radio_button(:gender, "Female") %>
         <%= f.label(:gender_female, "Female")  %>
-         <br>
+        <br/><br/>
         <%= f.label("Birthday") %>
         <%= f.date_field :birthday %>
 

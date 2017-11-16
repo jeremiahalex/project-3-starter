@@ -8,6 +8,15 @@ function () {
   $('select').material_select()
   $('.collapsible').collapsible()
   $(".dropdown-button").dropdown()
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 9, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+
   var userPoints = Number($('.userPoints').val())
   const $clothes = $('.clothes')
   const $bigCartNumber = $('.cart_item_count')
