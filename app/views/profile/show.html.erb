@@ -1,6 +1,7 @@
 
 <div class="container">  <!--  The container class is set to ~70% of the window width. -->
-  <h3 class="#b2dfdb teal lighten-4">User Information</h3>
+  <div class="profile-box">
+  <h3 class="profile-header teal lighten-4">User Information</h3>
     <ul>
       <li>Username: <%= current_user.name %></li>
       <li>Email:  <%= current_user.email%></li>
@@ -10,8 +11,9 @@
       <li>Points:  <%= current_user.points %></li>
       <li>Subscription:  <%= current_user.subscription_type %>
     </ul>
+  </div>
     <a class="waves-effect waves-light btn" href="/profile/edit">Edit profile</a>
-
+  
     <div class="divider"></div>
 
     <%= form_tag charges_path do %>
@@ -52,5 +54,4 @@
     <a class="waves-effect waves-light btn" href="/profile/children/edit">Edit child information</a>
     <a class="waves-effect waves-light btn" href="/profile/children/delete">Delete child information</a>
   <% end %>
-
 </div>

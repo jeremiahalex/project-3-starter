@@ -1,19 +1,29 @@
-<h1>Edit <%= @current_child.name %></h1>
+<div class="editchild red lighten-5">
+<div class="container">
+  <div class="row">
+    <div class="grid-example col s12 m4 l8">
+      <h3>Edit <%= @current_child.name %> details</h3>
 
-<%= form_for(@current_child) do |f| %>
-  <%= f.label("Name:") %>
-  <%= f.text_field :name %>
-  <%= f.label("Gender") %>
-  <%= f.radio_button(:gender, "Male") %>
-  <%= f.label(:gender_male, "Male") %>
-  <%= f.radio_button(:gender, "Female") %>
-  <%= f.label(:gender_female, "Female")  %>
-   <br>
-  <%= f.label("Birthday") %>
-  <%= f.date_field :birthday %>
+      <%= form_for(@current_child) do |f| %>
+        <%= f.label("Name:") %>
+        <%= f.text_field :name %>
+        <%= f.label("Gender") %>
+        <%= f.radio_button(:gender, "Male") %>
+        <%= f.label(:gender_male, "Male") %>
+        <%= f.radio_button(:gender, "Female") %>
+        <%= f.label(:gender_female, "Female")  %>
+         <br>
+        <%= f.label("Birthday") %>
+        <%= f.date_field :birthday %>
 
-  <%= f.label :size_id %><br />
-  <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @current_child.size_id) %>
+        <%= f.label :size_id %><br />
+        <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @current_child.size_id) %>
 
-  <%= f.submit("Update Child", class: 'btn') %>
-<% end %>
+        <div class="right-align">
+        <%= f.submit("Update Child", class: 'btn') %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111214529) do
+ActiveRecord::Schema.define(version: 20171116072405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20171111214529) do
     t.integer "points", default: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gender"
     t.index ["size_id"], name: "index_clothes_sets_on_size_id"
     t.index ["stock_status_id"], name: "index_clothes_sets_on_stock_status_id"
     t.index ["style_id"], name: "index_clothes_sets_on_style_id"

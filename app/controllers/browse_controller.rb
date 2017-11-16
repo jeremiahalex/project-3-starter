@@ -8,7 +8,8 @@ class BrowseController < ApplicationController
     clothes_size_id = Size.find_by(name: clothes_size_name)
     @clothes_style = params['style']
     clothes_style_id = Style.find_by(name: @clothes_style )
-    @filtered_clothes = ClothesSet.in_stock_size_style(clothes_size_id, clothes_style_id)
+    gender = params['gender']
+    @filtered_clothes = ClothesSet.in_stock_size_style(clothes_size_id, clothes_style_id, gender)
   end
 
 end

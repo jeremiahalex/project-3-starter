@@ -32,11 +32,11 @@ class CartController < ApplicationController
 
     if not_available.length == 0
       current_user.create_loaned_item
-      flash[:notice] = "Your request have been submited. Have a nice day"
+      flash[:notice] = "Your cart items have been submited. You can view their individual status on this page. Have a great day!"
       redirect_to '/my_order'
     else
       points_to_add_back = not_available.length * 10
-      flash[:notice] = "Sorry. #{not_available.to_sentence } is currently unavailable"
+      flash[:notice] = "Sorry. #{not_available.to_sentence} is currently unavailable"
       current_user.add_point(points_to_add_back)
       redirect_to '/cart'
     end

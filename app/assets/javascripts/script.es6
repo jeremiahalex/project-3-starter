@@ -15,7 +15,7 @@ function () {
 // Browse - add to cart btn
   $clothes.on('click', '.addBtn', function () {
     if (userPoints <= 0) {
-      alert('You have exceed the number of clothes you can select, Please remove before adding')
+      alert('You have insufficient points for this outfit.')
     }
     else if (userPoints > 0) {
     // Points display - AJAX
