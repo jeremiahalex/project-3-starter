@@ -3,6 +3,7 @@
     <div class"row"="class" row""="row""">
       <div class="class" "card-container">
         <div class="row margin-b-20">
+          <br><br><br>
 
           <div class="col-sm-3">
             <img src="<%=current_user.photo%>" class="img-circle img-responsive small">
@@ -65,9 +66,7 @@
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>Bookings
-      </h3>
-      <p>- Show me which are the lessons that I've bought and have attended(completed)</p>
+      <br>
       <div class="row">
         <div class="col-md-12">
           <section class="icon-box-tabs ">
@@ -92,7 +91,6 @@
 
               <div id="tab-14" class="tab-pane active">
                 <div class="heading-title-alt">
-                  <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
                   <h2>My Bookings</h2>
                 </div>
                 <table class="table table-dark">
@@ -111,7 +109,7 @@
                     <% @all_bookings.each do |booking| %>
                       <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) < booking.lesson.datetime %>
                         <tr>
-                          <td scope="col"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get %></th>
+                          <td scope="col"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get ,class:"link" %></th>
                           <td><%= booking.lesson.tutor.name %></td>
                           <td><%= booking.lesson.venue %></td>
                           <td><%= booking.lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
@@ -126,7 +124,6 @@
 
               <div id="tab-15" class="tab-pane">
                 <div class="heading-title-alt">
-                  <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
                   <h2>My Bookings</h2>
                 </div>
                 <table class="table table-dark">
@@ -145,7 +142,7 @@
                     <% @all_bookings.each do |booking| %>
                       <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
                         <tr>
-                          <td scope="col"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get %></th>
+                          <td scope="col"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get ,class:'link' %></th>
                           <td ><%= booking.lesson.tutor.name %></td>
                           <td><%= booking.lesson.venue %></td>
                           <td><%= booking.lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
@@ -165,8 +162,7 @@
 
 
       <div id="menu1" class="tab-pane fade">
-        <h3>Listings</h3>
-        <p>- Show me the lessons that I created and see which are booked or completed</p>
+        <br>
         <% if current_user.reg_tutor == false%>
           <h3>Sorry, please update your account profile to "Tutor" and you can start making lessons!</h3>
         <%else%>
@@ -199,7 +195,6 @@
                 <div class="tab-content">
                   <div id="tab-16" class="tab-pane active">
                     <div class="heading-title-alt">
-                      <span class="heading-sub-title-alt text-uppercase theme-color-">lessons</span>
                       <h2 class="text-uppercase">table of my booked lessons</h2>
                     </div>
                     <table class="table table-dark">
@@ -217,7 +212,7 @@
                         <% @all_bookings.each do |booking| %>
                           <tr>
                             <% unless (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
-                              <td scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get %></th>
+                              <td scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get ,class:"link"%></th>
                               <td><%= booking.student.name %></td>
                               <td><%= booking.lesson.venue %></td>
                               <td><%= booking.lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>
@@ -289,7 +284,7 @@
                       <% @all_bookings.each do |booking| %>
                         <tr>
                           <% if (DateTime.now.utc - (3600 * booking.lesson.duration)) > booking.lesson.datetime %>
-                            <th scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get %></th>
+                            <th scope="row"><%= link_to booking.lesson.language_taught, lesson_path(booking.lesson.id), method: :get, class:"link" %></th>
                             <td><%= booking.lesson.tutor.name %></td>
                             <td><%= booking.lesson.venue %></td>
                             <td><%= booking.lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></td>

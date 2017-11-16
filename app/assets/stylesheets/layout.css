@@ -4,10 +4,14 @@ html, body {
   width: 100%
 }
 
+.link{
+  color:black;
+}
+
 #loginPage {
   background-image: url('wallpaper2.jpg');
   background-size: cover;
-  height: 150vh;
+  height: 110vh;
 }
 
 .small{
@@ -21,19 +25,21 @@ html, body {
   margin-top:100px;
   border:1px solid transparent;
   padding:15px;
-  background: rgba(255,255,255, 0.3);
+  background: rgba(255,255,255, 0.8);
   border-radius: 12px;
   text-align: center;
+
 }
 
 .edit-wrap{
   width:450px;
   margin: 0 auto;
   margin-top:50px;
-  border:1px solid #eee;
-  padding:5px;
-  background: rgba(255,255,255, 0.3);
+  border:1px solid transparent;
+  padding:15px;
+  background: rgba(255,255,255, 0.8);
   border-radius: 12px;
+  text-align: center;
 }
 .booking {
   background-color: #ffffff;
@@ -67,6 +73,7 @@ html, body {
 .btn {
   background-color: #4ECDC4;
   color: white;
+  margin: 3px;
 }
 
 .searchbox {
@@ -701,7 +708,7 @@ a:active, a:focus, a:hover {
 }
 
 .link:after {
-  position: absolute;
+
   top: 8px;
   right: -15px;
   width: 9px;
