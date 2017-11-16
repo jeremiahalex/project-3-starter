@@ -1,6 +1,6 @@
 class CartController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
 
   def index
     @all_cart_item = current_user.cart_item
