@@ -1,0 +1,12 @@
+<div class="content-lg container">
+  <h1>We welcome your feedback</h1>
+
+  <%= bootstrap_form_for(@new_testimonial) do |h| %>
+  <%= h.label :tutor, 'Tutor name :' %>
+  <%= h.text_field :title, required: true, label: "Topic :" %>
+  <%= h.text_area :content, required: true , label: "Testimonial :"%>
+  
+  <%= h.submit "Submit" %>
+
+<% end %>
+</div>

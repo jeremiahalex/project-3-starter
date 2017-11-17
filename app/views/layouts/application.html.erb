@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codech - Learn to code with us</title>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= uploadcare_settings %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed-top">
+      <!-- Navbar -->
+      <nav class="navbar" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="menu-container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="toggle-icon"></span>
+            </button>
+
+            <!-- Logo -->
+            <div class="logo">
+              <a class="logo-wrap" href="/">
+                <%= image_tag "logo.png" %>
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-collapse">
+            <div class="menu-container">
+              <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item">
+                  <a class="nav-item-child nav-item-hover" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item-child nav-item-hover" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-item-child nav-item-hover"<%= link_to "My Bookings", bookings_path %></a>
+                </li>
+
+                <% if current_user == nil %>
+                  <% elsif current_user.reg_tutor == true %>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover"<%= link_to "Create lesson", new_lesson_path %></a>
+                  </li>
+                <% end %>
+
+                <% unless user_signed_in? %>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover"<%= link_to "Login", new_user_session_path %></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover"<%= link_to "Register", new_user_registration_path %></a>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover"<%= link_to current_user.email , edit_user_registration_path %></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-item-child nav-item-hover"<%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <!-- End Navbar Collapse -->
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <!--========== END HEADER ==========-->
+
+    <%= yield %>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer">
+      <!-- Copyright -->
+      <div class="content container">
+        <div class="row">
+          <div class="col-xs-6"></div>
+          <div class="col-xs-6 text-right">
+            <p class="margin-b-0">
+              <a class="color-base fweight-700">Codech</a>
+              Design by:
+              <a class="color-base fweight-700">Hui Shi, Hidayah & Chong Qiang</a>
+            </p>
+          </div>
+        </div>
+        <!--// end row -->
+      </div>
+      <!-- End Copyright -->
+
+    </footer>
+    <!--========== END FOOTER ==========-->
+  </body>
+
+</html>

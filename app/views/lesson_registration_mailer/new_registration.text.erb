@@ -1,0 +1,25 @@
+Hi <%=@new_booking.lesson.tutor.name%>
+
+Your lesson has been booked!
+
+Booking Summary
+
+Lesson Details :
+
+    Lesson Name :<%= @lesson.name %>
+
+    Programming Language :<%= @lesson.language_taught %>
+
+    Date : <%= @lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %>
+
+    Duration : <%= @lesson.duration %>hrs
+
+    Venue :<%= @lesson.venue %>
+
+    Total Price : $<%=@lesson.price * @lesson.duration %>
+
+    Student Name: <%=@new_booking.student.name%>
+
+
+You can check out your other bookings and appointments here:
+https://learntocodewithus.herokuapp.com/bookings

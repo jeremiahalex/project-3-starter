@@ -1,0 +1,201 @@
+<div class="content-lg container">
+  <br><br><br>
+  <div class="card mt-4" style="padding:30px">
+    <h1 class="my-4"><%=@lesson.name%><br/></h1>
+    <h3>Language:
+      <%=@lesson.language_taught%></h3>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+      <div class="col-md-5">
+        <%= image_tag "coding.jpg" ,class:"animated img-responsive img-fluid"%>
+      </div>
+
+      <div class="col-md-6">
+        <!-- <h3 class="my-3">Project Description</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris
+        ultricies, justo eu convallis placerat, felis enim.</p> -->
+        <h3 class="my-3">Lesson Details</h3>
+        <ul>
+          <li>Lesson Id:
+            <%=@lesson.id%></li>
+          <li>Date & Time:
+            <%=@lesson.datetime.strftime('%a, %d %b %Y %I:%M %p')%></li>
+          <!-- <h4>Time:<%=@lesson.datetime%></h4> -->
+          <li>Duration:
+            <%=@lesson.duration%>
+            hours</li>
+          <li>Venue:
+            <%=@lesson.venue%></li>
+        </ul>
+        <h2 class="rate">Price: $<%=@lesson.price%>/hr</h2>
+        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+        4.0 stars
+        <div style="margin-top:20px">
+          <!-- <h4><%= button_to 'Book Now!', lesson_path(@lesson), method: :get %></h4> -->
+          <% unless @booking.present? %>
+          <%= form_tag charges_path do %>
+            <%= hidden_field_tag 'amount', @lesson.price * @lesson.duration * 100 %>
+            <%= hidden_field_tag 'lessonId', @lesson.id %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+              <% if current_user %>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="Booking: <%= @lesson.name %>"
+                      data-amount="<%=@lesson.price * @lesson.duration%>00"
+                      data-locale="auto"
+                      data-currency="SGD"></script>
+                      <% else %>
+                      <%=link_to "Please log in before you checkout", user_session_path , class:'btn' %>
+            <% end %>
+
+            <% end %>
+          <% else %>
+          <span class="badge badge-pill badge-danger">Lesson has been booked by <%= @booking.student.name %></span>
+
+          <% end %>
+
+          <!-- <% @all_bookings%> -->
+
+
+
+        <!-- <h4><%= button_to 'Contact Tutor', lesson_path(@lesson), method: :get %></h4> -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10" style="padding:30px">
+        <h4>About Lesson</h4>
+        <p><%=@lesson.details%></p>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-3" style="padding:30px">
+      <h4>About Tutor</h4>
+      <!-- <img class="rounded-circle" src="<%@lesson_tutor.photo%>" alt="Generic placeholder image"> -->
+      <img src="<%= @lesson_tutor.photo %>" class="img-circle" style="max-width:100px">
+    </div>
+    <div class="col-md-8">
+      <h4>More details about tutor</h4>
+      <p>Name:
+        <%=@lesson_tutor.name%></p>
+      <p>Gender:
+        <%=@lesson_tutor.gender%></p>
+      <p>Past Experiences:
+        <%=@lesson_tutor.past_experience%></p>
+      <p>Github:
+        <a class="link" href="<%=@lesson_tutor.github%>"><%=@lesson_tutor.github%></a>
+      </p>
+    </div>
+  </div>
+    <!-- /.row -->
+  </div>
+
+
+  <!--Tutor's other lessons in cards-->
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <h2 class="text-center rate" style="margin-top: 30px">Check out other Lessons!</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @tutor_lessons.each do |lesson| %>
+    <div class="col-md-4 col-sm-6">
+
+      <div class="card-container manual-flip">
+        <div class="card">
+          <div class="front">
+
+            <% if @booked.include? lesson.id%>
+            <span class="badge badge-pill badge-danger">Booked</span>
+            <% else %>
+            <span class="badge badge-pill badge-danger">Available</span>
+            <% end  %>
+
+            <div class="cover">
+            </div>
+            <div class="user">
+
+              <img src="<%= lesson.tutor.photo %>" class="img-circle">
+
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3 class="name"><%= lesson.tutor.name %></h3>
+
+                <div class="text-center">
+                  <p class="profession"><%= lesson.language_taught %></p>
+                </div>
+                <br>
+
+                <p class="text-center">
+                  <%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %>
+                </p>
+
+                <div class="rate">
+                  $<%= lesson.price %>/hrs
+                </div>
+              </div>
+
+              <div class="footer">
+                <button class="btn btn-simple flipping" >
+                  <i class="fa fa-mail-forward"></i>
+                  Click here to view more
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end front panel -->
+          <div class="back">
+            <div class="header">
+              <h5 class="motto">"Learn to code with Us"</h5>
+            </div>
+            <div class="content">
+              <div class="main">
+                <h4 class="text-center"><%= lesson.name %></h4>
+                <p class="text-center"><%= lesson.details %><br>
+                  <b>Duration : <%= lesson.duration %> hrs</b><br>
+                  <b>Venue : <%= lesson.venue %></b>
+
+                </p>
+
+                <div class="text-center">
+                  <%= link_to "View more Details", lesson_path(lesson), class: 'btn' %>
+                </div>
+
+              </div>
+            </div>
+            <div class="footer">
+              <button class="btn btn-simple flipping" rel="tooltip" title="Flip Card">
+                <i class="fa fa-reply"></i>
+                Back
+              </button>
+            </div>
+          </div>
+          <!-- end back panel -->
+        </div>
+
+        <!-- end card -->
+      </div>
+
+      <!-- end card-container -->
+    </div>
+    <% end %>
+    <!-- end col sm 3 -->
+
+  </div>
+</div>
+</div>
+
+<!-- Related Projects Row -->
+<!-- <h3 class="my-4">Related Projects</h3> <div class="row"> <div class="col-md-3 col-sm-6 mb-4"> <a href="#"> <img class="img-fluid" src="http://placehold.it/150x150" alt=""> </a> </div> <div class="col-md-3 col-sm-6 mb-4"> <a href="#"> <img
+class="img-fluid" src="http://placehold.it/150x150" alt=""> </a> </div> <div class="col-md-3 col-sm-6 mb-4"> <a href="#"> <img class="img-fluid" src="http://placehold.it/150x150" alt=""> </a> </div> <div class="col-md-3 col-sm-6 mb-4"> <a href="#">
+<img class="img-fluid" src="http://placehold.it/150x150" alt=""> </a> </div> </div> /.row /.container </div> -->

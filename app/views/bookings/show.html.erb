@@ -1,0 +1,82 @@
+<div class="content-lg container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="booking">
+
+        <div class="invoice-title">
+          <h2>Booking Summary</h2>
+          <h3 class="pull-right"></h3>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6">
+            <address>
+              <strong>Lesson Details :</strong>
+              <br>
+              Lesson Name :
+              <%= @lesson.name %>
+              <br>
+              Programming Language :
+              <%= @lesson.language_taught %>
+              <br>
+              Date :
+              <%= @lesson.datetime %>
+              <br>
+              Duration :
+              <%= @lesson.duration %>
+              hrs
+              <br>
+              Venue :
+              <%= @lesson.venue %>
+              <br>
+              Total Price : <b>$<%=@lesson.price * @lesson.duration %></b>
+              <br>
+            </address>
+          </div>
+        </div>
+      </div>
+      <br><br>
+
+      <div class="booking">
+      <div class="invoice-title">
+      <h1>Terms and Conditions</h1>
+      <h3 class="pull-right"></h3>
+      </div>
+
+      <h5>Fees and Financial Arrangements</h5>
+<p>a. Notebook Tutors, as agent for the Tutor, will agree an hourly rate for tuition with the Client. The Tutor and the Client agree that all payments will be done through Notebook Tutors as the agent for the Tutor. The hourly rate may not be changed by the Tutor or the Client without written authority of Notebook Tutors.
+b. The Tutor and the Client agree not to make any private arrangements for tuition with each other or with other Tutors or Clients introduced by Notebook Tutors. A breach of this obligation will render the Tutor and the Client liable to account to Notebook Tutors for all sums paid and received, and Notebook Tutors will be entitled to seek an injunction against the Tutor and the Client to prevent further breaches. This obligation continues beyond the end of this agreement and the conclusion of the course of tuition.
+c. The Client may instruct the Tutor to acquire particular educational or teaching resources on behalf of the Client/Student. Notebook Tutors must be informed of any such arrangement, and we will arrange reimbursement of the Tutor via invoice to the Client. Tutors are not permitted to accept funds directly from the Client for any reason; Clients are not permitted to pay funds directly to the Tutor for any reason. Clients will have to confirm any such arrangement in writing.</p>
+
+<h5>Cancellations and Scheduling</h5>
+<p>a. The Tutor will provide to the Client notice of any proposed holiday dates and request the same from the Client, in order to schedule lessons at a convenient time for both parties. In the event of cancellation of a scheduled lesson, Notebook Tutors must be informed and an alternative date agreed between Client and Tutor.
+b. Clients must give notice of cancellation of any scheduled lesson more than five hours before the session is due to begin. If notice is given by that time, there is no charge to rearrange the session, and we do not charge for the session on behalf of the Tutor.
+c. If notice is given within five hours of the start time of the session, then Notebook Tutors will charge for the session on behalf of the Tutor unless the Tutor views the reason for cancellation to be unavoidable, and they choose not to charge for the session.
+d. If the Student is late for a session, the Tutor may choose to but is not obligated to work beyond the scheduled end time, and the session will be charged at the usual price, whether or not the Tutor works beyond the scheduled end time. If a Tutor is late for a session, then it is the obligation of the Tutor to arrange to make up the lost time.
+</p>
+
+<%= form_tag charges_path do %>
+  <%= hidden_field_tag 'amount', @lesson.price * @lesson.duration * 100 %>
+  <%= hidden_field_tag 'lessonId', @lesson.id %>
+  <%= hidden_field_tag 'tutor_email', @lesson.tutor.email %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="<%=@lesson.price * @lesson.duration%>00"
+            data-locale="auto"
+            data-currency="SGD"></script>
+  <% end %>
+
+
+
+
+  </div>
+</div>

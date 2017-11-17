@@ -1,0 +1,25 @@
+<h3>Hi <%=@new_booking.lesson.tutor.name%>,</h3>
+
+<h3 style="color: gray">Your lesson has been booked!</h3>
+
+<h2>Booking Summary</h2>
+<hr>
+<strong>Lesson Details :</strong>
+<ul>
+    <ol>Lesson Name :<%= @lesson.name %></ol>
+
+    <ol>Programming Language :<%= @lesson.language_taught %></ol>
+
+    <ol>Date : <%= @lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %></ol>
+
+    <ol>Duration : <%= @lesson.duration %>hrs</ol>
+
+    <ol>Venue :<%= @lesson.venue %></ol>
+
+    <ol>Total Price : $<%=@lesson.price * @lesson.duration %></ol>
+
+    <ol>Student Name: <%=@new_booking.student.name%></ol>
+</ul>
+
+You can check out your other bookings and appointments here:
+<a href="https://learntocodewithus.herokuapp.com/bookings">My Bookings</a>

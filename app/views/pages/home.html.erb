@@ -1,0 +1,122 @@
+<div class="content-lg container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Lessons</h2>
+    </div>
+  </div>
+
+  <div class="searchbox">
+    <div class="row">
+      <%= form_tag(root_path, method: :get) do %>
+
+      <div class="col-md-5">
+          <%= select_tag(:price, options_for_select(@all_prices), include_blank: 'Filter by Price', class: 'form-control') %>
+      </div>
+
+      <div class="col-md-5">
+          <%= select_tag(:language_taught, options_for_select(@all_languages), include_blank: 'Filter by Programming Language' , class: 'form-control') %>
+      </div>
+
+      <div class="col-md-1"><%= submit_tag 'Search', name: nil, class: 'btn' %></div>
+    </div>
+    <% end %>
+  </div>
+
+  <br>
+  <br>
+
+  <!--// end row -->
+
+  <div class="row">
+    <% @all_requests.each do |lesson| %>
+
+    <% if lesson.datetime > (DateTime.now.utc - (3600 * lesson.duration)) %>
+    <div class="col-md-4 col-sm-6">
+
+      <div class="card-container manual-flip">
+        <div class="card">
+          <div class="front">
+
+            <% if @booked.include? lesson.id%>
+            <span class="badge badge-pill badge-danger">Booked</span>
+            <% else %>
+            <span class="badge badge-pill badge-danger">Available</span>
+            <% end  %>
+
+            <div class="cover">
+            </div>
+            <div class="user">
+
+              <img src="<%= lesson.tutor.photo %>" class="img-circle">
+
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3 class="name"><%= lesson.tutor.name %></h3>
+
+                <div class="text-center">
+                  <p class="profession"><%= lesson.language_taught %></p>
+                </div>
+                <br>
+
+                <p class="text-center">
+                  <%= lesson.datetime.strftime('%a, %d %b %Y %I:%M %p') %>
+                </p>
+
+                <div class="rate">
+                  $<%= lesson.price %>/hrs
+                </div>
+              </div>
+
+              <div class="footer">
+                <button class="btn btn-simple flipping" >
+                  <i class="fa fa-mail-forward"></i>
+                  Click here to view more
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end front panel -->
+          <div class="back">
+            <div class="header">
+              <h5 class="motto">"Learn to code with Us"</h5>
+            </div>
+            <div class="content">
+              <div class="main">
+                <h4 class="text-center"><%= lesson.name %></h4>
+                <p class="text-center"><%=truncate( lesson.details , length: 100)%><br>
+                  <b>Duration : <%= lesson.duration %> hrs</b><br>
+                  <b>Venue : <%= lesson.venue %></b>
+
+                </p>
+
+                <div class="text-center">
+                  <%= link_to "View more Details", lesson_path(lesson), class: 'btn' %>
+                </div>
+
+              </div>
+            </div>
+            <div class="footer">
+              <button class="btn btn-simple flipping" rel="tooltip" title="Flip Card">
+                <i class="fa fa-reply"></i>
+                Back
+              </button>
+            </div>
+          </div>
+          <!-- end back panel -->
+        </div>
+
+        <!-- end card -->
+      </div>
+
+      <!-- end card-container -->
+    </div>
+    <% end %>
+    <% end %>
+    <!-- end col sm 3 -->
+
+
+  </div>
+  <!--// end row -->
+</div>
+<!-- End Latest Products -->

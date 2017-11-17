@@ -1,65 +1,49 @@
-# Your Project Name
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+# WDI PROJECT 3 (Hidayah & Chong Qiang & Hui Shi)
 
-## Getting Started
+## Link to live website
+ https://learntocodewithus.herokuapp.com/
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+## About Codech
+<h2>About Us</h2>
+<p>Struggling as a programming student?<br> <p>You are not alone - Codech with me can help you in your journey of mastering different programming languages.</p>
+<p>We have a pool of experienced tutors who love programming and have a passion to coach. You are now one step closer to being the programmer you have always dreamt to be!</p>
+<p>Register (if you have not yet done so), select a tutor according to your programming language and book a lesson. </p>
 
-### Prerequisites
+  <p><i>Leadership and learning are indispensable to each other.</i>John F. Kennedy</p>
+  
+  ## User Stories
+   1. Users can search for tutors and their timings based on the languages available (based on what the teachers have offered)
+    2. Users can sign up as a tutor nd post their available lesson time  - which is really tuition time
+    3. Tutors can set, edit and delete lessons that they make - but once it is booked neither student nor tutor can delete it.
+    4. Users can book lessons from tutors and make payment
+    5. Email will be sent to both tutor and student to confirm the booking
+    6. Users, both students and tutors, can view their bookings through the bookings page
+    7. Both can also track which bookings are upcoming and which are completed. We based the completion status on the date time - if it has passed, it is considered done.
 
-What is needed to install and run the project, how do we install them
+## ERD
 
-```
-Code example
-```
+![](/app/assets/images/Codech_ERD.png)
 
-### How to Use
+## Wireframes
+These wireframes are subject to changes.
+![](/app/assets/images/wireframe1.png)
+![](/app/assets/images/wireframe2.png)
+![](/app/assets/images/wireframe3.png)
+![](/app/assets/images/wireframe4.png)
+![](/app/assets/images/wireframe5.png)
 
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
+## Future Development
+1. Feature: For tutors to able to delete their account when the have no active bookings. Currently they are not able if they have any bookings at all.
+2. Users can rate and give Testimonials to Tutors
+3. Users will receive reminder emails for the lessons booked.
 
+## To work on this.
 
-```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
-
-## Tests
-
-Did you write automated tests? If so, how do we run them.
-
-
-```
-Code example
-```
-
-## Live Version
-
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
-
-## Built With
-
-What did you use to build it, list the technologies, plugins, gems, packages etc.
-
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
-
-## Workflow
-
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
-
-## Authors
-
-Did you collaborate with others on this project, list them here
-
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
-
+1. Fork and clone this repo
+2. ```bundle install```
+3. Set up Stripe API (sign up and input the keys to you .env file)
+4. Add your email account username and password in .env file
+5. ```rails db:create```
+6. ```rails db:migrate```
+7. ```rails s```

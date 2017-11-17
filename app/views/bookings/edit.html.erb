@@ -1,0 +1,20 @@
+<div class="content-lg container" style="width: 900px">
+  <br /><br /><br /><h1>Edit lesson</h1>
+
+  <%= bootstrap_form_for(@lesson) do |f| %>
+  <%= f.text_field :name, required: true %>
+  <%= f.number_field :price, in: 1..200 ,required: true  %>
+  <%= f.number_field :duration, in: 1..24 ,required: true %>
+  <div id="outlet">
+    <%= f.text_field :datetime, id: 'datetime' ,required: true, label: "Date & time:"%>
+    <input type="text" id="date" hidden/>
+    <input type="text" id="time" hidden/>
+  </div>  <%= f.select :language_taught, ['Angular','C','CSS','HTML','Java','Javascript','PHP','Python','Ruby','Vue'],required: true %>
+  <%= f.text_field :venue ,required: true %>
+  <%= f.text_area :details, size: "60x12", required: true%>
+
+
+  <%= f.submit "Edit" %>
+
+<% end %>
+</div>
