@@ -28,6 +28,7 @@ ActiveAdmin.register ClothesSet do
   end
 
   filter :style
+  filter :gender
   filter :size
   filter :stock_status
 
