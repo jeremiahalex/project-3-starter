@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+$title-font: 'Poiret One', cursive;
+$body-font: 'Open Sans', sans-serif;
+
+.greettxt span {
+  font-family: $title-font;
+}
+
+.greettxt {
+  font-family: $title-font;
+}
+
+.filernote {
+  background: linear-gradient(to right, #ffcdd2, #ffebee);
+}
+
+span {
+  font-family: $body-font;
+}

@@ -1,65 +1,161 @@
-# Your Project Name
-
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
-
-## Getting Started
-
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
-
-### Prerequisites
-
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
-
-### How to Use
-
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
+# PreciousTots
+![landing page](./app/assets/readme_img/landing_page.png)
+Done By: [Siya](https://github.com/Siya-ng), [Hazel](https://github.com/heyzernut) and [Mingyi](https://github.com/mingyikoh) <br>
 
 
-```
-Code example
-```
+Link To Website: [Precious-tots](https://precious-tots.herokuapp.com)
 
-More steps...
+---
 
-```
-until finished
-```
+## Design Idea
+**Observed Problem:** <br>
+
+![problem](./app/assets/readme_img/problem.png)
+
+**Proposed Solution:** <br>
+
+![solution](./app/assets/readme_img/solution.png)
+
+---
+
+## Table of Contents
+1. Design Idea
+1. Table of Contents
+1. User Story
+1. ERD
+1. Wireframe
+1. Development Log
+1. Built with
+1. Technical Information
+
+---
+
+## User Story
+#### Users
+![user_story](./app/assets/readme_img/user_story.png)
+- can register for an account
+- can login to their account
+- can subscribe / unsubscribe to monthly plan
+- can receive points to their account upon subscription
+- can add details of their children
+- can update details of their children
+- can choose a new set of clothes to receive at the start of every month
+  - can view outfits that match their children's size and selected style
+  - can add and remove selected outfits to their shopping cart
+  - can checkout their shopping cart to start the processing
+- have to return previously rented outfits when they receive newly requested ones
 
 
-## Tests
+#### Admins
+- can add new admins
+- can login to admin site
+- can view / edit all users in database
+- can view / edit all user outfit requests
+- can view / edit all clothes in database
+- can add new clothes into database
 
-Did you write automated tests? If so, how do we run them.
+---
 
+## ERD
+![Image of flowchart](app/assets/readme_img/ERD_nov8.png)
 
-```
-Code example
-```
+---
 
-## Live Version
+## Wireframe
+![Screenshot 1](/app/assets/readme_img/homepage.png)  |  ![Screenshot 2](/app/assets/readme_img/admin_register.png)
+:------------------------------------------------:|:-------------------------------------------------:
+![Screenshot 3](/app/assets/readme_img/profile.png)  |  ![Screenshot 4](/app/assets/readme_img/search.png)
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+![wireframe](./app/assets/readme_img/wireframe.png)
 
-## Built With
+![wireframe](./app/assets/readme_img/orderlist.png)
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+---
 
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
+## Development Log
 
-## Workflow
+**6 Nov 2017**
+* Add README with user stories, use case, ERD and wireframe
 
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+**7 Nov 2017**
+* Add working home page
+* Add Devise: allow for user register, login and logout
+* Add registration feature. Allow for registration with the necessary information recorded i.e. email and password
+* Edit ERD diagram
 
-## Authors
+**8 Nov 2017**
+* Add models: child, size, loan_status, style, stock_status, clothes_set, cart_item and loaned_item
+* Add migrate files for all models
+* Add db seed for loan_status, style, stock_status
+* Add controllers for children. Users are able to create child's details under their account.
 
-Did you collaborate with others on this project, list them here
+**9 Nov 2017**
+* Add profile page to user account
+* Add edit routes for editing children's information
+* Edit user_account_update routes from "/edit" to "/profile/edit"
+* Edit models: added relationships between models
 
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
+**10 Nov 2017**
+* Add edit & delete routes for child
+* Add necessary gem files
+* Add browse function
 
-## Acknowledgments
+**12 Nov 2017**
+* Add cart function: able to add item to cart, remove and checkout cart
+* Add admin function: admin able to add other admin account, admin able to see all the loaned item and edit it
 
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+**13 Nov 2017**
+* Add filter clothes function: able to filter clothes by size & style
+* Edit cart function: add AJAX cart function
+* Fix: double creation of cart_items
+* Improve CSS
 
+**14 Nove 2017**
+* Update user registration required field
+* Redirect to 'add child' on user register
+* Redirect to 'filter form' on child information added
+* Edit default values for style/size selection
+* Browse page display current user points, ajax: +/- points on add/remove cart item.
+
+**15 Nov 2017**
+* Add AJAX to in-cart quantity, add/remove button for clothes browsing
+* Add Stripe payment system
+* Edit user registration > add child > payment > filter form > browse page > cart > checkout > my orders route
+* Improve CSS
+* Push to Heroku
+* Soft launch
+* Edit README
+
+---
+
+## Built with
+* Ruby on rails
+
+* PostgreSQL
+
+* Materialize CSS Framework
+
+* Stripe payment
+
+* Active Admin
+
+* Devise
+
+---
+
+## Technical Information
+
+Ruby version: <br>
+*ruby 2.4.2p198*
+
+Configuration: <br>
+*$ bundle install*
+
+Database creation: <br>
+*$ rails db:migrate*
+
+Database initialization: <br>
+*$ rails db:seed*
+
+Deployment instructions: <br>
+*$ rails server*

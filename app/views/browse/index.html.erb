@@ -1,0 +1,63 @@
+<div class="filter red lighten-5">
+  <div class="row" style="border-top: 1px solid black;">
+
+    <!-- left side bar  -->
+    <div class="col m3 s12" style="padding: 20px 20px 10% 20px;">
+
+      <input type="hidden" value="<%=current_user.points%>" class='userPoints'>
+
+      <h5>Current Balance:</h5>
+      <div class="pointsDisplay">
+        <span class="new badge" data-badge-caption="Points"><%= current_user.points %></span>
+      </div>
+
+      <div class="divider" style="margin-bottom: 20px;"></div>
+
+      <label>Filter By Style</label>
+      <% size_name = Size.find(current_user.child[0].size_id).name %>
+      <%= select_tag "style", options_from_collection_for_select(@styles, "name", "name", @clothes_style), onchange: "window.location.replace('/browse/?size=#{size_name}&&style='+ this.value + '&&gender=#{current_user.child[0].gender}')" %>
+    </div>
+
+    <!-- right side  -->
+    <div class="leftside col m9 s12 brown lighten-5" style="padding-bottom:10%;">
+      <div class="container">
+        <h5 style="padding:30px 0px 10px 0px; border-bottom: 1px dashed black;">Browse Clothes</h5>
+
+        <div class="row clothes">
+          <% @filtered_clothes.each do |set| %>
+
+          <div class="col s12 m6 l4">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%= set.photo_URL %>" class="materialboxed browse-img" width="650" alt="<%= set.name %>">
+
+                <input type="hidden" value="<%=set.id%>" class='setId'>
+                <% unless set.in_cart(current_user.id) %>
+
+                <div class="parent_test">
+                  <a class="addBtn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <% else %>
+                <div class="parent_test">
+                  <a class="removeBtn btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons">clear</i></a>
+                </div>
+                <% end %>
+              </div>
+              <div class="card-content">
+                <h6><%= set.name %></h6>
+              </div>
+
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <div class="fixed-action-btn" id="fixedCartBtn" style="bottom: 40px; right: 20px;">
+          <a href="/cart" class="btn btn-floating btn-large teal lighten-2 waves-effect waves-light" style="border:2px solid #009688">
+            <h6 class="fixed-action-btn cart_item_count" style="bottom: 97px; right: 41px;"><%= current_user.cart_item.count %></h6>
+            <i class="large material-icons">shopping_basket</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

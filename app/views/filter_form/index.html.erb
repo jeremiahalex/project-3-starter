@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="filter red lighten-5">
+    <div class="row filernote">
+      <div class="col s12 m8">
+        <div class="card-panel filter">
+          <h4 class="greettxt left-align">
+            Hi <span class="teal-text";><%= current_user.name %></span>, glad you're back! <br>
+            <p> How are you and your family doing? <br>
+            Has <span class="teal-text";><%= current_user.child[0].name %> grown</span> in size since your last visit?</p>
+            <br>
+          </h4>
+          <%= link_to '<button class="filterq center-align" type="button">Yes</button>'.html_safe, '/choose_size_style/0' %>
+          <%= link_to '<button class="filterq center-align" type="button">No</button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

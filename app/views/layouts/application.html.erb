@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'partials/shim' %>
+  </head>
+  <body>
+
+    <%= render 'partials/header' %>
+
+      <div class="grey lighten-2 center-align">
+        <p class="notice center-align"><%= notice %></p>
+        <p class="alert center-align"><%= alert %></p>
+      </div>
+      <div class="">
+        <%= yield %>
+      </div>
+    <%= render 'partials/footer' %>
+  </body>
+</html>

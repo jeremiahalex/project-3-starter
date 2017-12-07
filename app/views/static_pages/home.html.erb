@@ -1,0 +1,122 @@
+<div class="container">
+<!-- SLIDER -->
+
+  <% if user_signed_in? && current_user.child[0].present? %>
+    <!-- filter form  -->
+    <div class="filter red lighten-5">
+      <div class="row filernote">
+        <div class="col s12 m8">
+          <div class="card-panel filter">
+            <h4 class="greettxt left-align">
+              Hi <span class="teal-text";><%= current_user.name %></span>, glad you're back! <br>
+              <p> How are you and your family doing? <br>
+              Has <span class="teal-text";><%= current_user.child[0].name %> grown</span> in size since your last visit?</p>
+              <br>
+            </h4>
+            <%= link_to '<button class="filterq center-align" type="button"><strong>Yes</strong></button>'.html_safe, '/choose_size_style/0' %>
+            <%= link_to '<button class="filterq center-align" type="button"><strong>No</strong></button>'.html_safe, "/choose_size_style/#{current_user.child[0].size_id}/0" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end filter form  -->
+  <% else %>
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <%= image_tag('banner_01.jpg') %> <!-- random image -->
+        <div class="sliderbox caption center-align" style="margin-top: 10%;">
+          <h3>A NEW STYLE EVERY MONTH</h3>
+          <h5 class="light grey-text text-lighten-3">Explore their individuality</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag('banner_03.jpg') %> <!-- random image -->
+        <div class="sliderbox caption left-align" style="margin-top: 10%;">
+          <h3>GROW IN STYLE</h3>
+          <h5 class="light grey-text text-lighten-3">Pamper your little ones</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag('banner_06.jpg') %> <!-- random image -->
+        <div class="sliderbox caption left-align" style="margin-top: 10%;">
+          <h3>DRESS THEM UP</h3>
+          <h5 class="light grey-text text-lighten-3">And save those precious memories</h5>
+        </div>
+      </li>
+      <li>
+        <%= image_tag('banner_05.jpg') %> <!-- random image -->
+        <div class="sliderbox caption center-align" style="margin-top: 10%;">
+          <h3>NO WORRIES ABOUT OUTGROWING</h3>
+          <h5 class="light grey-text text-lighten-3">Choose outfits based on size and style</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="divider" style="margin: 30px 0px;"></div>
+
+  <h4 style="position:absolute;">
+    01 - <span class="light grey-text darken-2" style="font-size: 26px;">About Us</span>
+  </h4>
+  <%= image_tag "about.png", class: "about_bg" %>
+    <div class="row about">
+      <div class="col s12 m5 offset-m2">
+        <div class="card-panel z-depth-1 teal lighten-4" style="border-radius: 0px; border: solid 4px white; box-shadow:none;">
+          <blockquote>
+          <h5>
+            Hello!<br/> Welcome to Precious Tots
+          </h5>
+          <span class="white-text">
+            We believe in offering our customers and their children with more than just a product or service. Here at Precious Tots, we provide families with a lifestyle experience through variety and fashion. Let your little ones try out new outfits every month and record them growing up in style.
+          </span>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+  <div class="divider home"></div>
+
+  <!-- HOW WE WORK -->
+  <div id="intro" class="section scrollspy">
+    <div class="row">
+      <div  class="col s12 m4 l4">
+        <div class="center promo promo-example">
+          <i class="material-icons medium">redeem</i>
+          <h5 class="promo-caption">
+            Choose new outfits every month
+          </h5>
+          <p class="light center">
+            Receive points every month to exchange for outfits
+          </p>
+        </div>
+      </div>
+      <div class="col s12 m4 l4">
+        <div class="center promo promo-example">
+          <i class="material-icons medium">insert_emoticon</i>
+          <h5 class="promo-caption">
+            Swap Whenever You Want
+          </h5>
+          <p class="light center">
+            Keep the pieces for as long as you want! Whenever you want to try something new, return and choose your next set
+          </p>
+        </div>
+      </div>
+      <div class="col s12 m4 l4">
+        <div class="center promo promo-example">
+          <i class="material-icons medium">local_laundry_service</i>
+          <h5 class="promo-caption">
+            Free Shipping & Dry Cleaning
+          </h5>
+          <p class="light center">
+            All deliveries, returns and cleaning fees are covered in your subscription. Just enjoy your outfits!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+</div>

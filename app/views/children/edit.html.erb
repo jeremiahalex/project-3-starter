@@ -1,0 +1,39 @@
+<div class="editchild red lighten-5">
+<div class="container">
+  <div class="editchild row">
+    <div class="grid-example col s12 m4 l10 white" style="border: 1px solid black; padding-bottom: 20px;">
+      <h5 class="teal lighten-4" style="padding: 10px;">Edit : <%= @current_child.name %> details</h5>
+
+      <%= form_for(@current_child) do |f| %>
+        <%= f.label("Name:") %>
+        <%= f.text_field :name %>
+        <%= f.label("Gender") %>
+        <br/>
+        <%= f.radio_button(:gender, "Male") %>
+        <%= f.label(:gender_male, "Male") %>
+        <%= f.radio_button(:gender, "Female") %>
+        <%= f.label(:gender_female, "Female")  %>
+        <br/><br/>
+        <%= f.label("Birthday") %>
+        <%= f.date_field :birthday, class: 'datepicker' %>
+
+        <%= f.label :size_id %><br />
+        <%= f.select :size_id, options_for_select(Size.all.map{|size|[size.name, size.id]}, @current_child.size_id) %>
+
+        <div class="row">
+          <div class="input-field col s6 left-align">
+              <%= link_to "Back", :back, class: 'back btn'%>
+          </div>
+
+          <div class="input-field col s6 right-align">
+            <div class="actions">
+              <%= f.submit("Update Child", class: 'btn') %>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

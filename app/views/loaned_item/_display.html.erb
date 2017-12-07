@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="row" style="padding-top: 40px; padding-bottom: 40px;">
+  <% @all_loaned_item.each do |item| %>
+  <div class="col s12 m2">
+       <div class="card">
+         <div class="card-image">
+          <% clothes_set = ClothesSet.find(item.clothes_set_id) %>
+          <img src="<%= clothes_set.photo_URL %>" class="materialboxed order-img" width="650" alt="<%= clothes_set.name %>">
+           <span class="card-title order" style="color: black; padding: 10px; width: 100%;">
+             <%= clothes_set.name %>
+           </span>
+         </div>
+         <div class="card-action grey darken-4 white-text">
+          <%= LoanStatus.find(item.loan_status_id).name %>
+         </div>
+       </div>
+  </div>
+  <% end %>
+</div>
+
+
+
+</div>
