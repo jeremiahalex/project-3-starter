@@ -54,4 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Other gems
+# CSS Framework
 gem 'materialize-sass'
+# JQuery
+gem 'jquery-rails'
+# Icon Support
+gem "font-awesome-rails"

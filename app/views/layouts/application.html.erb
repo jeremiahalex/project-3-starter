@@ -7,8 +7,40 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <%= link_to "Logo", root_path, class: "brand-logo" %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "Home", root_path%></li>
+          <li><%= link_to "Register Warranty", warranty_path%></li>
+          <li><%= link_to "<i class='fa fa-user-plus' aria-hidden='true'></i> Sign Up".html_safe, root_path%></li>
+          <li><%= link_to "<i class='fa fa-sign-in' aria-hidden='true'></i> Login".html_safe, root_path%></li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2017 Copyright Text
+        <div class="right">Authors | <a class="grey-text text-lighten-4" href="https://github.com/keed" target="_blank">Darren Koh</a> | <a class="grey-text text-lighten-4" href="https://github.com/limjiechao" target="_blank">Lim Jiechao</a></div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
