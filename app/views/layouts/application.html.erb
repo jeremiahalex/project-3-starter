@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "Home", root_path %> </li>
+          <li><%= link_to "Login", login_path %> </li>
+          <li><%= link_to "Search", search_path %> </li>
+          <li><%= link_to "Profile", create_path %> </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

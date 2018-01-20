@@ -56,4 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # custom gems
 gem 'rspec-rails'
 
+gem 'jquery-rails'
+
 gem 'materialize-sass'

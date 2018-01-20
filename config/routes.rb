@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  get 'pages/login'
+  get '/login', to: 'pages#login'
 
-  get 'pages/search'
+  get '/search', to: 'pages#search'
 
-  get 'pages/profile'
+  get '/profile', to: 'pages#profile'
 
-  get 'pages/result'
+  get '/result', to: 'pages#result'
 
-  get 'pages/create'
+  get '/create', to: 'pages#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
