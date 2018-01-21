@@ -1,4 +1,4 @@
 class WarrantyController < ApplicationController
-  def registration
+  def register
   end
 end

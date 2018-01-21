@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   # ========== Routing for index ==========
   root 'index#index'
   # ========== Routing for warranty ==========
-  get '/warranty/', to: 'warranty#registration'
+  get '/warranty/register', to: 'warranty#register'
   # ========== Routing for account ==========
+  get '/account/home', to: 'account#home'
+  get '/account/signup', to: 'account#signup'
+  get '/account/login', to: 'account#login'
+  get '/account/edit', to: 'account#edit'
   # ========== Routing for admin ==========
   get '/admin/', to: 'admin#dashboard'
 end

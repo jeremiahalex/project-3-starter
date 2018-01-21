@@ -1,0 +1,30 @@
+<div class="container">
+  <form action="/account/login" method="POST">
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <h4 class="header">Login</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-envelope prefix" aria-hidden="true"></i>
+        <input id="email" type="email" class="validate" required>
+        <label for="email" data-error="Please check you have enter your email correctly">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <input id="password" type="password" class="validate" required>
+        <label for="password" data-error="Please enter a password">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <button class="btn waves-effect waves-light green" type="submit" name="action">Login
+          <i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
