@@ -59,4 +59,6 @@ gem 'materialize-sass'
 # JQuery
 gem 'jquery-rails'
 # Icon Support
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+# Console
+gem 'pry'
