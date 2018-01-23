@@ -1,4 +1,51 @@
 <div class="container">
+  <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+      <h4 class="header">Create an account</h4>
+    </div>
+    <%= form_for @new_account, url: { action: "create" } do |f| %>
+      <div class="row">
+        <div class="input-field col s6 m5 offset-m1">
+          <i class="fa fa-user prefix" aria-hidden="true"></i>
+          <%= f.text_field :first_name, class: 'validate', required: 'required' %>
+          <label for="first_name" data-error="Please enter your first name">First Name</label>
+        </div>
+        <div class="input-field col s6 m5">
+          <%= f.text_field :last_name, class: 'validate', required: 'required' %>
+          <label for="last_name" data-error="Please enter your last name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m10 offset-m1">
+          <i class="fa fa-envelope prefix" aria-hidden="true"></i>
+          <%= f.email_field :email, class: 'validate', required: 'required' %>
+          <label for="email" data-error="Please check you have enter your email correctly">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m10 offset-m1">
+          <i class="fa fa-key prefix" aria-hidden="true"></i>
+          <%= f.password_field :password, class: 'validate', required: 'required' %>
+          <label for="password" data-error="Please enter a password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m10 offset-m1">
+          <button class="btn waves-effect waves-light green" type="submit" name="action">Create an account
+            <i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="input-field col s12 m10 offset-m1">
+          <button class="btn waves-effect waves-light blue" type="submit" name="action">Sign in with Facebook
+            <i class="fa fa-facebook fa-fw" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- <div class="container">
   <form action="/account/signup" method="POST">
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
@@ -18,16 +65,16 @@
     </div>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
-        <i class="fa fa-key prefix" aria-hidden="true"></i>
-        <input id="password" type="password" class="validate" required>
-        <label for="password" data-error="Please enter a password">Password</label>
+        <i class="fa fa-envelope prefix" aria-hidden="true"></i>
+        <input id="email" type="email" class="validate" required>
+        <label for="email" data-error="Please check you have enter your email correctly">Email</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
-        <i class="fa fa-envelope prefix" aria-hidden="true"></i>
-        <input id="email" type="email" class="validate" required>
-        <label for="email" data-error="Please check you have enter your email correctly">Email</label>
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <input id="password" type="password" class="validate" required>
+        <label for="password" data-error="Please enter a password">Password</label>
       </div>
     </div>
     <div class="row">
@@ -43,4 +90,4 @@
       </div>
     </div>
   </form>
-</div>
+</div> -->
