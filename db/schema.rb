@@ -15,12 +15,23 @@ ActiveRecord::Schema.define(version: 20180122223815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "staffs", force: :cascade do |t|
-    t.string "staff_id"
+create_table "staffs", force: :cascade do |t|
+  t.string "staff_id"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+create_table "accounts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password"
+    t.string "facebook_token"
+    t.boolean "is_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
