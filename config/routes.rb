@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   get '/account/login', to: 'account#login'
   get '/account/edit', to: 'account#edit'
   # ========== Routing for admin ==========
-  get '/admin/', to: 'admin#dashboard'
+  resources :admin, only: [:index]
+  # ========== Routing for products ==========
+  namespace :admin do
+    resources :products
+  end
 end
