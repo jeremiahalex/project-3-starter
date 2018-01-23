@@ -17,3 +17,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+
+$(document).ready(function() {
+  $('.slider').slider();
+});
