@@ -61,4 +61,8 @@ gem 'jquery-rails'
 # Icon Support
 gem 'font-awesome-rails'
 # Console
-gem 'pry'
+gem 'pry-rails'
+# Devise
+gem 'devise'
+# Facebook Omniauth
+gem 'omniauth-facebook'
