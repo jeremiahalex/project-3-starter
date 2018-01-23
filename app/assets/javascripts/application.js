@@ -19,5 +19,10 @@
 //= require materialize
 
 $(document).ready(function() {
-  $('.slider').slider();
+  $(".slider").slider();
+
+  $(".view-more").on("click", function() {
+    $(".view-more").css("display", "none");
+    $(".hidden").css("display", "block");
+  });
 });
