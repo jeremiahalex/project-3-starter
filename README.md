@@ -83,6 +83,10 @@ https://localsquare.herokuapp.com/
 <img src="/app/assets/readme/Wireframe-P3/Wireframe-P3-15.jpg" width="600">
 
 
+### ERD
+
+![](/app/assets/readme/Project-3 ERD.jpg)
+
 ### How to Use
 
 A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
