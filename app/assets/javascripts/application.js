@@ -16,16 +16,4 @@
 //= require jquery3
 //= require jquery_ujs
 //= require materialize
-<<<<<<< HEAD
-
-$(document).on("turbolinks:load", function() {
-  $(".slider").slider();
-
-  $(".view-more").on("click", function() {
-    $(".view-more").css("display", "none");
-    $(".hidden").css("display", "block");
-  });
-});
-=======
 //= require_tree .
->>>>>>> 06cdfecd821d73682c5ee542f0afb0480575c81c
