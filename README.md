@@ -85,7 +85,7 @@ https://localsquare.herokuapp.com/
 
 ### ERD
 
-![](/app/assets/readme/Project-3 ERD.jpg)
+![](/app/assets/readme/ERD.jpg)
 
 ### How to Use
 
