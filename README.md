@@ -53,15 +53,18 @@ Where is this deployed online (github pages, heroku etc), give us the link and a
 
 ### Technologies
 
-* [Ruby on Rails](http://rubyonrails.org/)
 * [Ruby](https://www.ruby-lang.org/en/)
+* [Ruby on Rails](http://rubyonrails.org/)
 <!-- * [jQuery](http://jquery.com/) - jQuery for example is something you likely used -->
 
 ### Gems
 
-* [Materialize](http://materializecss.com/) CSS framework
-* [RSpec](http://rspec.info/)
-
+* [Materialize](http://materializecss.com/) (CSS framework)
+* [RSpec](http://rspec.info/) (Testing)
+* [JQuery](https://github.com/rails/jquery-rails)
+* [Font Awesome](https://github.com/bokmann/font-awesome-rails) (Icons)
+* [Devise](https://github.com/plataformatec/devise)(Authentication Solution)
+* [Facebook Omniauth](https://github.com/mkdynamic/omniauth-facebook) (OAuth for Facebook)
 ---
 
 ## Workflow
@@ -72,9 +75,15 @@ Where is this deployed online (github pages, heroku etc), give us the link and a
 
 ### Entity-Relationship Diagram
 
-### Wireframes
+![](/-ProjectDocumentation/project_3_erd.svg)
+
+### Flow Chart
+
+![](/-ProjectDocumentation/project_3_flowchart.svg)
 
 ### User Stories
+
+<!-- Wireframe -->
 
 ---
 

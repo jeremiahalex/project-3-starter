@@ -17,8 +17,12 @@
           <% content_for :links do%>
             <li><%= link_to "Home", root_path%></li>
             <li><%= link_to "Register Warranty", warranty_register_path%></li>
-            <li><%= link_to "<i class='fa fa-user-plus' aria-hidden='true'></i> Sign Up".html_safe, new_account_registration_path%></li>
-            <li><%= link_to "<i class='fa fa-sign-in' aria-hidden='true'></i> Login".html_safe, new_account_session_path%></li>
+            <% if account_signed_in? %>
+              <li><%= link_to "<i class='fa fa-sign-out' aria-hidden='true'></i> Logout".html_safe, destroy_account_session_path, method: :delete%></li>
+            <% else %>
+              <li><%= link_to "<i class='fa fa-user-plus' aria-hidden='true'></i> Sign Up".html_safe, new_account_registration_path%></li>
+              <li><%= link_to "<i class='fa fa-sign-in' aria-hidden='true'></i> Login".html_safe, new_account_session_path%></li>
+            <% end %>
           <% end %>
           <%= yield :links%>
         </ul>
