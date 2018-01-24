@@ -40,3 +40,14 @@
 .product {
   float: right;
 }
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.bookmarks {
+  text-align: center;
+}
