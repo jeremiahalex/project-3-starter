@@ -18,7 +18,7 @@
 //= require jquery_ujs
 //= require materialize
 
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   $(".slider").slider();
 
   $(".view-more").on("click", function() {
