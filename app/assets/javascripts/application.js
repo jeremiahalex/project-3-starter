@@ -12,17 +12,8 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require materialize
-
-$(document).ready(function() {
-  $(".slider").slider();
-
-  $(".view-more").on("click", function() {
-    $(".view-more").css("display", "none");
-    $(".hidden").css("display", "block");
-  });
-});
+//= require_tree .
