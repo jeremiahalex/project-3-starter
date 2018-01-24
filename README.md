@@ -28,7 +28,7 @@ https://localsquare.herokuapp.com/
 * As a buyer of online goods, I want to be able to access the catalogues and be updated of the items sold at small physical shops, rented box spaces, flea markets or push carts so that I can make the decision first before visiting them.
 
 ## FLowchart
-![](/app/assets/readme/Flowchart-Project3.jpg)
+![](/app/assets/readme/Flowchart.jpg)
 
 
 ## Use cases
