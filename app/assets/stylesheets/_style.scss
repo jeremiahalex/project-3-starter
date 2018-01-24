@@ -27,3 +27,16 @@
 .large {
   font-size: 15rem !important;
 }
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.product {
+  float: right;
+}

@@ -14,7 +14,7 @@
         <div class="nav-wrapper">
           <div class="row">
             <div class="col s1 logo">
-              <%= link_to "Logo", "#", class: 'brand-logo' %>
+              <%= link_to "Logo", root_path, class: 'brand-logo' %>
             </div>
 
             <div class="col s1">
@@ -29,7 +29,7 @@
             </div>
 
             <div class="col s4 offset-s1">
-              <%= form_tag({}, class: "search-input") do %>
+              <%= form_tag({action: "search"}, method: "get", class: "search-input") do %>
                 <div class="input-field">
                   <%= search_field(:user, :name) %>
                   <%#= label_tag(:search) do %>
@@ -39,7 +39,7 @@
               <% end %>
             </div>
             <div class="col s1">
-              <%= link_to "Search", login_path, class: "waves-effect waves-light btn" %>
+              <%= link_to "Search", search_path, class: "waves-effect waves-light btn" %>
             </div>
 
             <div class="col s3 offset-s1">
@@ -53,7 +53,7 @@
 
     <%= yield %>
 
-    <footer class="page-footer">
+    <footer class="page-footer teal darken-2">
       <div class="footer-copyright">
         <div class="container">
           Copyright &copy; 2018 LocalSquare. All rights reserved.
