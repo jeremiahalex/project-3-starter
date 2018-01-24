@@ -59,3 +59,5 @@ gem 'rspec-rails'
 gem 'jquery-rails'
 
 gem 'materialize-sass'
+
+gem 'devise'
