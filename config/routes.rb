@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
-  resources :pages
+  resources :pages, only: [:show]
+  resources :spaces do
+    resources :bookmarks, only: [:create, :destroy]
+    resources :reviews, only: [:create, :destroy]
+  end
+  resources :websites, only: [:create, :update]
+
+  resources :users, only: [:show, :update]
+
   devise_for :users,
   path: '',
   path_names: {

@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 
   end
 
-  def search
-    
+  def show
+
   end
 
 end
