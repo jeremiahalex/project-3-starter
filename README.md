@@ -73,6 +73,7 @@ Where is this deployed online (github pages, heroku etc), give us the link and a
 
 ### Use Cases
 
+
 ### Entity-Relationship Diagram
 
 ![](/-ProjectDocumentation/project_3_erd.svg)
@@ -82,6 +83,16 @@ Where is this deployed online (github pages, heroku etc), give us the link and a
 ![](/-ProjectDocumentation/project_3_flowchart.svg)
 
 ### User Stories
+
+As a customer,
+* I want to register the product warranty easily and quickly
+* I want to be able to register for product warranty without being forced to first create an account
+* I want to head straight to the warranty registration form and not have to  google, search through the manufacturer’s website or type in the URL
+* I should not have to type in product particulars such as model number, serial number, and warranty card number etc. which can be hard to locate, determine and distinguish
+* I should only have to furnish the particulars that only I can give
+
+As the manufacturer,
+* I want provide my customers the best after-sales support without diverting precious technical resources from the core business
 
 <!-- Wireframe -->
 
