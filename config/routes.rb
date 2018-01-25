@@ -5,31 +5,19 @@ Rails.application.routes.draw do
   # ========== Routing for warranty ==========
   get '/warranty/register', to: 'warranty#register'
   # ========== Routing for account ==========
-  # get '/account/home', to: 'account#home'
-  #
-  # get '/account/signup', to: 'account#signup'
-  # post '/account/create', to: 'account#create'
-  #
-  # get '/account/login', to: 'account#login'
-  # post '/account/authenticate', to: 'account#authenticate'
-  #
-  # get '/account/:id/edit', to: 'account#edit', as: "edit_account"
-  # put '/account/:id', to: 'account#update'
-  # patch '/account/:id', to: 'account#update'
-
+  resources :account, only: [:index]
   devise_for :accounts, path: 'account', path_names:
   { sign_in: 'login',
     sign_out: 'logout',
     password: 'secret',
     registration: '',
-    edit: 'edit'
+    edit: 'edit',
   }
-
-  # delete '/account/:id', to: 'account#delete'
   # ========== Routing for admin ==========
   resources :admin, only: [:index]
   # ========== Routing for products ==========
   namespace :admin do
     resources :products
   end
+  # 404
 end
