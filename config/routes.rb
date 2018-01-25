@@ -2,11 +2,18 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   resources :pages, only: [:show]
+
+  patch '/spaces/:id/about', to: 'spaces#about', as: 'about'
+  patch '/spaces/:id/websites', to: 'spaces#websites', as: 'websites'
+  post '/spaces/:id/photo', to: 'spaces#photo', as: 'photo'
+  post '/spaces/:id/products', to: 'spaces#products', as: 'products'
+
+
   resources :spaces do
     resources :bookmarks, only: [:create, :destroy]
     resources :reviews, only: [:create, :destroy]
   end
-  resources :websites, only: [:create, :update]
+  # resources :websites, only: [:create, :update]
 
   resources :users, only: [:show, :update]
 

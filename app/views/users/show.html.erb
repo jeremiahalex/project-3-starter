@@ -8,17 +8,53 @@
   </div>
 </div>
 
+
+
+
+
 <div class="row">
-  <div class="col s4">
-    <h4>About</h4>
-    <h4>Websites</h4>
-    <h4>Photo</h4>
-    <h4>Products</h4>
-    <h4>View listing</h4>
+  <div class="col s3">
+    <ul class="tabs">
+      <li class="tab col s12"><a href="#space-bookmark">Bookmark</a></li>
+      <li class="tab col s12"><a href="#space-about">About</a></li>
+      <li class="tab col s12"><a href="#space-websites">Websites</a></li>
+      <li class="tab col s12"><a href="#space-photo">photo</a></li>
+      <li class="tab col s12"><a href="#space-products">Products</a></li>
+    </ul>
+    <%= link_to "View listing", space_path(1), class: 'waves-effect waves-light btn' %>
   </div>
 
-  <div class="col s8">
-    <%= form_tag(spaces_path) do %>
+  <div id="space-bookmark" class="col s9">
+    <div class="row">
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=24">
+        <h5><%= link_to "Company name", space_path(1) %></h5>
+        <p>category / location</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=25">
+        <h5><%= link_to "Company name", space_path(1) %></h5>
+        <p>category / location</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=26">
+        <h5><%= link_to "Company name", space_path(1) %></h5>
+        <p>category / location</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=26">
+        <h5><%= link_to "Company name", space_path(1) %></h5>
+        <p>category / location</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="space-about" class="col s9">
+    <%= form_tag(about_path(1), method: :patch) do %>
       <div>
         <%= label_tag :company_name %>
         <%= text_field_tag :company_name, nil, placeholder: 'Company name' %>
@@ -47,6 +83,97 @@
         <%= label_tag :tags %>
         <%= text_field_tag :tags %>
       </div>
+      <%= submit_tag("Save") %>
     <% end %>
   </div>
+
+  <div id="space-websites" class="col s9">
+    <%= form_tag(websites_path(1), method: :patch) do %>
+      <div>
+        <%= label_tag :website %>
+        <%= text_field_tag :website, nil, placeholder: 'Website' %>
+      </div>
+      <div>
+        <%= label_tag :facebook %>
+        <%= text_field_tag :facebook, nil, placeholder: 'Facebook' %>
+      </div>
+      <div>
+        <%= label_tag :instagram %>
+        <%= text_field_tag :instagram, nil, placeholder: 'Instagram' %>
+      </div>
+      <div>
+        <%= label_tag :googleplus %>
+        <%= text_field_tag :googleplus, nil, placeholder: 'Google+' %>
+      </div>
+      <div>
+        <%= label_tag :linkedin %>
+        <%= text_field_tag :linkedin, nil, placeholder: 'Linkedin' %>
+      </div>
+      <%= submit_tag("Save") %>
+    <% end %>
+  </div>
+
+  <div id="space-photo" class="col s9">
+
+
+<%= form_tag(photo_path(1), multipart: true) do %>
+<%= file_field_tag :image_url %>
+<%= submit_tag("Save") %>
+<% end %>
+<div class="col s6">
+  <img src="https://picsum.photos/300/300/?image=24">
+  </div>
+
+  </div>
+
+
+  <div id="space-products" class="col s9">
+<div>
+    <%= form_tag(products_path(1), multipart: true) do %>
+    <%= file_field_tag :image_url %>
+</div>
+    <div>
+      <%= label_tag :title %>
+      <%= text_field_tag :title, nil, placeholder: 'Title' %>
+    </div>
+    <div>
+      <%= label_tag :description %>
+      <%= text_area_tag :business_descriptions, nil, placeholder: "something" %>
+    </div>
+    <%= submit_tag("Save") %>
+    <% end %>
+
+    <div class="row">
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=24">
+        <h5>Title</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=25">
+        <h5>Title</h5>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=26">
+        <h5>Title</h5>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col s6">
+        <img src="https://picsum.photos/300/300/?image=26">
+        <h5>Title</h5>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 </div>
