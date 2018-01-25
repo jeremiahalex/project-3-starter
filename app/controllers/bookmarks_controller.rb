@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def create
     #code
+    
   end
 
   def destroy
