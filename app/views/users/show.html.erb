@@ -1,1 +1,52 @@
-<h1>Profile / Dashboard</h1>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="profile">
+      <h4>Firstname lastname</h4>
+      <img src="https://picsum.photos/600/300/?image=30">
+      <a class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s4">
+    <h4>About</h4>
+    <h4>Websites</h4>
+    <h4>Photo</h4>
+    <h4>Products</h4>
+    <h4>View listing</h4>
+  </div>
+
+  <div class="col s8">
+    <%= form_tag(spaces_path) do %>
+      <div>
+        <%= label_tag :company_name %>
+        <%= text_field_tag :company_name, nil, placeholder: 'Company name' %>
+      </div>
+      <div>
+        <%= label_tag :summary %>
+        <%= text_field_tag :summary, nil, placeholder: 'Lorem ipsum' %>
+      </div>
+      <div>
+        <%= label_tag :category %>
+        <%= text_field_tag :category, nil, placeholder: 'Lorem ipsum' %>
+      </div>
+      <div>
+        <%= label_tag :contact %>
+        <%= text_field_tag :contact, nil, placeholder: '12345678' %>
+      </div>
+      <div>
+        <%= label_tag :address %>
+        <%= text_field_tag :address, nil, placeholder: 'Lorem ipsum' %>
+      </div>
+      <div>
+        <%= label_tag :business_descriptions %>
+        <%= text_area_tag :business_descriptions %>
+      </div>
+      <div>
+        <%= label_tag :tags %>
+        <%= text_field_tag :tags %>
+      </div>
+    <% end %>
+  </div>
+</div>
