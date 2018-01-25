@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124172541) do
+ActiveRecord::Schema.define(version: 20180125085223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_bookmarks_on_space_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_name"
+    t.string "title"
+    t.text "description"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "space_id"
+    t.index ["space_id"], name: "index_products_on_space_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "review"
+    t.bigint "space_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_reviews_on_space_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.string "company_name"
+    t.string "address"
+    t.text "summary"
+    t.text "description"
+    t.string "contact"
+    t.string "image_url"
+    t.boolean "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.bigint "user_id"
+    t.bigint "website_id"
+    t.index ["category_id"], name: "index_spaces_on_category_id"
+    t.index ["user_id"], name: "index_spaces_on_user_id"
+    t.index ["website_id"], name: "index_spaces_on_website_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,4 +90,22 @@ ActiveRecord::Schema.define(version: 20180124172541) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "websites", force: :cascade do |t|
+    t.string "website"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "googleplus"
+    t.string "linkedin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookmarks", "spaces"
+  add_foreign_key "bookmarks", "users"
+  add_foreign_key "products", "spaces"
+  add_foreign_key "reviews", "spaces"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "spaces", "categories"
+  add_foreign_key "spaces", "users"
+  add_foreign_key "spaces", "websites"
 end
