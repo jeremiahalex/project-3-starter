@@ -1,32 +1,48 @@
 <div class="row">
   <div class="col s8 offset-s2">
     <h4>Sign up your page</h4>
-    <%= form_tag(spaces_path) do %>
-      <div>
-        <%= label_tag :company_name %>
-        <%= text_field_tag :company_name, nil, placeholder: 'Company name' %>
-      </div>
-      <div>
-        <%= label_tag :summary %>
-        <%= text_field_tag :summary, nil, placeholder: 'Lorem ipsum' %>
-      </div>
-      <div>
-        <%= label_tag :category %>
-        <%= text_field_tag :category, nil, placeholder: 'Lorem ipsum' %>
-      </div>
-      <div>
-        <%= label_tag :contact %>
-        <%= text_field_tag :contact, nil, placeholder: '12345678' %>
-      </div>
-      <div>
-        <%= label_tag :address %>
-        <%= text_field_tag :address, nil, placeholder: 'Lorem ipsum' %>
-      </div>
-      <div>
-        <%= label_tag :business_descriptions %>
-        <%= text_area_tag :business_descriptions %>
-      </div>
-      <%= link_to "Create Listing", user_path(1), class: "waves-effect waves-light btn" %>
+
+    <%= form_for @space, url: {action: "create"} do |f| %>
+    <div>
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name, placeholder: 'Company name' %>
+    </div>
+    <div>
+      <%= f.label :summary %>
+      <%= f.text_field :summary, placeholder: 'Lorem ipsum' %>
+    </div>
+    <div>
+      <%= f.label :category %>
+      <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }, class: "browser-default") %>
+
+      <%#= f.select "category_id", options_from_collection_for_select(Category.all, "id", "category_type"), class: "browser-default" %>
+      <%= f.collection_select(:category_id, Category.all, :id, :category_type) %>
+    </div>
+    <div>
+      <%= f.label :contact %>
+      <%= f.text_field :contact, placeholder: '12345678' %>
+    </div>
+    <div>
+      <%= f.label :address %>
+      <%= f.text_field :address, placeholder: 'Lorem ipsum' %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
+    </div>
+    <%= f.hidden_field(:is_active, value: false) %>
+    <%= f.submit("Create new listing", class: "waves-effect waves-light btn") %>
+
+
+
+
+
     <% end %>
+
+
+
+
+
+
   </div>
 </div>

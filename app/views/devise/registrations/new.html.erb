@@ -50,6 +50,10 @@
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
+<%= hidden_field(:user, :is_admin, value: false) %>
+<%= hidden_field(:user, :is_owner, value: false) %>
+
+
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>

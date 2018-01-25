@@ -35,7 +35,7 @@
             <div class="col s4 offset-s1">
               <%= form_tag(page_path(1), method: "get", class: "search-input") do %>
                 <div class="input-field">
-                  <%= search_field(:space, :product) %>
+                  <%#= search_field(:space, :product) %>
                   <%#= label_tag(:search) do %>
                     <!-- <i class="material-icons">search</i> -->
                   <%# end  %>
@@ -57,11 +57,11 @@
 
               <%= link_to "Profile", user_path(1) %>
               <%#= link_to "Dashboard", user_path(1) %>
-              <%#= link_to "Create business listing", new_space_path %>
+              <%= link_to "Create", new_space_path %>
 
-              <%#= link_to "Login", new_user_session_path %>
-              <%#= link_to "Signup", user_registration_path %>
-              <%#= link_to "Logout", destroy_user_session_path, method: :delete %>
+              <%= link_to "Login", new_user_session_path %>
+              <%= link_to "Signup", user_registration_path %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
             </div>
           </div>
         </div>

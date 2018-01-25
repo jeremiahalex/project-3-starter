@@ -6,5 +6,7 @@ $(document).on("turbolinks:load", function() {
     $(".hidden").css("display", "block");
 
     $('ul.tabs').tabs();
+    $('select').material_select();
+
   });
 });

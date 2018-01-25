@@ -5,14 +5,19 @@ class SpacesController < ApplicationController
 
   def show
     #code
+
   end
 
   def new
     #code
+    @space = Space.new
   end
 
   def create
-    #code
+
+    Space.create(space_params)
+    redirect_to root_path
+    # render json: params
   end
 
   def edit
@@ -42,4 +47,14 @@ class SpacesController < ApplicationController
   def products
     render html: 'update for products'
   end
+
+
+
+
+  private
+
+def space_params
+  params.require(:space).permit(:company_name, :summary, :category_id, :contact, :address, :description, :is_active)
+end
+
 end
