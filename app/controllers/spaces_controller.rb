@@ -26,6 +26,9 @@ class SpacesController < ApplicationController
 
   def update
     #code
+    @space = Space.find(params[:id])
+    @space.update(space_params)
+    redirect_to user_path(params[:id])
   end
 
 

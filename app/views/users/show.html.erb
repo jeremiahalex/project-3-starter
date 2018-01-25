@@ -16,9 +16,6 @@
         <a href="#space-bookmark">Bookmark</a>
       </li>
       <li class="tab col s12">
-        <a href="#space-approval">Bookmark</a>
-      </li>
-      <li class="tab col s12">
         <a href="#space-about">About</a>
       </li>
       <li class="tab col s12">
@@ -67,39 +64,38 @@
     </div>
   </div>
 
-
   <div id="space-about" class="col s9">
-    <%= form_tag(about_path(1), method: :patch) do %>
+    <%= form_for @space do |f| %>
     <div>
-      <%= label_tag :company_name %>
-      <%= text_field_tag :company_name, nil, placeholder: 'Company name' %>
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name, placeholder: 'Company name'%>
     </div>
     <div>
-      <%= label_tag :summary %>
-      <%= text_field_tag :summary, nil, placeholder: 'Lorem ipsum' %>
+      <%= f.label :summary %>
+      <%= f.text_field :summary, placeholder: 'Lorem ipsum' %>
     </div>
     <div>
-      <%= label_tag :category %>
-      <%= text_field_tag :category, nil, placeholder: 'Lorem ipsum' %>
+      <%= f.label :category %>
+      <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }, class: "browser-default") %>
     </div>
     <div>
-      <%= label_tag :contact %>
-      <%= text_field_tag :contact, nil, placeholder: '12345678' %>
+      <%= f.label :contact %>
+      <%= f.text_field :contact, placeholder: '12345678' %>
     </div>
     <div>
-      <%= label_tag :address %>
-      <%= text_field_tag :address, nil, placeholder: 'Lorem ipsum' %>
+      <%= f.label :address %>
+      <%= f.text_field :address, placeholder: 'Lorem ipsum' %>
     </div>
     <div>
-      <%= label_tag :business_descriptions %>
-      <%= text_area_tag :business_descriptions %>
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
     </div>
-    <div>
-      <%= label_tag :tags %>
-      <%= text_field_tag :tags %>
-    </div>
-    <%= submit_tag("Save") %>
-  <% end %>
+    <%= f.hidden_field(:is_active, value: false) %>
+    <%= f.submit("Create new listing", class: "waves-effect waves-light btn") %>
+    <% end %>
+
+
+
 </div>
 
 <div id="space-websites" class="col s9">
