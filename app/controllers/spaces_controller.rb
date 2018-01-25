@@ -11,12 +11,19 @@ class SpacesController < ApplicationController
   def new
     #code
     @space = Space.new
+    @space_website = @space.website
   end
 
   def create
 
-    Space.create(space_params)
-    redirect_to root_path
+    new_space = Space.new(space_params)
+    new_web = Website.new
+    new_web.save
+    render json: new_web
+    # new_space.website_id = new_web.id
+    # new_space.save
+
+    # redirect_to root_path
     # render json: params
   end
 
