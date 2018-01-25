@@ -60,7 +60,7 @@
   <div class="col s4">
     <div class="border">
       <h5>Write review</h5>
-      <%= form_tag do %>
+      <%= form_tag(space_reviews_path(1)) do %>
         <div class="input-field">
           <%= label_tag(:title, "Title") %>
           <%= text_field_tag(:title) %>
