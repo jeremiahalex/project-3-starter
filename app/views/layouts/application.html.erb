@@ -17,11 +17,12 @@
           <% content_for :links do%>
             <li><%= link_to "Register Warranty", warranty_register_path%></li>
             <% if account_signed_in? %>
-              <li><%= link_to "<i class='fa fa-user-circle-o' aria-hidden='true'></i> ".html_safe + current_account.email, edit_account_registration_path%></li>
-              <li><%= link_to "<i class='fa fa-sign-out' aria-hidden='true'></i> Logout".html_safe, destroy_account_session_path, method: :delete%></li>
+              <li><%= link_to (fa_icon 'user-circle-o').html_safe+' '.html_safe+ current_account.email, account_index_path%></li>
+              <li><%= link_to (fa_icon 'pencil').html_safe+' Edit Account', edit_account_registration_path%></li>
+              <li><%= link_to (fa_icon 'sign-out').html_safe+' Logout', destroy_account_session_path, method: :delete%></li>
             <% else %>
-              <li><%= link_to "<i class='fa fa-user-plus' aria-hidden='true'></i> Sign Up".html_safe, new_account_registration_path%></li>
-              <li><%= link_to "<i class='fa fa-sign-in' aria-hidden='true'></i> Login".html_safe, new_account_session_path%></li>
+              <li><%= link_to (fa_icon 'user-plus').html_safe+ ' Sign Up', new_account_registration_path%></li>
+              <li><%= link_to (fa_icon 'sign-in').html_safe + ' Login', new_account_session_path%></li>
             <% end %>
           <% end %>
           <%= yield :links%>

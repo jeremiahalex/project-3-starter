@@ -5,8 +5,6 @@
       <% content_for :admin_links do%>
         <li><%= link_to "Admin Home", admin_index_path%></li>
         <li><%= link_to "Product Listing", admin_products_path%></li>
-        <!-- <li><%= link_to "<i class='fa fa-user-plus' aria-hidden='true'></i> Sign Up".html_safe, account_signup_path%></li>
-        <li><%= link_to "<i class='fa fa-sign-in' aria-hidden='true'></i> Login".html_safe, account_login_path%></li> -->
       <% end %>
       <%= yield :admin_links%>
     </ul>
