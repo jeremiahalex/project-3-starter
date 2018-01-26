@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+50.times do |index|
+  new_space = Space.new
+
+  new_space.id = index + 1
+  new_space.company_name = Faker::Company.name
+  new_space.address = Faker::Address.street_address
+  new_space.summary = Faker::Company.catch_phrase
+  new_space.description = Faker::Company.bs
+  new_space.contact = Faker::Company.australian_business_number
+  new_space.image_url = Faker::Company.logo
+  new_space.is_active = false
+  new_space.category_id = Random.new.rand(1..10)
+
+  new_space.save
+end
+
+# 10.times do |index|
+#   new_category = Category.new
+#
+#   new_category.id = index + 1
+#   new_category.category_type = Faker::Commerce.department
+#
+#   new_category.save
+# end

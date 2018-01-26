@@ -4,7 +4,7 @@ class SpacesController < ApplicationController
   end
 
   def show
-    #code
+    @indiv_space = Space.find(params[:id])
   end
 
   def new
