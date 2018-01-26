@@ -4,6 +4,7 @@
       <h4 class="header">Login</h4>
     </div>
   </div>
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="row">
@@ -19,27 +20,28 @@
       <i class="fa fa-key prefix" aria-hidden="true"></i>
       <%= f.password_field :password, autocomplete: "off", class: 'validate', required: 'required' %>
       <label for="password" data-error="Please enter a password">Password</label>
+    </div>
+    <div class="col s12 m10 offset-m1">
       <% if devise_mapping.rememberable? -%>
-      <div class="field">
+      <p>
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
-      </div>
+      </p>
       <% end -%>
     </div>
   </div>
-
   <div class="row">
     <div class="input-field col s12 m10 offset-m1">
-      <button class="btn waves-effect waves-light green" type="submit" name="action">Login
+      <button class="btn waves-effect waves-light green" type="submit" name="action">
         <i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>
+        Login
       </button>
     </div>
-  </div>
 
-  <div class="row">
     <div class="input-field col s12 m10 offset-m1">
       <%= render "devise/shared/links" %>
     </div>
   </div>
+
   <% end %>
 </div>

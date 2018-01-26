@@ -1,43 +1,81 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+      <h2>Edit My <%= resource_name.to_s.humanize %></h2>
+    </div>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="row">
+      <div class="input-field col s6 m5 offset-m1">
+        <i class="fa fa-user prefix" aria-hidden="true"></i>
+        <%= f.text_field :first_name, class: 'validate', autofocus: true %>
+        <label for="first_name" data-error="Please enter your first name">First Name</label>
+      </div>
+      <div class="input-field col s6 m5">
+        <%= f.text_field :last_name, class: 'validate' %>
+        <label for="last_name" data-error="Please enter your last name">Last Name</label>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-envelope prefix" aria-hidden="true"></i>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <label for="email" data-error="<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>Currently waiting confirmation for: <%= resource.unconfirmed_email %><% else %>Please check you have enter your email correctly<% end %>">Email</label>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <%= f.password_field :password, autocomplete: "off" %>
+          <label for="password" data-error="Please enter a password of at least <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters">New Password (leave blank if you are not changing password)</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <%= f.password_field :password_confirmation, class: 'validate', autocomplete: "off" %>
+        <label for="password" data-error="Password does not tally">Confirm New Password</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <%= f.password_field :current_password, autocomplete: "off" %>
+        <label for="password" data-error="Current password is incorrect">Enter your current password to confirm your changes</label>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+        <%= f.submit "Update Profile", class: "btn waves-effect waves-light green" %>
+    </div>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+  <!-- <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+      <h3>Cancel my account</h3>
+    </div>
+  </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+      <%#= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+  </div> -->
 
-<%= link_to "Back", :back %>
+  <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+      <%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>

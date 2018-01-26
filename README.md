@@ -1,4 +1,4 @@
-# ![](./-ProjectDocumentation/ga_logo.svg) Project #3: Your Project Name
+# ![](./-ProjectDocumentation/ga_logo.svg) Project #3: Warranted
 
 This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
 
@@ -90,9 +90,12 @@ As a customer,
 * I want to head straight to the warranty registration form and not have to  google, search through the manufacturer’s website or type in the URL
 * I should not have to type in product particulars such as model number, serial number, and warranty card number etc. which can be hard to locate, determine and distinguish
 * I should only have to furnish the particulars that only I can give
+* I should have exhaustive list of products I own that are still under warranty
+* I should be able to raise a support ticket quickly from my list of products under warranty
+* I should be able to check the latest response from the manufacturer's response on my support ticket
 
-As the manufacturer,
-* I want provide my customers the best after-sales support without diverting precious technical resources from the core business
+As the distributor/manufacturer,
+* I want to provide my customers the best possible after-sales support without diverting scarce engineering resources and attention from the core business concerns.
 
 <!-- Wireframe -->
 
