@@ -58,9 +58,7 @@ class SpacesController < ApplicationController
     render html: 'update for photo'
   end
 
-  def product
-    render html: 'update for products'
-  end
+
 
 
 
@@ -74,5 +72,7 @@ end
 def website_params
   params.require(:website).permit(:website, :facebook, :instagram, :googleplus, :linkedin)
 end
+
+
 
 end

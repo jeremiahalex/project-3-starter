@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'products/create'
+
   root 'pages#home'
   resources :pages, only: [:show]
 
   patch '/spaces/:id/about', to: 'spaces#about', as: 'about'
   patch '/spaces/:id/website', to: 'spaces#website', as: 'website'
   post '/spaces/:id/photo', to: 'spaces#photo', as: 'photo'
-  post '/spaces/:id/product', to: 'spaces#product', as: 'product'
+  # post '/spaces/:id/product', to: 'spaces#product', as: 'product'
 
 
   resources :spaces do
     resources :bookmarks, only: [:create, :destroy]
     resources :reviews, only: [:create, :destroy]
+    resources :products, only: [:create]
+
   end
   # resources :websites, only: [:create, :update]
 

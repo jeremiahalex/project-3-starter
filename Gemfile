@@ -63,3 +63,5 @@ gem 'materialize-sass'
 gem 'devise'
 
 gem 'faker'
+
+gem 'carrierwave', '~> 1.0'

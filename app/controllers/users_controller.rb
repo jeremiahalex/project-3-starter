@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     #code
     @space = Space.first
     @website = @space.website
+    @product = Product.new
+    @products = Space.find(13).products
   end
 
   def update

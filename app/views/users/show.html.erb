@@ -136,7 +136,7 @@
 
 <div id="space-products" class="col s9">
 <div>
-<%= form_tag(product_path(1), multipart: true) do %>
+<%= form_tag(space_products_path(1), multipart: true) do %>
 <%= file_field_tag :image_url %>
 </div>
 <div>
@@ -177,5 +177,40 @@
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+<h1>Add post</h1>
+
+
+<%= form_for @product, url: space_products_path(13) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :image_url %>
+    <%= f.file_field :image_url %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+<% @products.each do |item| %>
+<h1><%= item.title %></h1>
+
+<%= image_tag(item.image_url.url, alt: 'Image', class: 'img-size') %>
+
+<p><%= item.description %></p>
+<% end %>
 
 </div>
