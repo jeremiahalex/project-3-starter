@@ -4,6 +4,10 @@
   margin-top: 10px;
 }
 
+.search-input i {
+  margin-top: 10px;
+}
+
 .feature {
   text-align: center;
 }
@@ -52,9 +56,6 @@
   text-align: center;
 }
 
-
-
-
 ul.tabs {
   flex-direction: column;
   height: 100%;
@@ -69,4 +70,18 @@ ul a {
 
 ul.tabs .indicator {
   display: none
+}
+
+.pages-show {
+  height: 500px;
+}
+
+.pages-show img {
+  width: 300px;
+  height: auto;
+}
+
+.space-show img {
+  width: 200px;
+  height: auto;
 }

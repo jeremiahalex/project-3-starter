@@ -1,5 +1,3 @@
 class Space < ApplicationRecord
-  has_one :category
-  has_one :website
-
+  belongs_to :category, dependent: :destroy
 end

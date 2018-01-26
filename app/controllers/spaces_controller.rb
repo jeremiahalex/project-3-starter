@@ -4,14 +4,13 @@ class SpacesController < ApplicationController
   end
 
   def show
-    #code
-
+    @indiv_space = Space.find(params[:id])
   end
 
   def new
     #code
     @space = Space.new
-    @space_website = @space.website
+    # @space_website = @space.website
   end
 
   def create
