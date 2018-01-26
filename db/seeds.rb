@@ -8,13 +8,14 @@
 
 
 
-
+# product seed
 # 3.times do
 #   Product.create(
 #     product_name: "hello"
 #   )
 # end
 #
+# space seed
 # 50.times do |index|
 #   new_space = Space.new
 #
@@ -31,7 +32,8 @@
 #
 #   new_space.save
 # end
-
+#
+# category seed
 # 10.times do
 #   new_category = Category.new
 #

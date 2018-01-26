@@ -26,7 +26,7 @@
       <p><%= @indiv_space.contact %></p>
 
       <h6>Website</h6>
-      <%= link_to @indiv_space.website_id, @indiv_space.website_id %>
+      <%= link_to @indiv_space.website.website, "http://#{@indiv_space.website.website}" %>
 
       <h6>Social media</h6>
       <a href="#" class="fa fa-facebook"></a>
