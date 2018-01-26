@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
 
   patch '/spaces/:id/about', to: 'spaces#about', as: 'about'
-  patch '/spaces/:id/websites', to: 'spaces#websites', as: 'websites'
+  patch '/spaces/:id/website', to: 'spaces#website', as: 'website'
   post '/spaces/:id/photo', to: 'spaces#photo', as: 'photo'
-  post '/spaces/:id/products', to: 'spaces#products', as: 'products'
+  post '/spaces/:id/product', to: 'spaces#product', as: 'product'
 
 
   resources :spaces do

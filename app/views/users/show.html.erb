@@ -99,7 +99,29 @@
 </div>
 
 <div id="space-websites" class="col s9">
-
+  <%= form_for @website do |f| %>
+  <div>
+    <%= f.label :website %>
+    <%= f.text_field :website, placeholder: 'Website' %>
+  </div>
+  <div>
+    <%= f.label :facebook %>
+    <%= f.text_field :facebook, placeholder: 'Facebook' %>
+  </div>
+  <div>
+    <%= f.label :instagram %>
+    <%= f.text_field :instagram, placeholder: 'Instagram' %>
+  </div>
+  <div>
+    <%= f.label :googleplus %>
+    <%= f.text_field :googleplus, placeholder: 'Google+' %>
+  </div>
+  <div>
+    <%= f.label :linkedin %>
+    <%= f.text_field :linkedin, placeholder: 'Linkedin' %>
+  </div>
+  <%= f.submit("Save") %>
+  <% end %>
 </div>
 
 <div id="space-photo" class="col s9">
@@ -114,7 +136,7 @@
 
 <div id="space-products" class="col s9">
 <div>
-<%= form_tag(products_path(1), multipart: true) do %>
+<%= form_tag(product_path(1), multipart: true) do %>
 <%= file_field_tag :image_url %>
 </div>
 <div>
