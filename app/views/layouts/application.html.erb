@@ -35,11 +35,7 @@
             <div class="col s4 offset-s1">
               <%= form_tag(page_path(:query), method: "get", class: "search-input") do %>
                 <div class="input-field">
-<<<<<<< HEAD
-                  <%#= search_field(:space, nil, placeholder: "Search") %>
-=======
                   <%= search_field(nil, :space, placeholder: "Search") %>
->>>>>>> 145f95d490d12149c2ea5779902f872a1ad7907f
                   <%= label_tag(:search) do %>
                     <i class="material-icons">search</i>
                   <% end  %>

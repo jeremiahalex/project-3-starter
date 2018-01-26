@@ -25,7 +25,7 @@ class SpacesController < ApplicationController
     new_space.save
 
     redirect_to root_path
-    # render json: params
+    # render json: new_space
   end
 
   def edit
