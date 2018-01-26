@@ -5,6 +5,8 @@ class SpacesController < ApplicationController
 
   def show
     @indiv_space = Space.find(params[:id])
+    @new_review = Review.new
+    @reviews = Review.where(space_id: params[:id]).order(:created_at).reverse
   end
 
   def new

@@ -4,4 +4,5 @@ class Space < ApplicationRecord
   belongs_to :user, dependent: :destroy
 
   has_many :products
+  has_many :reviews
 end

@@ -58,31 +58,23 @@
   </div>
 
   <div class="col s4">
-    <div class="border">
-      <h5>Write review</h5>
-      <%= form_tag(space_reviews_path(1)) do %>
+    <%= form_for(@new_review, url: space_reviews_path(@indiv_space.id), remote: true) do |f| %>
+      <div class="border">
+        <h5>Write review</h5>
         <div class="input-field">
-          <%= label_tag(:title, "Title") %>
-          <%= text_field_tag(:title) %>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
         </div>
         <div class="input-field">
-          <%= label_tag(:review, "Review") %>
-          <%= text_area_tag(:review, "", size: "50x6") %>
+          <%= f.label :review %>
+          <%= f.text_area :review %>
         </div>
-        <%= submit_tag("Submit", class: 'waves-effect waves-light btn') %>
-      <% end %>
-    </div>
+        <%= f.submit class: 'waves-effect waves-light btn' %>
+      </div>
+    <% end %>
 
-    <div class="border">
-      <h6>Title of review</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <h6>name</h6>
-    </div>
-
-    <div class="border">
-      <h6>Title of review</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <h6>name</h6>
+    <div class="review-list">
+      <%= render @reviews %>
     </div>
   </div>
 </div>
