@@ -15,26 +15,28 @@
 #   )
 # end
 #
-# 50.times do |index|
-#   new_space = Space.new
-#
-#   new_space.id = index + 1
-#   new_space.company_name = Faker::Company.name
-#   new_space.address = Faker::Address.street_address
-#   new_space.summary = Faker::Company.catch_phrase
-#   new_space.description = Faker::Company.bs
-#   new_space.contact = Faker::Company.australian_business_number
-#   new_space.image_url = Faker::Company.logo
-#   new_space.is_active = false
-#   new_space.category_id = Random.new.rand(1..10)
-#
-#   new_space.save
-# end
+10.times do |index|
+  new_space = Space.new
 
-10.times do
-  new_category = Category.new
+  new_space.company_name = Faker::Company.name
+  new_space.address = Faker::Address.street_address
+  new_space.summary = Faker::Company.catch_phrase
+  new_space.description = Faker::Company.bs
+  new_space.contact = Faker::Company.australian_business_number
+  # new_space.image_url = Faker::Company.logo
+  new_space.image_url = "/uploads/space/image_url/13/logo-placeholder.jpg"
+  new_space.is_active = false
+  new_space.category_id = Random.new.rand(1..10)
+  new_space.user_id = 1
+  new_space.website_id = 7
 
-  new_category.category_type = Faker::Commerce.department
-
-  new_category.save
+  new_space.save
 end
+
+# 10.times do
+#   new_category = Category.new
+#
+#   new_category.category_type = Faker::Commerce.department
+#
+#   new_category.save
+# end

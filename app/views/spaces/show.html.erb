@@ -26,12 +26,13 @@
       <p><%= @indiv_space.contact %></p>
 
       <h6>Website</h6>
-      <%= link_to @indiv_space.website_id, @indiv_space.website_id %>
+      <%= link_to @indiv_space.website.website, @indiv_space.website.website %>
 
       <h6>Social media</h6>
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-google"></a>
-      <a href="#" class="fa fa-linkedin"></a>
+      <a href="http://<%= @indiv_space.website.facebook %>" class="waves-effect waves-light btn"><i class="fa fa-facebook"></i></a>
+      <a href="http://<%= @indiv_space.website.instagram %>" class="waves-effect waves-light btn"><i class="fa fa-instagram"></i></a>
+      <a href="http://<%= @indiv_space.website.googleplus %>" class="waves-effect waves-light btn"><i class="fa fa-google"></i></a>
+      <a href="http://<%= @indiv_space.website.linkedin %>" class="waves-effect waves-light btn"><i class="fa fa-linkedin"></i></a>
     </div>
 
     <div>

@@ -8,24 +8,16 @@ class SpacesController < ApplicationController
   end
 
   def new
-    #code
     @space = Space.new
-    # @space_website = @space.website
   end
 
   def create
-
     new_space = Space.new(space_params)
     new_space.user = current_user || User.find(1)
     new_web = Website.create
     new_space.website = new_web
-    # render json: new_space
-
-    # new_space.website_id = new_web.id
     new_space.save
-
     redirect_to root_path
-    # render json: params
   end
 
   def edit
@@ -33,46 +25,28 @@ class SpacesController < ApplicationController
   end
 
   def update
-    #code
     @space = Space.find(params[:id])
     @space.update(space_params)
-    redirect_to user_path(params[:id])
-  end
-
-
-
-
-
-  def about
-    render html: 'update for company about fields'
+    redirect_to user_path(@space.user.id)
   end
 
   def website
     @website = Website.find(params[:id])
     @website.update(website_params)
-    redirect_to user_path(1)
-    # render html: 'update for websites'
+    redirect_to user_path(@website.space.user)
   end
-
-  def photo
-    render html: 'update for photo'
-  end
-
-
-
-
 
 
   private
 
+
 def space_params
-  params.require(:space).permit(:company_name, :summary, :category_id, :contact, :address, :description, :is_active)
+  params.require(:space).permit(:company_name, :summary, :category_id, :contact, :address, :description, :is_active, :image_url)
 end
 
 def website_params
   params.require(:website).permit(:website, :facebook, :instagram, :googleplus, :linkedin)
 end
-
 
 
 end

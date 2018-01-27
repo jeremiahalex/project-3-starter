@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def show
     #code
-    @space = Space.first
+    @space = User.find(params[:id]).space
     @website = @space.website
     @product = Product.new
-    @products = Space.find(13).products
+    @products = @space.products
+
+
   end
 
   def update
