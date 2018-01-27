@@ -5,6 +5,8 @@ class SpacesController < ApplicationController
 
   def show
     @indiv_space = Space.find(params[:id])
+    @new_review = Review.new
+    @reviews = Review.where(space_id: params[:id]).order(:created_at).reverse
   end
 
   def new
@@ -25,7 +27,7 @@ class SpacesController < ApplicationController
     new_space.save
 
     redirect_to root_path
-    # render json: params
+    # render json: new_space
   end
 
   def edit
