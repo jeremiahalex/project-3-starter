@@ -10,9 +10,6 @@
 
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <div class="navbar-fixed">
       <nav class="teal darken-2">
         <div class="nav-wrapper">
@@ -46,7 +43,7 @@
 
             <div class="col s2 offset-s3">
               <% if current_user  %>
-                <%= link_to "Profile", user_path(1) %>
+                <%= link_to "Profile", user_path(current_user.id) %>
 
                 <% unless current_user.is_owner %>
                   <%= link_to "Create", new_space_path %>
@@ -57,7 +54,7 @@
                 <% end  %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
-                
+
               <% else  %>
                 <%= link_to "Login", new_user_session_path %>
                 <%= link_to "Signup", user_registration_path %>
@@ -77,6 +74,9 @@
         </div>
       </nav>
     </div>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
