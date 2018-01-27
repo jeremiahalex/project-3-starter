@@ -1,0 +1,9 @@
+<div class="col s12">
+  <div class="col s4">
+    <%= image_tag(product.image_url.url, alt: 'Image', class: 'responsive-img') if product.image_url? %>
+  </div>
+  <div class="col s8">
+    <h6><%= product.title %></h6>
+    <p><%= product.description %></p>
+  </div>
+</div>

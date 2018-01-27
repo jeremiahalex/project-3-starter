@@ -2,7 +2,7 @@
   <div class="col s8 offset-s2">
     <div class="profile">
       <h4>Firstname lastname</h4>
-      <img src="https://picsum.photos/600/300/?image=30">
+      <%= image_tag(@space.image_url, alt: 'Image', class: 'img-size') %>
       <a class="waves-effect waves-light btn">
         <i class="material-icons left">message</i>Message</a>
     </div>
@@ -21,14 +21,15 @@
       <li class="tab col s12">
         <a href="#space-websites">Websites</a>
       </li>
-      <li class="tab col s12">
+      <!-- <li class="tab col s12">
         <a href="#space-photo">photo</a>
-      </li>
+      </li> -->
       <li class="tab col s12">
         <a href="#space-products">Products</a>
       </li>
     </ul>
-    <%= link_to "View listing", space_path(1), class: 'waves-effect waves-light btn' %>
+
+    <%= link_to "View listing", space_path(@space), class: 'waves-effect waves-light btn' %>
   </div>
 
   <div id="space-bookmark" class="col s9">
@@ -97,58 +98,48 @@
   <% end %>
 </div>
 
-<div id="space-photo" class="col s9">
-<%= form_tag(photo_path(1), multipart: true) do %>
-<%= file_field_tag :image_url %>
-<%= submit_tag("Save") %>
-<% end %>
-<div class="col s6">
-<img src="https://picsum.photos/300/300/?image=24">
-</div>
-</div>
+<!-- === for upload of logo === -->
+<!-- <div id="space-photo" class="col s9">
+  <%#= form_for @space do |f| %>
+    <div>
+      <%#= f.label :image_url %>
+      <%#= f.file_field :image_url %>
+    </div>
+    <%#= f.submit %>
+  <%# end %>
+</div> -->
+
+
 
 <div id="space-products" class="col s9">
-<div>
-<%= form_tag(product_path(1), multipart: true) do %>
-<%= file_field_tag :image_url %>
-</div>
-<div>
-<%= label_tag :title %>
-<%= text_field_tag :title, nil, placeholder: 'Title' %>
-</div>
-<div>
-<%= label_tag :description %>
-<%= text_area_tag :business_descriptions, nil, placeholder: "something" %>
-</div>
-<%= submit_tag("Save") %>
-<% end %>
 
-<div class="row">
-<div class="col s6">
-<img src="https://picsum.photos/300/300/?image=24">
-<h5>Title</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-<div class="col s6">
-<img src="https://picsum.photos/300/300/?image=25">
-<h5>Title</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-<div class="col s6">
-<img src="https://picsum.photos/300/300/?image=26">
-<h5>Title</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-<div class="col s6">
-<img src="https://picsum.photos/300/300/?image=26">
-<h5>Title</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-</div>
-</div>
 
+  <%= form_for @product, url: space_products_path(params[:id]) do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.label :image_url %>
+      <%= f.file_field :image_url %>
+    </div>
+    <%= f.hidden_field(:space_id, value: @space.id) %>
+    <%= f.submit %>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+</div>
 </div>
