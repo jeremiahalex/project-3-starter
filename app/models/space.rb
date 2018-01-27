@@ -5,4 +5,5 @@ class Space < ApplicationRecord
 
   has_many :products
   has_many :reviews
+  has_many :bookmarks
 end
