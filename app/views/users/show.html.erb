@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s8 offset-s2">
     <div class="profile">
-      <h4>Firstname lastname</h4>
+      <h4><%= @space.user.first_name %> <%= @space.user.last_name %></h4>
       <%= image_tag(@space.image_url, alt: 'Image', class: 'img-size') %>
       <a class="waves-effect waves-light btn">
         <i class="material-icons left">message</i>Message</a>

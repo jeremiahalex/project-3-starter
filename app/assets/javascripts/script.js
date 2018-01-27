@@ -16,4 +16,7 @@ $(document).on("turbolinks:load", function() {
   $(".bookmark").on("click", function() {
     $(".bookmark").addClass("disabled");
   });
+
+$(".notice, .alert").delay(3000).fadeOut(2000);
+
 });

@@ -13,4 +13,9 @@ class UsersController < ApplicationController
     #code
   end
 
+  def admin
+    @admin = User.find(2)
+    @spaces = Space.where(is_active: false)
+  end
+
 end

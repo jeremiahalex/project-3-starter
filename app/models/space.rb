@@ -1,7 +1,7 @@
 class Space < ApplicationRecord
-  belongs_to :category, dependent: :destroy
+  belongs_to :category
   belongs_to :website, dependent: :destroy
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
 
   has_many :bookmarks
   has_many :reviews
