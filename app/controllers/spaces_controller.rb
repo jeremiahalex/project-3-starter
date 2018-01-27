@@ -20,10 +20,7 @@ class SpacesController < ApplicationController
     new_space.website = new_web
     new_space.save
     redirect_to root_path
-<<<<<<< HEAD
     # render json: new_space
-=======
->>>>>>> dev
   end
 
   def edit
