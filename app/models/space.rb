@@ -8,6 +8,6 @@ class Space < ApplicationRecord
   has_many :reviews
   has_many :products
 
-  mount_uploader :image_url, ImageUploader
+  # mount_uploader :image_url, ImageUploader
 
 end

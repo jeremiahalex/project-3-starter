@@ -2,7 +2,7 @@
   <div class="col s8 offset-s2">
     <div class="profile">
       <h4>Firstname lastname</h4>
-      <%= image_tag(@space.image_url.url, alt: 'Image', class: 'img-size')if @space.image_url? %>
+      <%= image_tag(@space.image_url, alt: 'Image', class: 'img-size') %>
       <a class="waves-effect waves-light btn">
         <i class="material-icons left">message</i>Message</a>
     </div>
@@ -21,9 +21,9 @@
       <li class="tab col s12">
         <a href="#space-websites">Websites</a>
       </li>
-      <li class="tab col s12">
+      <!-- <li class="tab col s12">
         <a href="#space-photo">photo</a>
-      </li>
+      </li> -->
       <li class="tab col s12">
         <a href="#space-products">Products</a>
       </li>
@@ -125,15 +125,16 @@
   <% end %>
 </div>
 
-<div id="space-photo" class="col s9">
-  <%= form_for @space do |f| %>
+<!-- === for upload of logo === -->
+<!-- <div id="space-photo" class="col s9">
+  <%#= form_for @space do |f| %>
     <div>
-      <%= f.label :image_url %>
-      <%= f.file_field :image_url %>
+      <%#= f.label :image_url %>
+      <%#= f.file_field :image_url %>
     </div>
-    <%= f.submit %>
-  <% end %>
-</div>
+    <%#= f.submit %>
+  <%# end %>
+</div> -->
 
 
 
@@ -157,21 +158,7 @@
     <%= f.submit %>
   <% end %>
 
-  <div class="row product-list">
-  <% @products.each do |item| %>
-<div class="col s6">
-  <div class="card">
-    <div class="card-image">
-      <%= image_tag(item.image_url.url, alt: 'Image', class: 'img-size') if item.image_url? %>
-    </div>
-    <div class="card-content">
-      <h4><%= item.title %></h4>
-      <p><%= item.description %></p>
-      </div>
-  </div>
-</div>
-  <% end %>
-</div>
+
 
 
 

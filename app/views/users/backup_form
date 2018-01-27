@@ -31,6 +31,8 @@
 <% end %>
 
 
+
+
 # website
 <!-- <%= form_for @space do %>
 <div>
@@ -55,3 +57,24 @@
 </div>
 <%= f.submit("Save") %>
 <% end %> -->
+
+
+
+
+
+# product list
+<div class="row product-list">
+<% @products.each do |item| %>
+<div class="col s6">
+<div class="card">
+  <div class="card-image">
+    <%= image_tag(item.image_url.url, alt: 'Image', class: 'img-size') if item.image_url? %>
+  </div>
+  <div class="card-content">
+    <h4><%= item.title %></h4>
+    <p><%= item.description %></p>
+    </div>
+</div>
+</div>
+<% end %>
+</div>
