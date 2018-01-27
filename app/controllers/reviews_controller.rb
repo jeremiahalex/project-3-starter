@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @new_review.title = params[:review][:title]
     @new_review.review = params[:review][:review]
     @new_review.space_id = params[:space_id]
-    @new_review.user_id = 1
+    @new_review.user_id = current_user.id
     @new_review.save
     # render json: params
 

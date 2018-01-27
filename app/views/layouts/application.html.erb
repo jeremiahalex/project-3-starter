@@ -44,7 +44,24 @@
             </div>
 
 
-            <div class="col s3 offset-s1">
+            <div class="col s2 offset-s3">
+              <% if current_user  %>
+                <%= link_to "Profile", user_path(1) %>
+
+                <% unless current_user.is_owner %>
+                  <%= link_to "Create", new_space_path %>
+                <% end  %>
+
+                <% if current_user.is_admin  %>
+                  <%= link_to "Admin Approval", "#" %>
+                <% end  %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+                
+              <% else  %>
+                <%= link_to "Login", new_user_session_path %>
+                <%= link_to "Signup", user_registration_path %>
+              <% end  %>
               <%#= link_to "Profile", user_path(1), class: "waves-effect waves-light btn" %>
               <%#= link_to "Dashboard", user_path(1), class: "waves-effect waves-light btn" %>
               <%#= link_to "Create business listing", new_space_path, class: "waves-effect waves-light btn" %>
@@ -53,13 +70,8 @@
               <%#= link_to "Signup", user_registration_path, class: "waves-effect waves-light btn" %>
               <%#= link_to "Logout", destroy_user_session_path, class: "waves-effect waves-light btn", method: :delete %>
 
-              <%= link_to "Profile", user_path(1) %>
-              <%#= link_to "Dashboard", user_path(1) %>
-              <%= link_to "Create", new_space_path %>
 
-              <%= link_to "Login", new_user_session_path %>
-              <%= link_to "Signup", user_registration_path %>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              <%#= link_to "Dashboard", user_path(1) %>
             </div>
           </div>
         </div>
