@@ -25,11 +25,11 @@
 #   new_space.description = Faker::Company.bs
 #   new_space.contact = Faker::Company.australian_business_number
 #   new_space.image_url = Faker::Company.logo
-#   new_space.is_active = false
+#   new_space.is_active = true
 #   new_space.category_id = Random.new.rand(1..10)
 #   new_space.user_id = 1
 #   new_space.website_id = 1
-#
+# 
 #   new_space.save
 # end
 #

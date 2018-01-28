@@ -9,4 +9,7 @@ class Space < ApplicationRecord
 
   # mount_uploader :image_url, ImageUploader
 
+  validates :company_name, :summary, :category_id, :contact, :address, :description, presence: true
+  validates :contact, numericality: true
+
 end

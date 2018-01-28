@@ -45,7 +45,7 @@
               <% if current_user  %>
                 <%= link_to "Profile", user_path(current_user.id) %>
 
-                <% unless current_user.is_owner %>
+                <% unless current_user.space %>
                   <%= link_to "Create", new_space_path %>
                 <% end  %>
 

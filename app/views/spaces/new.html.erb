@@ -2,7 +2,18 @@
   <div class="col s8 offset-s2">
     <h4>Sign up your page</h4>
 
-    <%= form_for @space, url: {action: "create"} do |f| %>
+    <%= form_for @new_space, url: {action: "create"} do |f| %>
+    <% if @new_space.errors.any? %>
+      <div>
+        <h2><%= pluralize(@new_space.errors.count, "error") %> prohibited this form from being submitted:</h2>
+        <ul>
+          <% @new_space.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div>
       <%= f.label :company_name %>
       <%= f.text_field :company_name, placeholder: 'Company name' %>

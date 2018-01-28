@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def show
     @query = params[:space]
-    @spaces = Space.where("company_name ILIKE ?", "%#{@query}%")
+    @spaces = Space.where("company_name ILIKE ? AND is_active = ?", "%#{@query}%", true)
   end
 
 end

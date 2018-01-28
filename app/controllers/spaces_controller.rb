@@ -10,17 +10,22 @@ class SpacesController < ApplicationController
   end
 
   def new
-    @space = Space.new
+    @new_space = Space.new
   end
 
   def create
-    new_space = Space.new(space_params)
-    new_space.user = current_user || User.find(1)
+    @new_space = Space.new(space_params)
+    @new_space.user = current_user || User.find(1)
     new_web = Website.create
-    new_space.website = new_web
-    new_space.save
-    redirect_to root_path
-    # render json: new_space
+    @new_space.website = new_web
+    @new_space.save
+
+    if @new_space.errors.any?
+      render "new"
+      @new_space = Space.new
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
