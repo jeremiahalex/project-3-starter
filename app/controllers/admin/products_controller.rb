@@ -22,7 +22,7 @@ module Admin
         @new_product = Product.create(product_params)
         render html: "Added to database"
       else
-        render html: "Serial number is a duplicate"
+        render html: "Entry exists in database"
       end
     end
 
