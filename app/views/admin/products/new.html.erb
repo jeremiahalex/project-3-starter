@@ -1,2 +1,47 @@
 <%= render "admin/admin_nav"%>
-<h1>New Product</h1>
+<div class="container">
+  <div class="row">
+    <div class="input-field col s12 m10 offset-m1">
+      <h4>Create New Product</h4>
+    </div>
+  </div>
+
+  <%= form_for @new_product, url: admin_products_path, html: { method: "post"} do |f| %>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-list-alt prefix" aria-hidden="true"></i>
+        <%= f.text_field :product_name, class: "validate", required: "required", autofocus: true %>
+        <label for="product_name" data-error="Please enter the product name">Product Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-tag prefix" aria-hidden="true"></i>
+        <%= f.text_field :model_no, class: "validate", required: "required" %>
+        <label for="model_no" data-error="Please enter the model number">Model Number</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-barcode prefix" aria-hidden="true"></i>
+        <%= f.text_field :serial_no, class: "validate", required: "required" %>
+        <label for="serial_no" data-error="Please enter the model number">Serial Number</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-calendar-check-o prefix" aria-hidden="true"></i>
+        <%= f.text_field :warranty_in_months, class: "validate", required: "required" %>
+        <label for="product_name" data-error="Please enter the warranty period in months">Warranty (Months)</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <button class="btn waves-effect waves-light green" type="submit" name="action">
+          <i class="fa fa-check-square-o fa-fw" aria-hidden="true"></i>
+          Create New Product
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -9,4 +9,16 @@ class ApplicationController < ActionController::Base
       account_index_path
     end
   end
+
+  # Allow additional fields to go through devise
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+    def configure_permitted_parameters
+      # Allow :first_name and :last_name in the edit_account_registration to be updated
+      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :current_password])
+      # Allow :first_name and :last_name in the new_account_registration to be updated
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password])
+    end
 end

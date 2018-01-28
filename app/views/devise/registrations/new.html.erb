@@ -3,7 +3,13 @@
     <div class="input-field col s12 m10 offset-m1">
       <h4 class="header">Create an account</h4>
     </div>
-    <%= devise_error_messages! %>
+
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <%= devise_error_messages! %>
+      </div>
+    </div>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
       <div class="row">
