@@ -278,5 +278,12 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   # OmniAuth for Facebook
-  config.omniauth :facebook, Rails.application.secrets.FACEBOOK_APP_ID, Rails.application.secrets.FACEBOOK_APP_SECRET, scope: 'email, public_profile', display: 'popup'
+  config.omniauth :facebook, Rails.application.secrets.FACEBOOK_APP_ID,
+                  Rails.application.secrets.FACEBOOK_APP_SECRET,
+                  scope: 'public_profile,email',
+                  info_fields: 'email,first_name,last_name',
+                  client_options: {
+                    site: 'https://graph.facebook.com/v2.11',
+                    authorize_url: 'https://www.facebook.com/v2.11/dialog/oauth'
+                  }
 end
