@@ -35,7 +35,17 @@ class SpacesController < ApplicationController
   def update
     @space = Space.find(params[:id])
     @space.update(space_params)
-    redirect_to user_path(@space.user.id)
+    # === admin scenario ===
+    redirect_to admin_path(2)
+    # redirect_to user_path(@space.user.id)
+  end
+
+  def destroy
+    @space = Space.find(params[:id])
+    @space.destroy
+    @space.website.destroy
+    # === admin scenario ===
+    redirect_to admin_path(2)
   end
 
   def website

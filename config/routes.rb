@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch '/spaces/:id/website', to: 'spaces#website', as: 'website'
   post '/spaces/:id/photo', to: 'spaces#photo', as: 'photo'
   # post '/spaces/:id/product', to: 'spaces#product', as: 'product'
+  get '/users/:id/admin', to: 'users#admin', as: 'admin'
 
 
   resources :spaces do

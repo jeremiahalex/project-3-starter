@@ -15,7 +15,7 @@
         <div class="nav-wrapper">
           <div class="row">
             <div class="col s1 logo">
-              <%= link_to "Logo", root_path, class: 'brand-logo' %>
+              <%= link_to "Logo", root_path, class: 'brand-logo-cus' %>
             </div>
 
             <div class="col s1">
@@ -41,16 +41,17 @@
             </div>
 
 
-            <div class="col s2 offset-s3">
-              <% if current_user  %>
-                <%= link_to "Profile", user_path(current_user.id) %>
+            <div class="col s2 offset-s3 menu-list">
+              <% if current_user %>
+                <%= link_to "Profile", user_path(current_user) %>
 
                 <% unless current_user.space %>
                   <%= link_to "Create", new_space_path %>
                 <% end  %>
 
                 <% if current_user.is_admin  %>
-                  <%= link_to "Admin Approval", "#" %>
+                <!-- === need to chage for admin === -->
+                  <%= link_to "Admin", admin_path(current_user) %>
                 <% end  %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
@@ -66,6 +67,8 @@
               <%#= link_to "Login", new_user_session_path, class: "waves-effect waves-light btn" %>
               <%#= link_to "Signup", user_registration_path, class: "waves-effect waves-light btn" %>
               <%#= link_to "Logout", destroy_user_session_path, class: "waves-effect waves-light btn", method: :delete %>
+
+              <!-- <%= link_to "Profile", user_path(1) %> -->
 
 
               <%#= link_to "Dashboard", user_path(1) %>

@@ -91,3 +91,26 @@ ul.tabs .indicator {
 .img-size {
   width: 400px;
 }
+
+.admin-list {
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.notice, .alert {
+  position: absolute;
+  z-index: 10000;
+  margin: 30px 0 0 30px;
+  background-color: whitesmoke;
+}
+
+.menu-list a {
+  color: black;
+}
+
+.brand-logo-cus {
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
