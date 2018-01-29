@@ -33,19 +33,30 @@ class SpacesController < ApplicationController
   end
 
   def update
+    # from users/admin.html.erb
     @space = Space.find(params[:id])
     @space.update(space_params)
-    # === admin scenario ===
-    redirect_to admin_path(2)
-    # redirect_to user_path(@space.user.id)
+
+    if current_user.is_admin
+      # === admin scenario ===
+      @space.user.is_owner = true
+      @space.user.save
+      redirect_to admin_path(current_user.id)
+    else
+      # === business owner scenario ===
+      redirect_to user_path(current_user.id)
+    end
+    # render json: current_user
+    
   end
 
   def destroy
+    # from users/admin.html.erb
     @space = Space.find(params[:id])
     @space.destroy
     @space.website.destroy
     # === admin scenario ===
-    redirect_to admin_path(2)
+    redirect_to admin_path(current_user.id)
   end
 
   def website
