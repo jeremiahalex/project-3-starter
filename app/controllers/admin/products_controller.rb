@@ -3,8 +3,10 @@ require 'rqrcode'
 module Admin
   class ProductsController < ApplicationController
     before_action :is_admin?
+
     def index
-      # Show new product
+      # Show all product
+      @listings = Product.all
     end
 
     def new
@@ -13,7 +15,7 @@ module Admin
     end
 
     def create
-      # Prevent duplicates in Products table
+      # Prevent duplicates in Products table by checking for existence of exact match before creating
       unless Product.where(
         "product_name = ? AND model_no = ? AND serial_no = ?",
         product_params[:product_name],
@@ -38,7 +40,7 @@ module Admin
       @product = Product.find(params[:id])
 
       if @product.update(product_params)
-        redirect_to admin_product_path(@product.id), :notice => "Product has been updated"
+        redirect_to admin_product_path(@product.id), :notice => "Product updated"
       else
         render 'edit'
       end
@@ -47,12 +49,20 @@ module Admin
     def show
       @product = Product.find(params[:id])
       # Get serial number
-      @psn = @product.serial_no
       @url = 'https://warranted.herokuapp.com'
+      @psn = @product.serial_no
+
       # Generate QR code of URL with serial number as parameter
       @qrcode = RQRCode::QRCode.new(@url + "?psn=#{@psn}")
 
       @svg = @qrcode.as_svg(offset: 0, color: '000', shape_rendering: 'crispEdges', module_size: 10, preserveAspectRatio: "xMidYMid meet", height: 1000, width: 1000, viewbox: "0 0 1000 1000")
+    end
+
+    def destroy
+      @destroy_product = Product.find(params[:id])
+      @destroy_product.destroy
+
+      redirect_to admin_products_path, :alert => "Product deleted"
     end
 
     private

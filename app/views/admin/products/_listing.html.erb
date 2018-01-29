@@ -1,0 +1,12 @@
+<tr>
+  <td><%= listing.product_name %></td>
+  <td><%= listing.model_no %></td>
+  <td><%= listing.serial_no %></td>
+  <td class="center-align"><%= listing.warranty_in_months %></td>
+  <td class="center-align">
+    <%= link_to fa_icon("pencil", text: ""), edit_admin_product_path(listing.id), class: " waves-effect waves-light waves-light" %>
+  </td>
+  <td class="center-align">
+    <%= link_to fa_icon("search-plus", text: ""), admin_product_path(listing.id), class: "waves-effect waves-light waves-light" %>
+  </td>
+</tr>
