@@ -21,8 +21,9 @@ class SpacesController < ApplicationController
     @new_space.save
 
     if @new_space.errors.any?
-      render "new"
+      render "spaces/new"
       @new_space = Space.new
+
     else
       redirect_to root_path
     end
@@ -47,7 +48,7 @@ class SpacesController < ApplicationController
       redirect_to user_path(current_user.id)
     end
     # render json: current_user
-    
+
   end
 
   def destroy

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id/admin', to: 'users#admin', as: 'admin'
 
 
-  resources :spaces do
+  resources :spaces, except: :index do
     resources :bookmarks, only: [:create, :destroy]
     resources :reviews, only: [:create, :destroy]
     resources :products, only: [:create, :destroy]

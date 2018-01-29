@@ -57,7 +57,7 @@
       </div>
       <div>
         <%= f.label :category %>
-        <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }, class: "browser-default") %>
+        <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }) %>
       </div>
       <div>
         <%= f.label :contact %>
