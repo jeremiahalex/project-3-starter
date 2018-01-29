@@ -6,7 +6,7 @@ class CreateSpaces < ActiveRecord::Migration[5.1]
       t.text :summary
       t.text :description
       t.string :contact
-      t.string :image
+      t.string :image_url
       t.boolean :is_active
 
       t.timestamps

@@ -11,7 +11,6 @@ class SpacesController < ApplicationController
 
   def new
     @new_space = Space.new
-
   end
 
   def create
