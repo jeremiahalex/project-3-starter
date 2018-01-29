@@ -22,10 +22,9 @@
               <%= link_to 'Categories', "#", class: "dropdown-button btn", "data-beloworigin": true, "data-activates": 'dropdown1' %>
 
               <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#">one</a></li>
-                <li><a href="#">two</a></li>
-                <li><a href="#">three</a></li>
-                <li><a href="#"><i class="material-icons">view_module</i>four</a></li>
+                <% @category.each do |cat| %>
+                  <li><a href="#"><%= cat.category_type %></a></li>
+                <% end %>
               </ul>
             </div>
 
@@ -37,7 +36,6 @@
                 </div>
               <% end %>
             </div>
-
 
             <div class="col s2 offset-s3 menu-list">
               <% if current_user %>

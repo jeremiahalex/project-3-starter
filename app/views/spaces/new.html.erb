@@ -27,7 +27,7 @@
       <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }, class: "browser-default") %>
 
       <%#= f.select "category_id", options_from_collection_for_select(Category.all, "id", "category_type"), class: "browser-default" %>
-      <%= f.collection_select(:category_id, Category.all, :id, :category_type) %>
+      <%#= f.collection_select(:category_id, Category.all, :id, :category_type) %>
     </div>
     <div>
       <%= f.label :contact %>

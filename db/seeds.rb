@@ -29,15 +29,14 @@
 #   new_space.category_id = Random.new.rand(1..10)
 #   new_space.user_id = 1
 #   new_space.website_id = 1
-# 
+#
 #   new_space.save
 # end
 #
 # category seed
-# 10.times do
-#   new_category = Category.new
-#
-#   new_category.category_type = Faker::Commerce.department
-#
-#   new_category.save
-# end
+category_array = ["Electronic", "Food & Beverage", "Jewelry & Watches", "Apparel & Accessories", "Furniture", "Handicraft", "Toys & Hobbies", "Home & Garden", "Gift", "Others"]
+10.times.each do |index|
+  new_category = Category.new
+  new_category.category_type = category_array[index]
+  new_category.save
+end
