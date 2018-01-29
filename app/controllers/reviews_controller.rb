@@ -4,9 +4,13 @@ class ReviewsController < ApplicationController
     @new_review.title = params[:review][:title]
     @new_review.review = params[:review][:review]
     @new_review.space_id = params[:space_id]
-    @new_review.user_id = current_user.id
+    if current_user
+      @new_review.user_id = current_user.id
+    else
+      @new_review.user_id = 0
+    end
     @new_review.save
-    # render json: params
+    # render json: @new_review
 
     respond_to do |format|
       format.js
