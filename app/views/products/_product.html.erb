@@ -7,3 +7,9 @@
     <p><%= product.description %></p>
   </div>
 </div>
+
+<% if product.space.user == current_user %>
+  <%= form_for product, url: space_product_path(product.space, product), method: :delete do |f| %>
+    <%= f.submit("Remove", class: "waves-effect waves-light btn") %>
+  <% end %>
+<% end %>

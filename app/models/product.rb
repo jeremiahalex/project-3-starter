@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :space, dependent: :destroy
+  belongs_to :space
 
   mount_uploader :image_url, ImageUploader
 

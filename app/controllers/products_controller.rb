@@ -7,6 +7,13 @@ class ProductsController < ApplicationController
 
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    # === admin scenario ===
+    redirect_to space_path(params[:space_id])
+  end
+
 
 
 private

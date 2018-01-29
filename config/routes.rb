@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :spaces do
     resources :bookmarks, only: [:create, :destroy]
     resources :reviews, only: [:create, :destroy]
-    resources :products, only: [:create]
+    resources :products, only: [:create, :destroy]
 
   end
   # resources :websites, only: [:create, :update]
