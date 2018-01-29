@@ -29,7 +29,7 @@
 #   new_space.category_id = Random.new.rand(1..10)
 #   new_space.user_id = 1
 #   new_space.website_id = 1
-# 
+#
 #   new_space.save
 # end
 #
