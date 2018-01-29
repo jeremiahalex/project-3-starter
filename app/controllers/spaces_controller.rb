@@ -18,7 +18,7 @@ class SpacesController < ApplicationController
     @new_space.user = current_user || User.find(1)
     new_web = Website.create
     @new_space.website = new_web
-
+    @new_space.save
 
     if @new_space.errors.any?
       error_array = []
@@ -29,7 +29,6 @@ class SpacesController < ApplicationController
       redirect_to new_space_path
 
     else
-      @new_space.save
       redirect_to root_path
     end
   end
