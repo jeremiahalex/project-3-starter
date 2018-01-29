@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180125085019) do
     t.integer "warranty_in_months"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["serial_no"], name: "index_products_on_serial_no", unique: true
   end
 
   create_table "tickets", force: :cascade do |t|

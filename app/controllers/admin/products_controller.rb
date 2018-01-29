@@ -2,6 +2,7 @@ require 'rqrcode'
 # products_controller.rb
 module Admin
   class ProductsController < ApplicationController
+    before_action :is_admin?
     def index
       # Show new product
     end

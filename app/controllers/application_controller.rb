@@ -21,4 +21,9 @@ class ApplicationController < ActionController::Base
       # Allow :first_name and :last_name in the new_account_registration to be updated
       devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password])
     end
+
+  private
+    def is_admin?
+      redirect_to root_path, :alert => "Not allowed to access this page" if ! (account_signed_in? && current_account.is_admin?)
+    end
 end

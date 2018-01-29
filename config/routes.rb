@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # ========== Routing for index ==========
   root 'index#index'
   # ========== Routing for warranty ==========
-  get '/warranty/register', to: 'warranty#register'
+  get '/warranty/register', to: 'warranty#new'
+  post '/warranty/register', to: 'warranty#create'
+  # resources :warranty, only: [:new, :create]
   # ========== Routing for account ==========
   resources :account, only: [:index]
   devise_for :accounts, path: 'account', path_names:
