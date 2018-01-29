@@ -66,3 +66,5 @@ gem 'pry-rails'
 gem 'devise'
 # Facebook Omniauth
 gem 'omniauth-facebook'
+# rQRCode
+gem 'rqrcode'

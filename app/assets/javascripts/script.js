@@ -5,6 +5,6 @@ $(document).on('turbolinks:load',function() {
 
 $(document).ready(function() {
   if (!$('label').val()) {
-    $('label').addClass("active");
+    $('label').addClass('active');
   }
 })
