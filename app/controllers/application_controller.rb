@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permit, if: :devise_controller?
+  before_action :category
+
+  def category
+    @category = Category.all
+  end
 
   protected
 

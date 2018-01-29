@@ -57,7 +57,7 @@
       </div>
       <div>
         <%= f.label :category %>
-        <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }, class: "browser-default") %>
+        <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }) %>
       </div>
       <div>
         <%= f.label :contact %>
@@ -71,8 +71,7 @@
         <%= f.label :description %>
         <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
       </div>
-      <%= f.hidden_field(:is_active, value: false) %>
-      <%= f.submit("Create new listing", class: "waves-effect waves-light btn") %>
+      <%= f.submit("Update", class: "waves-effect waves-light btn") %>
       <% end %>
     </div>
 
