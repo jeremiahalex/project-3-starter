@@ -11,6 +11,7 @@ class SpacesController < ApplicationController
 
   def new
     @new_space = Space.new
+
   end
 
   def create
@@ -21,8 +22,12 @@ class SpacesController < ApplicationController
     @new_space.save
 
     if @new_space.errors.any?
-      render "spaces/new"
-      @new_space = Space.new
+      error_array = []
+      @new_space.errors.each do |key, value|
+        error_array.push("#{key} #{value}")
+      end
+      flash[:alert] = error_array
+      redirect_to new_space_path
 
     else
       redirect_to root_path
