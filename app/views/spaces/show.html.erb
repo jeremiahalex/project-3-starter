@@ -7,10 +7,13 @@
     <p><%= @indiv_space.category.category_type %></p>
     <p><%= @indiv_space.summary %></p>
     <a class="waves-effect waves-light btn"><i class="material-icons left">share</i>Share</a>
-    <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
-      <i class="material-icons left">bookmark</i>Bookmark
+
+    <% if current_user %>
+      <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
+        <i class="material-icons left">bookmark</i>Bookmark
+      <% end %>
+      <a class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
     <% end %>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
   </div>
 </div>
 
@@ -27,14 +30,27 @@
       <h6>Contact</h6>
       <p><%= @indiv_space.contact %></p>
 
-      <h6>Website</h6>
-      <%= link_to @indiv_space.website.website, "http://#{@indiv_space.website.website}" %>
+      <% if @indiv_space.website.website %>
+        <h6>Website</h6>
+        <%= link_to @indiv_space.website.website, "http://#{@indiv_space.website.website}" %>
+      <% end %>
 
-      <h6>Social media</h6>
-      <a href="http://<%= @indiv_space.website.facebook %>" class="waves-effect waves-light btn"><i class="fa fa-facebook"></i></a>
-      <a href="http://<%= @indiv_space.website.instagram %>" class="waves-effect waves-light btn"><i class="fa fa-instagram"></i></a>
-      <a href="http://<%= @indiv_space.website.googleplus %>" class="waves-effect waves-light btn"><i class="fa fa-google"></i></a>
-      <a href="http://<%= @indiv_space.website.linkedin %>" class="waves-effect waves-light btn"><i class="fa fa-linkedin"></i></a>
+      <% if @indiv_space.website.facebook || @indiv_space.website.instagram || @indiv_space.website.googleplus || @indiv_space.website.linkedin %>
+        <h6>Social media</h6>
+      <% end %>
+      
+      <% if @indiv_space.website.facebook %>
+        <a href="http://<%= @indiv_space.website.facebook %>" class="waves-effect waves-light btn"><i class="fa fa-facebook"></i></a>
+      <% end %>
+      <% if @indiv_space.website.instagram %>
+        <a href="http://<%= @indiv_space.website.instagram %>" class="waves-effect waves-light btn"><i class="fa fa-instagram"></i></a>
+      <% end %>
+      <% if @indiv_space.website.googleplus %>
+        <a href="http://<%= @indiv_space.website.googleplus %>" class="waves-effect waves-light btn"><i class="fa fa-google"></i></a>
+      <% end %>
+      <% if @indiv_space.website.linkedin %>
+        <a href="http://<%= @indiv_space.website.linkedin %>" class="waves-effect waves-light btn"><i class="fa fa-linkedin"></i></a>
+      <% end %>
     </div>
 
 <%= render @indiv_space.products %>

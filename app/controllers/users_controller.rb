@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     # @space = Space.find(13)
     @space = User.find(params[:id]).space
     @website = @space.website if @space
-    @bookmarks = Bookmark.where(user_id: current_user.id) # to be changed after login / logout done
+    @bookmarks = Bookmark.where(user_id: current_user.id) 
     @product = Product.new
     @products = @space.products if @space
   end
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def admin
-    @admin = User.find(2)
+    @admin = User.find(current_user.id)
     @spaces = Space.where(is_active: false)
   end
 
