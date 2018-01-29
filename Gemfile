@@ -66,6 +66,6 @@ gem 'faker'
 
 gem 'carrierwave', '~> 1.0'
 
-# gem 'cloudinary'
+gem 'cloudinary'
 
 gem 'figaro'
