@@ -27,7 +27,7 @@ module Admin
         # render html: "Added to database"
         redirect_to admin_product_path(@new_product.id), :notice => "Product added to database"
       else
-        # render html: "Entry exists in database"
+        flash[:alert] = "Unable to add to database"
         render 'create'
       end
     end
@@ -39,10 +39,17 @@ module Admin
     def update
       @product = Product.find(params[:id])
 
-      if @product.update(product_params)
+      unless Product.where(
+        "product_name = ? AND model_no = ? AND serial_no = ?",
+        product_params[:product_name],
+        product_params[:model_no],
+        product_params[:serial_no]
+      ).count > 0
+        @product.update(product_params)
         redirect_to admin_product_path(@product.id), :notice => "Product updated"
       else
-        render 'edit'
+          flash[:alert] = "Entry exists in database"
+          render 'edit'
       end
     end
 
@@ -60,9 +67,12 @@ module Admin
 
     def destroy
       @destroy_product = Product.find(params[:id])
-      @destroy_product.destroy
-
-      redirect_to admin_products_path, :alert => "Product deleted"
+      if @destroy_product.destroy
+        redirect_to admin_products_path, :alert => "Product deleted"
+      else
+        flash[:alert] = "Unable to delete from database"
+        render 'show'
+      end
     end
 
     private
