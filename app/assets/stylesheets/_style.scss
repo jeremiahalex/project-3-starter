@@ -114,3 +114,9 @@ ul.tabs .indicator {
   font-size: 2.1rem;
   padding: 0;
 }
+
+#conversation-body {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 2em;
+}

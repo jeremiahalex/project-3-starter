@@ -18,4 +18,9 @@ class UsersController < ApplicationController
     @spaces = Space.where(is_active: false)
   end
 
+# might or might not need
+  def index
+  @users = User.all
+end
+
 end

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
   # resources :websites, only: [:create, :update]
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show, :update, :index]
 
   devise_for :users,
   path: '',
@@ -33,6 +33,11 @@ Rails.application.routes.draw do
     registration: 'register',
     sign_up: ''
   }
+
+  # resources :users, only: [:index]
+  resources :personal_messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show]
+  # root 'conversations#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

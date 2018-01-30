@@ -16,4 +16,5 @@
 //= require jquery3
 //= require jquery_ujs
 //= require materialize
+//= require conversations
 //= require_tree .
