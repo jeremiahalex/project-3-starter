@@ -19,13 +19,13 @@ class WarrantyController < ApplicationController
   end
 
   def create
-    @new_warranty = Warranty.new(permit_warranty_params)
-    @new_warranty.product_id = params[:product][:id]
+    new_warranty = Warranty.new(permit_warranty_params)
+    new_warranty.product_id = params[:product][:id]
     message_hash = {}
     # ------Check if user is signed in------
     if account_signed_in?
-      @new_warranty.customer_id = current_account.id
-      @new_warranty.save
+      new_warranty.customer_id = current_account.id
+      new_warranty.save
       message_hash = {:notice => "Product Registered. Kindly Check Your Email For Confirmation."}
     else
       # ------Check for any errors with account creation------
@@ -36,9 +36,9 @@ class WarrantyController < ApplicationController
         flash.now[:alert] = new_account.errors.messages
         return render :new
       else
-        @new_account.save
-        @new_warranty.customer_id = new_account.id
-        @new_warranty.save
+        new_account.save
+        new_warranty.customer_id = new_account.id
+        new_warranty.save
         message_hash = {:notice => "Account Created & Product Registered. Kindly Check Your Email For Confirmation."}
       end
     end
