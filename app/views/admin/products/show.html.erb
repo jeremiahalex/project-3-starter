@@ -32,7 +32,7 @@
           <span class="">QR Code</span>
           <div class="section">
             <div style="width: 100%; max-width: 400px; margin: 0; padding: 0;">
-            <svg preserveAspectRatio="xMidYMid meet" viewbox="0 0 400 400">
+            <svg>
               <%= (@svg).html_safe %>
             </svg>
           </div>
@@ -43,12 +43,12 @@
   </div>
   <div class="row">
     <div class="col s12 m8 offset-m2">
-      <%= link_to fa_icon("pencil-square-o ", text: "Edit this Product"), edit_admin_product_path, class:"btn waves-effect waves-light amber accent-4" %>
+      <%= link_to fa_icon("pencil-square-o", text: "Edit this Product"), edit_admin_product_path, class:"btn waves-effect waves-light amber accent-4" %>
     </div>
   </div>
   <div class="row">
     <div class="col s12 m8 offset-m2">
-      <%= link_to fa_icon("arrow-left ", text: "Back to Product Listing"), admin_products_path, class:"btn waves-effect waves-light light-blue darken-3" %>
+      <%= link_to fa_icon("arrow-left", text: "Back to Product Listing"), admin_products_path, class:"btn waves-effect waves-light light-blue darken-3" %>
     </div>
   </div>
 </div>

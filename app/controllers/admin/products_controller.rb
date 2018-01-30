@@ -60,7 +60,7 @@ module Admin
       @psn = @product.serial_no
 
       # Generate QR code of URL with serial number as parameter
-      @qrcode = RQRCode::QRCode.new(@url + "?psn=#{@psn}")
+      @qrcode = RQRCode::QRCode.new(@url + "/warranty/register?psn=#{@psn}")
 
       @svg = @qrcode.as_svg(offset: 0, color: '000', shape_rendering: 'crispEdges', module_size: 10, preserveAspectRatio: "xMidYMid meet", height: 1000, width: 1000, viewbox: "0 0 1000 1000")
     end
