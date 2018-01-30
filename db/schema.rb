@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180125085223) do
     t.string "contact"
     t.string "image_url"
     t.boolean "is_active"
+    t.boolean "is_rejected"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"

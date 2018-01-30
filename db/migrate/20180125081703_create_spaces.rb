@@ -8,6 +8,7 @@ class CreateSpaces < ActiveRecord::Migration[5.1]
       t.string :contact
       t.string :image_url
       t.boolean :is_active
+      t.boolean :is_rejected
 
       t.timestamps
     end

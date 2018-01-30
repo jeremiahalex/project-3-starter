@@ -2,39 +2,79 @@
   <div class="col s8 offset-s2">
     <h4>Sign up your page</h4>
 
-    <%= form_for @new_space, url: {action: "create"} do |f| %>
+    <% if @new_space.is_rejected == nil %>
+      <%= form_for @new_space, url: {action: "create"} do |f| %>
 
-      <div>
-        <%= f.label :company_name %>
-        <%= f.text_field :company_name, placeholder: 'Company name' %>
-      </div>
-      <div>
-        <%= f.label :summary %>
-        <%= f.text_field :summary, placeholder: 'Lorem ipsum' %>
-      </div>
-      <div>
-        <%= f.label :category %>
-        <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }) %>
+        <div>
+          <%= f.label :company_name %>
+          <%= f.text_field :company_name, placeholder: 'Company name' %>
+        </div>
+        <div>
+          <%= f.label :summary %>
+          <%= f.text_field :summary, placeholder: 'Lorem ipsum' %>
+        </div>
+        <div>
+          <%= f.label :category %>
+          <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }) %>
 
-        <%#= f.select "category_id", options_from_collection_for_select(Category.all, "id", "category_type"), class: "browser-default" %>
-        <%#= f.collection_select(:category_id, Category.all, :id, :category_type) %>
-      </div>
-      <div>
-        <%= f.label :contact %>
-        <%= f.text_field :contact, placeholder: '12345678' %>
-      </div>
-      <div>
-        <%= f.label :address %>
-        <%= f.text_field :address, placeholder: 'Lorem ipsum' %>
-      </div>
-      <div>
-        <%= f.label :description %>
-        <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
-      </div>
-      <%= f.hidden_field(:is_active, value: false) %>
-      <%= f.hidden_field(:image_url, value: "https://pigment.github.io/fake-logos/logos/medium/color/4.png") %>
-      <%= f.submit("Create new listing", class: "waves-effect waves-light btn") %>
+          <%#= f.select "category_id", options_from_collection_for_select(Category.all, "id", "category_type"), class: "browser-default" %>
+          <%#= f.collection_select(:category_id, Category.all, :id, :category_type) %>
+        </div>
+        <div>
+          <%= f.label :contact %>
+          <%= f.text_field :contact, placeholder: '12345678' %>
+        </div>
+        <div>
+          <%= f.label :address %>
+          <%= f.text_field :address, placeholder: 'Lorem ipsum' %>
+        </div>
+        <div>
+          <%= f.label :description %>
+          <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
+        </div>
+        <%= f.hidden_field(:is_active, value: false) %>
+        <%= f.hidden_field(:is_rejected, value: false) %>
+        <%= f.hidden_field(:image_url, value: "https://pigment.github.io/fake-logos/logos/medium/color/4.png") %>
+        <%= f.submit("Create new listing", class: "waves-effect waves-light btn") %>
 
+      <% end %>
+    <% else %>
+      <p>Your company has been rejected.</p>
+      <%= form_for(@new_space, url: space_path(@new_space.id), html: {method: "patch"}) do |f| %>
+
+        <div>
+          <%= f.label :company_name %>
+          <%= f.text_field :company_name, value: @new_space.company_name %>
+        </div>
+        <div>
+          <%= f.label :summary %>
+          <%= f.text_field :summary, value: @new_space.summary %>
+        </div>
+        <div>
+          <%= f.label :category %>
+          <%= select("space", "category_id", Category.all.collect {|p| [ p.category_type, p.id ] }, { include_blank: false }) %>
+
+          <%#= f.select "category_id", options_from_collection_for_select(Category.all, "id", "category_type"), class: "browser-default" %>
+          <%#= f.collection_select(:category_id, Category.all, :id, :category_type) %>
+        </div>
+        <div>
+          <%= f.label :contact %>
+          <%= f.text_field :contact, value: @new_space.contact %>
+        </div>
+        <div>
+          <%= f.label :address %>
+          <%= f.text_field :address, value: @new_space.address %>
+        </div>
+        <div>
+          <%= f.label :description %>
+          <%= f.text_area :description, value: @new_space.description %>
+        </div>
+        <%= f.hidden_field(:is_active, value: false) %>
+        <%= f.hidden_field(:is_rejected, value: true) %>
+        <%= f.hidden_field(:image_url, value: "https://pigment.github.io/fake-logos/logos/medium/color/4.png") %>
+        <%= f.submit("Update new listing", class: "waves-effect waves-light btn") %>
+
+      <% end %>
     <% end %>
   </div>
 </div>

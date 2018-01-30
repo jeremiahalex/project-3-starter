@@ -41,7 +41,7 @@
               <% if current_user %>
                 <%= link_to "Profile", user_path(current_user) %>
 
-                <% unless current_user.space %>
+                <% if current_user.space == nil  || current_user.space.is_rejected == true %>
                   <%= link_to "Create", new_space_path %>
                 <% end  %>
 
