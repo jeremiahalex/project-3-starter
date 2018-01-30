@@ -3,18 +3,18 @@ Rails.application.routes.draw do
   # ========== Routing for index ==========
   root 'index#index'
   # ========== Routing for warranty ==========
+  get '/warranty/', to: 'warranty#index'
   get '/warranty/register', to: 'warranty#new'
   post '/warranty/register', to: 'warranty#create'
   # resources :warranty, only: [:new, :create]
   # ========== Routing for account ==========
   resources :account, only: [:index]
-  devise_for :accounts, path: 'account', path_names:
-  { sign_in: 'login',
-    sign_out: 'logout',
-    password: 'secret',
-    registration: '',
-    edit: 'edit',
-  }
+  devise_for :accounts, path: 'account',
+  path_names:{ sign_in: 'login',
+                sign_out: 'logout',
+                password: 'secret',
+                edit: 'edit',
+              }
   # ========== Routing for admin ==========
   resources :admin, only: [:index]
   # ========== Routing for products ==========
