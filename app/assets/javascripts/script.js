@@ -19,9 +19,21 @@ $(document).on("turbolinks:load", function() {
 
   // results filtering
   $(".filter a").on("click", function() {
-    var anchorClass = $(this).attr("id");
+    var anchorId = $(this).attr("id");
     $(".pages-show").css("display", "none");
-    $("." + anchorClass).css("display", "block");
+    $("." + anchorId).css("display", "block");
+    // console.log(window.location.href.split("="));
+    // $.ajax({
+    //   url: window.location.href + "-" + anchorId[anchorId.length - 1],
+    //   type: 'get',
+    //   success: function(data) {
+    //     console.log(data);
+    //   },
+    //   error: function(data) {
+    //     console.log(data);
+    //   }
+    // });
+
   });
 
 });

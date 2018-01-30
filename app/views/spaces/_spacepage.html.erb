@@ -1,0 +1,15 @@
+<% for space in @spaces %>
+  <div class="col s4 pages-show <%= space.category.category_type.split.first %>">
+    <img src="<%= space.image_url %>" class="responsive-img">
+    <h5><%= link_to space.company_name, space_path(space.id) %></h5>
+    <p><%= space.category.category_type %></p>
+    <p><%= space.address %></p>
+    <p><%= space.description %></p>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col s4 offset-s4 center-align">
+    <%= will_paginate @spaces %>
+  </div>
+</div>

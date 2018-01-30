@@ -97,7 +97,7 @@
         <%= f.label :linkedin %>
         <%= f.text_field :linkedin, placeholder: 'Linkedin' %>
       </div>
-      <%= f.submit("Save") %>
+      <%= f.submit("Save", class: "waves-effect waves-light btn") %>
       <% end %>
     </div>
 
@@ -131,7 +131,7 @@
           <%= f.file_field :image_url %>
         </div>
         <%= f.hidden_field(:space_id, value: @space.id) %>
-        <%= f.submit %>
+        <%= f.submit("Create Product", class: "waves-effect waves-light btn") %>
       <% end %>
 
     </div>
