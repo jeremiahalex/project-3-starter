@@ -49,6 +49,7 @@
         <label for="date_of_purchase" data-error="Please select the date of purchase">Date of Purchase</label>
       </div>
     </div>
+    <% if ! account_signed_in? %>
     <div class="row">
       <div class="input-field col s6 m5 offset-m1">
         <i class="fa fa-user prefix" aria-hidden="true"></i>
@@ -67,10 +68,26 @@
       <div class="input-field col s12 m10 offset-m1">
         <i class="fa fa-envelope prefix" aria-hidden="true"></i>
         <%= reg_form.email_field :email, class: 'validate', autocomplete: "email", required: 'required' %>
-        <% end %>
         <label for="email" data-error="Please check you have enter your email correctly">Email</label>
       </div>
     </div>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <%= reg_form.password_field :password, class: 'validate', autocomplete: "off", required: 'required' %>
+        <label for="password" data-error="Please enter a password (minimum <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters)">Password</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <i class="fa fa-key prefix" aria-hidden="true"></i>
+        <%= reg_form.password_field :password_confirmation, class: 'validate', autocomplete: "off", required: 'required' %>
+        <% end %>
+        <label for="password" data-error="Please enter a password (minimum <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters)">Confirm Password</label>
+      </div>
+    </div>
+    <% end %>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
         <button class="btn waves-effect waves-light green">

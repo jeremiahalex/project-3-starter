@@ -16,7 +16,7 @@
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class='fa fa-bars' aria-hidden='true'></i></a>
         <ul class="right hide-on-med-and-down">
           <% content_for :links do%>
-            <li><%= link_to "Register Warranty", warranty_register_path%></li>
+            <li><%= link_to "How to Register Warranty", warranty_path%></li>
             <% if account_signed_in? %>
               <li><%= link_to (fa_icon 'user-circle-o').html_safe+' '.html_safe+ current_account.email, account_index_path%></li>
               <li><%= link_to (fa_icon 'pencil').html_safe+' Edit Account', edit_account_registration_path%></li>
