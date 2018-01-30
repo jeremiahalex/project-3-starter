@@ -23,7 +23,7 @@
 
               <ul id='dropdown1' class='dropdown-content'>
                 <% @category.each do |cat| %>
-                  <li><a href="#"><%= cat.category_type %></a></li>
+                  <li><%= link_to cat.category_type, category_path(cat.id) %></li>
                 <% end %>
               </ul>
             </div>

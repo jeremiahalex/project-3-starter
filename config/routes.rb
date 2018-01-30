@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
   # resources :websites, only: [:create, :update]
 
+  resources :categories, only: [:show]
+
   resources :users, only: [:show, :update]
 
   devise_for :users,

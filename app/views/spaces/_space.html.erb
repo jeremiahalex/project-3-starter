@@ -1,4 +1,4 @@
-<div class="col s3 pages-show">
+<div class="col s4 pages-show <%= space.category.category_type.split.first %>">
   <img src="<%= space.image_url %>" class="responsive-img">
   <h5><%= link_to space.company_name, space_path(space.id) %></h5>
   <p><%= space.category.category_type %></p>
