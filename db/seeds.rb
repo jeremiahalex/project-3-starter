@@ -26,13 +26,14 @@
   new_space.contact = Faker::Company.australian_business_number
   new_space.image_url = Faker::Company.logo
   new_space.is_active = true
+  new_space.is_rejected = false
   new_space.category_id = Random.new.rand(1..10)
   new_space.user_id = 1
   new_space.website_id = 1
 
   new_space.save
 end
-#
+
 # category seed
 category_array = ["Apparel & Accessories", "Electronic", "Food & Beverage", "Furniture", "Gift", "Handicraft", "Home & Garden", "Jewelry &
 Watches", "Toys & Hobbies", "Others"]
