@@ -8,30 +8,36 @@ class WarrantyController < ApplicationController
     return redirect_to root_path, :alert => "Use QR Code for registration" if product_id.nil?
     product = Product.find_by(serial_no: product_id)
     return redirect_to root_path, :alert => "Serial Number not Found" if product.nil?
-    # @new_warranty.product = product
+    @new_warranty.product = product
     #
     # if account_signed_in?
 
   end
 
   def create
-    # new_account = Account.new(create_acc_params)
-    # new_account.save
-    # redirect_to root_path
-  end
+    if account_signed_in?
 
-  protected
 
-  def configure_permitted_parameters
-    # Allow :first_name and :last_name in the new_account_registration to be updated
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email])
-  end
-
-  def create_acc_params
-    params.require(:account).permit(:first_name, :last_name, :email)
+    else
+      params[:account][:password] = Devise.friendly_token.first(12)
+      new_account = Account.create!(permit_account_params)
+      new_warranty = Warranty.new(permit_warranty_params)
+      new_warranty.product_id = params[:product][:id]
+      new_warranty.customer_id = new_account.id
+      new_warranty.save
+      return redirect_to root_path, :notice => "Product Registered. Kindly Check Your Email For Confirmation."
+    end
   end
 
   private
+
+  def permit_account_params
+    params.require(:account).permit(:first_name, :last_name, :email, :password)
+  end
+
+  def permit_warranty_params
+    params.require(:warranty).permit(:date_of_purchase, :product_id, :customer_id)
+  end
 
   def resource_name
     :account

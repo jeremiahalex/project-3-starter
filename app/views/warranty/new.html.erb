@@ -53,20 +53,20 @@
       <div class="input-field col s6 m5 offset-m1">
         <i class="fa fa-user prefix" aria-hidden="true"></i>
         <%#= fields_for @new_warranty.customer do |warranty_form| %>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |warranty_form| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |reg_form| %>
         <%= devise_error_messages! %>
-        <%= warranty_form.text_field :first_name, class: 'validate', autofocus: true, required: 'required' %>
+        <%= reg_form.text_field :first_name, class: 'validate', autofocus: true, required: 'required' %>
         <label for="first_name" data-error="Please enter your first name">First Name</label>
       </div>
       <div class="input-field col s6 m5">
-        <%= warranty_form.text_field :last_name, class: 'validate', required: 'required' %>
+        <%= reg_form.text_field :last_name, class: 'validate', required: 'required' %>
         <label for="last_name" data-error="Please enter your last name">Last Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
         <i class="fa fa-envelope prefix" aria-hidden="true"></i>
-        <%= warranty_form.email_field :email, class: 'validate', autocomplete: "email", required: 'required' %>
+        <%= reg_form.email_field :email, class: 'validate', autocomplete: "email", required: 'required' %>
         <% end %>
         <label for="email" data-error="Please check you have enter your email correctly">Email</label>
       </div>

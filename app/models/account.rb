@@ -5,8 +5,8 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: %i[facebook]
 
-  has_many :warranties
-  has_many :tickets, through: :warranties
+  has_many :warranties, dependent: :destroy, foreign_key: 'customer_id'
+  has_many :tickets, through: :warranties, dependent: :destroy, source: :customer
 
   # For Facebook Login
   def self.from_omniauth(auth)
