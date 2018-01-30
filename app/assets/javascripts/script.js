@@ -2,6 +2,10 @@ $(document).on("turbolinks:load", function() {
   // slider at home page
   $(".slider").slider();
 
+  $(".dropdown-button").dropdown({
+    hover: true
+  });
+
   $('select').material_select();
   $('ul.tabs').tabs();
 
