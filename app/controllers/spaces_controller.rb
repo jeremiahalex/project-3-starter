@@ -7,6 +7,13 @@ class SpacesController < ApplicationController
     @indiv_space = Space.find(params[:id])
     @new_review = Review.new
     @reviews = Review.where(space_id: params[:id]).order(:created_at).reverse
+
+    @bookmark_check = false
+    current_user.bookmarks.each do |bookmark|
+      if bookmark.space_id == @indiv_space.id
+        @bookmark_check = true
+      end
+    end
   end
 
   def new

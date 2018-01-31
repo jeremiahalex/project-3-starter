@@ -9,9 +9,16 @@
     <a class="waves-effect waves-light btn"><i class="material-icons left">share</i>Share</a>
 
     <% if current_user %>
-      <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
-        <i class="material-icons left">bookmark</i>Bookmark
+      <% if @bookmark_check %>
+        <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark disabled", method: :post do %>
+          <i class="material-icons left">bookmark</i>Bookmark
+        <% end %>
+      <% else %>
+        <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
+          <i class="material-icons left">bookmark</i>Bookmark
+        <% end %>
       <% end %>
+
       <a href="/personal_messages/new?receiver_id=<%= @indiv_space.user.id %>" class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
     <% end %>
   </div>
