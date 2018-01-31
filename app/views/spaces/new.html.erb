@@ -2,8 +2,8 @@
   <div class="col s8 offset-s2">
     <h4>Sign up your page</h4>
 
-    <% if @new_space.is_rejected == nil %>
-      <%= form_for @new_space, url: {action: "create"} do |f| %>
+    <% if @space.is_rejected == nil %>
+      <%= form_for @space, url: {action: "create"} do |f| %>
 
         <div>
           <%= f.label :company_name %>
@@ -40,15 +40,15 @@
       <% end %>
     <% else %>
       <p>Your company has been rejected.</p>
-      <%= form_for(@new_space, url: space_path(@new_space.id), html: {method: "patch"}) do |f| %>
+      <%= form_for(@space, url: space_path(@space.id), html: {method: "patch"}) do |f| %>
 
         <div>
           <%= f.label :company_name %>
-          <%= f.text_field :company_name, value: @new_space.company_name %>
+          <%= f.text_field :company_name, value: @space.company_name %>
         </div>
         <div>
           <%= f.label :summary %>
-          <%= f.text_field :summary, value: @new_space.summary %>
+          <%= f.text_field :summary, value: @space.summary %>
         </div>
         <div>
           <%= f.label :category %>
@@ -59,15 +59,15 @@
         </div>
         <div>
           <%= f.label :contact %>
-          <%= f.text_field :contact, value: @new_space.contact %>
+          <%= f.text_field :contact, value: @space.contact %>
         </div>
         <div>
           <%= f.label :address %>
-          <%= f.text_field :address, value: @new_space.address %>
+          <%= f.text_field :address, value: @space.address %>
         </div>
         <div>
           <%= f.label :description %>
-          <%= f.text_area :description, value: @new_space.description %>
+          <%= f.text_area :description, value: @space.description %>
         </div>
         <%= f.hidden_field(:is_active, value: false) %>
         <%= f.hidden_field(:is_rejected, value: true) %>

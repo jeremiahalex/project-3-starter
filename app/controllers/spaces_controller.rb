@@ -11,9 +11,9 @@ class SpacesController < ApplicationController
 
   def new
     if current_user.space == nil
-      @new_space = Space.new
+      @space = Space.new
     else
-      @new_space = current_user.space
+      @space = current_user.space
     end
   end
 

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row valign-wrapper">
   <div class="col s4 offset-s1 space-show">
     <img src="<%= @indiv_space.image_url %>">
   </div>
@@ -30,25 +30,25 @@
       <h6>Contact</h6>
       <p><%= @indiv_space.contact %></p>
 
-      <% if @indiv_space.website.website %>
+      <% if !@indiv_space.website.website.blank? %>
         <h6>Website</h6>
         <%= link_to @indiv_space.website.website, "http://#{@indiv_space.website.website}" %>
       <% end %>
 
-      <% if @indiv_space.website.facebook || @indiv_space.website.instagram || @indiv_space.website.googleplus || @indiv_space.website.linkedin %>
+      <% if !@indiv_space.website.facebook.blank? || !@indiv_space.website.instagram.blank? || !@indiv_space.website.googleplus.blank? || !@indiv_space.website.linkedin.blank? %>
         <h6>Social media</h6>
       <% end %>
 
-      <% if @indiv_space.website.facebook %>
+      <% if !@indiv_space.website.facebook.blank? %>
         <a href="http://<%= @indiv_space.website.facebook %>" class="waves-effect waves-light btn"><i class="fa fa-facebook"></i></a>
       <% end %>
-      <% if @indiv_space.website.instagram %>
+      <% if !@indiv_space.website.instagram.blank? %>
         <a href="http://<%= @indiv_space.website.instagram %>" class="waves-effect waves-light btn"><i class="fa fa-instagram"></i></a>
       <% end %>
-      <% if @indiv_space.website.googleplus %>
+      <% if !@indiv_space.website.googleplus.blank? %>
         <a href="http://<%= @indiv_space.website.googleplus %>" class="waves-effect waves-light btn"><i class="fa fa-google"></i></a>
       <% end %>
-      <% if @indiv_space.website.linkedin %>
+      <% if !@indiv_space.website.linkedin.blank? %>
         <a href="http://<%= @indiv_space.website.linkedin %>" class="waves-effect waves-light btn"><i class="fa fa-linkedin"></i></a>
       <% end %>
     </div>
