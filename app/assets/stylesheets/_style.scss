@@ -130,7 +130,10 @@ ul.tabs .indicator {
   border: 1px solid black;
   background-color: #fff;
   z-index: 2;
-  .close {cursor: pointer}
+  .close {
+    cursor: pointer;
+    z-index: 3;
+  }
 }
 
 .online_status {
