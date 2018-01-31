@@ -18,7 +18,8 @@
           <% content_for :links do%>
             <li><%= link_to "How to Register Warranty", warranty_path%></li>
             <% if account_signed_in? %>
-              <li><%= link_to (fa_icon 'user-circle-o').html_safe+' '.html_safe+ current_account.email, account_index_path%></li>
+              <%fullname = ' '+ current_account.first_name+' '+current_account.last_name%>
+              <li><%= link_to (fa_icon 'user-circle-o').html_safe + fullname, account_index_path%></li>
               <li><%= link_to (fa_icon 'pencil').html_safe+' Edit Account', edit_account_registration_path%></li>
               <li><%= link_to (fa_icon 'sign-out').html_safe+' Logout', destroy_account_session_path, method: :delete%></li>
             <% else %>
