@@ -12,9 +12,8 @@
       <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
         <i class="material-icons left">bookmark</i>Bookmark
       <% end %>
-      <a class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
+      <a href="/personal_messages/new?receiver_id=<%= @indiv_space.user.id %>" class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
     <% end %>
-    <a href="/personal_messages/new?receiver_id=<%= @indiv_space.user.id %>" class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
   </div>
 </div>
 
