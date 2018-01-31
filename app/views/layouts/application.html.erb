@@ -37,6 +37,11 @@
               <% end %>
             </div>
 
+            <% if user_signed_in? %>
+              <div id="current-user"></div>
+                    <!-- ... -->
+            <% end %>
+
             <div class="col s2 offset-s3 menu-list">
               <% if current_user %>
                 <%= link_to "Profile", user_path(current_user) %>

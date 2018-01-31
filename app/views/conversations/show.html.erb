@@ -1,8 +1,8 @@
 <h1>Chatting with <%= @conversation.with(current_user).username %></h1>
 
 <div id="conversation-main">
-  <div id="conversation-body">
-    <%= render @conversation.personal_messages %>
+<div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+      <%= render @conversation.personal_messages %>
   </div>
 
   <%= form_for @personal_message do |f| %>

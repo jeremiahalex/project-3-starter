@@ -14,4 +14,9 @@ class User < ApplicationRecord
   has_many :personal_messages, dependent: :destroy
 
   validates :first_name, :last_name, :username, presence: true
+
+  def online?
+    !Redis.new.get("user_#{self.id}_online").nil?
+  end
+
 end
