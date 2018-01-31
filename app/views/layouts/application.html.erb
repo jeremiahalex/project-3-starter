@@ -9,17 +9,23 @@
     <%= favicon_link_tag 'favico.png' %>
   </head>
   <body>
-    <nav class="teal">
+    <nav class="primary-color">
       <div class="nav-wrapper container">
         <%= link_to "Warranted", root_path, class: "brand-logo" %>
         <!-- <%= link_to "<i class='fa fa-bars' aria-hidden='true'></i>".html_safe, root_path, 'data-activates': "mobile-nav", class: "button-collapse" %> -->
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class='fa fa-bars' aria-hidden='true'></i></a>
         <ul class="right hide-on-med-and-down">
           <% content_for :links do%>
-            <li><%= link_to "How to Register Warranty", warranty_path%></li>
             <% if account_signed_in? %>
-              <%fullname = ' '+ current_account.first_name+' '+current_account.last_name%>
-              <li><%= link_to (fa_icon 'user-circle-o').html_safe + fullname, account_index_path%></li>
+            <%fullname = ' '+ current_account.first_name+' '+current_account.last_name%>
+              <% if current_account.is_admin? %>
+                <li><%= link_to "Admin Home", admin_index_path %></li>
+                <li><%= link_to "Product Listing", admin_products_path %></li>
+                <li><%= link_to "Create New Product", new_admin_product_path %></li>
+              <% else %>
+                <li><%= link_to "How to Register Warranty", warranty_path%></li>
+                <li><%= link_to (fa_icon 'user-circle-o').html_safe + fullname, account_index_path%></li>
+              <% end %>
               <li><%= link_to (fa_icon 'pencil').html_safe+' Edit Account', edit_account_registration_path%></li>
               <li><%= link_to (fa_icon 'sign-out').html_safe+' Logout', destroy_account_session_path, method: :delete%></li>
             <% else %>
@@ -39,7 +45,7 @@
     <%= javascript_tag "Materialize.toast('#{message}', 5000 ,'red')" if message_type.eql?'alert'%>
     <% end %>
     <%= yield %>
-    <footer class="teal page-footer">
+    <footer class="primary-color page-footer">
       <div class="footer-copyright">
         <div class="container">
           <span class="left">

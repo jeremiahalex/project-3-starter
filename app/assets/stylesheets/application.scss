@@ -1,8 +1,19 @@
+@import "materialize/components/color";
+$primary-color: color("blue", "darken-4") !default;
+$secondary-color: color("blue", "darken-1") !default;
 @import "materialize";
 @import "font-awesome";
 
 nav ul a, nav .brand-logo {
   color: rgba(255,255,255,.9);
+}
+
+.primary-color {
+  background-color: $primary-color;
+}
+
+.primary-text-color{
+  color: $primary-color;
 }
 
 .parallax-container {
