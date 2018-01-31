@@ -1,0 +1,15 @@
+<tbody>
+  <tr>
+    <td><%= listing[:product_name] %></td>
+    <td><%= listing[:serial_no] %></td>
+    <% if listing[:warranty_left] > 0 %>
+    <td><%= listing[:warranty_left] %></td>
+    <% elsif listing[:warranty_left] == 0 %>
+    <td>Last day</td>
+    <% else %>
+    <td>Expired</td>
+    <% end %>
+    <td><%= listing[:date_of_purchase] %></td>
+    <td><%= listing[:expiry_date] %></td>
+  </tr>
+</tbody>

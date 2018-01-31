@@ -12,11 +12,9 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>Dyson V8 Absolute+</td>
-            <td>Open</td>
-            <td>Sorry to hear about it…</td>
-          </tr>
+          <td>Dyson V8 Absolute+</td>
+          <td>Live</td>
+          <td>22/01/2023</td>
         </tbody>
       </table>
     </div>
@@ -27,17 +25,17 @@
       <table>
         <thead>
           <tr>
-            <th>Product</th>
+            <th>Product Name</th>
+            <th>Serial Number</th>
             <th>Warranty Status</th>
+            <th>Warranty Start Date</th>
             <th>Warranty End Date</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td>Dyson V8 Absolute+</td>
-            <td>Live</td>
-            <td>22/01/2023</td>
+            <%= render partial: 'listing', collection: @listings %>
           </tr>
         </tbody>
       </table>
