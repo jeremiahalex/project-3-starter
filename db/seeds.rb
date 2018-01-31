@@ -35,9 +35,9 @@
 end
 
 # category seed
-# category_array = ["Apparel & Accessories", "Electronic", "Food & Beverage", "Furniture", "Gift", "Handicraft", "Home & Garden", "Jewelry & Watches", "Toys & Hobbies", "Others"]
-# 10.times.each do |index|
-#   new_category = Category.new
-#   new_category.category_type = category_array[index]
-#   new_category.save
-# end
+category_array = ["Apparel & Accessories", "Electronic", "Food & Beverage", "Furniture", "Gift", "Handicraft", "Home & Garden", "Jewelry & Watches", "Toys & Hobbies", "Others"]
+10.times.each do |index|
+  new_category = Category.new
+  new_category.category_type = category_array[index]
+  new_category.save
+end
