@@ -133,3 +133,32 @@ ul.tabs .indicator {
 .pagination * {
   margin: 5px;
 }
+
+#conversation-body {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 2em;
+}
+
+#notification {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #fff;
+  z-index: 2;
+  .close {
+    cursor: pointer;
+    z-index: 3;
+  }
+}
+
+.online_status {
+  color: red;
+  transition: color 1s ease;
+  &.online {
+    color: green;
+  }
+}

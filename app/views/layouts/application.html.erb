@@ -37,9 +37,15 @@
               <% end %>
             </div>
 
+            <% if user_signed_in? %>
+              <div id="current-user"></div>
+                    <!-- ... -->
+            <% end %>
+
             <div class="col s3 offset-s1 menu-list right-align">
               <% if current_user %>
                 <%= link_to "Profile", user_path(current_user) %>
+                <%= link_to "Inbox", conversations_path %>
 
                 <% if current_user.space == nil  || current_user.space.is_rejected == true %>
                   <%= link_to "Create", new_space_path %>
@@ -74,6 +80,7 @@
       </nav>
     </div>
 
+<<<<<<< HEAD
     <% if notice %>
       <p class="notice"><%= notice %></p>
     <% end %>
@@ -81,6 +88,15 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
+=======
+    <ul>
+      <li><%#= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Users', users_path %></li>
+    </ul>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+>>>>>>> custom_message
 
     <%= yield %>
 

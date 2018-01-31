@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show, :update, :index]
 
   devise_for :users,
   path: '',
@@ -35,6 +35,12 @@ Rails.application.routes.draw do
     registration: 'register',
     sign_up: ''
   }
+
+  # resources :users, only: [:index]
+  resources :personal_messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show]
+  # root 'conversations#index'
+  mount ActionCable.server => '/cable'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
