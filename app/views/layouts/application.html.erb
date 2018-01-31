@@ -11,7 +11,7 @@
   <body>
 
     <div class="navbar-fixed">
-      <nav class="blue accent-2">
+      <nav>
         <div class="nav-wrapper">
           <div class="row">
             <div class="col s1 logo">
@@ -23,8 +23,9 @@
 
               <ul id='dropdown1' class='dropdown-content'>
                 <% @category.each do |cat| %>
-                  <li><%= link_to cat.category_type, category_path(cat.id) %></li>
+                  <li class="light-blue-text text-darken-3"><%= link_to cat.category_type, category_path(cat.id) %></li>
                 <% end %>
+
               </ul>
             </div>
 
@@ -96,7 +97,7 @@
     <%= yield %>
 
     <footer class="page-footer">
-      <div class="footer-copyright blue accent-2">
+      <div class="footer-copyright">
         <div class="container">
           Copyright &copy; 2018 LocalSquare. All rights reserved.
         </div>

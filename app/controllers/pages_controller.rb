@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+    # before_action :authenticate_user!, except: [:home]
   def home
     @spaces = Space.where("is_active = ?", true).order(:created_at).reverse.first(8)
   end
