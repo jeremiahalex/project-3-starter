@@ -34,8 +34,8 @@
       </div>
     </nav>
     <% flash.each do |message_type, message| %>
-    <%= javascript_tag "Materialize.toast('#{message}', 3000, 'green')" if message_type.eql?'notice'%>
-    <%= javascript_tag "Materialize.toast('#{message}', 3000 ,'red')" if message_type.eql?'alert'%>
+    <%= javascript_tag "Materialize.toast('#{message}', 5000, 'green')" if message_type.eql?'notice'%>
+    <%= javascript_tag "Materialize.toast('#{message}', 5000 ,'red')" if message_type.eql?'alert'%>
     <% end %>
     <%= yield %>
     <footer class="teal page-footer">
