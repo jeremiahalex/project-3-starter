@@ -7,7 +7,8 @@
     <ul class="tabs filter">
       <% @categories.each do |cat| %>
         <li class="tab col s12">
-          <%= link_to cat[:name], "#", id: cat[:link] %>
+          <%#= link_to cat[:name], "#", id: "#{@query}-#{cat[:id]}" %>
+          <%= link_to cat.category_type, "#", id: "#{@query}-#{cat.id}" %>
         </li>
       <% end %>
     </ul>

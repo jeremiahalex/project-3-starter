@@ -7,7 +7,7 @@
 }
 
 .search-input {
-  background-color: rgb(0, 150, 136);
+  background-color: #82b1ff;
   height: 45px;
   margin-top: 10px;
 }
@@ -24,6 +24,10 @@
   background-color: black;
   color: white;
   padding: 15px;
+}
+
+.page-footer {
+  background-color: transparent !important;
 }
 
 // .search-input i {
