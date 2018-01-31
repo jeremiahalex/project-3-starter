@@ -4,18 +4,12 @@
       <h4 class="header">Warranty Registration</h4>
     </div>
   </div>
-  <%#= form_for @products, url: warranty_register_path, html: { method: 'post'} do |products_form| %>
-  <%# product_name_array = Product.all.map { |product| [product.product_name, product.id] } %>
-  <%# model_no_array = Product.all.map { |product| [product.model_no, product.id] } %>
   <%= form_for @new_warranty, url: warranty_register_path, html: { method: 'post'} do |warranty_form| %>
   <%= fields_for @new_warranty.product do |product_form| %>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
         <i class="fa fa-list-alt prefix" aria-hidden="true"></i>
         <%= product_form.text_field :product_name, class: 'validate', disabled: 'disabled'%>
-        <%#= products_form.select(:product_name) do %>
-          <%#= options_for_select(product_name_array) %>
-        <%# end %>
         <label for="product_name" data-error="Please enter the product name">Product Name</label>
       </div>
     </div>
@@ -23,10 +17,6 @@
       <div class="input-field col s12 m10 offset-m1">
         <i class="fa fa-tag prefix" aria-hidden="true"></i>
         <%= product_form.text_field :model_no, class: 'validate', disabled: 'disabled'%>
-        <%#= product_form.text_field :model_no, disabled: "disabled", class: "validate" %>
-        <%#= products_form.select(:model_no) do %>
-          <%#= options_for_select(model_no_array) %>
-        <%# end %>
         <label for="model_no" data-error="Please enter the model number">Model Number</label>
       </div>
     </div>
@@ -36,57 +26,53 @@
         <%= product_form.text_field :serial_no, class: 'validate', disabled: 'disabled'%>
         <%= product_form.hidden_field :id%>
         <% end %>
-        <%#= fields_for @new_warranty do |warranty_form| %>
-          <%#= products_form.text_field :serial_no, disabled: "disabled", class: "validate" %>
         <label for="serial_no" data-error="Please enter the serial number">Serial Number</label>
+      </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
         <i class="fa fa-calendar prefix" aria-hidden="true"></i>
         <%= warranty_form.date_field :date_of_purchase, class: "validate", required: 'required', autofocus: true %>
-        <%# end %>
-        <!-- <input type="text" id="date_of_purchase" class="validate" required> -->
         <label for="date_of_purchase" data-error="Please select the date of purchase">Date of Purchase</label>
       </div>
     </div>
     <% if ! account_signed_in? %>
-    <div class="row">
-      <div class="input-field col s6 m5 offset-m1">
-        <i class="fa fa-user prefix" aria-hidden="true"></i>
-        <%#= fields_for @new_warranty.customer do |warranty_form| %>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |reg_form| %>
-        <%= devise_error_messages! %>
-        <%= reg_form.text_field :first_name, class: 'validate', autofocus: true, required: 'required' %>
-        <label for="first_name" data-error="Please enter your first name">First Name</label>
+    <!-- <div id="warranty_user_registration"> -->
+      <%= fields_for(resource, as: resource_name, url: registration_path(resource_name)) do |reg_form| %>
+      <div class="row">
+        <div class="input-field col s12 m10 offset-m1">
+          <i class="fa fa-envelope prefix" aria-hidden="true"></i>
+          <%= reg_form.email_field :email, class: 'validate', autocomplete: "email", required: 'required' %>
+          <label for="email" data-error="Please check you have enter your email correctly">Email</label>
+        </div>
       </div>
-      <div class="input-field col s6 m5">
-        <%= reg_form.text_field :last_name, class: 'validate', required: 'required' %>
-        <label for="last_name" data-error="Please enter your last name">Last Name</label>
+      <div class="row">
+        <div class="input-field col s6 m5 offset-m1">
+          <i class="fa fa-user prefix" aria-hidden="true"></i>
+          <%= reg_form.text_field :first_name, class: 'validate', autofocus: true, required: 'required' %>
+          <label for="first_name" data-error="Please enter your first name">First Name</label>
+        </div>
+        <div class="input-field col s6 m5">
+          <%= reg_form.text_field :last_name, class: 'validate', required: 'required' %>
+          <label for="last_name" data-error="Please enter your last name">Last Name</label>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12 m10 offset-m1">
-        <i class="fa fa-envelope prefix" aria-hidden="true"></i>
-        <%= reg_form.email_field :email, class: 'validate', autocomplete: "email", required: 'required' %>
-        <label for="email" data-error="Please check you have enter your email correctly">Email</label>
+      <div class="row">
+        <div class="input-field col s12 m10 offset-m1">
+          <i class="fa fa-key prefix" aria-hidden="true"></i>
+          <%= reg_form.password_field :password, class: 'validate', autocomplete: "off", required: 'required' %>
+          <label for="password" data-error="Please enter a password (minimum <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters)">Password</label>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12 m10 offset-m1">
-        <i class="fa fa-key prefix" aria-hidden="true"></i>
-        <%= reg_form.password_field :password, class: 'validate', autocomplete: "off", required: 'required' %>
-        <label for="password" data-error="Please enter a password (minimum <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters)">Password</label>
+      <div class="row">
+        <div class="input-field col s12 m10 offset-m1">
+          <i class="fa fa-key prefix" aria-hidden="true"></i>
+          <%= reg_form.password_field :password_confirmation, class: 'validate', autocomplete: "off", required: 'required' %>
+          <label for="password" data-error="Please enter a password (minimum <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters)">Confirm Password</label>
+        </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="input-field col s12 m10 offset-m1">
-        <i class="fa fa-key prefix" aria-hidden="true"></i>
-        <%= reg_form.password_field :password_confirmation, class: 'validate', autocomplete: "off", required: 'required' %>
-        <% end %>
-        <label for="password" data-error="Please enter a password (minimum <% if @minimum_password_length %><%= @minimum_password_length %><% end %> characters)">Confirm Password</label>
-      </div>
-    </div>
+    <!-- </div> -->
+    <% end %>
     <% end %>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">

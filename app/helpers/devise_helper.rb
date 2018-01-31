@@ -1,15 +1,20 @@
 module DeviseHelper
   def devise_error_messages!
-    @messages = ""
     if resource.errors.full_messages.any?
-      @messages += "<h5>Please correct the following error(s):</h5>"
-      @messages += "<ol>"
-      resource.errors.full_messages.each do |message|
-        # flash.now[:alert] = message
-        @messages += '<li>' + message + '</li>'
-      end
-      @messages += "</ol>"
+      flash[:alert] = array_to_flash(resource.errors.full_messages)
     end
-    @messages.html_safe
+  end
+
+  private
+
+  # Method to convert errors messages in hash to flash
+  def array_to_flash(full_msg)
+    return_string = ''
+    if full_msg.kind_of?(Array)
+      if ! full_msg.empty?
+        full_msg.each { |x| return_string += x.to_s + '<br>' }
+      end
+    end
+    return_string.gsub(/[\'\"\[\]]/, '')
   end
 end

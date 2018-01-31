@@ -13,48 +13,63 @@ class WarrantyController < ApplicationController
     product = Product.find_by(serial_no: product_id)
     return redirect_to root_path, :alert => "Serial Number not Found" if product.nil?
     @new_warranty.product = product
-    #
-    # if account_signed_in?
 
   end
 
   def create
-    new_warranty = Warranty.new(permit_warranty_params)
-    new_warranty.product_id = params[:product][:id]
+    @new_warranty = Warranty.new(permit_warranty_params)
+    @new_warranty.product_id = params[:product][:id]
     message_hash = {}
-    # ------Check if user is signed in------
     if account_signed_in?
-      new_warranty.customer_id = current_account.id
-      new_warranty.save
-      message_hash = {:notice => "Product Registered. Kindly Check Your Email For Confirmation."}
+      # ------Check if user is signed in------
+      acc_id_for_warranty = current_account.id
     else
-      # ------Check for any errors with account creation------
-      # params[:account][:password] = Devise.friendly_token.first(12)
+      # ------Create new user------
       new_account = Account.new(permit_account_params)
+      # ------Check for any errors with account creation------
       if ! new_account.validate
-        # return render json: new_account.errors.messages
-        flash.now[:alert] = new_account.errors.messages
-        return render :new
+        flash[:alert] =  array_to_flash(new_account.errors.full_messages)
+        return redirect_to(request.env['HTTP_REFERER'])
       else
         new_account.save
-        new_warranty.customer_id = new_account.id
-        new_warranty.save
-        message_hash = {:notice => "Account Created & Product Registered. Kindly Check Your Email For Confirmation."}
+        acc_id_for_warranty = new_account.id
       end
+    end
+    # ------Create new warranty------
+    @new_warranty.customer_id = acc_id_for_warranty
+    if ! @new_warranty.validate
+      flash[:alert] = array_to_flash(@new_warranty.errors.full_messages)
+      return redirect_to(request.env['HTTP_REFERER'])
+    else
+      @new_warranty.save
+      message_hash = {:notice => "Product Registered. Kindly Check Your Email For Confirmation."}
     end
     redirect_to root_path, message_hash
   end
 
   private
 
+  # Method to convert errors messages in hash to flash
+  def array_to_flash(full_msg)
+    return_string = ''
+    if full_msg.kind_of?(Array)
+      if ! full_msg.empty?
+        full_msg.each { |x| return_string += x.to_s + '<br>' }
+      end
+    end
+    return_string.gsub(/[\'\"\[\]]/, '')
+  end
+
+  # Permit Params
   def permit_account_params
-    params.require(:account).permit(:first_name, :last_name, :email, :password)
+    params.require(:account).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
   def permit_warranty_params
     params.require(:warranty).permit(:date_of_purchase, :product_id, :customer_id)
   end
 
+  # Methods for Devise Account Creation
   def resource_name
     :account
   end
@@ -74,5 +89,4 @@ class WarrantyController < ApplicationController
     Account
   end
   helper_method :resource_class
-
 end
