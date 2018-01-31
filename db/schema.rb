@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180125180225) do
+ActiveRecord::Schema.define(version: 20180125085223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 20180125180225) do
     t.string "product_name"
     t.string "title"
     t.text "description"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "space_id"
-    t.string "image_url"
     t.index ["space_id"], name: "index_products_on_space_id"
   end
 
@@ -58,13 +58,14 @@ ActiveRecord::Schema.define(version: 20180125180225) do
     t.text "summary"
     t.text "description"
     t.string "contact"
+    t.string "image_url"
     t.boolean "is_active"
+    t.boolean "is_rejected"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.bigint "user_id"
     t.bigint "website_id"
-    t.string "image_url"
     t.index ["category_id"], name: "index_spaces_on_category_id"
     t.index ["user_id"], name: "index_spaces_on_user_id"
     t.index ["website_id"], name: "index_spaces_on_website_id"

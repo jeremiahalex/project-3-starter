@@ -21,44 +21,42 @@
   </div>
 
 
-<div class="col s9">
+  <div class="col s9">
     <%= @spaces.find_each do |item| %>
-  <div id="space-<%= item.id %>" class="col s12">
-<h5>Company Name:</h5>
-<p><%= item.company_name %></p>
-<h5>Address:</h5>
-<p><%= item.address %></p>
-<h5>Contact:</h5>
-<p><%= item.contact %></p>
-<h5>Summary:</h5>
-<p><%= item.summary %></p>
-<h5>Description:</h5>
-<p><%= item.description %></p>
+      <% if item.is_rejected %>
+        <p>This company has been rejected.</p>
+      <% end %>
+      <div id="space-<%= item.id %>" class="col s12">
+        <h5>Company Name:</h5>
+        <p><%= item.company_name %></p>
+        <h5>Address:</h5>
+        <p><%= item.address %></p>
+        <h5>Contact:</h5>
+        <p><%= item.contact %></p>
+        <h5>Summary:</h5>
+        <p><%= item.summary %></p>
+        <h5>Description:</h5>
+        <p><%= item.description %></p>
 
-<div class="row">
+        <div class="row">
 
-  <div class="col s3">
-  <%= form_for item do |f| %>
-    <%= f.hidden_field(:is_active, value: true) %>
-    <%= f.submit("Approve", class: "waves-effect waves-light btn") %>
-  <% end %>
+          <div class="col s3">
+            <%= form_for item do |f| %>
+              <%= f.hidden_field(:is_active, value: true) %>
+              <%= f.hidden_field(:is_rejected, value: false) %>
+              <%= f.submit("Approve", class: "waves-effect waves-light btn") %>
+            <% end %>
+          </div>
+
+          <div class="col s3">
+            <%= form_for item do |f| %>
+              <%= f.hidden_field(:is_rejected, value: true) %>
+              <%= f.submit("Reject", class: "waves-effect waves-light btn") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="col s3">
-  <%= form_for item, method: :delete do |f| %>
-    <%= f.submit("Reject", class: "waves-effect waves-light btn") %>
-  <% end %>
-  </div>
-
-
-</div>
-
-<pre><%= item.inspect %></pre>
-</div>
-<% end %>
-</div>
-
-
-
 
 </div>

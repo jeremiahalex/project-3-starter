@@ -10,19 +10,27 @@ class SpacesController < ApplicationController
   end
 
   def new
-    @new_space = Space.new
+    if current_user.space == nil
+      @space = Space.new
+    else
+      @space = current_user.space
+    end
   end
 
   def create
     @new_space = Space.new(space_params)
-    @new_space.user = current_user || User.find(1)
+    @new_space.user = current_user
     new_web = Website.create
     @new_space.website = new_web
     @new_space.save
 
     if @new_space.errors.any?
-      render "spaces/new"
-      @new_space = Space.new
+      error_array = []
+      @new_space.errors.each do |key, value|
+        error_array.push("#{key} #{value}")
+      end
+      flash[:alert] = error_array
+      redirect_to new_space_path
 
     else
       redirect_to root_path
@@ -40,8 +48,10 @@ class SpacesController < ApplicationController
 
     if current_user.is_admin
       # === admin scenario ===
-      @space.user.is_owner = true
-      @space.user.save
+      if @space.is_active
+        @space.user.is_owner = true
+        @space.user.save
+      end
       redirect_to admin_path(current_user.id)
     else
       # === business owner scenario ===
@@ -71,7 +81,7 @@ class SpacesController < ApplicationController
 
 
 def space_params
-  params.require(:space).permit(:company_name, :summary, :category_id, :contact, :address, :description, :is_active, :image_url)
+  params.require(:space).permit(:company_name, :summary, :category_id, :contact, :address, :description, :is_active, :is_rejected, :image_url)
 end
 
 def website_params

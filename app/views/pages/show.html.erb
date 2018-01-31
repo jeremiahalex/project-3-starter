@@ -1,22 +1,22 @@
-<div>
+<div class="result">
   <h5>Showing results for <%= @query %></h5>
 </div>
 
 <div class="row">
-  <%= render @spaces %>
-</div>
-
-<div class="row">
-  <div class="col s4 offset-s4 page">
-    <ul class="pagination">
-      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-      <li class="active"><a href="#!">1</a></li>
-      <li class="waves-effect"><a href="#!">2</a></li>
-      <li class="waves-effect"><a href="#!">3</a></li>
-      <li class="waves-effect"><a href="#!">4</a></li>
-      <li class="waves-effect"><a href="#!">5</a></li>
-      <li class="waves-effect"><a href="#!">6</a></li>
-      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  <div class="col s3">
+    <ul class="tabs filter">
+      <% @categories.each do |cat| %>
+        <li class="tab col s12">
+          <%= link_to cat[:name], "#", id: cat[:link] %>
+        </li>
+      <% end %>
     </ul>
+  </div>
+
+  <div class="col s9">
+    <div class="row">
+      <%#= render @spaces %>
+      <%= render :partial => "spaces/spacepage", :locals => { :spaces => @spaces } %>
+    </div>
   </div>
 </div>

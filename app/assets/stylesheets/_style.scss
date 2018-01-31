@@ -1,24 +1,48 @@
-// search in navbar
+// navbar
+.brand-logo-cus {
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
+
 .search-input {
   background-color: rgb(0, 150, 136);
   height: 45px;
   margin-top: 10px;
 }
 
-.search-input i {
-  margin: -10px 0 0 12px;
+.menu-list a {
+  padding: 0 5px;
+  // color: black;
 }
 
+.notice, .alert {
+  position: absolute;
+  z-index: 10000;
+  margin: 30px 0 0 30px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+}
+
+// .search-input i {
+//   margin: -10px 0 0 12px;
+// }
+
+// home page
 .feature {
   text-align: center;
+  margin: 40px 0px;
 }
 
-.view-more {
-  width: 100%;
+// to size logo images at home page
+.pages-show {
+  height: 500px;
 }
 
-.hidden {
-  display: none;
+.pages-show img {
+  width: 300px;
 }
 
 .about h5, .about p {
@@ -30,31 +54,23 @@
 }
 
 .large {
-  font-size: 15rem !important;
+  font-size: 10rem !important;
 }
 
-.page {
-  display: flex;
-  justify-content: center;
-}
-
-.border {
-  border: 1px solid black;
-}
-
-.product {
-  float: right;
-}
-
+// profile page
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid $green;
+  margin: 20px 0px;
+  padding: 20px 0px;
+  box-shadow: 5px 5px $green;
+  background-color: $grey;
 }
 
-.bookmarks {
-  text-align: center;
+.profile a {
+  margin-top: 10px;
 }
 
 ul.tabs {
@@ -66,26 +82,38 @@ ul.tabs {
 }
 
 ul a {
-    text-align: left;
+  text-align: left;
 }
 
 ul.tabs .indicator {
-  display: none
+  display: none;
 }
 
-// to size logo images
-.pages-show {
-  height: 500px;
+.page {
+  display: flex;
+  justify-content: center;
 }
 
-.pages-show img {
-  width: 300px;
-  height: auto;
+// spaces profile page
+.border {
+  border: 1px solid $green;
+  box-shadow: 5px 5px $green;
+  margin: 10px;
+  padding: 15px;
+  background-color: $grey;
 }
 
 .space-show img {
   width: 200px;
   height: auto;
+}
+
+.product {
+  float: right;
+}
+
+.bookmarks {
+  text-align: center;
 }
 
 .img-size {
@@ -97,20 +125,11 @@ ul.tabs .indicator {
   overflow: scroll;
 }
 
-.notice, .alert {
-  position: absolute;
-  z-index: 10000;
-  margin: 30px 0 0 30px;
-  background-color: whitesmoke;
+// results page
+.result {
+  margin: 25px 0px;
 }
 
-.menu-list a {
-  // color: black;
-}
-
-.brand-logo-cus {
-  color: #fff;
-  display: inline-block;
-  font-size: 2.1rem;
-  padding: 0;
+.pagination * {
+  margin: 5px;
 }

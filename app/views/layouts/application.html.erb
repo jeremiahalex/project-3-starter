@@ -19,16 +19,16 @@
             </div>
 
             <div class="col s1">
-              <%= link_to 'Categories', "#", class: "dropdown-button btn", "data-beloworigin": true, "data-activates": 'dropdown1' %>
+              <%= link_to 'Categories', '#', class: "dropdown-button btn", "data-beloworigin": true, "data-activates": 'dropdown1' %>
 
               <ul id='dropdown1' class='dropdown-content'>
                 <% @category.each do |cat| %>
-                  <li><a href="#"><%= cat.category_type %></a></li>
+                  <li><%= link_to cat.category_type, category_path(cat.id) %></li>
                 <% end %>
               </ul>
             </div>
 
-            <div class="col s4 offset-s1">
+            <div class="col s4 offset-s2">
               <%= form_tag(page_path(:query), method: "get", class: "search-input") do %>
                 <div class="input-field">
                   <!-- <i class="material-icons prefix">search</i> -->
@@ -37,11 +37,11 @@
               <% end %>
             </div>
 
-            <div class="col s2 offset-s3 menu-list">
+            <div class="col s3 offset-s1 menu-list right-align">
               <% if current_user %>
                 <%= link_to "Profile", user_path(current_user) %>
 
-                <% unless current_user.space %>
+                <% if current_user.space == nil  || current_user.space.is_rejected == true %>
                   <%= link_to "Create", new_space_path %>
                 <% end  %>
 
@@ -74,8 +74,13 @@
       </nav>
     </div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
 
     <%= yield %>
 
