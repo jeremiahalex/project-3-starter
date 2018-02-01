@@ -1,0 +1,187 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #ECFEE8;
+}
+
+.bd-sidebar {
+  background-color: #C2EFEB;
+}
+
+#error_explanation {
+  color: red;
+}
+
+.stretch {
+  width: 100vw
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.thumbnail {
+  position: relative;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  height:350px;
+  width:100%;
+  border-radius: 25px;
+}
+
+.thumbnail-name{
+  display: block;
+  text-align: center;
+  display: -webkit-box;
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  margin: auto;
+  /* line-height: 1; */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-category {
+  display: block;
+  text-align: center;
+  display: -webkit-box;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  margin: auto;
+  /* line-height: 1; */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-price{
+  display: block;
+  text-align: center;
+  display: -webkit-box;
+  width: 100%;
+  height: 24px;
+  font-size: 20px;
+  /* line-height: 1; */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-des {
+  display: block;
+  display: -webkit-box;
+  width: 100%;
+  height: 120px;
+  font-size: 16px;
+  /* line-height: 1; */
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+
+}
+
+.thumbnail img {
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+}
+.row.display-flex {
+  // display: flex;
+  // flex-wrap: wrap;
+}
+
+.form-format {
+  background: #C2E7DA;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.flavor-text {
+  border: 4px solid black;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.admin-functions {
+  font-weight: 1000;
+}
+
+.approval-card {
+  background-color: #BAFF29;
+  border-radius: 25px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.product-title{
+  margin: 0, auto;
+  text-align: center;
+}
+
+.item-container {
+
+}
+
+.product-price {
+  margin-left: 130px;
+}
+
+.product-price-word {
+  // font-weight: bold;
+  font-size: 18px;
+}
+
+.product-price-number {
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.show-product-btn {
+    margin-left: 130px;
+    margin-bottom: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f5f5f5;
+}
+.footer-text {
+  text-align: left;
+  cursor: default
+}
+
+.paginator {
+  text-align: center
+}
+
+.purchase-display {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 25px;
+}
