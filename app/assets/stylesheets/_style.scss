@@ -1,0 +1,131 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+.backgrd {
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-image: image-url('abstract.png');
+}
+
+td, th {
+  line-height: 20px;
+  width: 20%;
+  text-align: left;
+  height: 50px;
+  padding: 15px;
+}
+
+#table {
+  opacity: 0.8;
+}
+
+.description {
+  width: 100%;
+}
+
+.side-nav, h4 {
+  color: black;
+  padding: 1em;
+  text-align: center;
+  margin-left: 0.3em;
+  line-height: 1em;
+}
+
+.btn {
+  background-color: #757575;
+  float: right;
+}
+
+.btn:hover {
+  background-color: #424242;
+}
+
+.section {
+  text-align:center;
+  padding:50px 80px;
+  width: 100%;
+}
+
+.section-light {
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+#pics {
+  width: 100%
+}
+
+#about h3 {
+  opacity: 0.3;
+}
+
+#about p {
+  line-height: 1em;
+}
+
+.img_div {
+  padding: 0 !important;
+}
+
+#icons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: gray;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0.5em
+}
+
+// Thank you page
+// #booking {
+//   padding-top: 1em;
+//   text-align: center;
+// }
+
+#details {
+  border: 1px solid gray;
+}
+
+.footer-copyright {
+  position: relative;
+  width: 100%;
+  height: 2em;
+  bottom: 0;
+  text-align: center;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+                 border: $radius;
+}

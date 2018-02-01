@@ -1,0 +1,199 @@
+<!-- ################# Select Timing & Therapist ################# -->
+<div class="backgrd">
+  <div class="container">
+
+    <div class="row center">
+
+      <%= form_for @booking do |booking_form| %>
+      <%#= booking_form.text_field :time %>
+      <div>
+        <div class="input-field col s12 m6 white">
+          <%= booking_form.text_field :date, class: 'datepicker', id: 'date_selector', placeholder: 'Select Date' %>
+          <!-- This is the datepicker in rails format -->
+        </div>
+
+        <div class="input-field col s12 m6 white time_selector">
+          <%= booking_form.select :time,
+          options_for_select([
+            ["Select Timeslot", "0"],
+            ["11:00AM", "1"],
+            ["11:30AM", "2"],
+            ["12:00PM", "3"],
+            ["12:30PM", "4"],
+            ["13:00PM", "5"],
+            ["13:30PM", "6"],
+            ["14:00PM", "7"],
+            ["14:30PM", "8"],
+            ["15:00PM", "9"],
+            ["15:30PM", "10"],
+            ["16:00PM", "11"],
+            ["16:30PM", "12"],
+            ["17:00PM", "13"],
+            ["17:30PM", "14"],
+            ["18:00PM", "15"],
+            ["18:30PM", "16"],
+            ["19:00PM", "17"],
+            ["19:30PM", "18"],
+            ["20:00PM", "19"],
+            ["20:30PM", "20"]
+            ]), {}, { :class => 'time_dropdown', :disabled => false } # disabled true to disable. fix the onset date disabled = false else true
+            %>
+          </div>
+        </div>
+
+
+        <!-- ################# Services ################# -->
+        <table class="highlight bordered white" id="table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th class="description">Description</th>
+              <th class="price">Price(SGD)</th>
+              <th>Therapist</th>
+              <th>Select</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @all_services.each do |service| %>
+            <tr>
+              <td><%= service.name %></td>
+              <td><%= service.description %></td>
+              <td><%= service.price.to_i %></td>
+              <td><%= service.therapist.name %></td>
+              <td>
+                <input type="checkbox" name="booking[services_list][<%= service.id %>]" id="checkbox<%= service.id %>" class="service_checkbox"/>
+                <label for="checkbox<%= service.id %>"></label>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+          <%= hidden_field_tag(:stripeToken) %>
+        <%= booking_form.submit 'Proceed To Pay', :class => 'btn waves-effect waves-light', :id => 'submit-btn' %>
+        <% end %>
+
+        <%= form_tag charges_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+          </article>
+          <script src="https://checkout.stripe.com/checkout.js">
+          </script>
+        <% end %>
+
+
+      </div>
+
+  </div>
+</div>
+
+
+<!-- ################# About ################# -->
+<section class="section section-light" id="about">
+  <h3>About Us</h3>
+    <h5>MennStop is the ultimate grooming place for the busy men.</h5>
+    <p>Easy booking system catering services that include massage, facial, shave and haircut at one place,</p>
+    <p>offering the convenience, relaxation – feeling and looking your best.</p>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text">
+            <i class="material-icons">airline_seat_recline_extra</i>
+          </h2>
+          <h6 class="center">Catered For You</h6>
+        </div>
+      </div>
+
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text">
+            <i class="material-icons">alarm_off</i>
+          </h2>
+          <h6 class="center">No Interruptions</h6>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text">
+            <i class="material-icons">mood</i>
+          </h2>
+          <h6 class="center">Fuss Free</h6>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="section section-light" id="pics">
+    <div class="row">
+          <div class="col s12 m3 img_div">
+            <%= image_tag("aroma.png", class: "responsive-img") %>
+          </div>
+
+          <div class="col s12 m3 img_div">
+            <%= image_tag("massage.png", class: "responsive-img") %>
+          </div>
+
+          <div class="col s12 m3 img_div">
+            <%= image_tag("hair.png", class: "responsive-img") %>
+          </div>
+
+          <div class="col s12 m3 img_div">
+            <%= image_tag("shave.png", class: "responsive-img") %>
+          </div>
+
+            <div class="col s12 img_div">
+            <%= image_tag("place.png", class: "responsive-img") %>
+          </div>
+    </div>
+
+</section>
+
+
+<!-- ################# Contact Us ################# -->
+
+<div class="container">
+  <div class="row">
+      <div class="col s12 m6" id="contactus">
+        <p>Email: mennstop@email.com</p>
+        <p>Phone: 6543 2130</p>
+        <p>Address: 123 Shan Road, Singapore</p>
+
+        <a href="#" class="social-btn">
+        <a href="https://www.facebook.com" id="icons" class="fa fa-facebook"></a>
+        <a href="https://twitter.com" id="icons" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com" id="icons" class="fa fa-instagram"></a>
+      </div>
+
+
+  <div class="row">
+        <div class="col s12 m6">
+          <form method="post" action="/contactus">
+            <h5>Contact Us</h5>
+            <div>
+              <input type="text" class="text" name="name" placeholder="Name">
+            </div>
+
+            <div>
+              <input type="email" class="text" name="email" placeholder="Email">
+            </div>
+
+            <div>
+              <input type="tel" class="phone" name="email" placeholder="Phone">
+            </div>
+
+            <div class="row-message">
+                <textarea id="message" class="form-control" name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button name="submit" class="btn contact-btn" type="submit" id="submit">Send</button><br/>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

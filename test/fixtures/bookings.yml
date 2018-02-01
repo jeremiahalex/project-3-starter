@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  service: 
+  date: 2018-01-25
+  time: 2018-01-25 16:51:02
+
+two:
+  user: 
+  service: 
+  date: 2018-01-25
+  time: 2018-01-25 16:51:02

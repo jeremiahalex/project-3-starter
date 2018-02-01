@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Proj 3</title>
+  <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+</head>
+
+<body>
+
+  <p class="notice">
+    <%= notice %>
+  </p>
+
+  <p class="alert">
+    <%= alert %>
+  </p>
+
+
+  <!-- Nav bar -->
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <%= link_to "MennStop", root_path, class: "brand-logo", id: "logo-container" %>
+
+        <% if current_user %>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <%= link_to "About", '#about', class: "nav-link" %>
+            </li>
+            <li>
+              <%= link_to current_user.email, edit_user_registration_path, class: 'nav-link' %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+
+          <% else %>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <%= link_to "About", '#about', class: "nav-link" %>
+              </li>
+
+              <li>
+                <%= link_to "Login", "?form=login", class: "activate-side", 'data-activates': 'slide-out' %>
+              </li>
+
+              <li>
+                <%= link_to "Sign Up", "?form=signup", class: "activate-side", 'data-activates': 'slide-signup' %>
+              </li>
+              <!-- <li><a href="sass.html"><i class="material-icons left">search</i></a></li> -->
+            </ul>
+          <% end %>
+
+          <!-- <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons"</i></a> -->
+          <!-- <ul class="side-nav" id="mobile-demo" style="transform: translateX(-100%)">
+
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul> -->
+
+      </div>
+    </nav>
+
+
+  <!-- Login Slideout bar -->
+    <ul id="slide-out" class="side-nav">
+      <%= form_for(:user, url: session_path(:user)) do |f| %>
+        <h4>Login</h4>
+          <div class="field">
+            <%= f.label :email %><br/>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %><br/>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <!-- <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %><br/>
+          </div> -->
+
+          <div class="actions">
+            <%= f.submit "Login" %><br/><br/>
+            <%= link_to "Forgot your password?", new_user_password_path %><br><br>
+            <%= link_to "Sign Up", "?form=signup", class: "activate-side", 'data-activates': 'slide-signup' %>
+          </div>
+      <% end %>
+    </ul>
+
+
+
+  <!-- Sign Up Slideout bar -->
+    <ul id="slide-signup" class="side-nav">
+        <h4>Sign Up</h4>
+          <%= form_for @user, url: user_registration_path do |f| %>
+
+          <div class="field">
+            <%= f.label :first_name %><br>
+            <%= f.text_field :first_name, autofocus: 'autofocus' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :last_name %><br>
+            <%= f.text_field :last_name %>
+          </div>
+
+            <div class="field">
+              <%= f.label :email %><br>
+              <%= f.email_field :email, autocomplete: 'email' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <em>(6 characters minimum)</em><br>
+              <%= f.password_field :password, autocomplete: 'off' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br>
+              <%= f.password_field :password_confirmation, autocomplete: 'off' %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign Up"%><br><br>
+              <!-- <%= link_to "Login", "?form=login", class: "activate-side", 'data-activates': 'slide-out' %> -->
+            </div>
+            <% end %>
+        </ul>
+    </div
+
+  <%= yield %>
+    <footer class="footer-copyright">
+      <div class="container">
+        <p> &copy 2018 &nbsp
+          <a href="https://github.com/emjys/project-3">
+            <strong>MennStop</strong>
+            </a> &nbsp All Rights Reserved &nbsp • &nbsp
+            <a href="/" class="page-scroll">Top
+            <span class="fa fa-angle-up"></span>
+          </p>
+          </a>
+        </div>
+      </footer>
+  </body>
+  </html>
