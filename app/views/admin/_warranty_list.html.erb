@@ -1,0 +1,11 @@
+<tr>
+  <%
+  customer = Account.find(warranty_list.customer_id)
+  customer_name = customer.first_name+' '+customer.last_name
+  product = Product.find(warranty_list.product_id)
+  %>
+  <td><%= customer_name %></td>
+  <td><%= product.product_name%></td>
+  <td><%= product.serial_no %></td>
+  <td><%= warranty_list.created_at.time.getlocal.strftime("%d-%b-%y %r") %></td>
+</tr>
