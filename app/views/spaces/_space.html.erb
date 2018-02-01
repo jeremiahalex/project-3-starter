@@ -1,7 +1,21 @@
-<div class="col s3 pages-show <%= space.category.category_type.split.first %> center-align">
+<!-- <div class="col s3 pages-show <%= space.category.category_type.split.first %> center-align">
   <img src="<%= space.image_url %>" class="responsive-img">
   <h5><%= link_to space.company_name, space_path(space.id) %></h5>
   <p><%= space.category.category_type %></p>
   <p><%= space.address %></p>
   <p><%= space.description %></p>
+</div> -->
+
+<div class="card col s3 pages-show <%= space.category.category_type.split.first %> center-align">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator responsive-img" src="<%= space.image_url %>">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4"><%= link_to space.company_name, space_path(space.id) %></span>
+    <p><%= space.category.category_type %></p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Description</span>
+    <p><%= space.description %></p>
+  </div>
 </div>

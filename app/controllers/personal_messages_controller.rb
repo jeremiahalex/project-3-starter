@@ -33,5 +33,5 @@ class PersonalMessagesController < ApplicationController
       redirect_to(root_path) and return unless @conversation && @conversation.participates?(current_user)
     end
   end
-  
+
 end

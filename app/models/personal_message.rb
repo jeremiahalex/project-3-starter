@@ -16,5 +16,5 @@ class PersonalMessage < ApplicationRecord
       conversation.receiver
     end
   end
-  
+
 end

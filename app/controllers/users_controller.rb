@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     # @space = Space.find(13)
     @space = User.find(params[:id]).space
     @website = @space.website if @space
-    @bookmarks = Bookmark.where(user_id: current_user.id) 
+    @bookmarks = Bookmark.where(user_id: current_user.id)
     @product = Product.new
     @products = @space.products if @space
   end

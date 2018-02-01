@@ -1,3 +1,5 @@
+<div class="container">
+
 <div class="row">
   <div class="col s8 offset-s2">
     <h4>Sign up your page</h4>
@@ -11,7 +13,7 @@
         </div>
         <div>
           <%= f.label :summary %>
-          <%= f.text_field :summary, placeholder: 'Lorem ipsum' %>
+          <%= f.text_field :summary, placeholder: 'Summary' %>
         </div>
         <div>
           <%= f.label :category %>
@@ -22,15 +24,15 @@
         </div>
         <div>
           <%= f.label :contact %>
-          <%= f.text_field :contact, placeholder: '12345678' %>
+          <%= f.text_field :contact, placeholder: 'Contact number' %>
         </div>
         <div>
           <%= f.label :address %>
-          <%= f.text_field :address, placeholder: 'Lorem ipsum' %>
+          <%= f.text_field :address, placeholder: 'Address' %>
         </div>
         <div>
           <%= f.label :description %>
-          <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
+          <%= f.text_area :description, placeholder: 'Description', class: "materialize-textarea" %>
         </div>
         <%= f.hidden_field(:is_active, value: false) %>
         <%= f.hidden_field(:is_rejected, value: false) %>
@@ -67,7 +69,7 @@
         </div>
         <div>
           <%= f.label :description %>
-          <%= f.text_area :description, value: @space.description %>
+          <%= f.text_area :description, value: @space.description, class: "materialize-textarea" %>
         </div>
         <%= f.hidden_field(:is_active, value: false) %>
         <%= f.hidden_field(:is_rejected, value: true) %>
@@ -77,4 +79,6 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
 </div>
