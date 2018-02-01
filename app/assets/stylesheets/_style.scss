@@ -249,16 +249,22 @@ body {
 }
 
 .footer-copyright {
-  padding-top: 20px;
   min-height: 60px !important;
-padding: 30px 0 40px !important;
+  padding: 30px 0 40px !important;
+  & h6 {
+    padding-left: 50px;
+  }
 }
 
-.card .card-image img {
-    padding-top: 20px !important;
-  min-height: 20%;
+main {
+  min-height: 80vh;
 }
 
-.space-card {
-  min-height: 300px
-}
+// .card .card-image img {
+//     padding-top: 20px !important;
+//   min-height: 20%;
+// }
+//
+// .space-card {
+//   min-height: 300px
+// }

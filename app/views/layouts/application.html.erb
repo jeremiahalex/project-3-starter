@@ -57,6 +57,8 @@
 
                 <% if current_user.is_admin  %>
                 <!-- === need to chage for admin === -->
+                <%= link_to 'Users', users_path %>
+
                   <%= link_to "Admin", admin_path(current_user) %>
                 <% end  %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -95,12 +97,13 @@
     <!-- <ul>
       <li><%#= link_to 'Users', users_path %></li>
     </ul> -->
+    <main>
     <%= yield %>
+  </main>
+
     <footer class="page-footer">
       <div class="footer-copyright">
-        <div class="container">
-          Copyright &copy; 2018 LocalSquare. All rights reserved.
-        </div>
+          <h6>Copyright &copy; 2018 LocalSquare. All rights reserved.</h6>
       </div>
     </footer>
   </body>

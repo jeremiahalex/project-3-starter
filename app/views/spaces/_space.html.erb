@@ -5,18 +5,3 @@
   <p><%= space.address %></p>
   <p><%= space.description %></p>
 </div>
-
-
-<div class="card col s3 <%= space.category.category_type.split.first %> center-align">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="<%= space.image_url %>">
-  </div>
-  <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4 space-card"><%= link_to space.company_name, space_path(space.id) %><i class="material-icons right">add</i></span>
-    <p><%= space.category.category_type %></p>
-  </div>
-  <div class="card-reveal space-root">
-    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-    <p><%= space.description %></p>
-  </div>
-</div>
