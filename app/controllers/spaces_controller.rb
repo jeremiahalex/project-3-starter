@@ -9,9 +9,11 @@ class SpacesController < ApplicationController
     @reviews = Review.where(space_id: params[:id]).order(:created_at).reverse
 
     @bookmark_check = false
-    current_user.bookmarks.each do |bookmark|
-      if bookmark.space_id == @indiv_space.id
-        @bookmark_check = true
+    if current_user
+      current_user.bookmarks.each do |bookmark|
+        if bookmark.space_id == @indiv_space.id
+          @bookmark_check = true
+        end
       end
     end
   end
