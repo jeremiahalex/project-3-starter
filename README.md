@@ -40,8 +40,6 @@ until finished
 
 ## Built With
 
-<!-- What did you use to build it, list the technologies, plugins, gems, packages etc. -->
-
 ### Technologies
 
 * [Ruby](https://www.ruby-lang.org/en/)
@@ -61,11 +59,6 @@ until finished
 ---
 
 ## Workflow
-
-<!-- Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here. -->
-
-### Use Cases
-
 
 ### Entity-Relationship Diagram
 
@@ -125,11 +118,5 @@ As the distributor/manufacturer,
 
 * **[Darren Koh](https://github.com/keed)**
 * **[Lim Jiechao](https://github.com/limjiechao)**
-
----
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
 
 ---
