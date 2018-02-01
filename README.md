@@ -44,7 +44,6 @@ until finished
 
 * [Ruby](https://www.ruby-lang.org/en/)
 * [Ruby on Rails](http://rubyonrails.org/)
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
 
 ### Gems
 
@@ -54,7 +53,6 @@ until finished
 * [Font Awesome](https://github.com/bokmann/font-awesome-rails) (Icons)
 * [rQRCode](https://github.com/whomwah/rqrcode) (QR Code Encoder)
 * [jQuery](https://github.com/rails/jquery-rails)
-* [RSpec](http://rspec.info/) (Testing)
 
 ---
 
