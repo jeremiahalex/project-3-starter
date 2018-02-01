@@ -1,0 +1,16 @@
+<%
+product_name = Product.find(Warranty.find(open_ticket[:warranty_id]).product_id).product_name
+%>
+<tr>
+  <td><%= product_name %></td>
+  <td><%= open_ticket.date_created.strftime("%-d %b %Y") %></td>
+  <td><%= open_ticket.title %></td>
+  <% if open_ticket.is_resolved == true %>
+  <td>Closed</td>
+  <% else %>
+  <td>Open</td>
+  <% end %>
+  <td style="text-align: center;">
+    <%= link_to fa_icon("search-plus", text: ""), account_ticket_path(open_ticket[:id]), class:"waves-effect waves-light blue-text text-darken-2" %>
+  </td>
+</tr>

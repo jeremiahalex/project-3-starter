@@ -1,0 +1,26 @@
+<%= form_for ticket, url: url, html: html do |f| %>
+<%= hidden_field_tag :warranty_id, params[:warranty_id] %>
+<%= hidden_field_tag :customer_id, current_account.id %>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2">
+    <i class="fa fa-thumbs-o-down prefix" aria-hidden="true"></i>
+    <%= f.text_field :title, class: "validate", required: "required", autofocus: true %>
+    <label for="title" data-error="Tell us the problem you have with this product">Tell us the issue</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2">
+    <i class="fa fa-pencil-square-o prefix" aria-hidden="true"></i>
+    <%= f.text_area :body, class: "validate materialize-textarea", required: "required" %>
+    <label for="body" data-error="Help us understand how the product broke down">Tell us more</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2">
+    <button class="btn waves-effect waves-light green" type="submit" name="action">
+      <i class="fa fa-check-square-o fa-fw" aria-hidden="true"></i>
+      Submit
+    </button>
+  </div>
+</div>
+<% end %>

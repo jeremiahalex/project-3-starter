@@ -17,7 +17,7 @@ module Admin
     def create
       # Prevent duplicates in Products table by checking for existence of exact match before creating
       unless Product.where(
-        "product_name = ? AND model_no = ? AND serial_no = ?",
+        'product_name = ? AND model_no = ? AND serial_no = ?',
         product_params[:product_name],
         product_params[:model_no],
         product_params[:serial_no]
@@ -25,9 +25,9 @@ module Admin
         # Save to Products table only if no duplicate
         @new_product = Product.create(product_params)
         # render html: "Added to database"
-        redirect_to admin_product_path(@new_product.id), :notice => "Product added to database"
+        redirect_to admin_product_path(@new_product.id), :notice => 'Product added to database'
       else
-        flash[:alert] = "Unable to add to database"
+        flash[:alert] = 'Unable to add to database'
         render 'create'
       end
     end
@@ -40,15 +40,15 @@ module Admin
       @product = Product.find(params[:id])
 
       unless Product.where(
-        "product_name = ? AND model_no = ? AND serial_no = ?",
+        'product_name = ? AND model_no = ? AND serial_no = ?',
         product_params[:product_name],
         product_params[:model_no],
         product_params[:serial_no]
       ).count > 0
         @product.update(product_params)
-        redirect_to admin_product_path(@product.id), :notice => "Product updated"
+        redirect_to admin_product_path(@product.id), :notice => 'Product updated'
       else
-          flash[:alert] = "Entry exists in database"
+          flash[:alert] = 'Entry exists in database'
           render 'edit'
       end
     end
@@ -62,15 +62,15 @@ module Admin
       # Generate QR code of URL with serial number as parameter
       @qrcode = RQRCode::QRCode.new(@url + "/warranty/register?psn=#{@psn}")
 
-      @svg = @qrcode.as_svg(offset: 0, color: '000', shape_rendering: 'crispEdges', module_size: 10, preserveAspectRatio: "xMidYMid meet", viewbox: "0 0 1000 1000")
+      @svg = @qrcode.as_svg(offset: 0, color: '000', shape_rendering: 'crispEdges', module_size: 10, preserveAspectRatio: 'xMidYMid meet', viewbox: '0 0 1000 1000')
     end
 
     def destroy
       @destroy_product = Product.find(params[:id])
       if @destroy_product.destroy
-        redirect_to admin_products_path, :alert => "Product deleted"
+        redirect_to admin_products_path, :alert => 'Product deleted'
       else
-        flash[:alert] = "Unable to delete from database"
+        flash[:alert] = 'Unable to delete from database'
         render 'show'
       end
     end

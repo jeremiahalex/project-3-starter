@@ -1,15 +1,20 @@
-<tbody>
   <tr>
-    <td><%= listing[:product_name] %></td>
-    <td><%= listing[:serial_no] %></td>
+    <td style="width: 150px;"><%= listing[:product_name] %></td>
+    <td><input style="margin: 0; width: 100%; border: none; height: auto" type="text" value="<%= listing[:serial_no] %>" readonly></td>
     <% if listing[:warranty_left] > 0 %>
-    <td><%= listing[:warranty_left] %></td>
+    <td style="text-align: center;"><%= listing[:warranty_left] %> days</td>
     <% elsif listing[:warranty_left] == 0 %>
-    <td>Last day</td>
+    <td style="text-align: center;">Last day</td>
     <% else %>
-    <td>Expired</td>
+    <td style="text-align: center;">Expired</td>
     <% end %>
-    <td><%= listing[:date_of_purchase] %></td>
-    <td><%= listing[:expiry_date] %></td>
+    <td style="text-align: center;"><%= listing[:date_of_purchase] %></td>
+    <td style="text-align: center;"><%= listing[:expiry_date] %></td>
+    <% if listing[:warranty_left] >= 0 %>
+    <td style="text-align: center;">
+      <%= link_to fa_icon("ticket", text: "Create"), new_account_ticket_path(:warranty_id => listing[:warranty_id]), class:"waves-effect waves-light blue-text text-darken-2" %>
+    </td>
+    <% else %>
+    <td style="text-align: center;"></td>
+    <% end %>
   </tr>
-</tbody>

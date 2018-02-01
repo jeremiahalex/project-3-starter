@@ -5,16 +5,16 @@
       <table>
         <thead>
           <tr>
-            <th>Product</th>
-            <th>Ticket Status</th>
-            <th>Last Response</th>
+            <th>Product Name</th>
+            <th>Date Created</th>
+            <th>Issue</th>
+            <th>Status</th>
+            <th>View</th>
           </tr>
         </thead>
 
         <tbody>
-          <td>Dyson V8 Absolute+</td>
-          <td>Live</td>
-          <td>22/01/2023</td>
+          <%= render partial: 'open_ticket', collection: @open_tickets %>
         </tbody>
       </table>
     </div>
@@ -27,16 +27,15 @@
           <tr>
             <th>Product Name</th>
             <th>Serial Number</th>
-            <th>Warranty Status</th>
-            <th>Warranty Start Date</th>
-            <th>Warranty End Date</th>
+            <th style="text-align: center;">Warranty</th>
+            <th style="text-align: center;">Start Date</th>
+            <th style="text-align: center;">End Date</th>
+            <th style="text-align: center;">Support Ticket</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
             <%= render partial: 'listing', collection: @listings %>
-          </tr>
         </tbody>
       </table>
     </div>

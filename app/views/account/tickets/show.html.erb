@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col m8 offset-m2">
+        <h4>Support Ticket <%= @ticket.id %></h4>
+      </div>
+
+      <div class="col s12 m8 offset-m2">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <i class="fa fa-list-alt circle light-blue darken-2" aria-hidden="true"></i>
+            <span class="">Issue</span>
+            <h4 class="flow-text"><%= @ticket.title %></h4>
+          </li>
+
+          <li class="collection-item avatar">
+            <i class="fa fa-pencil-square-o circle light-blue darken-2" aria-hidden="true"></i>
+            <span class="">Description</span>
+            <h4 class="flow-text"><%= @ticket.body %></h4>
+          </li>
+
+          <li class="collection-item avatar">
+            <i class="fa fa-tag circle light-blue darken-2" aria-hidden="true"></i>
+            <span class="">Product</span>
+            <h4 class="flow-text"><%= @product.product_name %></h4>
+            <h4 class="flow-text"><%= @product.serial_no %></h4>
+          </li>
+
+          <li class="collection-item avatar">
+            <i class="fa fa-calendar circle light-blue darken-2" aria-hidden="true"></i>
+            <span class="">Date created</span>
+            <h4 class="flow-text"><%= @ticket.date_created %></h4>
+          </li>
+
+          <li class="collection-item avatar">
+            <i class="fa fa-id-card-o  circle light-blue darken-2" aria-hidden="true"></i>
+            <span class="">Customer Support Officer</span>
+            <h4 class="flow-text"><%= @staff.first_name %> <%= @staff.last_name %></h4>
+            <h4 class="flow-text"><%= @staff.email %></h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
