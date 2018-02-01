@@ -8,7 +8,11 @@
       <% @categories.each do |cat| %>
         <li class="tab col s12">
           <%#= link_to cat[:name], "#", id: "#{@query}-#{cat[:id]}" %>
-          <%= link_to cat.category_type, "#", id: "#{@query}-#{cat.id}" %>
+          <% if @category_number.to_i == cat.id %>
+            <%= link_to cat.category_type, "#", id: "#{@query}-#{cat.id}", class: "active" %>
+          <% else %>
+            <%= link_to cat.category_type, "#", id: "#{@query}-#{cat.id}" %>
+          <% end %>
         </li>
       <% end %>
     </ul>

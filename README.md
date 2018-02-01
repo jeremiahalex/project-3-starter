@@ -1,12 +1,20 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 3: Localsquare
 
-My group is developing an online business directory and networking platform
-to help small scale local businesses / individuals,
+My group is developing an *online business directory and networking platform*
+to help *small scale local businesses or individuals*,
 to solve the problem of a lack in popularity to the general public
 by creating a community to foster collaboration between small scale businesses.
 
-Our site also aims to feature products which are not commonly found which differentiates us from other e-commerce sites.
-eg. an individual specialize in making christmas related handicraft can choose to partner with a neighbourhood cake shop selling christmas log cakes during the christmas festive season through the site we are building
+**Problem Statement**
+
+- There is a lack in popularity of small scale local businesses or individuals.
+- These business owners have difficulty advertising or reaching out to the general public.
+
+**Proposed Solution**
+
+- Our site aims to create a community of small scale local businesses or individuals so that they are able to collaborate to come up with business strategies instead of competing among themselves or working alone.
+- Our site also aims to feature products which are not commonly found which differentiates us from other e-commerce sites.
+- For example, an individual specialize in making Christmas related handicraft can choose to partner with a neighbourhood cake shop selling Christmas log cakes during the Christmas festive season through the site we are building.
 
 
 ## Live version
@@ -27,12 +35,20 @@ https://localsquare.herokuapp.com/
 
 * As a buyer of online goods, I want to be able to access the catalogues and be updated of the items sold at small physical shops, rented box spaces, flea markets or push carts so that I can make the decision first before visiting them.
 
-## FLowchart
+
+## Flowchart
 ![](/app/assets/readme/Flowchart.jpg)
 
 
 ## Use cases
 ![](/app/assets/readme/Use-Cases.jpg)
+
+
+1. As a **Normal User** of our website without any registered account, this user will be able to search for businesses listed on our site and write a review anonymously.
+2. After registering for any account, all **Users** have access to their personal profile page and are able to bookmark businesses. They are able to chat or message business owners.
+3. As a **Registered User**, this user will be able to create business listing to advertise his / her business. This is subjected to approval by the **Administrator**.
+4. Upon approval, this **Registered User** changes to a **Business Owner**. His / her business will be listed on the site and will be visible to the public. This **Business Onwer** is allowed to edit his / her business information subsequently.
+5. As an **Administrator**, he / she has the access rights to approve or reject newly created business listings submitted by **Registered User**.
 
 
 ## Wireframes
@@ -87,48 +103,76 @@ https://localsquare.herokuapp.com/
 
 ![](/app/assets/readme/ERD.jpg)
 
+
+### Additional features to highlight
+
+**Image upload using Carrierwave and Cloudinary**
+
+Carrierwave gem is used for image upload. More details can be found in this [guide](https://code.tutsplus.com/articles/uploading-with-rails-and-carrierwave--cms-28409).
+
+Cloudinary is needed for online deployment and for retention of images uploaded.
+
+
+**Action cable for instant messaging**
+
+Messaging models have to be set up first to store the conversations and messages occurring. This [guide](https://www.sitepoint.com/build-a-messaging-system-with-rails-and-actioncable/) is used.
+
+Action cable is then used to enable real time messaging. This [guide](https://www.sitepoint.com/rails-and-actioncable-adding-advanced-features/) is used.
+
+Redis Cloud is needed for online deployment.
+
+
 ### How to Use
 
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
+- Fork and clone this repository.
+- Run `bundle install` to install dependencies.
+- Run `rails server` to launch web server for local deployment.
+- Start PostgreSQL server.
+- To seed dummy data, run `rails db:seed`.
 
-```
-Code example
-```
 
-More steps...
+### Deployment
 
-```
-until finished
-```
+This project is deployed on [Heroku](https://id.heroku.com/login).
+- Redis Cloud is needed for real time messaging system.
+- Run `heroku addons:create rediscloud` to initialize this.
 
-## Tests
-
-Did you write automated tests? If so, how do we run them.
-
-```
-Code example
-```
-
-## Live Version
-
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
 
 ## Built With
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
+- Ruby on Rails
+- PostgreSQL
+- Embedded Ruby
+- [jQuery](http://jquery.com/)
+- [Materialize](http://materializecss.com/)
+- Devise
+- Will_paginate
+- Carrierwave & Cloudinary
+- Action cable & Redis Cloud
 
-- [jQuery](http://jquery.com/) - jQuery for example is something you likely used
 
 ## Workflow
 
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+- **Gantt chart**
+<img src="/app/assets/readme/Gantt-Chart.png">
+
+- [Kanban board](https://github.com/chongct/project-3/projects/1) used for individual tasks tracking and to record issues to attend to.
+
+
+## Areas to Improve On
+
+- Search and filter function
+- Devise customization
+- Functions to have more efficient collaboration between business owners
+
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
+- **Edmund Teo** - [edmundtck](https://github.com/edmundtck)
+- **Chong Ching Tong** - [chongct](https://github.com/chongct)
 
-- **John McClain** - _Responsible for keeping vests white_ - [GithubUserName](https://github.com/GithubUserName)
 
 ## Acknowledgments
 
-- Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+- Prima Aulia Gusta
+- Shaun Loh
