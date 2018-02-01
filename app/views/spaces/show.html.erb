@@ -4,11 +4,11 @@
   <div class="col s4 offset-s1 space-show">
     <img src="<%= @indiv_space.image_url %>">
   </div>
-  <div class="col s6">
+  <div class="col s7">
     <h5><%= @indiv_space.company_name %></h5>
     <p><%= @indiv_space.category.category_type %></p>
     <p><%= @indiv_space.summary %></p>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">share</i>Share</a>
+    <!-- <a class="waves-effect waves-light btn"><i class="material-icons left">share</i>Share</a> -->
 
     <% if current_user %>
       <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
@@ -55,8 +55,10 @@
       <% end %>
     </div>
 
+<% if @indiv_space.products.length > 0 %>
+<h5 class="product-padding">Products</h5>
 <%= render @indiv_space.products %>
-
+<% end %>
   </div>
 
   <div class="col s4">
@@ -69,7 +71,7 @@
         </div>
         <div class="input-field">
           <%= f.label :review %>
-          <%= f.text_area :review %>
+          <%= f.text_area :review, class: "materialize-textarea" %>
         </div>
         <%= f.submit class: 'waves-effect waves-light btn' %>
       </div>

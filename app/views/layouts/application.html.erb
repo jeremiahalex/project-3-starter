@@ -48,7 +48,7 @@
               <div class="col s4 menu-list right-align">
 
               <% if current_user %>
-                <%= link_to "Profile", user_path(current_user) %>
+                <%= link_to current_user.username, user_path(current_user) %>
                 <%= link_to "Inbox", conversations_path %>
 
                 <% if current_user.space == nil  || current_user.space.is_rejected == true %>

@@ -7,8 +7,8 @@
       <% if current_user.is_owner %>
         <%= image_tag(@space.image_url, alt: 'Image', class: 'img-size') %>
       <% end %>
-      <a class="waves-effect waves-light btn">
-        <i class="material-icons left">message</i>Message</a>
+      <!-- <a class="waves-effect waves-light btn">
+        <i class="material-icons left">message</i>Message</a> -->
     </div>
   </div>
 </div>
@@ -71,7 +71,7 @@
       </div>
       <div>
         <%= f.label :description %>
-        <%= f.text_area :description, placeholder: 'Lorem ipsum' %>
+        <%= f.text_area :description, placeholder: 'Lorem ipsum', class: 'materialize-textarea' %>
       </div>
       <%= f.submit("Update", class: "waves-effect waves-light btn") %>
       <% end %>
@@ -122,16 +122,31 @@
       <%= form_for @product, url: space_products_path(params[:id]) do |f| %>
         <div>
           <%= f.label :title %>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, placeholder: 'Title of product' %>
         </div>
         <div>
           <%= f.label :description %>
-          <%= f.text_area :description %>
+          <%= f.text_area :description, class: "materialize-textarea", placeholder: 'Tell us more ...' %>
         </div>
-        <div>
-          <%= f.label :image_url %>
-          <%= f.file_field :image_url %>
-        </div>
+        <!-- <div>
+          <%#= f.label :image_url %>
+          <%#= f.file_field :image_url %>
+        </div> -->
+        <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <%= f.file_field :image_url, accept: "image/*" %>
+                <!-- <input type="file"> -->
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path" type="text" placeholder="Image file">
+              </div>
+            </div>
+
+
+
+
+
         <%= f.hidden_field(:space_id, value: @space.id) %>
         <%= f.submit("Create Product", class: "waves-effect waves-light btn") %>
       <% end %>
