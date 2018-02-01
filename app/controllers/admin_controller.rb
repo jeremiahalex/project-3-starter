@@ -4,6 +4,6 @@ class AdminController < ApplicationController
 
   def index
     @warranty_list = Warranty.all
-    # render json: @warranty_list
+    @ticket_list = Ticket.all
   end
 end
