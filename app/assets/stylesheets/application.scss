@@ -28,6 +28,10 @@ nav ul a, nav .brand-logo {
   width: 100%;
 }
 
+input:disabled {
+  color: black !important;
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
