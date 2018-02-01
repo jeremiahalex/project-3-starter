@@ -1,7 +1,13 @@
-<div class="col s6 pages-show center-align">
-  <img src="<%= bookmark.space.image_url %>" class="responsive-img">
-  <h5><%= link_to bookmark.space.company_name, space_path(bookmark.space_id) %></h5>
-  <p><%= bookmark.space.category.category_type %></p>
-  <p><%= bookmark.space.address %></p>
-  <p><%= bookmark.space.description %></p>
+<div class="card col s6 pages-show center-align">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator responsive-img" src="<%= bookmark.space.image_url %>">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4"><%= link_to bookmark.space.company_name, space_path(bookmark.space_id) %></span>
+    <p><%= bookmark.space.category.category_type %></p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Description</span>
+    <p><%= bookmark.space.description %></p>
+  </div>
 </div>

@@ -39,7 +39,7 @@
 
 // to size logo images at home page
 .pages-show {
-  height: 400px;
+  height: 300px;
 }
 
 // .pages-show img {
@@ -147,7 +147,7 @@ ul.tabs .indicator {
   bottom: 10px;
   width: 300px;
   padding: 10px;
-  border: 1px solid black;
+  box-shadow: 0 0 3px $blue;
   background-color: #fff;
   .close {
     cursor: pointer
@@ -226,9 +226,15 @@ nav, footer {
   color: $blue;
 }
 
-.dropdown-content li:hover {
-  background-color: $grey;
+.dropdown-content {
+  a:hover {
+  color: $darkblue !important;
 }
+  li:hover {
+    background: white !important;
+  }
+}
+
 
 .button-inline {
   display: inline-block;
@@ -257,7 +263,7 @@ body {
 }
 
 main {
-  // min-height: 80vh;
+  min-height: 80vh;
 }
 
 .close-box {
@@ -275,11 +281,19 @@ main {
 .product-padding {
   padding-left: 20px;
 }
-// .card .card-image img {
-//     padding-top: 20px !important;
-//   min-height: 20%;
-// }
-//
-// .space-card {
-//   min-height: 300px
-// }
+
+.card .card-image img {
+  margin-top: 20px !important;
+  height: 100px !important;
+}
+
+
+.tabs {
+ a {
+  color: $blue !important;
+}
+a.active, a:hover {
+  color: $darkblue !important;
+}
+
+}

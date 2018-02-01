@@ -17,6 +17,7 @@ $(document).on("turbolinks:load", function() {
   // flash messages
   $(".notice, .alert").delay(3000).fadeOut(2000);
 
+
   // results filtering
   $(".filter a").on("click", function() {
     var anchorId = $(this).attr("id");
@@ -41,6 +42,4 @@ $(document).on("turbolinks:load", function() {
     //   }
     // });
   });
-
-
 });

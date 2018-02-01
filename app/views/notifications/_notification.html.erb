@@ -1,8 +1,8 @@
 <div id="notification">
-  <div class="close">close me</div>
-  <p>
-    <%= message.body %><br>
-    from <%= message.user.space ? message.user.space.company_name : message.user.username %>
-  </p>
+  <div class="close"><i class="material-icons right">close</i></div>
+
+    <h6>Message from <%= message.user.space ? message.user.space.company_name : message.user.username %></h6>
+  <p><%= message.body %></p>
+
   <p><%= link_to 'Take me there now!', conversation_path(message.conversation) %></p>
 </div>

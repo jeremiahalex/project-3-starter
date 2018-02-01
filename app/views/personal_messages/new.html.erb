@@ -7,13 +7,8 @@
   <%= hidden_field_tag 'receiver_id', @receiver.id %>
 
   <%= f.label :body %>
-  <%= f.text_area :body %>
-  <%#= f.text_area :body, class: 'materialize-textarea' %>
-
-  <%#= f.submit('Send', class: "btn waves-effect waves-light") %>
-
-  <%= f.submit %>
-
+  <%= f.text_area :body, class: 'materialize-textarea' %>
+  <%= f.submit('Send', class: "btn waves-effect waves-light") %>
 <% end %>
 
 </div>
