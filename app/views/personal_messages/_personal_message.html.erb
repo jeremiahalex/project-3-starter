@@ -1,23 +1,8 @@
-<!-- <p><%= personal_message.body %></p>
-<p>at <strong><%= personal_message.created_at %></strong><br>
-  by <strong><%= online_status personal_message.user %></strong></p>
-<hr> -->
-
-<% if personal_message.user == current_user %>
 <div>
-<strong><%= online_status personal_message.user %></strong>
-<small><%= personal_message.created_at %></small><br>
+<strong><%= online_status personal_message.user %></strong><br>
+<small><%= personal_message.created_at %></small>
 <p>
  <%= personal_message.body %>
 </p>
 </div>
-<% else %>
-<div class="right-align">
-<strong><%= online_status personal_message.user %></strong>
-<small><%= personal_message.created_at %></small><br>
-<p>
- <%= personal_message.body %>
-</p>
-</div>
-<% end %>
 <hr>
