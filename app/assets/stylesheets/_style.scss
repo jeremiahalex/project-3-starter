@@ -1,13 +1,14 @@
 // navbar
 .brand-logo-cus {
-  color: #fff;
+  color: #000;
   display: inline-block;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   padding: 0;
+  font-family: 'Pacifico', cursive;
 }
 
 .search-input {
-  background-color: #82b1ff;
+  background-color: rgb(0, 150, 136);
   height: 45px;
   margin-top: 10px;
 }
@@ -26,10 +27,6 @@
   padding: 15px;
 }
 
-.page-footer {
-  background-color: transparent !important;
-}
-
 // .search-input i {
 //   margin: -10px 0 0 12px;
 // }
@@ -42,12 +39,12 @@
 
 // to size logo images at home page
 .pages-show {
-  height: 500px;
+  height: 300px;
 }
 
-.pages-show img {
-  width: 300px;
-}
+// .pages-show img {
+//   width: 300px;
+// }
 
 .about h5, .about p {
   text-align: center;
@@ -66,11 +63,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid $green;
+  // border: 1px solid black;
   margin: 20px 0px;
   padding: 20px 0px;
-  box-shadow: 5px 5px $green;
-  background-color: $grey;
+  box-shadow: 2px 2px 3px $blue;
+  background-color: white;
 }
 
 .profile a {
@@ -100,11 +97,11 @@ ul.tabs .indicator {
 
 // spaces profile page
 .border {
-  border: 1px solid $green;
-  box-shadow: 5px 5px $green;
+  // border: 1px solid $green;
+  box-shadow: 2px 2px 3px $blue;
   margin: 10px;
   padding: 15px;
-  background-color: $grey;
+  background-color: white;
 }
 
 .space-show img {
@@ -150,12 +147,10 @@ ul.tabs .indicator {
   bottom: 10px;
   width: 300px;
   padding: 10px;
-  border: 1px solid black;
+  box-shadow: 0 0 3px $blue;
   background-color: #fff;
-  z-index: 2;
   .close {
-    cursor: pointer;
-    z-index: 3;
+    cursor: pointer
   }
 }
 
@@ -165,4 +160,140 @@ ul.tabs .indicator {
   &.online {
     color: green;
   }
+}
+
+nav, footer {
+  background-color: white !important;
+  & a {
+    color: black;
+  }
+}
+
+.btn {
+  background-color: $blue !important;
+
+}
+
+.slider {
+  height: 87vh !important;
+}
+
+.slides {
+  height: 80vh !important;
+}
+
+#space {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+}
+
+// underline for form
+.input-field input:focus, .materialize-textarea:focus, input[type=text]:focus {
+  border-bottom: 1px solid $blue !important;
+  box-shadow: 0 1px 0 0 #9e9e9e !important;
+}
+
+.dropdown-content {
+  & a, span {
+  color: $blue !important;
+  }
+}
+
+.prefix {
+  top: -9px;
+  left: 7px;
+}
+
+.input-field input[type=search]:focus + label {
+  color: #000;
+}
+
+.input-field input[type=search] + label {
+  background-color: white;
+  left: 17px;
+  top: 12px;
+}
+
+.input-field input[type=search] {
+  padding-left: 1.5rem !important;
+}
+
+.search-input {
+  background-color: white;
+}
+
+.input-field .prefix.active {
+  color: $blue;
+}
+
+.dropdown-content {
+  a:hover {
+  color: $darkblue !important;
+}
+  li:hover {
+    background: white !important;
+  }
+}
+
+
+.button-inline {
+  display: inline-block;
+}
+
+body {
+  background-color: $grey;
+}
+
+.page-footer .footer-copyright {
+  background-color: transparent !important;
+  color: black !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.page-footer {
+  padding-top: 0 !important;
+}
+
+.footer-copyright {
+  min-height: 60px !important;
+  padding: 30px 0 40px !important;
+  & h6 {
+    padding-left: 50px;
+  }
+}
+
+main {
+  min-height: 80vh;
+}
+
+.close-box {
+  color: grey;
+  border: none;
+  background-color: none;
+  padding: 3px;
+  &:hover {
+    color: black;
+    background-color: grey;
+
+  }
+}
+
+.product-padding {
+  padding-left: 20px;
+}
+
+.card .card-image img {
+  margin-top: 20px !important;
+  height: 100px !important;
+}
+
+
+.tabs {
+ a {
+  color: $blue !important;
+}
+a.active, a:hover {
+  color: $darkblue !important;
+}
+
 }

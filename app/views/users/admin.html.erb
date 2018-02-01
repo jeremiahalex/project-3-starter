@@ -1,9 +1,11 @@
+<div class="container">
+
 <div class="row">
   <div class="col s8 offset-s2">
     <div class="profile">
       <h4><%= @admin.first_name %> <%= @admin.last_name %></h4>
-      <a class="waves-effect waves-light btn">
-        <i class="material-icons left">message</i>Message</a>
+      <!-- <a class="waves-effect waves-light btn">
+        <i class="material-icons left">message</i>Message</a> -->
     </div>
   </div>
 </div>
@@ -27,6 +29,8 @@
         <p>This company has been rejected.</p>
       <% end %>
       <div id="space-<%= item.id %>" class="col s12">
+        <h5>Username:</h5>
+        <p><%= item.user.username %></p>
         <h5>Company Name:</h5>
         <p><%= item.company_name %></p>
         <h5>Address:</h5>
@@ -58,5 +62,8 @@
       </div>
     <% end %>
   </div>
+
+</div>
+
 
 </div>
