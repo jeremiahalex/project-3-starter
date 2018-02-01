@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
   end
+  # ========== Routing for tickets ==========
+  namespace :account do
+    resources :tickets
+  end
   # 404
   match "*path", to: "index#catch_404", via: :all
 end
