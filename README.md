@@ -90,7 +90,34 @@ As a customer,
 As the distributor/manufacturer,
 * I want to provide my customers the best possible after-sales support without diverting scarce engineering resources and attention from the core business concerns.
 
-<!-- Wireframe -->
+### Screenshots
+
+Home Page
+![](/-ProjectDocumentation/screenshots/ss1.png)
+
+Customer Home
+![](/-ProjectDocumentation/screenshots/ss2.png)
+
+Support Tickets
+![](/-ProjectDocumentation/screenshots/ss3.png)
+
+Create Support Ticket
+![](/-ProjectDocumentation/screenshots/ss4.png)
+
+Edit Account
+![](/-ProjectDocumentation/screenshots/ss5.png)
+
+Warranty Registration
+![](/-ProjectDocumentation/screenshots/ss6.png)
+
+Admin Home
+![](/-ProjectDocumentation/screenshots/ss7.png)
+
+Admin Product Listing
+![](/-ProjectDocumentation/screenshots/ss8.png)
+
+Admin Create New Product
+![](/-ProjectDocumentation/screenshots/ss9.png)
 
 ---
 
