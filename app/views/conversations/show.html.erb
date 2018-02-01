@@ -1,0 +1,19 @@
+<div class="container">
+
+<h1>Chatting with <%= @conversation.with(current_user).space ? @conversation.with(current_user).space.company_name : @conversation.with(current_user).username %></h1>
+
+<div id="conversation-main">
+<div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+      <%= render @conversation.personal_messages %>
+  </div>
+
+  <%= form_for @personal_message do |f| %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+    <%= f.label "Message" %>
+    <%= f.text_area :body, class: 'materialize-textarea' %>
+
+    <%= f.submit('Send', class: 'btn waves-effect waves-light') %>
+  <% end %>
+</div>
+
+</div>

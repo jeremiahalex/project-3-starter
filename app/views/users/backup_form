@@ -1,0 +1,80 @@
+<%= form_tag(about_path(1), method: :patch) do %>
+<div>
+  <%= label_tag :company_name %>
+  <%= text_field_tag :company_name, nil, placeholder: 'Company name' %>
+</div>
+<div>
+  <%= label_tag :summary %>
+  <%= text_field_tag :summary, nil, placeholder: 'Lorem ipsum' %>
+</div>
+<div>
+  <%= label_tag :category %>
+  <%= text_field_tag :category, nil, placeholder: 'Lorem ipsum' %>
+</div>
+<div>
+  <%= label_tag :contact %>
+  <%= text_field_tag :contact, nil, placeholder: '12345678' %>
+</div>
+<div>
+  <%= label_tag :address %>
+  <%= text_field_tag :address, nil, placeholder: 'Lorem ipsum' %>
+</div>
+<div>
+  <%= label_tag :business_descriptions %>
+  <%= text_area_tag :business_descriptions %>
+</div>
+<div>
+  <%= label_tag :tags %>
+  <%= text_field_tag :tags %>
+</div>
+<%= submit_tag("Save") %>
+<% end %>
+
+
+
+
+# website
+<!-- <%= form_for @space do %>
+<div>
+  <%= f.label :website %>
+  <%= f.text_field :website, placeholder: 'Website' %>
+</div>
+<div>
+  <%= f.label :facebook %>
+  <%= f.text_field :facebook, placeholder: 'Facebook' %>
+</div>
+<div>
+  <%= f.label :instagram %>
+  <%= f.text_field :instagram, placeholder: 'Instagram' %>
+</div>
+<div>
+  <%= f.label :googleplus %>
+  <%= f.text_field :googleplus, placeholder: 'Google+' %>
+</div>
+<div>
+  <%= f.label :linkedin %>
+  <%= f.text_field :linkedin, placeholder: 'Linkedin' %>
+</div>
+<%= f.submit("Save") %>
+<% end %> -->
+
+
+
+
+
+# product list
+<div class="row product-list">
+<% @products.each do |item| %>
+<div class="col s6">
+<div class="card">
+  <div class="card-image">
+    <%= image_tag(item.image_url.url, alt: 'Image', class: 'img-size') if item.image_url? %>
+  </div>
+  <div class="card-content">
+    <h4><%= item.title %></h4>
+    <p><%= item.description %></p>
+    </div>
+</div>
+</div>
+<% end %>
+</div>

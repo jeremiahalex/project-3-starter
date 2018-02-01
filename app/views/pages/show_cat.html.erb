@@ -1,0 +1,12 @@
+<div class="container">
+
+<div class="result">
+  <h5>Showing results for <%= @query %></h5>
+</div>
+
+<div class="row">
+  <%#= render @spaces %>
+  <%= render :partial => "spaces/spacepage", :locals => { :spaces => @spaces } %>
+</div>
+
+</div>

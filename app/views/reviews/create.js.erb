@@ -1,0 +1,3 @@
+<% if !@new_review.title.blank? && !@new_review.review.blank? %>
+  $(".review-list").prepend("<%= escape_javascript(render @new_review) %>")
+<% end %>

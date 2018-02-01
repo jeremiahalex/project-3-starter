@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local Square</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="row">
+            <div class="col s2 logo">
+              <%= link_to "Local Square", root_path, class: 'brand-logo-cus' %>
+            </div>
+
+            <div class="col s2">
+              <%= link_to 'Categories', '#', class: "dropdown-button btn", "data-beloworigin": true, "data-activates": 'dropdown1' %>
+
+              <ul id='dropdown1' class='dropdown-content'>
+                <% @category.each do |cat| %>
+                  <li><%= link_to cat.category_type, category_path(cat.id) %></li>
+                <% end %>
+
+              </ul>
+            </div>
+
+            <!-- <div class="col s4 offset-s2"> -->
+              <div class="col s4">
+
+              <%= form_tag(page_path(:query), method: "get", class: "search-input") do %>
+                <div class="input-field">
+                  <i class="material-icons prefix">search</i>
+                  <%= search_field(nil, :space, placeholder: "Search") %>
+                </div>
+              <% end %>
+            </div>
+
+            <% if user_signed_in? %>
+              <div id="current-user"></div>
+              <!-- ... -->
+            <% end %>
+
+            <!-- <div class="col s3 offset-s1 menu-list right-align"> -->
+              <div class="col s4 menu-list right-align">
+
+              <% if current_user %>
+                <%= link_to current_user.username, user_path(current_user) %>
+                <%= link_to "Inbox", conversations_path %>
+
+                <% if current_user.space == nil  || current_user.space.is_rejected == true %>
+                  <%= link_to "Create", new_space_path %>
+                <% end  %>
+
+                <% if current_user.is_admin  %>
+                <!-- === need to chage for admin === -->
+                <%= link_to 'Users', users_path %>
+
+                  <%= link_to "Admin", admin_path(current_user) %>
+                <% end  %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+
+              <% else  %>
+                <%= link_to "Login", new_user_session_path %>
+                <%= link_to "Signup", user_registration_path %>
+              <% end  %>
+              <%#= link_to "Profile", user_path(1), class: "waves-effect waves-light btn" %>
+              <%#= link_to "Dashboard", user_path(1), class: "waves-effect waves-light btn" %>
+              <%#= link_to "Create business listing", new_space_path, class: "waves-effect waves-light btn" %>
+
+              <%#= link_to "Login", new_user_session_path, class: "waves-effect waves-light btn" %>
+              <%#= link_to "Signup", user_registration_path, class: "waves-effect waves-light btn" %>
+              <%#= link_to "Logout", destroy_user_session_path, class: "waves-effect waves-light btn", method: :delete %>
+
+              <!-- <%= link_to "Profile", user_path(1) %> -->
+
+
+              <%#= link_to "Dashboard", user_path(1) %>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <!-- <ul>
+      <li><%#= link_to 'Users', users_path %></li>
+    </ul> -->
+    <main>
+    <%= yield %>
+  </main>
+
+    <footer class="page-footer">
+      <div class="footer-copyright">
+          <h6>Copyright &copy; 2018 LocalSquare. All rights reserved.</h6>
+      </div>
+    </footer>
+  </body>
+</html>

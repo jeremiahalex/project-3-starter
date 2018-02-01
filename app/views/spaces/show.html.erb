@@ -1,0 +1,93 @@
+<div class="container">
+
+<div class="row valign-wrapper">
+  <div class="col s4 offset-s1 space-show">
+    <img src="<%= @indiv_space.image_url %>">
+  </div>
+  <div class="col s7">
+    <h5><%= @indiv_space.company_name %></h5>
+    <p><%= @indiv_space.category.category_type %></p>
+    <p><%= @indiv_space.summary %></p>
+    <!-- <a class="waves-effect waves-light btn"><i class="material-icons left">share</i>Share</a> -->
+
+    <% if current_user %>
+      <% if @bookmark_check %>
+        <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark disabled", method: :post do %>
+          <i class="material-icons left">bookmark</i>Bookmark
+        <% end %>
+      <% else %>
+        <%= link_to space_bookmarks_path(@indiv_space.id), class: "waves-effect waves-light btn bookmark", method: :post do %>
+          <i class="material-icons left">bookmark</i>Bookmark
+        <% end %>
+      <% end %>
+
+      <a href="/personal_messages/new?receiver_id=<%= @indiv_space.user.id %>" class="waves-effect waves-light btn"><i class="material-icons left">message</i>Message</a>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s8">
+    <div class="border">
+      <h5>Business Description</h5>
+      <p><%= @indiv_space.description %></p>
+
+      <h5>Company details</h5>
+      <h6>Address</h6>
+      <p><%= @indiv_space.address %></p>
+
+      <h6>Contact</h6>
+      <p><%= @indiv_space.contact %></p>
+
+      <% if !@indiv_space.website.website.blank? %>
+        <h6>Website</h6>
+        <%= link_to @indiv_space.website.website, "http://#{@indiv_space.website.website}" %>
+      <% end %>
+
+      <% if !@indiv_space.website.facebook.blank? || !@indiv_space.website.instagram.blank? || !@indiv_space.website.googleplus.blank? || !@indiv_space.website.linkedin.blank? %>
+        <h6>Social media</h6>
+      <% end %>
+
+      <% if !@indiv_space.website.facebook.blank? %>
+        <a href="http://<%= @indiv_space.website.facebook %>" class="waves-effect waves-light btn"><i class="fa fa-facebook"></i></a>
+      <% end %>
+      <% if !@indiv_space.website.instagram.blank? %>
+        <a href="http://<%= @indiv_space.website.instagram %>" class="waves-effect waves-light btn"><i class="fa fa-instagram"></i></a>
+      <% end %>
+      <% if !@indiv_space.website.googleplus.blank? %>
+        <a href="http://<%= @indiv_space.website.googleplus %>" class="waves-effect waves-light btn"><i class="fa fa-google"></i></a>
+      <% end %>
+      <% if !@indiv_space.website.linkedin.blank? %>
+        <a href="http://<%= @indiv_space.website.linkedin %>" class="waves-effect waves-light btn"><i class="fa fa-linkedin"></i></a>
+      <% end %>
+    </div>
+
+<% if @indiv_space.products.length > 0 %>
+<h5 class="product-padding">Products</h5>
+<%= render @indiv_space.products %>
+<% end %>
+  </div>
+
+  <div class="col s4">
+    <%= form_for(@new_review, url: space_reviews_path(@indiv_space.id), remote: true) do |f| %>
+      <div class="border">
+        <h5>Write review</h5>
+        <div class="input-field">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div class="input-field">
+          <%= f.label :review %>
+          <%= f.text_area :review, class: "materialize-textarea" %>
+        </div>
+        <%= f.submit class: 'waves-effect waves-light btn' %>
+      </div>
+    <% end %>
+
+    <div class="review-list">
+      <%= render @reviews %>
+    </div>
+  </div>
+</div>
+
+</div>

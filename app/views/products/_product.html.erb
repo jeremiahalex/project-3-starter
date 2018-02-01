@@ -1,0 +1,14 @@
+<div class="col s12">
+  <div class="col s4">
+    <%= image_tag(product.image_url.url, alt: 'Image', class: 'responsive-img') if product.image_url? %>
+  </div>
+  <div class="col s8">
+    <% if product.space.user == current_user %>
+      <%= form_for product, url: space_product_path(product.space, product), method: :delete do |f| %>
+        <%= f.submit("X", class: "close-box right") %>
+      <% end %>
+    <% end %>
+    <h5><%= product.title %></h5>
+    <p><%= product.description %></p>
+  </div>
+</div>
