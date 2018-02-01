@@ -107,6 +107,9 @@ As the distributor/manufacturer,
 #### Admin Product Listing
 ![](/-ProjectDocumentation/screenshots/ss8.png)
 
+#### Admin View Product (QR Code)
+![](/-ProjectDocumentation/screenshots/ss10.png)
+
 #### Admin Create New Product
 ![](/-ProjectDocumentation/screenshots/ss9.png)
 
