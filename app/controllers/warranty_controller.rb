@@ -4,7 +4,6 @@ class WarrantyController < ApplicationController
   end
 
   def new
-    # @products = Product.all.to_ary
     # Create new Warranty Product
     @new_warranty = Warranty.new
     # # Find product from URL query
@@ -28,8 +27,10 @@ class WarrantyController < ApplicationController
       new_account = Account.new(permit_account_params)
       # ------Check for any errors with account creation------
       if ! new_account.validate
-        flash[:alert] =  array_to_flash(new_account.errors.full_messages)
-        return redirect_to(request.env['HTTP_REFERER'])
+        acc_err_msg = array_to_flash(new_account.errors.full_messages)
+        return respond_to do |format|
+          format.js { render :js => "Materialize.toast('#{acc_err_msg}', 5000, 'red')" }
+        end
       else
         new_account.save
         acc_id_for_warranty = new_account.id
@@ -38,13 +39,17 @@ class WarrantyController < ApplicationController
     # ------Create new warranty------
     @new_warranty.customer_id = acc_id_for_warranty
     if ! @new_warranty.validate
-      flash[:alert] = array_to_flash(@new_warranty.errors.full_messages)
-      return redirect_to(request.env['HTTP_REFERER'])
+      warr_err_msg = array_to_flash(@new_warranty.errors.full_messages)
+      return respond_to do |format|
+        format.js { render :js => "Materialize.toast('#{warr_err_msg}', 5000, 'red')" }
+      end
     else
       @new_warranty.save
       message_hash = {:notice => "Product Registered. Kindly Check Your Email For Confirmation."}
     end
-    redirect_to root_path, message_hash
+    return respond_to do |format|
+      format.html { redirect_to root_path, message_hash }
+    end
   end
 
   private

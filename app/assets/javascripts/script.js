@@ -9,7 +9,5 @@ $(document).on('turbolinks:load',function() {
   if (!$('label').val()) {
     $('label').addClass('active');
   }
-
-  // $('#warranty_user_registration').hide();
-
+  
 });

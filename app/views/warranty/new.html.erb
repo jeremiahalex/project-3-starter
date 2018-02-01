@@ -4,7 +4,7 @@
       <h4 class="header">Warranty Registration</h4>
     </div>
   </div>
-  <%= form_for @new_warranty, url: warranty_register_path, html: { method: 'post'} do |warranty_form| %>
+  <%= form_with model: @new_warranty, url: warranty_register_path, method: :post do |warranty_form| %>
   <%= fields_for @new_warranty.product do |product_form| %>
     <div class="row">
       <div class="input-field col s12 m10 offset-m1">
@@ -42,7 +42,7 @@
       <div class="row">
         <div class="input-field col s12 m10 offset-m1">
           <i class="fa fa-envelope prefix" aria-hidden="true"></i>
-          <%= reg_form.email_field :email, class: 'validate', autocomplete: "email", required: 'required' %>
+          <%= reg_form.email_field :email, id:'reg_form_email', class: 'validate', autocomplete: "email", required: 'required' %>
           <label for="email" data-error="Please check you have enter your email correctly">Email</label>
         </div>
       </div>
@@ -78,7 +78,7 @@
       <div class="input-field col s12 m10 offset-m1">
         <button class="btn waves-effect waves-light green">
           <%=(fa_icon 'check-square-o').html_safe%>
-          <%= warranty_form.submit 'Register Warranty'%>
+          <%= warranty_form.submit 'Register Warranty', :data => {:disable_with => "Processing..."}%>
         </button>
       </div>
     </div>
