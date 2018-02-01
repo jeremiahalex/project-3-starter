@@ -2,7 +2,9 @@
   <div class="close">close me</div>
   <p>
     <%= message.body %><br>
-    from <%= message.user.space ? message.user.space.company_name : message.user.username %>
+    from <%= message.user.name %>
+
+    <!-- from <%#= message.user.space ? message.user.space.company_name : message.user.username %> -->
   </p>
   <p><%= link_to 'Take me there now!', conversation_path(message.conversation) %></p>
 </div>

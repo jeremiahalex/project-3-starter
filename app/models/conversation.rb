@@ -19,7 +19,4 @@ class Conversation < ApplicationRecord
   def participates?(user)
   author == user || receiver == user
 end
-
-
-
 end

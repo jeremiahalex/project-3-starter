@@ -9,10 +9,10 @@
 
   <%= form_for @personal_message do |f| %>
     <%= hidden_field_tag 'conversation_id', @conversation.id %>
-    <%= f.label 'Message' %>
-    <%= f.text_area :body, class: 'materialize-textarea' %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
 
-    <%= f.submit('Send', class: "btn waves-effect waves-light") %>
+    <%= f.submit %>
   <% end %>
 </div>
 

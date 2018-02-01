@@ -55,7 +55,7 @@
       </div>
       <div>
         <%= f.label :summary %>
-        <%= f.text_field :summary, placeholder: 'Lorem ipsum' %>
+        <%= f.text_field :summary, placeholder: 'Summary' %>
       </div>
       <div>
         <%= f.label :category %>
@@ -63,15 +63,15 @@
       </div>
       <div>
         <%= f.label :contact %>
-        <%= f.text_field :contact, placeholder: '12345678' %>
+        <%= f.text_field :contact, placeholder: 'Contact number' %>
       </div>
       <div>
         <%= f.label :address %>
-        <%= f.text_field :address, placeholder: 'Lorem ipsum' %>
+        <%= f.text_field :address, placeholder: 'Address' %>
       </div>
       <div>
         <%= f.label :description %>
-        <%= f.text_area :description, placeholder: 'Lorem ipsum', class: 'materialize-textarea' %>
+        <%= f.text_area :description, placeholder: 'Description', class: 'materialize-textarea' %>
       </div>
       <%= f.submit("Update", class: "waves-effect waves-light btn") %>
       <% end %>

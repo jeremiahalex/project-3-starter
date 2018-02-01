@@ -14,6 +14,6 @@
 //= require jquery3
 //= require jquery_ujs
 //= require materialize
-//= require cable
 //= require turbolinks
+//= require cable
 //= require_tree .
