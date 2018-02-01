@@ -10,9 +10,9 @@ class PagesController < ApplicationController
     @category_number = query_string.split("-")[1]
 
     if @category_number
-      @spaces = Space.where("company_name ILIKE ? AND is_active = ? AND category_id = ?", "%#{@query}%", true, @category_number).paginate(:page => params[:space_page], :per_page => 6)
+      @spaces = Space.where("company_name ILIKE ? AND is_active = ? AND category_id = ?", "%#{@query}%", true, @category_number).paginate(:page => params[:space_page], :per_page => 15)
     else
-      @spaces = Space.where("company_name ILIKE ? AND is_active = ?", "%#{@query}%", true).paginate(:page => params[:space_page], :per_page => 6)
+      @spaces = Space.where("company_name ILIKE ? AND is_active = ?", "%#{@query}%", true).paginate(:page => params[:space_page], :per_page => 15)
     end
 
     # @spaces = Space.where("company_name ILIKE ? AND is_active = ?", "%#{@query}%", true).paginate(:page => params[:space_page], :per_page => 6)
