@@ -92,31 +92,31 @@ As the distributor/manufacturer,
 
 ### Screenshots
 
-Home Page
+#### Home Page
 ![](/-ProjectDocumentation/screenshots/ss1.png)
 
-Customer Home
+#### Customer Home
 ![](/-ProjectDocumentation/screenshots/ss2.png)
 
-Support Tickets
+#### Support Tickets
 ![](/-ProjectDocumentation/screenshots/ss3.png)
 
-Create Support Ticket
+#### Create Support Ticket
 ![](/-ProjectDocumentation/screenshots/ss4.png)
 
-Edit Account
+#### Edit Account
 ![](/-ProjectDocumentation/screenshots/ss5.png)
 
-Warranty Registration
+#### Warranty Registration
 ![](/-ProjectDocumentation/screenshots/ss6.png)
 
-Admin Home
+#### Admin Home
 ![](/-ProjectDocumentation/screenshots/ss7.png)
 
-Admin Product Listing
+#### Admin Product Listing
 ![](/-ProjectDocumentation/screenshots/ss8.png)
 
-Admin Create New Product
+#### Admin Create New Product
 ![](/-ProjectDocumentation/screenshots/ss9.png)
 
 ---
