@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <h3>Open Tickets</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Customer Email</th>
+              <th>Title</th>
+              <th>Ticket Status</th>
+              <th>Created On</th>
+            </tr>
+          </thead>
+
+          <tbody>
+              <%= render partial: 'ticket_list', collection: @ticket_list %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <h3>Registered Warranties</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Product</th>
+              <th>Serial No</th>
+              <th>Created On</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <%= render partial: 'warranty_list', collection: @warranty_list %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

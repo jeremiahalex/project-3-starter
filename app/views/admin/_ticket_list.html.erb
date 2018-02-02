@@ -1,0 +1,16 @@
+<tr>
+  <%
+  customer = Account.find(ticket_list.customer_id)
+  customer_name = customer.first_name+' '+customer.last_name
+  if ticket_list.is_resolved
+    status = 'Closed'
+  else
+    status = 'Open'
+  end
+  %>
+  <td><%= customer_name %></td>
+  <td><%= customer.email%></td>
+  <td><%= ticket_list.title %></td>
+  <td><%= status %></td>
+  <td><%= ticket_list.created_at.time.getlocal.strftime("%d-%b-%y %r") %></td>
+</tr>

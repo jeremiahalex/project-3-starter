@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s6 m4 offset-m2">
+        <h3>Edit Product</h3>
+      </div>
+      <div class="col s6 m4">
+        <h4 class="right-align">
+          <%= link_to fa_icon('trash', text: " Delete"), admin_product_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn waves-effect waves-light red" %>
+        </h4>
+      </div>
+    </div>
+
+    <%= render "product", product: @product, url: admin_product_path, html: { method: "patch"} %>
+
+    <div class="row">
+      <div class="input-field col s6 m4 offset-m2">
+        <%= link_to fa_icon("arrow-left ", text: "To Product Listing"), admin_products_path, class:"btn waves-effect waves-light light-blue darken-3" %>
+      </div>
+    </div>
+  </div>
+</div>

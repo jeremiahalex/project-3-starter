@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Warranted</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag 'favico.png' %>
+  </head>
+  <body>
+    <nav class="primary-color">
+      <div class="nav-wrapper container">
+        <%= link_to "Warranted", root_path, class: "brand-logo" %>
+        <!-- <%= link_to "<i class='fa fa-bars' aria-hidden='true'></i>".html_safe, root_path, 'data-activates': "mobile-nav", class: "button-collapse" %> -->
+        <a href="#" data-activates="mobile-nav" class="button-collapse"><i class='fa fa-bars' aria-hidden='true'></i></a>
+        <ul class="right hide-on-med-and-down">
+          <% content_for :links do%>
+            <% if account_signed_in? %>
+            <%fullname = ' '+ current_account.first_name+' '+current_account.last_name%>
+              <% if current_account.is_admin? %>
+                <li><%= link_to "Admin Home", admin_index_path %></li>
+                <li><%= link_to "Product Listing", admin_products_path %></li>
+                <li><%= link_to "Create New Product", new_admin_product_path %></li>
+              <% else %>
+                <li><%= link_to "How to Register Warranty", warranty_path%></li>
+                <li><%= link_to (fa_icon 'user-circle-o').html_safe + fullname, account_index_path%></li>
+              <% end %>
+              <li><%= link_to (fa_icon 'pencil').html_safe+' Edit Account', edit_account_registration_path%></li>
+              <li><%= link_to (fa_icon 'sign-out').html_safe+' Logout', destroy_account_session_path, method: :delete%></li>
+            <% else %>
+              <li><%= link_to (fa_icon 'user-plus').html_safe+ ' Sign Up', new_account_registration_path%></li>
+              <li><%= link_to (fa_icon 'sign-in').html_safe + ' Login', new_account_session_path%></li>
+            <% end %>
+          <% end %>
+          <%= yield :links%>
+        </ul>
+        <ul class="side-nav" id="mobile-nav">
+          <%= yield :links%>
+        </ul>
+      </div>
+    </nav>
+    <% flash.each do |message_type, message| %>
+    <%= javascript_tag "Materialize.toast('#{message}', 5000, 'green')" if message_type.eql?'notice'%>
+    <%= javascript_tag "Materialize.toast('#{message}', 5000 ,'red')" if message_type.eql?'alert'%>
+    <% end %>
+    <%= yield %>
+    <footer class="primary-color page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          <span class="left">
+            <strong>© 2018 Warranted</strong> | <a class="center grey-text text-lighten-3" href="#">Privacy Policy</a> | <a class="grey-text text-lighten-3" href="#">Terms of Use</a>
+          </span>
+          <span class="right">
+            By <a class="grey-text text-lighten-3" href="https://github.com/keed" target="_blank"><i class="fa fa-github prefix" aria-hidden="true"></i> <strong>Darren Koh</strong></a> | <a class="grey-text text-lighten-4" href="https://github.com/limjiechao" target="_blank"><i class="fa fa-github prefix" aria-hidden="true"></i> <strong>Lim Jiechao</strong></a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

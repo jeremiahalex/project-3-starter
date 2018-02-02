@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <h3>Create New Product</h3>
+      </div>
+    </div>
+
+    <%= render "product", product: @product, url: admin_products_path, html: { method: "post"} %>
+  </div>
+</div>
