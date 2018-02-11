@@ -22,27 +22,27 @@ With this trend accelerating, we see an market opportunity where we can step in 
 
 Our company
 
-> #### Warranted
+#### Warranted
 
 is developing an  
 
-> #### after-sales support platform
+#### after-sales support platform
 
 that helps
 
-> #### manufacturers and wholesale distributors
+#### manufacturers and wholesale distributors
 
 to
 
-> #### streamline their customer service while increasing customer retention
+#### streamline their customer service while increasing customer retention
 
-with
+with a
 
-> #### a simple warranty registration
+#### simple warranty registration
 
-and
+and a
 
-> #### a thoughtful customer support suite  
+#### thoughtful customer support suite  
 
 ---
 
@@ -68,11 +68,11 @@ and
 
 ### Entity-Relationship Diagram
 
-![](/-ProjectDocumentation/project_3_erd.svg)
+![](./-ProjectDocumentation/project_3_erd.svg)
 
 ### Flow Chart
 
-![](/-ProjectDocumentation/project_3_flowchart.svg)
+![](./-ProjectDocumentation/project_3_flowchart.svg)
 
 ### User Stories
 
@@ -98,34 +98,34 @@ As the manufacturer/distributor,
 ### Screenshots
 
 #### Home Page
-![](/-ProjectDocumentation/screenshots/ss1.png)
+![](./-ProjectDocumentation/screenshots/ss1.png)
 
 #### Customer Home
-![](/-ProjectDocumentation/screenshots/ss2.png)
+![](./-ProjectDocumentation/screenshots/ss2.png)
 
 #### Support Tickets
-![](/-ProjectDocumentation/screenshots/ss3.png)
+![](./-ProjectDocumentation/screenshots/ss3.png)
 
 #### Create Support Ticket
-![](/-ProjectDocumentation/screenshots/ss4.png)
+![](./-ProjectDocumentation/screenshots/ss4.png)
 
 #### Edit Account
-![](/-ProjectDocumentation/screenshots/ss5.png)
+![](./-ProjectDocumentation/screenshots/ss5.png)
 
 #### Warranty Registration
-![](/-ProjectDocumentation/screenshots/ss6.png)
+![](./-ProjectDocumentation/screenshots/ss6.png)
 
 #### Admin Home
-![](/-ProjectDocumentation/screenshots/ss7.png)
+![](./-ProjectDocumentation/screenshots/ss7.png)
 
 #### Admin Product Listing
-![](/-ProjectDocumentation/screenshots/ss8.png)
+![](./-ProjectDocumentation/screenshots/ss8.png)
 
 #### Admin View Product (QR Code)
-![](/-ProjectDocumentation/screenshots/ss10.png)
+![](./-ProjectDocumentation/screenshots/ss10.png)
 
 #### Admin Create New Product
-![](/-ProjectDocumentation/screenshots/ss9.png)
+![](./-ProjectDocumentation/screenshots/ss9.png)
 
 ---
 
